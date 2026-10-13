@@ -1,141 +1,43 @@
 {
-  "scan_iso": "2026-10-13T20:58:51.575934+00:00",
-  "last_updated": "October 13, 2026 at 08:58 PM UTC",
-  "all_database_prints": [
+  "scan_iso": "2026-10-13T23:00:32.660380+00:00",
+  "last_updated": "October 13, 2026 at 11:00 PM UTC",
+  "makerworld_picks": [
     {
       "name": "Bambu Scraper Grip Pro",
       "badge": "Bed Maintenance",
-      "meta": "⭐ 4.9 • Model #2272874",
-      "desc": "Ergonomic scraper handle optimized for standard Bambu replacement razor blades with protected plate angle.",
+      "meta": "⭐ 4.9 • 52k Downloads",
+      "desc": "Ergonomic bed scraper handle designed for standard Bambu replacement razor blades.",
       "img": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/2272874-bambu-scraper-grip-pro"
+      "url": "https://www.printables.com/model/12702-bambu-scraper-grip"
     },
     {
-      "name": "Bambu Lab Disconnect Tool Set",
+      "name": "AMS Dry-Box Desiccant Pod",
       "badge": "AMS Upgrade",
-      "meta": "⭐ 4.9 • Model #14462",
-      "desc": "Buffer outlet fork and hotend wire disconnect levers for smooth PTFE removal without pinched fingers.",
-      "img": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/14462-bambu-tools-bambu-lab-tool-set-disconnect-tools"
-    },
-    {
-      "name": "AMS HT Silica Dry Pods",
-      "badge": "Filament Care",
-      "meta": "⭐ 4.9 • Model #1875836",
-      "desc": "Custom vented slide-in silica desiccant pods designed to sit behind the spool rollers inside the AMS unit.",
+      "meta": "⭐ 4.9 • 34k Downloads",
+      "desc": "Slide-in silica desiccant pods designed to keep engineering filaments moisture-free.",
       "img": "https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/1875836-ams-ht-desiccant-box-silica-dry-box-dry-pods"
+      "url": "https://www.printables.com/model/519731-bambu-lab-ams-silica-gel-dry-box"
     },
     {
-      "name": "Kumiko Pattern Cylinder Lamp",
-      "badge": "LED Hardware Kit",
-      "meta": "⭐ 4.9 • Model #13717",
-      "desc": "Decorative geometric desktop lamp designed around Bambu Lab's quick-plug USB LED Lamp Kit.",
-      "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/13717-led-lamp-001"
-    },
-    {
-      "name": "Bambu Universal Tool Box",
-      "badge": "Workshop Storage",
-      "meta": "⭐ 4.9 • Model #1892987",
-      "desc": "Heavy-duty latching carry case with dedicated slots for hotends, Allen wrenches, wipers, and lube packets.",
-      "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/1892987-bambu-universal-toolbox-model"
-    },
-    {
-      "name": "Magnetic Purge Chute Bin",
-      "badge": "Clean Setup",
-      "meta": "⭐ 4.8 • Model #14902",
-      "desc": "Slide-on magnetic waste bucket that fits flush against the rear poop chute to collect extruded coils.",
-      "img": "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/14902-bambu-poop-chute"
-    },
-    {
-      "name": "Articulated Flexi Leviathan Dragon",
+      "name": "Articulated Flexi Leviathan",
       "badge": "Showcase Print",
-      "meta": "⭐ 4.9 • Model #1163767",
-      "desc": "Print-in-place multi-segmented model engineered to test multi-color material switches and seamless tolerances.",
+      "meta": "⭐ 4.9 • 19k Downloads",
+      "desc": "Print-in-place multi-segmented model engineered to test multi-color switches and overhangs.",
       "img": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/1163767-shadowcoil-articulated-dragon"
+      "url": "https://www.printables.com/model/1163767-shadowcoil-articulated-dragon"
     },
     {
-      "name": "Plate Centering Guide Clips",
-      "badge": "Bed Mod",
-      "meta": "⭐ 4.9 • Model #83480",
-      "desc": "Rear alignment corners that make dropping spring-steel PEI sheets onto magnetic beds fast and foolproof.",
-      "img": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/83480-the-shifty-build-plate-guide"
-    },
-    {
-      "name": "Honeycomb Tool Wall System",
-      "badge": "Organization",
-      "meta": "⭐ 4.9 • Model #28412",
-      "desc": "Modular wall matrix for hanging digital calipers, scraper handles, flush cutters, and filament snips.",
-      "img": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/28412-honeycomb-storage-wall"
-    },
-    {
-      "name": "MicroSD & Adapter Desk Hub",
-      "badge": "Desk Accessory",
-      "meta": "⭐ 4.8 • Model #31205",
-      "desc": "Machined-style weighted desktop block with dedicated slots for TF/MicroSD cards and USB flash drives.",
-      "img": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/31205-sd-card-holder"
-    },
-    {
-      "name": "Collapsible TPU Desiccant Funnel",
-      "badge": "Filament Care",
-      "meta": "⭐ 4.9 • Model #19204",
-      "desc": "Flexible fold-flat funnel sized precisely for pouring silica gel beads without workshop spills.",
-      "img": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/19204-collapsible-funnel"
-    },
-    {
-      "name": "Minimalist Desktop Headphone Rest",
-      "badge": "Desk Setup",
-      "meta": "⭐ 4.8 • Model #45889",
-      "desc": "Balanced architectural stand with curved cradle profile to prevent headband creasing.",
-      "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/45889-headphone-stand"
-    }
-  ],
-  "makerworld_picks": [
-    {
-      "name": "Magnetic Purge Chute Bin",
-      "badge": "Clean Setup",
-      "meta": "⭐ 4.8 • Model #14902",
-      "desc": "Slide-on magnetic waste bucket that fits flush against the rear poop chute to collect extruded coils.",
-      "img": "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/14902-bambu-poop-chute"
-    },
-    {
-      "name": "MicroSD & Adapter Desk Hub",
-      "badge": "Desk Accessory",
-      "meta": "⭐ 4.8 • Model #31205",
-      "desc": "Machined-style weighted desktop block with dedicated slots for TF/MicroSD cards and USB flash drives.",
-      "img": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/31205-sd-card-holder"
-    },
-    {
-      "name": "Bambu Universal Tool Box",
-      "badge": "Workshop Storage",
-      "meta": "⭐ 4.9 • Model #1892987",
-      "desc": "Heavy-duty latching carry case with dedicated slots for hotends, Allen wrenches, wipers, and lube packets.",
-      "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/1892987-bambu-universal-toolbox-model"
-    },
-    {
-      "name": "Minimalist Desktop Headphone Rest",
-      "badge": "Desk Setup",
-      "meta": "⭐ 4.8 • Model #45889",
-      "desc": "Balanced architectural stand with curved cradle profile to prevent headband creasing.",
-      "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
-      "url": "https://makerworld.com/en/models/45889-headphone-stand"
+      "name": "Spiral Accent Lamp 001",
+      "badge": "LED Hardware Kit",
+      "meta": "⭐ 4.9 • 14k Downloads",
+      "desc": "Decorative geometric desktop lamp designed around quick-plug USB LED lamp kits.",
+      "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&auto=format&fit=crop&q=80",
+      "url": "https://www.printables.com/model/13717-led-lamp-001"
     }
   ],
   "priority_articles": [
     {
-      "id": "web-2995489514986885104",
+      "id": "web-6830562402757174409",
       "title": "Bambu Lab: FCC filings reveal two new 3D printers, H3C and X2D Pro - 3Druck.com",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -167,7 +69,7 @@
   ],
   "general_articles": [
     {
-      "id": "web-6383152827160740035",
+      "id": "web-1321909791471031223",
       "title": "This firmware update will make your 3D printer less capable than the day you bought it - MakeUseOf",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -177,7 +79,7 @@
       "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "web-3306946824495132684",
+      "id": "web-2518859336771275285",
       "title": "Best Multicolor 3D Printers 2026: Every System Compared - 3dprinting.com",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -187,7 +89,7 @@
       "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "web-485944750640769358",
+      "id": "web-5224093642229808706",
       "title": "How Susan Fang Used Bambu Lab Printers to Create Runway Illusions - 3Dnatives",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -197,7 +99,7 @@
       "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "web-5147634991104600793",
+      "id": "web-8396257643843835196",
       "title": "Bambu Lab & 7 Accessibility Organizations Launch Design Challenge for 3D Printed Assistive Devices - 3DPrint.com",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -207,7 +109,7 @@
       "timestamp": "Oct 04, 2026"
     },
     {
-      "id": "web-740396412944895594",
+      "id": "web-1291354844910233365",
       "title": "Bambu Lab 3D Printers Compared: Which to Buy (2026) - https://3dprinting.com/",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -217,7 +119,7 @@
       "timestamp": "Sep 30, 2026"
     },
     {
-      "id": "web-8071231164999011615",
+      "id": "web-342375549886295458",
       "title": "Makers Making Change and Bambu Lab launch global assistive technology 3D printing challenge - 3D Printing Industry",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -227,7 +129,7 @@
       "timestamp": "Sep 28, 2026"
     },
     {
-      "id": "web-8512273792056582221",
+      "id": "web-8189032727022132577",
       "title": "Bambu Lab Has 6 New Products Coming - YouTube",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -237,7 +139,7 @@
       "timestamp": "Sep 24, 2026"
     },
     {
-      "id": "web-7256333216589213006",
+      "id": "web-4884799446924602814",
       "title": "Bambu Lab S1: FCC Approval Marks Bambu Lab's First Portable 3D Scanner - 3Druck.com",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -247,7 +149,7 @@
       "timestamp": "Sep 23, 2026"
     },
     {
-      "id": "web-2258818182168110137",
+      "id": "web-2777999334089819195",
       "title": "Bambu Lab P3C: FCC approval reveals new 3D printer with model number PF006P - 3Druck.com",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -257,7 +159,7 @@
       "timestamp": "Sep 19, 2026"
     },
     {
-      "id": "web-2372078213142772608",
+      "id": "web-4463789561535686999",
       "title": "Bambu Lab and Accessibility Organizations Launch MakerWorld 3D-Printing Challenge - PR Newswire",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -269,7 +171,7 @@
   ],
   "reddit_articles": [
     {
-      "id": "red-48896285311744286",
+      "id": "red-8101672849522957944",
       "title": "Searching for the next level",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -279,7 +181,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-8531761036531301215",
+      "id": "red-6893469744677573291",
       "title": "Panda Station or U.S. General for H series printer",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -289,7 +191,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-21810337159813419",
+      "id": "red-5237055334795688726",
       "title": "New H3C machine incoming? Real photo or AI art?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -299,7 +201,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-8514204739334385536",
+      "id": "red-3694291193896175647",
       "title": "Faster Multi Color printing",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -309,7 +211,7 @@
       "timestamp": "Oct 11, 2026"
     },
     {
-      "id": "red-3536676966190168851",
+      "id": "red-5525947947007412798",
       "title": "Predictions for H3C Price",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -319,7 +221,7 @@
       "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "red-8198763755557277106",
+      "id": "red-6713851363397830784",
       "title": "H2C color changing limits",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -329,7 +231,7 @@
       "timestamp": "Oct 07, 2026"
     },
     {
-      "id": "red-7453538406358558527",
+      "id": "red-9190759762779410156",
       "title": "The H3C",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -339,7 +241,7 @@
       "timestamp": "Oct 06, 2026"
     },
     {
-      "id": "red-5015293232935593949",
+      "id": "red-7600374305345411181",
       "title": "What are the chances, really, for new printers before Black Friday?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -349,7 +251,7 @@
       "timestamp": "Oct 02, 2026"
     },
     {
-      "id": "red-4646826403727322918",
+      "id": "red-211897383811885345",
       "title": "Possible Bambu Lab Upcoming Releases - Full List",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -359,7 +261,7 @@
       "timestamp": "Sep 27, 2026"
     },
     {
-      "id": "red-8128974404315683642",
+      "id": "red-1371070755408927680",
       "title": "Beginner: $300 Bambu first, or go $1k–1.5k multi-filament now?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -369,7 +271,7 @@
       "timestamp": "Sep 26, 2026"
     },
     {
-      "id": "red-6236291667420029805",
+      "id": "red-1859535914408743033",
       "title": "Bambu 3D scanner",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -379,7 +281,7 @@
       "timestamp": "Sep 24, 2026"
     },
     {
-      "id": "red-6682779880740922743",
+      "id": "red-6426498376745532207",
       "title": "More H3C news, and possible AMS3",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -389,7 +291,7 @@
       "timestamp": "Sep 22, 2026"
     },
     {
-      "id": "red-1408189069310643973",
+      "id": "red-856052056020067956",
       "title": "I can’t decide if I should open H2C since H3C application went to FCC!!!",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -399,7 +301,7 @@
       "timestamp": "Sep 19, 2026"
     },
     {
-      "id": "red-7107006523725636722",
+      "id": "red-3820829054749328271",
       "title": "X2D-Pro?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -409,7 +311,7 @@
       "timestamp": "Sep 19, 2026"
     },
     {
-      "id": "red-5899973770098818193",
+      "id": "red-6624390925859751687",
       "title": "I want to get rid of my H2C? Whats an actual fair price",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",

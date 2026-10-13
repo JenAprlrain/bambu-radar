@@ -1,246 +1,66 @@
 {
-  "scan_iso": "2026-10-13T19:51:24.688404+00:00",
-  "total_web": 31,
-  "total_reddit": 25,
+  "scan_iso": "2026-10-13T20:07:57.313645+00:00",
+  "last_updated": "October 13, 2026 at 08:07 PM UTC",
   "makerworld_picks": [
     {
-      "name": "Bambu Universal Tool Box",
-      "badge": "Essential Tool",
-      "meta": "⭐ 4.9 • Model #1892987",
-      "desc": "Rugged snap-fit container tailored for Bambu hotends, wipers, and hex wrenches.",
-      "img": "https://makerworld.bblmw.com/makerworld/model/US9e840b13a3714f/design/2025-10-16_797d4777c3f6b8.jpg",
-      "url": "https://makerworld.com/en/models/1892987-bambu-universal-toolbox-model"
+      "name": "Shadowcoil Articulated Dragon",
+      "badge": "Multi-Color",
+      "meta": "⭐ 4.9 • Model #1163767",
+      "desc": "Print-in-place flexi showpiece for testing color switches, retractions, and overhangs.",
+      "img": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80",
+      "url": "https://makerworld.com/en/models/1163767-shadowcoil-articulated-dragon"
     },
     {
-      "name": "The Shifty - Build Plate Guide",
-      "badge": "Print Mod",
-      "meta": "⭐ 4.9 • Model #83480",
-      "desc": "Snap-on corner guides that effortlessly direct flexible steel build plates into place.",
-      "img": "https://makerworld.bblmw.com/makerworld/model/US229e8471a8bc29/design/2023-12-04_992bf761a2938.jpg?x-oss-process=image/resize,w_800/format,webp",
-      "url": "https://makerworld.com/en/models/83480-the-shifty-build-plate-guide"
+      "name": "Honeycomb Storage Wall (HSW)",
+      "badge": "Workshop Organization",
+      "meta": "⭐ 4.9 • Model #28412",
+      "desc": "Modular wall bracket grid for calipers, side cutters, and Allen keys.",
+      "img": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=80",
+      "url": "https://makerworld.com/en/models/28412-honeycomb-storage-wall"
     },
     {
       "name": "Bambu Official LED Lamp 001",
       "badge": "Official Kit",
       "meta": "⭐ 4.9 • Model #13717",
       "desc": "Bambu Lab's spiral desktop accent lamp powered by their official USB lamp hardware kit.",
-      "img": "https://makerworld.bblmw.com/makerworld/model/DSM00000000013717/design/2023-09-19_9f3e533f94456.jpg?x-oss-process=image/format,webp",
+      "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&auto=format&fit=crop&q=80",
       "url": "https://makerworld.com/en/models/13717-led-lamp-001"
     },
     {
-      "name": "AMS PTFE Tube Release Tool",
-      "badge": "Must-Have Mod",
-      "meta": "⭐ 4.8 • Model #735306",
-      "desc": "Special lever that safely depresses the PTFE tube release collar inside AMS units.",
-      "img": "https://makerworld.bblmw.com/makerworld/model/US3ef489ba12891f/design/2024-10-27_879bf123a.jpg?x-oss-process=image/resize,w_800/format,webp",
-      "url": "https://makerworld.com/en/models/735306-ams-ptfe-tube-removal-tool"
+      "name": "Official Bambu Scraper Grip",
+      "badge": "Workshop Essential",
+      "meta": "⭐ 4.9 • Model #12702",
+      "desc": "Ergonomic bed scraper handle designed specifically for Bambu's replacement razor blades.",
+      "img": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=600&auto=format&fit=crop&q=80",
+      "url": "https://makerworld.com/en/models/12702-bambu-scraper-grip"
     }
   ],
-  "web_articles": [
+  "priority_articles": [
     {
-      "id": "web-6785899915635509615",
-      "title": "Bambu Lab launches S1 3D scanner, opening sign-ups for early access - news.lavx.hu",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab launches S1 3D scanner, opening sign-ups for early access&nbsp;&nbsp;news.lavx.hu",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZ29QYVZwQXZSdWV5cTJ6OGplUlhucFRhSDNncXNFdUx0MWVHbXFOaDdKSXd2Z2tueEM1Wlp5bnE0QUR2RDE0S182aHZvSjd6TVMwaGdNYVBBd1BFaUFLVnZVTFIyTzVKY3VLNHFwbkUtVXVfSll3ZHV4M2o3NS1aQW1JRlRpUHFNUjFrbkJVZzA0cm5yXzkxMjBjcw",
-      "timestamp": "Oct 13, 2026"
+      "id": "fcc-pf008p",
+      "title": "FCC Registration Confirms Bambu Lab H3C and X2D Pro (ID: 2A6J8-PF008P)",
+      "source": "FCC Registry",
+      "category": "Regulatory Filing",
+      "target": "H3C / X2D Pro",
+      "summary": "FCC filings confirm dual releases: the 10-nozzle H3C flagship alongside the industrial-spec X2D Pro combo.",
+      "url": "https://forum.bambulab.com/t/h3c-edit-and-x2d-pro-printer-registered-with-fcc/259692",
+      "timestamp": "Sept 12, 2026"
     },
     {
-      "id": "web-5414620795608710380",
-      "title": "Bambu Lab just entered the 3D scanning scene, and you can sign up to hear more right now - XDA",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab just entered the 3D scanning scene, and you can sign up to hear more right now&nbsp;&nbsp;XDA",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOdVVZVkRkUEhHUmJXdUNpSl9PdFA3V0dVTjBpQ2c1SFRQemk1WkQ2TTNTdFI3MEdOcUtBRGstWFh2MGZJSzFVM3k4MC1ldDRDQnNiQTJiOTlQMS1GcURsMFI2REZkTTNiM25zUkV6ZjFKLXIyYnpCOXdPcGxfYnRKN0gxZnBpaEFSd0N4Q1VQRUxHclhhbzNKaVZLOHItOEJZYUJpa0dLZDlpMkc3RlplTjMwNA",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "web-3251961867552618120",
-      "title": "Bambu Lab officially teases its first 3D scanner — S1 3D set for launch in November 2026 - Tom's Hardware",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab officially teases its first 3D scanner — S1 3D set for launch in November 2026&nbsp;&nbsp;Tom's Hardware",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQemZ2LUNpcFBjMEdiZ0VOZnQ1ZmVfb1hWOWdBRjZ4Z0d1U2hNSmx2a3NkeWgtMEJoSFNNSXlIblZOMmRhT29SRlFGclpLN1B6QXl0clJ0TWJsWEMwamNqbGpZTGVaR0QzbDVPMm9YUXZ0Q0xPS0lyQ2J6azNMb1BpRTNOM016WElYdHN5bkJUb04xOXpZQ2tmeFE0czN0VERaOVpKYm85X1ROQzZXalJGdXJxNkFZRzktSEpJ",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "web-7775410623936307430",
-      "title": "Bambu Lab Teases New S1 Handheld 3D Scanner - All3DP",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab Teases New S1 Handheld 3D Scanner&nbsp;&nbsp;All3DP",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1ka1lBMGhQZkpRZG9SU0ZkSmlUZVpGN2R2aGdMQWpFaHNneVVFaHhSQUl0Z0ktc3hIbEVhXzE2X0hCOGtMNmMyR3BUNkNBSjBKNmxJeWQ0QkcxWnRaX0kzc2E1REdkQ0NFcHdaakFtajYzX2c",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "web-4621697787584820056",
-      "title": "Bambu Lab Teases S1 3D Scanner, Its First, for November 2026 - Glitchwire",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab Teases S1 3D Scanner, Its First, for November 2026&nbsp;&nbsp;Glitchwire",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPb2FRbFlrbGVPZ05RQU5iZW50UEdUd3VraXZNdkxjME10NGxTamZrbTR4UWJTYVB3dWJGTi1aaC1yel85RFVOdGV6NGlQSUJ3LXlET1ZkdUtoRlJKTWF0TE5SR3VtcnhMYTFDcHdLNXNRbGtxcE90dFFEYWZ6Q1VLOXEyRlhrT1FzQjJDc1JKLWM",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "web-7471385326332849762",
-      "title": "Bambu Lab S1: Manufacturer Officially Announces Its First 3D Scanner for November 2026 - 3Druck.com",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab S1: Manufacturer Officially Announces Its First 3D Scanner for November 2026&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPenNJT1FZUzdzWkJlSVVRMDdqN3FRRHRHYjNOZlJEZUlnM0wtSWdmWC1meF9IOG4ycjhTaDk5cTAtaGlqYjgwc3dYZTQ2QzlMMWNCdTBENWlZT0lPYlIxMXV3VEsxR2dEYU1rdFJPeTg3YS1LcUlkMUtKS29uNWxaUTNXVlVJdVdCYnNZREo2N2dFc0tCXzBVanhYdGxqbWgySWFnUU93VmhxcVhXSlhjU01ZckctVHdHRHVGLVNRYm0zTk0",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "web-6525912651074203713",
-      "title": "After Losing in Court: Bambu Lab Prevails Against Four Stratasys Patents at the U.S. Patent and Trademark Office - 3Druck.com",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "After Losing in Court: Bambu Lab Prevails Against Four Stratasys Patents at the U.S. Patent and Trademark Office&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOa3hNT0N0SDdLY3d1SVhEX1h4R1ZVcWxRcXctSFkwdHBwb1dWci1kNERSbzlLQ0ZVeXRSX0Y4LWx0Zm05NkhuREh6ZmlIT1JYc1BiZ3I2UEJDX2l1d0FJcTlNM0VneF9WTXhETVMxUFU0dHBHUXpocmU1NDh1YXBIYmRieHdmTUptSG0tbFZ1U3l2bk1mRUR3OEdxTVcwOUhNTHdMNXRJWWhKbVp5elpzSkNPb3l0ZFZWb2w3ZGxkdHo5WXVidk9lZWw0emQtRkV5aGRVeFEyOU9IV2pkeGpGdHh1LVMwbHF0",
-      "timestamp": "Oct 10, 2026"
-    },
-    {
-      "id": "web-1044788633419739002",
-      "title": "3 reasons this desktop laser has me thinking beyond 3D printing - The Gadgeteer",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "3 reasons this desktop laser has me thinking beyond 3D printing&nbsp;&nbsp;The Gadgeteer",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeDZUTUVZUTBsZTczNnV3VUxtSlBqR0RuMV9OOW56SFBYZGQtU3lvT1BPUWRuTGU3LUstUUd1Y2xMeDNwaDVyQnJCN0xmSFI0clhCS2hXdHF6YWYzMGEyalNoUzF4bnV1aHRlLTZxUmpmbjByQVZpc1pRMG9QWlVrcGZmbUxPcjhtdlgtdjI4a003VFJGZ013Zlh1Z0YzbkdzM3Zr",
-      "timestamp": "Oct 10, 2026"
-    },
-    {
-      "id": "web-9023453059604976064",
-      "title": "Bambu Lab R1 review: Powerful, plug-and-play laser cutting - Notebookcheck",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab R1 review: Powerful, plug-and-play laser cutting&nbsp;&nbsp;Notebookcheck",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPVnpjUGRScW1fMjVDV2VRUnMzRWhfWDZkcWM0QzhKeFlaRkpnLU40RWRIN2tmc1BRaENqUUpCRmVkVE9Pd1RXSDlzVTZ2NmwxcWtOYWlrWDdIZUFWS20xdF93S0ZwMW91eDBxay05cGhaQUFQNlo4enNBVWltRWlBbnlOYmJGRFNmdlowSTg5bzBXNnpFSjNETk55OHpCN1ZhZ3dJ",
-      "timestamp": "Oct 10, 2026"
-    },
-    {
-      "id": "web-1651285114047511705",
-      "title": "3D Printer Brand Bambu Lab Just Released A Dedicated Laser Cutter – Here's What It Can Do - SlashGear",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "3D Printer Brand Bambu Lab Just Released A Dedicated Laser Cutter – Here's What It Can Do&nbsp;&nbsp;SlashGear",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQeG1lb3VlSjctQUZOejQwUFFuOFlPU1dZTTVoTmk4QUtqVGVGU1NEaWwyUmdwREdBRlRucldjQzNIQWxiSEVGMzFHSmxWVGhmSDg5WGYxLU5RUm9uUUNoVGFVdE8xUnJBckZDMzFoUWVONkZTY3BRMGo5OUZnRjhwWGxhZmRsWEhkQzN3aEdqMA",
-      "timestamp": "Oct 10, 2026"
-    },
-    {
-      "id": "web-3580395723701640704",
-      "title": "Bambu Lab’s 3D printing patent application for a new heatbed design may improve peeling issues — replacement costs could possibly rise as a consequence - Tom's Hardware",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab’s 3D printing patent application for a new heatbed design may improve peeling issues — replacement costs could possibly rise as a consequence&nbsp;&nbsp;Tom's Hardware",
-      "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxNOTZWc3FUbE9yZ2xyTjREakFMQXFrNTNGRGZjOE1XZ1BzVlFzaDRhME9kUUt1bDB0NGY3a0o1SDFHTzlJbEl5MmZZY1lDYmdwb0tOWmJkZk4xaEk4akwzdTVPaElzS3RNbHpxLUVGZWJic2JXallSU29oMEtVUEtETnpzTGF5THptYXNFdUtZelVkNUFDc2VRMGRCMFNKeHpnQTVJSUx2ZElYSEdMYTdsWmV4TVZBQXEwaDhFV0VCWW41Yks4bUNZTnhVT0JXOEExNnlDMWZhZlA3cjJHMWRZMkotcENhSlM2Z1NyN2wxYUJ1b3RuekpqbHd0UTFoN1FKYVNFQXFIaThKREhGaUZqOFJjN09lelVu",
-      "timestamp": "Oct 08, 2026"
-    },
-    {
-      "id": "web-6603012671422257622",
-      "title": "Bambu Lab Wins Four Patent Office Rulings Weeks After Losing $27.6 Million Verdict - All3DP",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab Wins Four Patent Office Rulings Weeks After Losing $27.6 Million Verdict&nbsp;&nbsp;All3DP",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYzRTcHcyTmxHa0p6cW53cXVLeHNnQ01KT3ZlckhPRmlDQkdZTzNYSjRkRm9PM181c0tvemxYaVcwNlJMQVI5Yzh2TUh5b1dCYW81dXpmd1RVYjVIQVh6RmFTTEw1SFpVLTVTOTVERS1wZl9qb2FKMGxWZkN5V0xVakhHZGVzX2FYZXFpTHN2X2N6UHJET1NCcXhZUFV2OENvdzctdGxn",
-      "timestamp": "Oct 07, 2026"
-    },
-    {
-      "id": "web-7383766365700837832",
-      "title": "Stratasys vs. Bambu Lab: Why Europe and the U.S. Reached Different Results, Part II - 3DPrint.com",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Stratasys vs. Bambu Lab: Why Europe and the U.S. Reached Different Results, Part II&nbsp;&nbsp;3DPrint.com",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOb2ZDaFBDdzY4TzJqYWdveXZGT0JtQzBEUGlhd284Rl9wX3hwOVRWaGZGdWh3QXJzTTZzWWZwMTMzbEJoMk1mWVJNdExQeV9aUFZqUWNscHpKeW9KVEVPR1gxdkx5VEx3dzhZZ3J3SzVQOUIxSDlWMVQzR2xwUTIwUDlITGJUdGdKMjBmdzVMZXhfVmVSRElzS2VVVkJVMXE5X1VaMThWSHRUNkXSAbABQVVfeXFMTlhNUTd1eDB0T0I4MU9Pc3BSQVpuR2J5UGR4MkFkcEpKRnhUcFZVYlpXTklMWjd2aXNlNU9aZC1hS2pLZVpSV1VEdkFmS0ZYanhGQVRPX1gtQm1jc2hGRC1keno2b2xfN2hxVEt2eU56b1gyeEVOX2VjQjg5VXVlTGIyMWhJQk55VzRBOV94b2ljR0J3SUxUWXktQzZPbnZzN2hyZVg4dEk2OUY3S3NzQ3Y",
-      "timestamp": "Oct 05, 2026"
-    },
-    {
-      "id": "web-6906587924338676397",
-      "title": "Bambu Lab 3D Printers Compared: Which to Buy (2026) - https://3dprinting.com/",
-      "source": "Google News",
-      "category": "Regulatory & Leaks",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab 3D Printers Compared: Which to Buy (2026)&nbsp;&nbsp;https://3dprinting.com/",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9ZUE4tNzhwbVFjb3c1SC1sbTN5dlZCbEpBWEVrdi16ZTRYWEVtUXZFZmN3WjdXRkxkOXN5OEtOeEs1eTV2MjJPVU1nUzdCZW9rLUxoMjZDeXdiTDktUUJJNXYyeFZLQzF4c0NFRmw2ZmxlVkdv",
-      "timestamp": "Sep 30, 2026"
-    },
-    {
-      "id": "web-5654745302979668204",
-      "title": "Bambu Lab’s massive Halloween sale is all treat, with up to 30% off 3D printing supplies - Creative Bloq",
-      "source": "Google News",
-      "category": "Regulatory & Leaks",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab’s massive Halloween sale is all treat, with up to 30% off 3D printing supplies&nbsp;&nbsp;Creative Bloq",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVWN4dXBxd01fOVdoRVV6bnlIOHZMVlRlQWlrUGh6eWU0VU0xMkh6cDVDQXB2aE41YWM2aDVtNGNKRm90NWg0MkpMQV9iSUtpZWx6b29DSDlBTU1KWnIwOGZJTTFRYVZjdnd0QzNSQlVRbVpfeHUwQVU4NUp6SHJnSHoxbGVIUWUxRDU0aGVlV3BrSllfcUpnV0JNVVB2WUIwWVVkV21sVEFfYm40OXo0NU8xTm1iWERJOW1qTGx4Y1pUZmlIT2loeWJDcUxOYi0xZmc",
-      "timestamp": "Sep 29, 2026"
-    },
-    {
-      "id": "web-8701035441350739025",
-      "title": "Stratasys vs. Bambu Lab: What’s Really Behind the $27.6M Patent Verdict? - 3DPrint.com",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Stratasys vs. Bambu Lab: What’s Really Behind the $27.6M Patent Verdict?&nbsp;&nbsp;3DPrint.com",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQWRiM29EMk44Y2NHcWpXSjczMUw2ZEkzZjEzdGxSTzRMRWNYMUN3cWhvX0cwaGl6dTJlb05vQ0JZQm0zeVo4SDBORVJreUtsMmdtcDdJSnBueXQ3ZWFGQkhQS01BdWFMcVpXcTdvWmc2ZERSc1Yyc0pIR0NFQzdGdWFzQkpEZUhlT1hHR1ptY24xNzU5NW51R2liUdIBoAFBVV95cUxNanVGdWEwZm1renRhN2M0Wm04WUl0cndjbTI4ZmpTY2FFbnZyX1oxb1NnbzNfTTlUNjlQTkVDQ2tiTnE1MmdVb3ZVUGdtVEROdnpVOWM0aGFSajRhTDNYNE9CekNWS2FjV2NvbzFkcFlkdFR2dDRzRWE0UGVnc1lJcVFhTTU0a1ZNUjI4dVRXc3ZlaGlWNXNqRjJ3Z2VJRjdD",
-      "timestamp": "Sep 29, 2026"
-    },
-    {
-      "id": "web-550061305718548979",
-      "title": "Bambu Lab Paying Out $27.6M In Massive 3D Printer Tech Lawsuit - BGR",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab Paying Out $27.6M In Massive 3D Printer Tech Lawsuit&nbsp;&nbsp;BGR",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNZ2VyQWJ3QlhCajNzMUdOc3FkRlJkdHEwYWVoLWpUd1VrbzRFa2tvaXpmRllfb3llRHk2TGgyQXAwUGh3LXNjck9hd0JZUS13UEFJQ3N1LTUtcGRSU09vRE5kazNra3g2SEdibk0zRW5pbldaX0Q0eF8yVlROd1NQb0VBM21QeDU0ZG1J",
-      "timestamp": "Sep 26, 2026"
-    },
-    {
-      "id": "web-5450149561653361376",
-      "title": "Bambu Lab Loses Big In $27M 3D Printer Lawsuit - SlashGear",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab Loses Big In $27M 3D Printer Lawsuit&nbsp;&nbsp;SlashGear",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPMUFuYjRfbExqTExhR1NITHBSLUxWSk5qMnNPR0R4S2dpM21vTUhGdUFmdlg1YUNCLXZtMktRVncwb1lIenJTOVMxSW80NkhxNkVsSlpqTlVuMWFLb1Jaam5JMFVsVVE5Mk9LS0xIVmdpWGMtM2NaU0Y5NlRXanB1TmlvSzV3em5IUFBYaQ",
-      "timestamp": "Sep 25, 2026"
-    },
-    {
-      "id": "web-8473943410169272797",
-      "title": "$27.6M Patent Verdict in East Texas Shows Disconnect Between 'Willfulness' and Damages - Law.com",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "$27.6M Patent Verdict in East Texas Shows Disconnect Between 'Willfulness' and Damages&nbsp;&nbsp;Law.com",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbjJHRUNRVDlFS1lEQXRNSTBOczhwNm9uaTV3SjByaUxibjZub3N1dFk1X21ib3pHTnBPMHJacnMtUUk4N3FNU0tnMHh1ZGVyT0s5QlVMazlJMUtCSWgxNHBBeTVsOXY1UlhOQk9kWXR5bjBDUTFtVWJuQUluZnF4T0NvWTd1VldBa3JQX2dxbFlrc1FId1Q2ZDl3ZkNNdkFfQ3NLNFdBVWF5amtYWlNodzRnclZNV2hEa3NidlVXeE9Xbkpz",
-      "timestamp": "Sep 23, 2026"
-    },
-    {
-      "id": "web-6048813477576357993",
-      "title": "The Maker’s Toolbox: Bambu Lab R1 CO2 Laser Cutter Review - Hackster.io",
-      "source": "Bambu Radar",
-      "category": "Hardware Watch",
-      "target": "Bambu Lab",
-      "summary": "The Maker’s Toolbox: Bambu Lab R1 CO2 Laser Cutter Review&nbsp;&nbsp;Hackster.io",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORENiTWZfNG1jcWZSZXA0Vi1BdncyZ3FSREI4a3U3SmpuR1Nab1RQdFZ6Tm9YbjBSeGg3UHNyTjc1STJabGVCMEg2VmRKTmpYQ1FKVEI2bmVGY3J1SmFPa1Y4Y0dBaFN1STdicVNGbWt3UTFWeXZZR29QVkVGNXc0TlZxZ1c1THRIQTBUeVNoU3RWTnlMYXUyT2cxVmpPYTQ",
-      "timestamp": "Sep 23, 2026"
+      "id": "patent-h3c",
+      "title": "Patent Analysis: Inside the H3C Single-Motion 10-Toolhead Docking Rack",
+      "source": "Makers101 Patent Breakdown",
+      "category": "Hardware Analysis",
+      "target": "H3C",
+      "summary": "Patent CN 122560413 details how the toolhead couples locking and placement into a single high-speed stroke with magnetic spring retention.",
+      "url": "https://makers101.com/bambu-lab-h3c-patent/",
+      "timestamp": "Aug 21, 2026"
     }
   ],
+  "general_articles": [],
   "reddit_articles": [
     {
-      "id": "red-842405111791054208",
+      "id": "red-9193213414395248805",
       "title": "Searching for the next level",
       "source": "r/BambuLab",
       "category": "Reddit Community",
@@ -250,7 +70,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-1199555228992716866",
+      "id": "red-8406502195218500943",
       "title": "Panda Station or U.S. General for H series printer",
       "source": "r/BambuLab",
       "category": "Reddit Community",
@@ -260,7 +80,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-1457370658734494757",
+      "id": "red-3594399686831179913",
       "title": "New H3C machine incoming? Real photo or AI art?",
       "source": "r/BambuLab",
       "category": "Reddit Community",
@@ -270,7 +90,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-2216447899248044571",
+      "id": "red-6290382406106071824",
       "title": "Faster Multi Color printing",
       "source": "r/BambuLab",
       "category": "Reddit Community",
@@ -280,7 +100,7 @@
       "timestamp": "Oct 11, 2026"
     },
     {
-      "id": "red-4652523430810621695",
+      "id": "red-3635699927769552210",
       "title": "Predictions for H3C Price",
       "source": "r/BambuLab",
       "category": "Reddit Community",
@@ -290,7 +110,7 @@
       "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "red-1460890873941173258",
+      "id": "red-1090029294295706829",
       "title": "H2C color changing limits",
       "source": "r/BambuLab",
       "category": "Reddit Community",
@@ -300,7 +120,7 @@
       "timestamp": "Oct 07, 2026"
     },
     {
-      "id": "red-3155297282804615910",
+      "id": "red-3613395694027614345",
       "title": "The H3C",
       "source": "r/BambuLab",
       "category": "Reddit Community",
@@ -310,17 +130,17 @@
       "timestamp": "Oct 06, 2026"
     },
     {
-      "id": "red-6488172014283452522",
+      "id": "red-6849987856867344881",
       "title": "Mini Skyline - 70+ Free Updates - Print Any Place, Minecraft Worlds Included. Full Multicolor Support, Massive Editing Suite, Puzzle Modes, Hiking Trails, All Free!",
       "source": "r/BambuLab",
       "category": "Reddit Community",
-      "target": "H3C",
+      "target": "General 3D Tech",
       "summary": "Hey r/BambuLab, Im back and with more updates than ever. Im Joey, the solo developer out of Phoenix Arizona, behind the free 3d mapping tool Mini Skyline. I am going to be keeping the tool completely free even as costs grow despit...",
       "url": "https://www.reddit.com/r/BambuLab/comments/1wxjetc/mini_skyline_70_free_updates_print_any_place/",
       "timestamp": "Oct 04, 2026"
     },
     {
-      "id": "red-8077708806580106799",
+      "id": "red-3367205417698565695",
       "title": "What are the chances, really, for new printers before Black Friday?",
       "source": "r/BambuLab",
       "category": "Reddit Community",
@@ -330,7 +150,7 @@
       "timestamp": "Oct 02, 2026"
     },
     {
-      "id": "red-1637631330470262041",
+      "id": "red-424807373989748723",
       "title": "Possible Bambu Lab Upcoming Releases - Full List",
       "source": "r/BambuLab",
       "category": "Reddit Community",
@@ -340,7 +160,7 @@
       "timestamp": "Sep 27, 2026"
     },
     {
-      "id": "red-8124578033795639693",
+      "id": "red-61609281795597271",
       "title": "Beginner: $300 Bambu first, or go $1k–1.5k multi-filament now?",
       "source": "r/BambuLab",
       "category": "Reddit Community",
@@ -350,44 +170,14 @@
       "timestamp": "Sep 26, 2026"
     },
     {
-      "id": "red-7321334069581784956",
+      "id": "red-1732562665695162576",
       "title": "I'm pretty sure this patent shows the inner components of the new AMS 3H??",
       "source": "r/BambuLab",
       "category": "Reddit Community",
-      "target": "H3C",
+      "target": "General 3D Tech",
       "summary": "Edit: This is all just speculation for fun!! I was looking through Bambu Lab's FCC filings and realized the AMS 3H patent showed the back of the unit. Its outside shape is slanted, with the filament at the back of the machine rais...",
       "url": "https://www.reddit.com/r/BambuLab/comments/1wq2qs0/im_pretty_sure_this_patent_shows_the_inner/",
       "timestamp": "Sep 25, 2026"
-    },
-    {
-      "id": "red-3973132227533695005",
-      "title": "Bambu 3D scanner",
-      "source": "r/BambuLab",
-      "category": "Reddit Community",
-      "target": "H3C",
-      "summary": "This is all based on FCC Filings. No official announcement has been made. Bambu apparently isn’t done. A new FCC filing landed on Sep 22 for the Bambu Lab S1 (DS001), and the device label appears to identify it as a 3D scanner. R1...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1wone24/bambu_3d_scanner/",
-      "timestamp": "Sep 24, 2026"
-    },
-    {
-      "id": "red-1844557933372905976",
-      "title": "A newbie with an X2D in the shopping cart, with some thoughts about what to add next and why",
-      "source": "r/BambuLab",
-      "category": "Reddit Community",
-      "target": "X2D Pro",
-      "summary": "Hello folks, total beginner in the 3d printing world, like until a week ago the only thing I knew about FDM was that &quot;it exists&quot; 😁 I had my fair share of reading and watching videos in the last few days on the subject, a...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1woh72l/a_newbie_with_an_x2d_in_the_shopping_cart_with/",
-      "timestamp": "Sep 23, 2026"
-    },
-    {
-      "id": "red-8266403181882426635",
-      "title": "More H3C news, and possible AMS3",
-      "source": "r/BambuLab",
-      "category": "Reddit Community",
-      "target": "H3C",
-      "summary": "Bambu received FCC approval today for two new AMS systems: AMS 3H (SA017) and AMS 3P (SA018). Both use 13.56 MHz, likely for filament RFID. That RF transmitter is why the AMS itself needs FCC approval. H3C was also tested with AMS...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1wnbmi1/more_h3c_news_and_possible_ams3/",
-      "timestamp": "Sep 22, 2026"
     }
   ]
 }

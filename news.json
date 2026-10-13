@@ -1,22 +1,22 @@
 {
-  "last_updated": "October 13, 2026 at 06:22 PM UTC",
-  "total": 11,
+  "last_updated": "October 13, 2026 at 06:45 PM UTC",
+  "total": 7,
   "makerworld_picks": [
     {
-      "name": "Magnetic Purge Chute Bin",
-      "badge": "Clean Setup",
-      "meta": "⭐ 4.8 • 44k Downloads",
-      "desc": "Slide-on magnetic bucket for the rear poop chute to catch multi-color purge coils.",
-      "img": "https://makerworld.bblmw.com/makerworld/model/USf0764dc7070e2c/design/2025-03-01_a443aa6c1fd3a.png",
-      "url": "https://makerworld.com/en/search/models?keyword=poop%20chute"
+      "name": "Ergonomic Bed Scraper Handle",
+      "badge": "Workshop Essential",
+      "meta": "⭐ 4.8 • 52k Downloads",
+      "desc": "Comfort-grip bed scraper handle optimized for standard Bambu replacement razor blades.",
+      "img": "https://makerworld.bblmw.com/makerworld/model/US9e840b13a3714f/design/2025-10-16_797d4777c3f6b8.jpg",
+      "url": "https://makerworld.com/en/search/models?keyword=bambu%20scraper"
     },
     {
-      "name": "Build Plate Alignment Guides",
-      "badge": "Print Mod",
-      "meta": "⭐ 4.9 • 19k Downloads",
-      "desc": "Corner tabs that guide textured PEI sheets directly into alignment during bed changes.",
-      "img": "https://makerworld.bblmw.com/makerworld/model/DSM00000000013717/design/2023-09-19_9f3e533f94456.jpg?x-oss-process=image/format,webp",
-      "url": "https://makerworld.com/en/search/models?keyword=build%20plate%20guide"
+      "name": "PTFE Tube Quick-Disconnect Tool",
+      "badge": "Must-Have Mod",
+      "meta": "⭐ 4.9 • 31k Downloads",
+      "desc": "Lever tool to safely release stubborn pneumatic PTFE connectors without damaging tubing.",
+      "img": "https://makerworld.bblmw.com/makerworld/model/US15f809ba9e1867/design/2025-01-09_4624e9779251a.jpg?x-oss-process=image/resize,w_800/format,webp",
+      "url": "https://makerworld.com/en/search/models?keyword=ptfe%20disconnect%20tool"
     },
     {
       "name": "Bambu Universal Tool Box",
@@ -37,7 +37,7 @@
   ],
   "articles": [
     {
-      "id": "red-3296972127583047779",
+      "id": "red-5033273059167734531",
       "title": "Searching for the next level",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
@@ -47,7 +47,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-1148091828592513582",
+      "id": "red-7637375156123531839",
       "title": "Panda Station or U.S. General for H series printer",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
@@ -57,7 +57,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-7228864763862387792",
+      "id": "red-8113341428993808793",
       "title": "New H3C machine incoming? Real photo or AI art?",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
@@ -67,7 +67,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-6396355335116940423",
+      "id": "red-7607408994292656382",
       "title": "Faster Multi Color printing",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
@@ -77,7 +77,7 @@
       "timestamp": "Oct 11, 2026"
     },
     {
-      "id": "red-6910397268229608462",
+      "id": "red-6471164740224648504",
       "title": "Predictions for H3C Price",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
@@ -87,7 +87,7 @@
       "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "red-2930504097815128926",
+      "id": "red-1539199171332040785",
       "title": "H2C color changing limits",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
@@ -97,47 +97,7 @@
       "timestamp": "Oct 07, 2026"
     },
     {
-      "id": "red-5469932392419972050",
-      "title": "The H3C",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "H3C",
-      "summary": "&#32; submitted by &#32; /u/SnooConfections1271 [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1wzhvkg/the_h3c/",
-      "timestamp": "Oct 06, 2026"
-    },
-    {
-      "id": "red-3700993432890864241",
-      "title": "What are the chances, really, for new printers before Black Friday?",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "H3C",
-      "summary": "I was about to pull the trigger on a Snapmaker U1, but some friends told me to wait for Black Friday to get one of Bambu Lab’s new printers (the p3c or h3c) Instead. What are the actual chances of Bambu releasing those printers be...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1ww0tsv/what_are_the_chances_really_for_new_printers/",
-      "timestamp": "Oct 02, 2026"
-    },
-    {
-      "id": "red-7723536102945998984",
-      "title": "Possible Bambu Lab Upcoming Releases - Full List",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "H3C / X2D Pro",
-      "summary": "As you probably have heard, there are a bunch of new products on the horizon for Bambu. I have tried to consolidate everything I have seen in one thread. I am not a Bambu employee, just someone who follows the industry. All the in...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1wrjqzz/possible_bambu_lab_upcoming_releases_full_list/",
-      "timestamp": "Sep 27, 2026"
-    },
-    {
-      "id": "red-6308945470299083901",
-      "title": "Beginner: $300 Bambu first, or go $1k–1.5k multi-filament now?",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "Cheap Bambu now, or jump to multi-filament in the $1k–1.5k range? Never printed before. I can draw in 2d/3d CAD and I program (python, pytorch). What I want to make - small engineering parts that need some strength (ABS is probabl...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1wqmeyz/beginner_300_bambu_first_or_go_1k15k/",
-      "timestamp": "Sep 26, 2026"
-    },
-    {
-      "id": "web-5853362722655707970",
+      "id": "web-8797791784482753017",
       "title": "Bambu Lab: FCC filings reveal two new 3D printers, H3C and X2D Pro - 3Druck.com",
       "source": "Google News",
       "category": "Regulatory & Leaks",

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bambu Lab Radar | X2D Pro & H3C Launch Watch</title>
+  <title>Bambu Lab Radar | H3C & X2D Pro Launch Watch</title>
   <style>
     :root {
       --bg: #090d12;
@@ -140,8 +140,8 @@
       border-radius: 4px;
       letter-spacing: 0.5px;
     }
-    .badge-x2d { background: rgba(0, 174, 66, 0.15); color: var(--bambu-green); border: 1px solid rgba(0, 174, 66, 0.35); }
     .badge-h3c { background: rgba(245, 158, 11, 0.15); color: var(--bambu-amber); border: 1px solid rgba(245, 158, 11, 0.35); }
+    .badge-x2d { background: rgba(0, 174, 66, 0.15); color: var(--bambu-green); border: 1px solid rgba(0, 174, 66, 0.35); }
 
     .status-pill {
       font-size: 0.72rem;
@@ -317,7 +317,7 @@
     }
     .maker-download-btn:hover { background: #374151; }
 
-    /* NEWS FEED SECTION */
+    /* FEEDS SECTION */
     .feed-controls {
       display: flex;
       justify-content: space-between;
@@ -339,7 +339,7 @@
     }
     .tab-btn.active { background: #1e293b; color: #fff; border-color: #38bdf8; }
 
-    .news-list { display: flex; flex-direction: column; gap: 12px; }
+    .news-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 34px; }
     .news-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -356,9 +356,10 @@
       border-radius: 4px;
       text-transform: uppercase;
     }
-    .tag-x2d { background: rgba(0, 174, 66, 0.15); color: var(--bambu-green); }
     .tag-h3c { background: rgba(245, 158, 11, 0.15); color: var(--bambu-amber); }
+    .tag-x2d { background: rgba(0, 174, 66, 0.15); color: var(--bambu-green); }
     .tag-general { background: rgba(156, 163, 175, 0.15); color: var(--text-sub); }
+    
     .source-badge {
       font-size: 0.7rem;
       padding: 2px 6px;
@@ -366,8 +367,8 @@
       margin-left: 6px;
       font-weight: 600;
     }
+    .source-web { background: rgba(56, 189, 248, 0.12); color: #38bdf8; }
     .source-reddit { background: rgba(255, 69, 0, 0.18); color: #ff5722; border: 1px solid rgba(255, 69, 0, 0.3); }
-    .source-default { background: rgba(56, 189, 248, 0.12); color: #38bdf8; }
 
     .news-timestamp { font-size: 0.78rem; color: var(--text-dim); }
     .news-title { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
@@ -387,7 +388,7 @@
         <span class="alert-icon">⚡</span>
         <div>
           <div class="alert-title" id="alertTitleText">PRE-ORDER DETECTED!</div>
-          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's scan.</div>
+          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's morning scan.</div>
         </div>
       </div>
       <a href="https://store.bambulab.com/" target="_blank" rel="noopener noreferrer" class="alert-btn" id="bannerStoreBtn">
@@ -399,7 +400,7 @@
     <header>
       <div class="logo-area">
         <h1><span>⚡</span> Bambu Next-Gen Radar</h1>
-        <p id="lastScanText" class="status-sub">Tracking FCC filings, Reddit r/BambuLab & news...</p>
+        <p id="lastScanText" class="status-sub">Tracking FCC filings, news & r/BambuLab...</p>
       </div>
       <div class="header-controls">
         <label class="sim-toggle" title="Test how the page behaves when pre-orders open">
@@ -410,72 +411,13 @@
     </header>
 
     <!-- DUAL HARDWARE RADAR -->
-    <div class="section-title"><span>🎯</span> Target Hardware Launch Trackers</div>
+    <div class="section-title"><span>🎯</span> Priority Launch Trackers</div>
     <div class="grid-duo">
 
-      <!-- CARD 1: BAMBU LAB X2D PRO -->
-      <div class="printer-hero-card" id="cardX2D">
-        <div class="card-top">
-          <span class="model-badge badge-x2d">Target #1 • Precision Dual-Extrusion</span>
-          <span class="status-pill" id="pillX2D">Stage 3: FCC Registered</span>
-        </div>
-        <div class="printer-name">Bambu Lab X2D Pro</div>
-        <p class="printer-desc">
-          Professional dual-nozzle CoreXY architecture with closed-loop Vision Encoders, hardened extrusion components, and AMS 2 Pro high-capacity support.
-        </p>
-
-        <!-- PIPELINE TRACKER X2D PRO -->
-        <div class="pipeline-wrapper">
-          <div class="pipeline-header">
-            <span>Release Pipeline Detection</span>
-            <span class="pipeline-stage-title" id="stageTextX2D">Stage 3 of 4 (FCC Filed)</span>
-          </div>
-          <div class="pipeline-bar">
-            <div class="pipeline-step active" id="pX2D-1" title="Stage 1: Leaks"></div>
-            <div class="pipeline-step active" id="pX2D-2" title="Stage 2: Patent Disclosed"></div>
-            <div class="pipeline-step active" id="pX2D-3" title="Stage 3: FCC Registered"></div>
-            <div class="pipeline-step" id="pX2D-4" title="Stage 4: Pre-Order Live"></div>
-          </div>
-          <div class="pipeline-labels">
-            <span class="highlight">1. Rumors</span>
-            <span class="highlight">2. Patent</span>
-            <span class="highlight" id="labelX2D-3">3. FCC Filed</span>
-            <span id="labelX2D-4">4. Pre-Order</span>
-          </div>
-        </div>
-
-        <div class="specs-grid">
-          <div class="spec-item">
-            <span class="spec-label">Extrusion System</span>
-            <span class="spec-value">Direct Drive + Bowden Aux</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Volumetric Flow</span>
-            <span class="spec-value">Up to 65 mm³/s</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Chamber Temp</span>
-            <span class="spec-value">65°C Actively Heated</span>
-          </div>
-          <div class="spec-item">
-            <span class="spec-label">Motion Telemetry</span>
-            <span class="spec-value">50 µm Vision Encoder</span>
-          </div>
-        </div>
-        <div class="card-actions">
-          <a href="https://store.bambulab.com/" target="_blank" class="primary-card-btn" id="actionBtnX2D">
-            Official Store Check
-          </a>
-          <a href="https://forum.bambulab.com/" target="_blank" class="primary-card-btn">
-            Bambu Forum
-          </a>
-        </div>
-      </div>
-
-      <!-- CARD 2: BAMBU LAB H3C -->
+      <!-- CARD 1: TARGET #1 (BAMBU LAB H3C) -->
       <div class="printer-hero-card" id="cardH3C">
         <div class="card-top">
-          <span class="model-badge badge-h3c">Target #2 • 10-Toolhead Flagship</span>
+          <span class="model-badge badge-h3c">Target #1 • 10-Toolhead Flagship</span>
           <span class="status-pill" id="pillH3C">Stage 3: FCC Registered</span>
         </div>
         <div class="printer-name">Bambu Lab H3C</div>
@@ -531,6 +473,65 @@
         </div>
       </div>
 
+      <!-- CARD 2: TARGET #2 (BAMBU LAB X2D PRO) -->
+      <div class="printer-hero-card" id="cardX2D">
+        <div class="card-top">
+          <span class="model-badge badge-x2d">Target #2 • Precision Dual-Extrusion</span>
+          <span class="status-pill" id="pillX2D">Stage 3: FCC Registered</span>
+        </div>
+        <div class="printer-name">Bambu Lab X2D Pro</div>
+        <p class="printer-desc">
+          Professional dual-nozzle CoreXY architecture with closed-loop Vision Encoders, hardened extrusion components, and AMS 2 Pro high-capacity support.
+        </p>
+
+        <!-- PIPELINE TRACKER X2D PRO -->
+        <div class="pipeline-wrapper">
+          <div class="pipeline-header">
+            <span>Release Pipeline Detection</span>
+            <span class="pipeline-stage-title" id="stageTextX2D">Stage 3 of 4 (FCC Filed)</span>
+          </div>
+          <div class="pipeline-bar">
+            <div class="pipeline-step active" id="pX2D-1" title="Stage 1: Leaks"></div>
+            <div class="pipeline-step active" id="pX2D-2" title="Stage 2: Patent Disclosed"></div>
+            <div class="pipeline-step active" id="pX2D-3" title="Stage 3: FCC Registered"></div>
+            <div class="pipeline-step" id="pX2D-4" title="Stage 4: Pre-Order Live"></div>
+          </div>
+          <div class="pipeline-labels">
+            <span class="highlight">1. Rumors</span>
+            <span class="highlight">2. Patent</span>
+            <span class="highlight" id="labelX2D-3">3. FCC Filed</span>
+            <span id="labelX2D-4">4. Pre-Order</span>
+          </div>
+        </div>
+
+        <div class="specs-grid">
+          <div class="spec-item">
+            <span class="spec-label">Extrusion System</span>
+            <span class="spec-value">Direct Drive + Bowden Aux</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Volumetric Flow</span>
+            <span class="spec-value">Up to 65 mm³/s</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Chamber Temp</span>
+            <span class="spec-value">65°C Actively Heated</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Motion Telemetry</span>
+            <span class="spec-value">50 µm Vision Encoder</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="https://store.bambulab.com/" target="_blank" class="primary-card-btn" id="actionBtnX2D">
+            Official Store Check
+          </a>
+          <a href="https://forum.bambulab.com/t/h3c-edit-and-x2d-pro-printer-registered-with-fcc/259692" target="_blank" class="primary-card-btn">
+            FCC Forum Thread
+          </a>
+        </div>
+      </div>
+
     </div>
 
     <!-- MAKERWORLD PICKS GALLERY (DYNAMIC CONTAINER) -->
@@ -548,25 +549,57 @@
       </div>
     </div>
 
-    <!-- NEWS FEED SECTION -->
+    <!-- SECTION 1: PRIMARY NEWS & ARTICLES -->
     <div class="feed-controls">
-      <div class="section-title" style="margin-bottom:0;"><span>📡</span> Morning Radar Intelligence (Newest First)</div>
+      <div class="section-title" style="margin-bottom:0;"><span>📡</span> Morning News & Regulatory Reports</div>
       <div class="filter-tabs">
-        <button class="tab-btn active" onclick="filterTab('all', this)">All Feeds</button>
-        <button class="tab-btn" onclick="filterTab('X2D Pro', this)">X2D Pro</button>
-        <button class="tab-btn" onclick="filterTab('H3C', this)">H3C</button>
+        <button class="tab-btn active" onclick="filterWebTab('all', this)">All</button>
+        <button class="tab-btn" onclick="filterWebTab('H3C', this)">H3C</button>
+        <button class="tab-btn" onclick="filterWebTab('X2D Pro', this)">X2D Pro</button>
       </div>
     </div>
+    <div id="webNewsContainer" class="news-list">
+      <p style="color: var(--text-dim); padding: 12px;">Loading latest news articles...</p>
+    </div>
 
-    <div id="newsContainer" class="news-list">
-      <p style="color: var(--text-dim); padding: 12px;">Loading latest news & Reddit threads...</p>
+    <!-- SECTION 2: DEDICATED REDDIT COMMUNITY FEED -->
+    <div class="feed-controls">
+      <div class="section-title" style="margin-bottom:0;"><span style="color: var(--reddit-orange)">💬</span> r/BambuLab Community Intel</div>
+      <div class="filter-tabs">
+        <button class="tab-btn active" onclick="filterRedditTab('all', this)">All Threads</button>
+        <button class="tab-btn" onclick="filterRedditTab('H3C', this)">H3C</button>
+        <button class="tab-btn" onclick="filterRedditTab('X2D Pro', this)">X2D Pro</button>
+      </div>
+    </div>
+    <div id="redditContainer" class="news-list">
+      <p style="color: var(--text-dim); padding: 12px;">Loading Reddit discussions...</p>
     </div>
 
   </div>
 
   <script>
-    let allArticles = [];
-    let currentFilter = 'all';
+    let webArticles = [];
+    let redditArticles = [];
+    let currentWebFilter = 'all';
+    let currentRedditFilter = 'all';
+
+    function formatToLocalTime(isoString) {
+      if (!isoString) return 'Today at 6:00 AM';
+      try {
+        const d = new Date(isoString);
+        return d.toLocaleDateString(undefined, {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric'
+        }) + ' at ' + d.toLocaleTimeString(undefined, {
+          hour: 'numeric',
+          minute: '2-digit',
+          timeZoneName: 'short'
+        });
+      } catch (e) {
+        return 'Today at 6:00 AM';
+      }
+    }
 
     function renderMakerWorld(picks) {
       const container = document.getElementById('makerGridContainer');
@@ -592,24 +625,31 @@
       });
     }
 
-    function filterTab(target, btn) {
-      currentFilter = target;
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    function filterWebTab(target, btn) {
+      currentWebFilter = target;
+      btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      renderNews();
+      renderWebNews();
     }
 
-    function renderNews() {
-      const container = document.getElementById('newsContainer');
+    function filterRedditTab(target, btn) {
+      currentRedditFilter = target;
+      btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderRedditNews();
+    }
+
+    function renderWebNews() {
+      const container = document.getElementById('webNewsContainer');
       if (!container) return;
 
-      const filtered = allArticles.filter(item => {
-        if (currentFilter === 'all') return true;
-        return (item.target || '').includes(currentFilter);
+      const filtered = webArticles.filter(item => {
+        if (currentWebFilter === 'all') return true;
+        return (item.target || '').includes(currentWebFilter);
       });
 
       if (filtered.length === 0) {
-        container.innerHTML = '<p style="color: var(--text-dim); padding: 12px;">No matching articles found in this filter.</p>';
+        container.innerHTML = '<p style="color: var(--text-dim); padding: 12px;">No matching news articles found.</p>';
         return;
       }
 
@@ -617,30 +657,66 @@
       filtered.forEach(item => {
         const card = document.createElement('article');
         card.className = 'news-card';
-        
-        let tagClass = 'tag-general';
         const targetStr = item.target || '';
-        if (targetStr.includes('X2D Pro')) tagClass = 'tag-x2d';
-        else if (targetStr.includes('H3C')) tagClass = 'tag-h3c';
-
-        const isReddit = (item.source || '').toLowerCase().includes('reddit');
-        const sourceBadgeClass = isReddit ? 'source-reddit' : 'source-default';
+        let tagClass = 'tag-general';
+        if (targetStr.includes('H3C')) tagClass = 'tag-h3c';
+        else if (targetStr.includes('X2D Pro')) tagClass = 'tag-x2d';
 
         card.innerHTML = `
           <div class="news-card-header">
             <div>
               <span class="news-tag ${tagClass}">${item.target} • ${item.category}</span>
-              <span class="source-badge ${sourceBadgeClass}">${item.source}</span>
+              <span class="source-badge source-web">${item.source}</span>
             </div>
             <span class="news-timestamp">📅 ${item.timestamp}</span>
           </div>
           <div class="news-title">${item.title}</div>
           <div class="news-summary">${item.summary}</div>
           <div class="news-footer">
-            <span class="news-source">${isReddit ? 'r/BambuLab Community Thread' : 'Source: ' + item.source}</span>
-            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="read-btn">
-              ${isReddit ? 'View on Reddit &rarr;' : 'Read Article &rarr;'}
-            </a>
+            <span class="news-source">Source: ${item.source}</span>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="read-btn">Read Article &rarr;</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function renderRedditNews() {
+      const container = document.getElementById('redditContainer');
+      if (!container) return;
+
+      const filtered = redditArticles.filter(item => {
+        if (currentRedditFilter === 'all') return true;
+        return (item.target || '').includes(currentRedditFilter);
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-dim); padding: 12px;">No matching community threads found.</p>';
+        return;
+      }
+
+      container.innerHTML = '';
+      filtered.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'news-card';
+        const targetStr = item.target || '';
+        let tagClass = 'tag-general';
+        if (targetStr.includes('H3C')) tagClass = 'tag-h3c';
+        else if (targetStr.includes('X2D Pro')) tagClass = 'tag-x2d';
+
+        card.innerHTML = `
+          <div class="news-card-header">
+            <div>
+              <span class="news-tag ${tagClass}">${item.target}</span>
+              <span class="source-badge source-reddit">r/BambuLab</span>
+            </div>
+            <span class="news-timestamp">📅 ${item.timestamp}</span>
+          </div>
+          <div class="news-title">${item.title}</div>
+          <div class="news-summary">${item.summary}</div>
+          <div class="news-footer">
+            <span class="news-source">Reddit Community Thread</span>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="read-btn">Open Thread &rarr;</a>
           </div>
         `;
         container.appendChild(card);
@@ -649,21 +725,21 @@
 
     function checkPreorderSignals(articles) {
       const alertTokens = ['pre-order', 'preorder', 'available now', 'order live', 'add to cart'];
-      let foundX2D_live = false;
       let foundH3C_live = false;
+      let foundX2D_live = false;
 
       articles.forEach(a => {
         const text = ((a.title || '') + ' ' + (a.summary || '')).toLowerCase();
         const hasOrder = alertTokens.some(tok => text.includes(tok));
         if (hasOrder) {
           const targetStr = a.target || '';
-          if (targetStr.includes('X2D Pro') || text.includes('x2d pro')) foundX2D_live = true;
           if (targetStr.includes('H3C') || text.includes('h3c')) foundH3C_live = true;
+          if (targetStr.includes('X2D Pro') || text.includes('x2d pro')) foundX2D_live = true;
         }
       });
 
-      if (foundX2D_live || foundH3C_live) {
-        triggerPreorderAlarm(foundX2D_live, foundH3C_live);
+      if (foundH3C_live || foundX2D_live) {
+        triggerPreorderAlarm(foundH3C_live, foundX2D_live);
       }
     }
 
@@ -690,7 +766,7 @@
       }
     }
 
-    function triggerPreorderAlarm(x2dLive, h3cLive) {
+    function triggerPreorderAlarm(h3cLive, x2dLive) {
       const banner = document.getElementById('preorderBanner');
       const bannerTitle = document.getElementById('alertTitleText');
       const bannerDesc = document.getElementById('alertDescText');
@@ -698,26 +774,15 @@
       if (banner) banner.classList.add('active');
 
       if (bannerTitle && bannerDesc) {
-        if (x2dLive && h3cLive) {
-          bannerTitle.textContent = '🔥 BAMBU LAB X2D PRO & H3C PRE-ORDERS ARE LIVE!';
-          bannerDesc.textContent = 'Pre-order listings confirmed for both models in today\'s scan.';
-        } else if (x2dLive) {
-          bannerTitle.textContent = '🔥 BAMBU LAB X2D PRO PRE-ORDER IS LIVE!';
-          bannerDesc.textContent = 'Pre-order listings detected for the X2D Pro combo.';
-        } else {
+        if (h3cLive && x2dLive) {
+          bannerTitle.textContent = '🔥 BAMBU LAB H3C & X2D PRO PRE-ORDERS ARE LIVE!';
+          bannerDesc.textContent = 'Pre-order listings confirmed for both flagship models in today\'s scan.';
+        } else if (h3cLive) {
           bannerTitle.textContent = '🔥 BAMBU LAB H3C PRE-ORDER IS LIVE!';
           bannerDesc.textContent = 'Pre-order listings detected for the H3C flagship.';
-        }
-      }
-
-      if (x2dLive) {
-        const cardX2D = document.getElementById('cardX2D');
-        if (cardX2D) cardX2D.classList.add('live-order');
-        setPipelineStage('X2D', 4);
-        const btn = document.getElementById('actionBtnX2D');
-        if (btn) {
-          btn.classList.add('btn-active-order');
-          btn.textContent = 'Order X2D Pro Now';
+        } else {
+          bannerTitle.textContent = '🔥 BAMBU LAB X2D PRO PRE-ORDER IS LIVE!';
+          bannerDesc.textContent = 'Pre-order listings detected for the X2D Pro combo.';
         }
       }
 
@@ -731,22 +796,33 @@
           btn.textContent = 'Order H3C Now';
         }
       }
+
+      if (x2dLive) {
+        const cardX2D = document.getElementById('cardX2D');
+        if (cardX2D) cardX2D.classList.add('live-order');
+        setPipelineStage('X2D', 4);
+        const btn = document.getElementById('actionBtnX2D');
+        if (btn) {
+          btn.classList.add('btn-active-order');
+          btn.textContent = 'Order X2D Pro Now';
+        }
+      }
     }
 
     function toggleSimulation(enabled) {
       const banner = document.getElementById('preorderBanner');
-      const cardX2D = document.getElementById('cardX2D');
-      const btnX2D = document.getElementById('actionBtnX2D');
+      const cardH3C = document.getElementById('cardH3C');
+      const btnH3C = document.getElementById('actionBtnH3C');
 
       if (enabled) {
         triggerPreorderAlarm(true, false);
       } else {
         if (banner) banner.classList.remove('active');
-        if (cardX2D) cardX2D.classList.remove('live-order');
-        setPipelineStage('X2D', 3);
-        if (btnX2D) {
-          btnX2D.classList.remove('btn-active-order');
-          btnX2D.textContent = 'Official Store Check';
+        if (cardH3C) cardH3C.classList.remove('live-order');
+        setPipelineStage('H3C', 3);
+        if (btnH3C) {
+          btnH3C.classList.remove('btn-active-order');
+          btnH3C.textContent = 'Official Store Check';
         }
       }
     }
@@ -756,18 +832,20 @@
         const res = await fetch('./news.json');
         if (res.ok) {
           const data = await res.json();
-          if (data.last_updated) {
+          if (data.scan_iso) {
             const scanText = document.getElementById('lastScanText');
-            if (scanText) scanText.textContent = `Morning Scan: ${data.last_updated}`;
+            if (scanText) scanText.textContent = `Morning Scan: ${formatToLocalTime(data.scan_iso)}`;
           }
           if (data.makerworld_picks && data.makerworld_picks.length > 0) {
             renderMakerWorld(data.makerworld_picks);
           }
-          if (data.articles && data.articles.length > 0) {
-            allArticles = data.articles;
-            renderNews();
-            checkPreorderSignals(allArticles);
-          }
+          webArticles = data.web_articles || [];
+          redditArticles = data.reddit_articles || [];
+
+          renderWebNews();
+          renderRedditNews();
+
+          checkPreorderSignals(webArticles.concat(redditArticles));
         }
       } catch (e) {
         console.warn('news.json fetch error:', e);

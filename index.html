@@ -3,125 +3,603 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bambu Lab Next-Gen Radar</title>
+  <title>Bambu Lab Next-Gen Radar | X2C & H3C Watch</title>
   <style>
     :root {
-      --bg: #0d1117;
-      --card-bg: #161b22;
-      --border: #30363d;
-      --accent: #00ae42;
-      --accent-glow: rgba(0, 174, 66, 0.2);
-      --text: #f0f6fc;
-      --text-muted: #8b949e;
-      --badge-leak: #d29922;
+      --bg: #0b0f14;
+      --card-bg: #141b24;
+      --card-border: #222e3c;
+      --card-hover: #2d3c4e;
+      --bambu-green: #00ae42;
+      --bambu-green-glow: rgba(0, 174, 66, 0.25);
+      --alert-gold: #f59e0b;
+      --alert-red: #ef4444;
+      --text-main: #f3f4f6;
+      --text-sub: #9ca3af;
+      --text-dim: #6b7280;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background-color: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       line-height: 1.5;
       padding: 24px;
+      min-height: 100vh;
     }
 
-    .container { max-width: 900px; margin: 0 auto; }
-    header { margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
-    h1 { font-size: 1.8rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
-    h1 span { color: var(--accent); }
-    .update-subtext { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+    .container { max-width: 1040px; margin: 0 auto; }
 
-    .news-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+    /* URGENT PRE-ORDER BANNER */
+    .preorder-alert-banner {
+      display: none;
+      background: linear-gradient(90deg, #166534 0%, #15803d 100%);
+      border: 2px solid var(--bambu-green);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 0 25px var(--bambu-green-glow);
+      animation: pulseAlert 2.5s infinite;
+    }
+    .preorder-alert-banner.active { display: flex; align-items: center; justify-content: space-between; }
+    .alert-left { display: flex; align-items: center; gap: 14px; }
+    .alert-icon { font-size: 2rem; }
+    .alert-title { font-size: 1.15rem; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; }
+    .alert-desc { font-size: 0.88rem; color: #dcfce7; }
+    .alert-btn {
+      background: #fff;
+      color: #14532d;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      transition: transform 0.15s ease;
+    }
+    .alert-btn:hover { transform: scale(1.05); }
+
+    @keyframes pulseAlert {
+      0%, 100% { box-shadow: 0 0 15px rgba(0, 174, 66, 0.4); }
+      50% { box-shadow: 0 0 35px rgba(0, 174, 66, 0.85); }
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo-area h1 { font-size: 1.85rem; font-weight: 800; letter-spacing: -0.5px; }
+    .logo-area h1 span { color: var(--bambu-green); }
+    .status-sub { color: var(--text-sub); font-size: 0.88rem; margin-top: 4px; }
+    .header-controls { display: flex; align-items: center; gap: 12px; }
+    .sim-toggle {
+      background: #1f2937;
+      border: 1px solid #374151;
+      color: var(--text-sub);
+      font-size: 0.75rem;
+      padding: 6px 10px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+      cursor: pointer;
+    }
+    .sim-toggle input { cursor: pointer; accent-color: var(--bambu-green); }
+
+    /* HARDWARE RADAR DUAL CARDS */
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .grid-duo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 600px) {
+      .grid-duo { grid-template-columns: 1fr; }
+    }
+
+    .printer-hero-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .printer-hero-card:hover { border-color: var(--card-hover); }
+    .printer-hero-card.live-order {
+      border-color: var(--bambu-green);
+      box-shadow: 0 0 20px var(--bambu-green-glow);
+    }
+
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .model-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    .badge-x2c { background: rgba(0, 174, 66, 0.18); color: var(--bambu-green); border: 1px solid rgba(0, 174, 66, 0.4); }
+    .badge-h3c { background: rgba(245, 158, 11, 0.18); color: var(--alert-gold); border: 1px solid rgba(245, 158, 11, 0.4); }
+    
+    .status-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: #1e293b;
+      color: #94a3b8;
+    }
+    .status-pill.pill-live {
+      background: var(--bambu-green);
+      color: #fff;
+      animation: pulseAlert 2s infinite;
+    }
+
+    .printer-name { font-size: 1.45rem; font-weight: 800; margin-bottom: 6px; }
+    .printer-desc { font-size: 0.88rem; color: var(--text-sub); margin-bottom: 16px; }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      background: #0d131a;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    .spec-item { display: flex; flex-direction: column; }
+    .spec-label { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; }
+    .spec-value { font-size: 0.88rem; font-weight: 700; color: #e5e7eb; }
+
+    .card-actions { display: flex; gap: 10px; }
+    .primary-card-btn {
+      flex: 1;
+      background: #1f2937;
+      border: 1px solid #374151;
+      color: var(--text-main);
+      padding: 9px 12px;
+      border-radius: 6px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .primary-card-btn:hover { background: #374151; }
+    .primary-card-btn.btn-active-order {
+      background: var(--bambu-green);
+      border-color: var(--bambu-green);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* ZERO-PURGE CALCULATOR */
+    .calc-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+    .calc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .calc-title { font-size: 1.05rem; font-weight: 700; }
+    .calc-sub { font-size: 0.82rem; color: var(--text-sub); }
+    .slider-row { display: flex; align-items: center; gap: 16px; margin: 12px 0 16px 0; }
+    .slider-row input[type="range"] {
+      flex: 1;
+      accent-color: var(--bambu-green);
+      cursor: pointer;
+    }
+    .slider-val { font-weight: 800; font-size: 1.1rem; color: var(--bambu-green); min-width: 90px; text-align: right; }
+    .calc-results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      background: #0d131a;
+      padding: 14px;
+      border-radius: 8px;
+    }
+    .metric-val { font-size: 1.35rem; font-weight: 800; color: #fff; }
+    .metric-sub { font-size: 0.75rem; color: var(--text-sub); }
+
+    /* NEWS FEED SECTION */
+    .feed-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-tabs { display: flex; gap: 8px; }
+    .tab-btn {
+      background: #141b24;
+      border: 1px solid var(--card-border);
+      color: var(--text-sub);
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .tab-btn.active { background: #222e3c; color: #fff; border-color: #3b82f6; }
+
+    .news-list { display: flex; flex-direction: column; gap: 12px; }
     .news-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
       border-radius: 8px;
       padding: 16px;
-      transition: border-color 0.2s ease;
+      transition: border-color 0.2s;
     }
-    .news-card:hover { border-color: var(--accent); }
-
-    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-    .badge {
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 2px 8px;
-      border-radius: 12px;
+    .news-card:hover { border-color: var(--card-hover); }
+    .news-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .news-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .badge-general { background: rgba(0, 174, 66, 0.15); color: #2ea043; border: 1px solid rgba(0, 174, 66, 0.3); }
-    .badge-leak { background: rgba(210, 153, 34, 0.15); color: #e3b341; border: 1px solid rgba(210, 153, 34, 0.3); }
-
-    .news-date { font-size: 0.8rem; color: var(--text-muted); }
-    .news-title { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; color: #fff; }
-    .news-summary { font-size: 0.95rem; color: #c9d1d9; margin-bottom: 14px; }
-
-    .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #21262d; pt: 10px; margin-top: 8px; }
-    .news-source { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
-    .read-link { color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
-    .read-link:hover { text-decoration: underline; }
+    .tag-x2c { background: rgba(0, 174, 66, 0.15); color: var(--bambu-green); }
+    .tag-h3c { background: rgba(245, 158, 11, 0.15); color: var(--alert-gold); }
+    .tag-general { background: rgba(156, 163, 175, 0.15); color: var(--text-sub); }
+    .news-timestamp { font-size: 0.78rem; color: var(--text-dim); }
+    .news-title { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .news-summary { font-size: 0.88rem; color: #cbd5e1; margin-bottom: 10px; line-height: 1.45; }
+    .news-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1f2937; padding-top: 8px; font-size: 0.8rem; }
+    .news-source { color: var(--text-dim); }
+    .read-btn { color: var(--bambu-green); text-decoration: none; font-weight: 600; }
+    .read-btn:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <div class="container">
+
+    <!-- URGENT PRE-ORDER ALERT BANNER -->
+    <div id="preorderBanner" class="preorder-alert-banner">
+      <div class="alert-left">
+        <span class="alert-icon">⚡</span>
+        <div>
+          <div class="alert-title" id="alertTitleText">PRE-ORDER DETECTED!</div>
+          <div class="alert-desc" id="alertDescText">Official store listings or pre-order orders detected this morning.</div>
+        </div>
+      </div>
+      <a href="https://store.bambulab.com/" target="_blank" rel="noopener noreferrer" class="alert-btn" id="bannerStoreBtn">
+        Open Bambu Store &rarr;
+      </a>
+    </div>
+
+    <!-- MAIN HEADER -->
     <header>
-      <h1><span>⚡</span> Bambu Lab Next-Gen Radar</h1>
-      <p id="lastUpdatedTime" class="update-subtext">Loading daily report...</p>
+      <div class="logo-area">
+        <h1><span>⚡</span> Bambu Next-Gen Radar</h1>
+        <p id="lastScanText" class="status-sub">Scanning for X2C & H3C release updates...</p>
+      </div>
+      <div class="header-controls">
+        <label class="sim-toggle" title="Test how the page behaves when pre-orders open">
+          <input type="checkbox" id="simCheckbox" onchange="toggleSimulation(this.checked)" />
+          Simulate Pre-Order Alert
+        </label>
+      </div>
     </header>
 
-    <div id="newsFeedContainer" class="news-grid">
-      <p style="color: var(--text-muted);">Fetching morning articles from news.json...</p>
+    <!-- DUAL HARDWARE RADAR -->
+    <div class="section-title"><span>🎯</span> Priority Hardware Launch Trackers</div>
+    <div class="grid-duo">
+
+      <!-- CARD 1: BAMBU LAB X2C -->
+      <div class="printer-hero-card" id="cardX2C">
+        <div class="card-top">
+          <span class="model-badge badge-x2c">Target #1 • Desktop Toolchanger</span>
+          <span class="status-pill" id="pillX2C">Speculation / Leaks</span>
+        </div>
+        <div class="printer-name">Bambu Lab X2C</div>
+        <p class="printer-desc">
+          Compact CoreXY toolchanger utilizing the Vortek hotend-swapping mechanism. Designed for instantaneous swaps without purge towers or filament waste.
+        </p>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <span class="spec-label">Mechanism</span>
+            <span class="spec-value">Compact Vortek Swapper</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Head Swap Speed</span>
+            <span class="spec-value">&lt; 5 Seconds</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Expected Volume</span>
+            <span class="spec-value">256 × 256 × 256 mm</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Filament Waste</span>
+            <span class="spec-value">Zero (No Purge Tower)</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="https://store.bambulab.com/" target="_blank" class="primary-card-btn" id="actionBtnX2C">
+            Official Store Check
+          </a>
+          <a href="https://forum.bambulab.com/" target="_blank" class="primary-card-btn">
+            Bambu Forum
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD 2: BAMBU LAB H3C -->
+      <div class="printer-hero-card" id="cardH3C">
+        <div class="card-top">
+          <span class="model-badge badge-h3c">Target #2 • Industrial Flagship</span>
+          <span class="status-pill" id="pillH3C">Patent Disclosed</span>
+        </div>
+        <div class="printer-name">Bambu Lab H3C</div>
+        <p class="printer-desc">
+          High-end commercial flagship featuring an automated 9–10 nozzle pick-and-place carousel, heated chamber, and high-flow rate kinematics.
+        </p>
+        <div class="specs-grid">
+          <div class="spec-item">
+            <span class="spec-label">Capacity</span>
+            <span class="spec-value">Up to 10 Nozzles</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Chamber Temp</span>
+            <span class="spec-value">Active Heated (65–70°C)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Expected Volume</span>
+            <span class="spec-value">350 × 350 × 350 mm+</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Toolhead Design</span>
+            <span class="spec-value">Carousel Pick-and-Place</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="https://store.bambulab.com/" target="_blank" class="primary-card-btn" id="actionBtnH3C">
+            Official Store Check
+          </a>
+          <a href="https://forum.bambulab.com/" target="_blank" class="primary-card-btn">
+            Bambu Forum
+          </a>
+        </div>
+      </div>
+
     </div>
+
+    <!-- ZERO-PURGE CALCULATOR -->
+    <div class="calc-box">
+      <div class="calc-header">
+        <div>
+          <div class="calc-title">⏱️ Toolchanger Time & Purge Savings Estimator</div>
+          <div class="calc-sub">See how much filament and time the X2C toolchanger saves your dad compared to standard AMS single-nozzle purge cycles.</div>
+        </div>
+      </div>
+      <div class="slider-row">
+        <input type="range" id="swapSlider" min="20" max="800" step="20" value="250" oninput="updateSavings(this.value)" />
+        <span class="slider-val" id="swapValText">250 swaps</span>
+      </div>
+      <div class="calc-results">
+        <div>
+          <div class="metric-val" id="timeSavedText">3.8 hrs</div>
+          <div class="metric-sub">Print Time Saved</div>
+        </div>
+        <div>
+          <div class="metric-val" id="wasteSavedText">188 g</div>
+          <div class="metric-sub">Purge Waste Eliminated</div>
+        </div>
+        <div>
+          <div class="metric-val" id="swapTimeText">21 mins vs 4.2 hrs</div>
+          <div class="metric-sub">Swap Overhead (X2C vs AMS)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEWS FEED -->
+    <div class="feed-controls">
+      <div class="section-title" style="margin-bottom:0;"><span>📡</span> Morning Radar Intelligence</div>
+      <div class="filter-tabs">
+        <button class="tab-btn active" onclick="filterTab('all', this)">All Feeds</button>
+        <button class="tab-btn" onclick="filterTab('X2C', this)">X2C Leaks</button>
+        <button class="tab-btn" onclick="filterTab('H3C', this)">H3C Leaks</button>
+      </div>
+    </div>
+
+    <div id="newsContainer" class="news-list">
+      <p style="color: var(--text-dim);">Loading latest morning signals from news.json...</p>
+    </div>
+
   </div>
 
   <script>
-    async function loadDailyNews() {
-      const container = document.getElementById('newsFeedContainer');
-      const lastUpdatedEl = document.getElementById('lastUpdatedTime');
+    let allArticles = [];
+    let currentFilter = 'all';
 
-      try {
-        const res = await fetch('./news.json');
-        if (!res.ok) throw new Error('news.json not found');
+    // Toolchanger savings calculation:
+    // AMS typical purge: ~60 seconds and ~0.75g waste per swap.
+    // Toolchanger typical swap: ~5 seconds and 0g waste.
+    function updateSavings(swaps) {
+      document.getElementById('swapValText').textContent = swaps + ' swaps';
+      const amsSeconds = swaps * 60;
+      const tcSeconds = swaps * 5;
+      const savedSeconds = amsSeconds - tcSeconds;
 
-        const data = await res.json();
+      const savedHours = (savedSeconds / 3600).toFixed(1);
+      const wasteGrams = Math.round(swaps * 0.75);
 
-        if (lastUpdatedEl && data.last_updated) {
-          lastUpdatedEl.textContent = `Auto-refreshed: ${data.last_updated}`;
+      document.getElementById('timeSavedText').textContent = savedHours + ' hrs';
+      document.getElementById('wasteSavedText').textContent = wasteGrams + ' g';
+      document.getElementById('swapTimeText').textContent = 
+        Math.round(tcSeconds / 60) + 'm vs ' + (amsSeconds / 3600).toFixed(1) + 'h';
+    }
+
+    // Tab filtering
+    function filterTab(target, btn) {
+      currentFilter = target;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderNews();
+    }
+
+    // Render cards
+    function renderNews() {
+      const container = document.getElementById('newsContainer');
+      const filtered = allArticles.filter(item => {
+        if (currentFilter === 'all') return true;
+        return item.target === currentFilter;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-dim); padding: 12px;">No matching articles found in this filter.</p>';
+        return;
+      }
+
+      container.innerHTML = '';
+      filtered.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'news-card';
+        const tagClass = item.target === 'X2C' ? 'tag-x2c' : item.target === 'H3C' ? 'tag-h3c' : 'tag-general';
+
+        card.innerHTML = `
+          <div class="news-card-header">
+            <span class="news-tag ${tagClass}">${item.target} • ${item.category}</span>
+            <span class="news-timestamp">${item.timestamp}</span>
+          </div>
+          <div class="news-title">${item.title}</div>
+          <div class="news-summary">${item.summary}</div>
+          <div class="news-footer">
+            <span class="news-source">${item.source}</span>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="read-btn">Read Article &rarr;</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Pre-order detection scanner
+    function checkPreorderSignals(articles) {
+      const alertTokens = ['pre-order', 'preorder', 'available now', 'order live', 'add to cart'];
+      let foundX2C = false;
+      let foundH3C = false;
+
+      articles.forEach(a => {
+        const text = (a.title + " " + a.summary).toLowerCase();
+        const hasToken = alertTokens.some(tok => text.includes(tok));
+        if (hasToken) {
+          if (a.target === 'X2C' || text.includes('x2c')) foundX2C = true;
+          if (a.target === 'H3C' || text.includes('h3c')) foundH3C = true;
         }
+      });
 
-        if (data.articles && data.articles.length > 0) {
-          container.innerHTML = '';
-          data.articles.forEach(item => {
-            const card = document.createElement('article');
-            card.className = 'news-card';
-            
-            const isLeak = item.category.toLowerCase().includes('leak') || item.category.toLowerCase().includes('speculation');
-            const badgeClass = isLeak ? 'badge-leak' : 'badge-general';
-
-            card.innerHTML = `
-              <div class="card-header">
-                <span class="badge ${badgeClass}">${item.category}</span>
-                <span class="news-date">${item.timestamp}</span>
-              </div>
-              <h3 class="news-title">${item.title}</h3>
-              <p class="news-summary">${item.summary}</p>
-              <div class="card-footer">
-                <span class="news-source">${item.source}</span>
-                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="read-link">
-                  Read Post &rarr;
-                </a>
-              </div>
-            `;
-            container.appendChild(card);
-          });
-        }
-      } catch (err) {
-        console.warn("Could not load news.json:", err);
+      if (foundX2C || foundH3C) {
+        triggerPreorderAlarm(foundX2C, foundH3C);
       }
     }
 
-    document.addEventListener('DOMContentLoaded', loadDailyNews);
+    function triggerPreorderAlarm(x2cLive, h3cLive) {
+      const banner = document.getElementById('preorderBanner');
+      const bannerTitle = document.getElementById('alertTitleText');
+      const bannerDesc = document.getElementById('alertDescText');
+
+      banner.classList.add('active');
+
+      if (x2cLive && h3cLive) {
+        bannerTitle.textContent = '🔥 BAMBU LAB X2C & H3C PRE-ORDERS ARE LIVE!';
+        bannerDesc.textContent = 'Pre-order alerts detected for both models in today\'s morning scan.';
+      } else if (x2cLive) {
+        bannerTitle.textContent = '🔥 BAMBU LAB X2C PRE-ORDER IS LIVE!';
+        bannerDesc.textContent = 'Pre-order listings detected for the X2C toolchanger.';
+      } else {
+        bannerTitle.textContent = '🔥 BAMBU LAB H3C PRE-ORDER IS LIVE!';
+        bannerDesc.textContent = 'Pre-order listings detected for the H3C flagship.';
+      }
+
+      if (x2cLive) {
+        document.getElementById('cardX2C').classList.add('live-order');
+        document.getElementById('pillX2C').className = 'status-pill pill-live';
+        document.getElementById('pillX2C').textContent = '🔥 Pre-Order Live';
+        const btn = document.getElementById('actionBtnX2C');
+        btn.classList.add('btn-active-order');
+        btn.textContent = 'Order X2C Now';
+      }
+
+      if (h3cLive) {
+        document.getElementById('cardH3C').classList.add('live-order');
+        document.getElementById('pillH3C').className = 'status-pill pill-live';
+        document.getElementById('pillH3C').textContent = '🔥 Pre-Order Live';
+        const btn = document.getElementById('actionBtnH3C');
+        btn.classList.add('btn-active-order');
+        btn.textContent = 'Order H3C Now';
+      }
+    }
+
+    // Toggle simulation for testing
+    function toggleSimulation(enabled) {
+      const banner = document.getElementById('preorderBanner');
+      const cardX2C = document.getElementById('cardX2C');
+      const pillX2C = document.getElementById('pillX2C');
+      const btnX2C = document.getElementById('actionBtnX2C');
+
+      if (enabled) {
+        triggerPreorderAlarm(true, false);
+      } else {
+        banner.classList.remove('active');
+        cardX2C.classList.remove('live-order');
+        pillX2C.className = 'status-pill';
+        pillX2C.textContent = 'Speculation / Leaks';
+        btnX2C.classList.remove('btn-active-order');
+        btnX2C.textContent = 'Official Store Check';
+      }
+    }
+
+    // Fetch and initialize news
+    async function loadRadarData() {
+      try {
+        const res = await fetch('./news.json');
+        if (!res.ok) throw new Error('news.json not reachable');
+        const data = await res.json();
+
+        if (data.last_updated) {
+          document.getElementById('lastScanText').textContent = `Morning Scan Updated: ${data.last_updated}`;
+        }
+
+        allArticles = data.articles || [];
+        renderNews();
+        checkPreorderSignals(allArticles);
+      } catch (e) {
+        console.warn('Could not load news.json dynamically:', e);
+        document.getElementById('lastScanText').textContent = 'Monitoring offline cache.';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateSavings(250);
+      loadRadarData();
+    });
   </script>
 </body>
 </html>

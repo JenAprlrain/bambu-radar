@@ -1,4 +1,571 @@
-let allArticles = [];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bambu Lab Radar | X2D Pro & H3C Launch Watch</title>
+  <style>
+    :root {
+      --bg: #090d12;
+      --card-bg: #121820;
+      --card-border: #1f2937;
+      --card-hover: #2b394a;
+      --bambu-green: #00ae42;
+      --bambu-glow: rgba(0, 174, 66, 0.25);
+      --bambu-amber: #f59e0b;
+      --reddit-orange: #ff4500;
+      --text-main: #f9fafb;
+      --text-sub: #9ca3af;
+      --text-dim: #6b7280;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      padding: 24px;
+      min-height: 100vh;
+    }
+
+    .container { max-width: 1080px; margin: 0 auto; }
+
+    /* PRE-ORDER BANNER */
+    .preorder-alert-banner {
+      display: none;
+      background: linear-gradient(90deg, #14532d 0%, #16a34a 100%);
+      border: 2px solid var(--bambu-green);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 0 25px var(--bambu-glow);
+      animation: pulseAlert 2.5s infinite;
+    }
+    .preorder-alert-banner.active { display: flex; align-items: center; justify-content: space-between; }
+    .alert-left { display: flex; align-items: center; gap: 14px; }
+    .alert-icon { font-size: 2rem; }
+    .alert-title { font-size: 1.15rem; font-weight: 800; color: #fff; text-transform: uppercase; }
+    .alert-desc { font-size: 0.88rem; color: #dcfce7; }
+    .alert-btn {
+      background: #fff;
+      color: #14532d;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      transition: transform 0.15s ease;
+    }
+    .alert-btn:hover { transform: scale(1.05); }
+
+    @keyframes pulseAlert {
+      0%, 100% { box-shadow: 0 0 15px rgba(0, 174, 66, 0.4); }
+      50% { box-shadow: 0 0 30px rgba(0, 174, 66, 0.85); }
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo-area h1 { font-size: 1.85rem; font-weight: 800; letter-spacing: -0.5px; }
+    .logo-area h1 span { color: var(--bambu-green); }
+    .status-sub { color: var(--text-sub); font-size: 0.88rem; margin-top: 4px; }
+    .header-controls { display: flex; align-items: center; gap: 12px; }
+    .sim-toggle {
+      background: #1e2633;
+      border: 1px solid #334155;
+      color: var(--text-sub);
+      font-size: 0.75rem;
+      padding: 6px 10px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .sim-toggle input { accent-color: var(--bambu-green); }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* HARDWARE CARDS */
+    .grid-duo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+    @media (max-width: 580px) {
+      .grid-duo { grid-template-columns: 1fr; }
+    }
+
+    .printer-hero-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 22px;
+      position: relative;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .printer-hero-card:hover { border-color: var(--card-hover); }
+    .printer-hero-card.live-order {
+      border-color: var(--bambu-green);
+      box-shadow: 0 0 22px var(--bambu-glow);
+    }
+
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+    .model-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    .badge-x2d { background: rgba(0, 174, 66, 0.15); color: var(--bambu-green); border: 1px solid rgba(0, 174, 66, 0.35); }
+    .badge-h3c { background: rgba(245, 158, 11, 0.15); color: var(--bambu-amber); border: 1px solid rgba(245, 158, 11, 0.35); }
+
+    .status-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      background: #1e293b;
+      color: #94a3b8;
+    }
+    .status-pill.pill-live {
+      background: var(--bambu-green);
+      color: #fff;
+      animation: pulseAlert 2s infinite;
+    }
+
+    .printer-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 6px; }
+    .printer-desc { font-size: 0.88rem; color: var(--text-sub); margin-bottom: 16px; }
+
+    /* RELEASE PIPELINE STEP TRACKER */
+    .pipeline-wrapper {
+      margin-bottom: 16px;
+      background: #0b0f14;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #1a2332;
+    }
+    .pipeline-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .pipeline-stage-title { font-weight: 700; color: #cbd5e1; }
+    .pipeline-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .pipeline-step {
+      height: 6px;
+      background: #1f2937;
+      border-radius: 3px;
+      transition: background 0.3s ease;
+    }
+    .pipeline-step.active {
+      background: var(--bambu-green);
+      box-shadow: 0 0 8px var(--bambu-glow);
+    }
+    .pipeline-labels {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      text-align: center;
+    }
+    .pipeline-labels span.highlight { color: #f3f4f6; font-weight: 700; }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      background: #0b0f14;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    .spec-item { display: flex; flex-direction: column; }
+    .spec-label { font-size: 0.68rem; color: var(--text-dim); text-transform: uppercase; }
+    .spec-value { font-size: 0.88rem; font-weight: 700; color: #e5e7eb; }
+
+    .card-actions { display: flex; gap: 10px; }
+    .primary-card-btn {
+      flex: 1;
+      background: #1e2633;
+      border: 1px solid #334155;
+      color: var(--text-main);
+      padding: 9px 12px;
+      border-radius: 6px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .primary-card-btn:hover { background: #334155; }
+    .primary-card-btn.btn-active-order {
+      background: var(--bambu-green);
+      border-color: var(--bambu-green);
+      color: #fff;
+    }
+
+    /* MAKERWORLD PICKS SECTION */
+    .makerworld-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .maker-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .maker-title { font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .maker-title span { color: var(--bambu-green); }
+    .maker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    .maker-card {
+      background: #0b0f14;
+      border: 1px solid #1a2332;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .maker-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--card-hover);
+    }
+    .maker-img-wrap {
+      width: 100%;
+      height: 160px;
+      background: #1e2633;
+      position: relative;
+      overflow: hidden;
+    }
+    .maker-img-wrap img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      background: #10161f;
+    }
+    .maker-badge-overlay {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .maker-info { padding: 12px; display: flex; flex-direction: column; flex: 1; }
+    .maker-name { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; color: #fff; }
+    .maker-meta { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 8px; }
+    .maker-desc { font-size: 0.8rem; color: var(--text-sub); margin-bottom: 12px; flex: 1; line-height: 1.4; }
+    .maker-download-btn {
+      background: #1f2937;
+      border: 1px solid #374151;
+      color: var(--text-main);
+      padding: 7px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.15s;
+    }
+    .maker-download-btn:hover { background: #374151; }
+
+    /* NEWS FEED SECTION */
+    .feed-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-tabs { display: flex; gap: 8px; }
+    .tab-btn {
+      background: #121820;
+      border: 1px solid var(--card-border);
+      color: var(--text-sub);
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .tab-btn.active { background: #1e293b; color: #fff; border-color: #38bdf8; }
+
+    .news-list { display: flex; flex-direction: column; gap: 12px; }
+    .news-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 16px;
+      transition: border-color 0.2s;
+    }
+    .news-card:hover { border-color: var(--card-hover); }
+    .news-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .news-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .tag-x2d { background: rgba(0, 174, 66, 0.15); color: var(--bambu-green); }
+    .tag-h3c { background: rgba(245, 158, 11, 0.15); color: var(--bambu-amber); }
+    .tag-general { background: rgba(156, 163, 175, 0.15); color: var(--text-sub); }
+    .source-badge {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+    .source-reddit { background: rgba(255, 69, 0, 0.18); color: #ff5722; border: 1px solid rgba(255, 69, 0, 0.3); }
+    .source-default { background: rgba(56, 189, 248, 0.12); color: #38bdf8; }
+
+    .news-timestamp { font-size: 0.78rem; color: var(--text-dim); }
+    .news-title { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .news-summary { font-size: 0.88rem; color: #cbd5e1; margin-bottom: 10px; }
+    .news-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1a2332; padding-top: 8px; font-size: 0.8rem; }
+    .news-source { color: var(--text-dim); }
+    .read-btn { color: var(--bambu-green); text-decoration: none; font-weight: 600; }
+    .read-btn:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- URGENT PRE-ORDER ALERT BANNER -->
+    <div id="preorderBanner" class="preorder-alert-banner">
+      <div class="alert-left">
+        <span class="alert-icon">⚡</span>
+        <div>
+          <div class="alert-title" id="alertTitleText">PRE-ORDER DETECTED!</div>
+          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's scan.</div>
+        </div>
+      </div>
+      <a href="https://store.bambulab.com/" target="_blank" rel="noopener noreferrer" class="alert-btn" id="bannerStoreBtn">
+        Open Bambu Store &rarr;
+      </a>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header>
+      <div class="logo-area">
+        <h1><span>⚡</span> Bambu Next-Gen Radar</h1>
+        <p id="lastScanText" class="status-sub">Tracking FCC filings, Reddit r/BambuLab & news...</p>
+      </div>
+      <div class="header-controls">
+        <label class="sim-toggle" title="Test how the page behaves when pre-orders open">
+          <input type="checkbox" id="simCheckbox" onchange="toggleSimulation(this.checked)" />
+          Simulate Pre-Order Alert
+        </label>
+      </div>
+    </header>
+
+    <!-- DUAL HARDWARE RADAR -->
+    <div class="section-title"><span>🎯</span> Target Hardware Launch Trackers</div>
+    <div class="grid-duo">
+
+      <!-- CARD 1: BAMBU LAB X2D PRO -->
+      <div class="printer-hero-card" id="cardX2D">
+        <div class="card-top">
+          <span class="model-badge badge-x2d">Target #1 • Precision Dual-Extrusion</span>
+          <span class="status-pill" id="pillX2D">Stage 3: FCC Registered</span>
+        </div>
+        <div class="printer-name">Bambu Lab X2D Pro</div>
+        <p class="printer-desc">
+          Professional dual-nozzle CoreXY architecture with closed-loop Vision Encoders, hardened extrusion components, and AMS 2 Pro high-capacity support.
+        </p>
+
+        <!-- PIPELINE TRACKER X2D PRO -->
+        <div class="pipeline-wrapper">
+          <div class="pipeline-header">
+            <span>Release Pipeline Detection</span>
+            <span class="pipeline-stage-title" id="stageTextX2D">Stage 3 of 4 (FCC Filed)</span>
+          </div>
+          <div class="pipeline-bar">
+            <div class="pipeline-step active" id="pX2D-1" title="Stage 1: Leaks"></div>
+            <div class="pipeline-step active" id="pX2D-2" title="Stage 2: Patent Disclosed"></div>
+            <div class="pipeline-step active" id="pX2D-3" title="Stage 3: FCC Registered"></div>
+            <div class="pipeline-step" id="pX2D-4" title="Stage 4: Pre-Order Live"></div>
+          </div>
+          <div class="pipeline-labels">
+            <span class="highlight">1. Rumors</span>
+            <span class="highlight">2. Patent</span>
+            <span class="highlight" id="labelX2D-3">3. FCC Filed</span>
+            <span id="labelX2D-4">4. Pre-Order</span>
+          </div>
+        </div>
+
+        <div class="specs-grid">
+          <div class="spec-item">
+            <span class="spec-label">Extrusion System</span>
+            <span class="spec-value">Direct Drive + Bowden Aux</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Volumetric Flow</span>
+            <span class="spec-value">Up to 65 mm³/s</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Chamber Temp</span>
+            <span class="spec-value">65°C Actively Heated</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Motion Telemetry</span>
+            <span class="spec-value">50 µm Vision Encoder</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="https://store.bambulab.com/" target="_blank" class="primary-card-btn" id="actionBtnX2D">
+            Official Store Check
+          </a>
+          <a href="https://forum.bambulab.com/" target="_blank" class="primary-card-btn">
+            Bambu Forum
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD 2: BAMBU LAB H3C -->
+      <div class="printer-hero-card" id="cardH3C">
+        <div class="card-top">
+          <span class="model-badge badge-h3c">Target #2 • 10-Toolhead Flagship</span>
+          <span class="status-pill" id="pillH3C">Stage 3: FCC Registered</span>
+        </div>
+        <div class="printer-name">Bambu Lab H3C</div>
+        <p class="printer-desc">
+          Flagship multi-material platform pairing a 10-toolhead docking rack with single-stroke magnetic pickups, heated chamber, and optical duct lighting.
+        </p>
+
+        <!-- PIPELINE TRACKER H3C -->
+        <div class="pipeline-wrapper">
+          <div class="pipeline-header">
+            <span>Release Pipeline Detection</span>
+            <span class="pipeline-stage-title" id="stageTextH3C">Stage 3 of 4 (FCC Filed)</span>
+          </div>
+          <div class="pipeline-bar">
+            <div class="pipeline-step active" id="pH3C-1" title="Stage 1: Leaks"></div>
+            <div class="pipeline-step active" id="pH3C-2" title="Stage 2: Patent Disclosed"></div>
+            <div class="pipeline-step active" id="pH3C-3" title="Stage 3: FCC Registered"></div>
+            <div class="pipeline-step" id="pH3C-4" title="Stage 4: Pre-Order Live"></div>
+          </div>
+          <div class="pipeline-labels">
+            <span class="highlight">1. Rumors</span>
+            <span class="highlight">2. Patent</span>
+            <span class="highlight" id="labelH3C-3">3. FCC Filed</span>
+            <span id="labelH3C-4">4. Pre-Order</span>
+          </div>
+        </div>
+
+        <div class="specs-grid">
+          <div class="spec-item">
+            <span class="spec-label">Capacity</span>
+            <span class="spec-value">10 Toolheads (9+1 Rack)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Docking Motion</span>
+            <span class="spec-value">Single-Stroke Magnetic Pick</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Expected Volume</span>
+            <span class="spec-value">350 × 350 × 350 mm+</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Nozzle Lighting</span>
+            <span class="spec-value">Split Matte Duct Optics</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="https://store.bambulab.com/" target="_blank" class="primary-card-btn" id="actionBtnH3C">
+            Official Store Check
+          </a>
+          <a href="https://makers101.com/bambu-lab-h3c-patent/" target="_blank" class="primary-card-btn">
+            Read Patent Analysis
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAKERWORLD PICKS GALLERY (DYNAMIC CONTAINER) -->
+    <div class="makerworld-box">
+      <div class="maker-header">
+        <div class="maker-title">
+          <span>🌟</span> MakerWorld Featured Prints of the Day
+        </div>
+        <a href="https://makerworld.com/en" target="_blank" rel="noopener noreferrer" style="color: var(--bambu-green); font-size: 0.85rem; font-weight: 700; text-decoration: none;">
+          Browse All on MakerWorld &rarr;
+        </a>
+      </div>
+      <div id="makerGridContainer" class="maker-grid">
+        <p style="color: var(--text-dim); padding: 12px;">Loading print recommendations...</p>
+      </div>
+    </div>
+
+    <!-- NEWS FEED SECTION -->
+    <div class="feed-controls">
+      <div class="section-title" style="margin-bottom:0;"><span>📡</span> Morning Radar Intelligence (Newest First)</div>
+      <div class="filter-tabs">
+        <button class="tab-btn active" onclick="filterTab('all', this)">All Feeds</button>
+        <button class="tab-btn" onclick="filterTab('X2D Pro', this)">X2D Pro</button>
+        <button class="tab-btn" onclick="filterTab('H3C', this)">H3C</button>
+      </div>
+    </div>
+
+    <div id="newsContainer" class="news-list">
+      <p style="color: var(--text-dim); padding: 12px;">Loading latest news & Reddit threads...</p>
+    </div>
+
+  </div>
+
+  <script>
+    let allArticles = [];
     let currentFilter = 'all';
 
     function renderMakerWorld(picks) {
@@ -38,8 +605,7 @@ let allArticles = [];
 
       const filtered = allArticles.filter(item => {
         if (currentFilter === 'all') return true;
-        // Match exact or joint targets (e.g. 'H3C / X2D Pro')
-        return item.target.includes(currentFilter);
+        return (item.target || '').includes(currentFilter);
       });
 
       if (filtered.length === 0) {
@@ -53,10 +619,11 @@ let allArticles = [];
         card.className = 'news-card';
         
         let tagClass = 'tag-general';
-        if (item.target.includes('X2D Pro')) tagClass = 'tag-x2d';
-        else if (item.target.includes('H3C')) tagClass = 'tag-h3c';
+        const targetStr = item.target || '';
+        if (targetStr.includes('X2D Pro')) tagClass = 'tag-x2d';
+        else if (targetStr.includes('H3C')) tagClass = 'tag-h3c';
 
-        const isReddit = item.source.toLowerCase().includes('reddit');
+        const isReddit = (item.source || '').toLowerCase().includes('reddit');
         const sourceBadgeClass = isReddit ? 'source-reddit' : 'source-default';
 
         card.innerHTML = `
@@ -89,13 +656,98 @@ let allArticles = [];
         const text = ((a.title || '') + ' ' + (a.summary || '')).toLowerCase();
         const hasOrder = alertTokens.some(tok => text.includes(tok));
         if (hasOrder) {
-          if (a.target.includes('X2D Pro') || text.includes('x2d pro')) foundX2D_live = true;
-          if (a.target.includes('H3C') || text.includes('h3c')) foundH3C_live = true;
+          const targetStr = a.target || '';
+          if (targetStr.includes('X2D Pro') || text.includes('x2d pro')) foundX2D_live = true;
+          if (targetStr.includes('H3C') || text.includes('h3c')) foundH3C_live = true;
         }
       });
 
       if (foundX2D_live || foundH3C_live) {
         triggerPreorderAlarm(foundX2D_live, foundH3C_live);
+      }
+    }
+
+    function setPipelineStage(model, stage) {
+      const stageText = document.getElementById(`stageText${model}`);
+      const pill = document.getElementById(`pill${model}`);
+      const step4 = document.getElementById(`p${model}-4`);
+      const label4 = document.getElementById(`label${model}-4`);
+
+      if (!stageText || !pill || !step4 || !label4) return;
+
+      if (stage === 4) {
+        stageText.textContent = 'Stage 4 of 4 (PRE-ORDER LIVE)';
+        pill.className = 'status-pill pill-live';
+        pill.textContent = '🔥 Pre-Order Live';
+        step4.className = 'pipeline-step active';
+        label4.className = 'highlight';
+      } else {
+        stageText.textContent = 'Stage 3 of 4 (FCC Filed)';
+        pill.className = 'status-pill';
+        pill.textContent = 'Stage 3: FCC Registered';
+        step4.className = 'pipeline-step';
+        label4.className = '';
+      }
+    }
+
+    function triggerPreorderAlarm(x2dLive, h3cLive) {
+      const banner = document.getElementById('preorderBanner');
+      const bannerTitle = document.getElementById('alertTitleText');
+      const bannerDesc = document.getElementById('alertDescText');
+
+      if (banner) banner.classList.add('active');
+
+      if (bannerTitle && bannerDesc) {
+        if (x2dLive && h3cLive) {
+          bannerTitle.textContent = '🔥 BAMBU LAB X2D PRO & H3C PRE-ORDERS ARE LIVE!';
+          bannerDesc.textContent = 'Pre-order listings confirmed for both models in today\'s scan.';
+        } else if (x2dLive) {
+          bannerTitle.textContent = '🔥 BAMBU LAB X2D PRO PRE-ORDER IS LIVE!';
+          bannerDesc.textContent = 'Pre-order listings detected for the X2D Pro combo.';
+        } else {
+          bannerTitle.textContent = '🔥 BAMBU LAB H3C PRE-ORDER IS LIVE!';
+          bannerDesc.textContent = 'Pre-order listings detected for the H3C flagship.';
+        }
+      }
+
+      if (x2dLive) {
+        const cardX2D = document.getElementById('cardX2D');
+        if (cardX2D) cardX2D.classList.add('live-order');
+        setPipelineStage('X2D', 4);
+        const btn = document.getElementById('actionBtnX2D');
+        if (btn) {
+          btn.classList.add('btn-active-order');
+          btn.textContent = 'Order X2D Pro Now';
+        }
+      }
+
+      if (h3cLive) {
+        const cardH3C = document.getElementById('cardH3C');
+        if (cardH3C) cardH3C.classList.add('live-order');
+        setPipelineStage('H3C', 4);
+        const btn = document.getElementById('actionBtnH3C');
+        if (btn) {
+          btn.classList.add('btn-active-order');
+          btn.textContent = 'Order H3C Now';
+        }
+      }
+    }
+
+    function toggleSimulation(enabled) {
+      const banner = document.getElementById('preorderBanner');
+      const cardX2D = document.getElementById('cardX2D');
+      const btnX2D = document.getElementById('actionBtnX2D');
+
+      if (enabled) {
+        triggerPreorderAlarm(true, false);
+      } else {
+        if (banner) banner.classList.remove('active');
+        if (cardX2D) cardX2D.classList.remove('live-order');
+        setPipelineStage('X2D', 3);
+        if (btnX2D) {
+          btnX2D.classList.remove('btn-active-order');
+          btnX2D.textContent = 'Official Store Check';
+        }
       }
     }
 
@@ -123,3 +775,6 @@ let allArticles = [];
     }
 
     document.addEventListener('DOMContentLoaded', loadRadarData);
+  </script>
+</body>
+</html>

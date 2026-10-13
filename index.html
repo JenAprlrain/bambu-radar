@@ -583,21 +583,23 @@
     let currentWebFilter = 'all';
     let currentRedditFilter = 'all';
 
-    function formatToLocalTime(isoString) {
-      if (!isoString) return 'Today at 6:00 AM';
+    function formatToLocalTime(dateInput) {
+      if (!dateInput) {
+        return new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+      }
       try {
-        const d = new Date(isoString);
+        const d = new Date(dateInput);
+        if (isNaN(d.getTime())) return String(dateInput);
         return d.toLocaleDateString(undefined, {
           month: 'short',
-          day: 'numeric',
-          year: 'numeric'
+          day: 'numeric'
         }) + ' at ' + d.toLocaleTimeString(undefined, {
           hour: 'numeric',
           minute: '2-digit',
           timeZoneName: 'short'
         });
       } catch (e) {
-        return 'Today at 6:00 AM';
+        return String(dateInput);
       }
     }
 
@@ -832,14 +834,20 @@
         const res = await fetch('./news.json');
         if (res.ok) {
           const data = await res.json();
-          if (data.scan_iso) {
-            const scanText = document.getElementById('lastScanText');
-            if (scanText) scanText.textContent = `Morning Scan: ${formatToLocalTime(data.scan_iso)}`;
+          
+          // Robust timestamp display (handles scan_iso or legacy last_updated)
+          const timeVal = data.scan_iso || data.last_updated;
+          const scanText = document.getElementById('lastScanText');
+          if (scanText && timeVal) {
+            scanText.textContent = `Morning Scan: ${formatToLocalTime(timeVal)}`;
           }
+
           if (data.makerworld_picks && data.makerworld_picks.length > 0) {
             renderMakerWorld(data.makerworld_picks);
           }
-          webArticles = data.web_articles || [];
+
+          // Handles both separated arrays and legacy article lists
+          webArticles = data.web_articles || data.articles || [];
           redditArticles = data.reddit_articles || [];
 
           renderWebNews();

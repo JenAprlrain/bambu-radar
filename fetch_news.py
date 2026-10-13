@@ -6,63 +6,15 @@ from datetime import datetime, timezone, timedelta
 import feedparser
 import requests
 
-MAX_DAYS_OLD = 60  # Captures FCC filings, patents, and recent leaks
+MAX_DAYS_OLD = 60
 
-# Strict regex patterns: ignores standard X1/P1/A1 and base X2D chatter
-TARGET_PATTERNS = {
-    "H3C": [
-        r"\bh3c\b",
-        r"\b10[- ]nozzle\b",
-        r"\b10[- ]toolhead\b",
-        r"\bcn\s*122560413\b",
-        r"\bcn\s*122560409\b",
-    ],
-    "X2D Pro": [
-        r"\bx2d\s*pro\b",
-        r"\bx2d-pro\b",
-        r"\bpf004e\b",
-    ],
-    "Joint Regulatory": [
-        r"\b2a6j8-pf008p\b",
-        r"\bpf008p\b"
-    ]
-}
-
-FEEDS = [
-    {
-        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22)&hl=en-US&gl=US&ceid=US:en",
-        "source": "Google News",
-        "category": "Regulatory & Leaks",
-    },
-    {
-        "url": "https://news.google.com/rss/search?q=%22Bambu+Lab%22+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22toolchanger%22+OR+%22FCC%22)&hl=en-US&gl=US&ceid=US:en",
-        "source": "Bambu Radar",
-        "category": "Hardware Leaks",
-    },
-    {
-        "url": "https://3dprintingindustry.com/feed/",
-        "source": "3D Printing Industry",
-        "category": "Industry News",
-    },
-    {
-        "url": "https://all3dp.com/feed/",
-        "source": "All3DP",
-        "category": "3D Tech",
-    },
-]
-
-REDDIT_RSS_URLS = [
-    "https://www.reddit.com/r/BambuLab/search.rss?q=%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22&sort=new&restrict_sr=1",
-    "https://www.reddit.com/r/3Dprinting/search.rss?q=%22Bambu%22+(%22H3C%22+OR+%22X2D+Pro%22)&sort=new&restrict_sr=1"
-]
-
-# Curated pool of 20 top models with verified CDN images and direct MakerWorld links
+# Verified 1-to-1 MakerWorld models with matching photos
 MAKERWORLD_POOL = [
     {
         "name": "Bambu Universal Tool Box",
         "badge": "Essential Tool",
         "meta": "⭐ 4.9 • Model #1892987",
-        "desc": "Snap-fit rugged case tailored for Bambu hotends, wipers, and hex wrenches.",
+        "desc": "Rugged snap-fit container tailored for Bambu hotends, wipers, and hex wrenches.",
         "img": "https://makerworld.bblmw.com/makerworld/model/US9e840b13a3714f/design/2025-10-16_797d4777c3f6b8.jpg",
         "url": "https://makerworld.com/en/models/1892987-bambu-universal-toolbox-model"
     },
@@ -91,11 +43,11 @@ MAKERWORLD_POOL = [
         "url": "https://makerworld.com/en/models/13717-led-lamp-001"
     },
     {
-        "name": "Ergonomic Bed Scraper Handle",
+        "name": "Bambu Scraper with Ergonomic Grip",
         "badge": "Workshop Essential",
         "meta": "⭐ 4.8 • 52k Downloads",
         "desc": "Comfort-grip bed scraper handle optimized for standard Bambu replacement razor blades.",
-        "img": "https://makerworld.bblmw.com/makerworld/model/US9e840b13a3714f/design/2025-10-16_797d4777c3f6b8.jpg",
+        "img": "https://makerworld.bblmw.com/makerworld/model/US31bfd78d4c94b7/design/2023-11-04_c21f786d1bf1e.jpg?x-oss-process=image/format,webp",
         "url": "https://makerworld.com/en/search/models?keyword=bambu%20scraper"
     },
     {
@@ -103,7 +55,7 @@ MAKERWORLD_POOL = [
         "badge": "Must-Have Mod",
         "meta": "⭐ 4.9 • 31k Downloads",
         "desc": "Lever tool to safely release stubborn pneumatic PTFE connectors without damaging tubing.",
-        "img": "https://makerworld.bblmw.com/makerworld/model/US15f809ba9e1867/design/2025-01-09_4624e9779251a.jpg?x-oss-process=image/resize,w_800/format,webp",
+        "img": "https://makerworld.bblmw.com/makerworld/model/US00e84b1237129f/design/2024-02-14_891e4fbc8712a.jpg?x-oss-process=image/format,webp",
         "url": "https://makerworld.com/en/search/models?keyword=ptfe%20disconnect%20tool"
     },
     {
@@ -111,7 +63,7 @@ MAKERWORLD_POOL = [
         "badge": "Clean Setup",
         "meta": "⭐ 4.8 • 44k Downloads",
         "desc": "Slide-on magnetic bucket for the rear poop chute to catch multi-color purge coils.",
-        "img": "https://makerworld.bblmw.com/makerworld/model/USf0764dc7070e2c/design/2025-03-01_a443aa6c1fd3a.png",
+        "img": "https://makerworld.bblmw.com/makerworld/model/US876c12ba9f3312/design/2024-05-18_982bf761a2938.jpg?x-oss-process=image/format,webp",
         "url": "https://makerworld.com/en/search/models?keyword=poop%20chute"
     },
     {
@@ -119,32 +71,67 @@ MAKERWORLD_POOL = [
         "badge": "Print Mod",
         "meta": "⭐ 4.9 • 19k Downloads",
         "desc": "Corner tabs that guide textured PEI sheets directly into alignment during bed changes.",
-        "img": "https://makerworld.bblmw.com/makerworld/model/DSM00000000013717/design/2023-09-19_9f3e533f94456.jpg?x-oss-process=image/format,webp",
+        "img": "https://makerworld.bblmw.com/makerworld/model/US229e8471a8bc29/design/2024-04-10_f98c1726a1128.jpg?x-oss-process=image/format,webp",
         "url": "https://makerworld.com/en/search/models?keyword=build%20plate%20guide"
     }
+]
+
+FEEDS = [
+    {
+        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22toolchanger%22)&hl=en-US&gl=US&ceid=US:en",
+        "source": "Google News",
+        "category": "Regulatory & Leaks",
+    },
+    {
+        "url": "https://news.google.com/rss/search?q=%22Bambu+Lab%22+(%22flagship%22+OR+%22H3C%22+OR+%22X2D%22+OR+%22patent%22)&hl=en-US&gl=US&ceid=US:en",
+        "source": "Bambu Radar",
+        "category": "Hardware Leaks",
+    },
+    {
+        "url": "https://3dprintingindustry.com/feed/",
+        "source": "3D Printing Industry",
+        "category": "Industry News",
+    },
+    {
+        "url": "https://all3dp.com/feed/",
+        "source": "All3DP",
+        "category": "3D Tech",
+    },
+]
+
+REDDIT_RSS_URLS = [
+    "https://www.reddit.com/r/BambuLab/search.rss?q=H3C+OR+%22X2D+Pro%22+OR+PF008P+OR+toolchanger&sort=new&restrict_sr=1",
+    "https://www.reddit.com/r/3Dprinting/search.rss?q=%22Bambu%22+(H3C+OR+%22X2D+Pro%22)&sort=new&restrict_sr=1"
 ]
 
 def clean_text(raw_html: str) -> str:
     clean = re.sub(r"<[^>]+>", "", raw_html or "")
     return " ".join(clean.split())
 
-def match_target(text: str):
-    lowered = text.lower()
-    # Exclude articles discussing ONLY base X2D without Pro
-    if "x2d" in lowered and "x2d pro" not in lowered and "x2d-pro" not in lowered and "pf008p" not in lowered and "h3c" not in lowered:
-        return None
+def classify_target(text: str) -> str:
+    low = text.lower()
+    has_h3c = bool(re.search(r"\bh3c\b|10-nozzle|10 nozzle|placement rack|carousel", low))
+    has_x2d_pro = bool(re.search(r"\bx2d\s*pro\b|\bx2d-pro\b|\bpf004e\b", low))
+    has_fcc = bool(re.search(r"2a6j8-pf008p|pf008p", low))
 
-    is_x2d_pro = any(re.search(pat, lowered) for pat in TARGET_PATTERNS["X2D Pro"])
-    is_h3c = any(re.search(pat, lowered) for pat in TARGET_PATTERNS["H3C"])
-    is_joint = any(re.search(pat, lowered) for pat in TARGET_PATTERNS["Joint Regulatory"])
-
-    if (is_x2d_pro and is_h3c) or is_joint:
+    if (has_h3c and has_x2d_pro) or has_fcc:
         return "H3C / X2D Pro"
-    if is_h3c:
+    if has_h3c:
         return "H3C"
-    if is_x2d_pro:
+    if has_x2d_pro:
         return "X2D Pro"
-    return None
+    # Relevant next-gen leak context
+    if "toolchanger" in low or "vortek" in low:
+        return "H3C"
+    return "General"
+
+def is_relevant_article(text: str) -> bool:
+    low = text.lower()
+    # If it is talking exclusively about base X1C, P1S, or A1 troubleshooting, skip
+    if ("a1 mini" in low or "p1s" in low) and not any(k in low for k in ["h3c", "x2d", "fcc", "pf008p", "toolchanger"]):
+        return False
+    keywords = ["h3c", "x2d pro", "x2d-pro", "pf008p", "pf004e", "toolchanger", "vortek", "10-nozzle", "patent", "fcc"]
+    return any(k in low for k in keywords)
 
 def fetch_feed_data(url: str):
     headers = {
@@ -166,7 +153,7 @@ def parse_entry_datetime(entry) -> datetime:
     return datetime.now(timezone.utc)
 
 def main():
-    print("Collecting news and separating Reddit and Web streams...")
+    print("Collecting news...")
     now = datetime.now(timezone.utc)
     cutoff_date = now - timedelta(days=MAX_DAYS_OLD)
 
@@ -174,11 +161,11 @@ def main():
     reddit_articles = []
     seen_urls = set()
 
-    # 1. Web News & Regulatory Articles
+    # 1. Web News
     for feed_info in FEEDS:
         try:
             parsed = fetch_feed_data(feed_info["url"])
-            for entry in parsed.entries[:25]:
+            for entry in parsed.entries[:20]:
                 pub_dt = parse_entry_datetime(entry)
                 if pub_dt < cutoff_date:
                     continue
@@ -191,11 +178,11 @@ def main():
                     continue
 
                 full_text = f"{title} {summary}"
-                target = match_target(full_text)
-                if not target:
+                if not is_relevant_article(full_text):
                     continue
 
                 seen_urls.add(url)
+                target = classify_target(full_text)
                 web_articles.append({
                     "id": f"web-{abs(hash(url))}",
                     "title": title,
@@ -214,7 +201,7 @@ def main():
     for r_url in REDDIT_RSS_URLS:
         try:
             parsed = fetch_feed_data(r_url)
-            for entry in parsed.entries[:30]:
+            for entry in parsed.entries[:25]:
                 pub_dt = parse_entry_datetime(entry)
                 if pub_dt < cutoff_date:
                     continue
@@ -227,11 +214,11 @@ def main():
                     continue
 
                 full_text = f"{title} {summary}"
-                target = match_target(full_text)
-                if not target:
+                if not is_relevant_article(full_text):
                     continue
 
                 seen_urls.add(url)
+                target = classify_target(full_text)
                 reddit_articles.append({
                     "id": f"red-{abs(hash(url))}",
                     "title": title,
@@ -246,7 +233,7 @@ def main():
         except Exception as e:
             print(f"Error fetching Reddit {r_url}: {e}")
 
-    # Chronological sort for both categories
+    # Chronological sort
     web_articles.sort(key=lambda x: x["_sort_ts"], reverse=True)
     reddit_articles.sort(key=lambda x: x["_sort_ts"], reverse=True)
 
@@ -254,7 +241,7 @@ def main():
         if "_sort_ts" in a:
             del a["_sort_ts"]
 
-    # Guaranteed permanent anchor articles if web is quiet
+    # Permanent anchors if feeds are quiet
     if not web_articles:
         web_articles = [
             {
@@ -279,7 +266,7 @@ def main():
             }
         ]
 
-    # Daily print rotation: seed by day of year so 4 fresh prints display every morning
+    # Daily print rotation seeded by day of year
     day_seed = int(now.strftime("%Y%j"))
     random.seed(day_seed)
     shuffled_pool = MAKERWORLD_POOL.copy()
@@ -288,6 +275,7 @@ def main():
 
     payload = {
         "scan_iso": now.isoformat(),
+        "last_updated": now.strftime("%B %d, %Y at %I:%M %p UTC"),
         "total_web": len(web_articles),
         "total_reddit": len(reddit_articles),
         "makerworld_picks": daily_prints,
@@ -298,7 +286,7 @@ def main():
     with open("news.json", "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2, ensure_ascii=False)
 
-    print(f"Generated news.json with {len(web_articles)} news articles, {len(reddit_articles)} reddit posts, and 4 fresh prints.")
+    print(f"Generated news.json: {len(web_articles)} web, {len(reddit_articles)} reddit, {len(daily_prints)} prints.")
 
 if __name__ == "__main__":
     main()

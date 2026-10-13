@@ -8,19 +8,16 @@ MAX_DAYS_OLD = 75
 
 # Primary Targeted Bambu Feeds
 FEEDS = [
-    # 1. Hardware Identifiers & Patent Registries
     {
         "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22+OR+%22CN122560413%22+OR+%22CN122560409%22)&hl=en-US&gl=US&ceid=US:en",
         "source": "FCC & Patent Registry",
         "category": "Priority Radar",
     },
-    # 2. Kinematic & Mechanism disclosures (10-nozzle rack, Vision Encoder, Vortek)
     {
         "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%2210-nozzle%22+OR+%2210+nozzle%22+OR+%22docking+rack%22+OR+%22Vortek%22+OR+%22Vision+Encoder%22)&hl=en-US&gl=US&ceid=US:en",
         "source": "Bambu Hardware Watch",
         "category": "Hardware Leaks",
     },
-    # 3. Official Bambu ecosystem news
     {
         "url": "https://news.google.com/rss/search?q=%22Bambu+Lab%22+(%22flagship%22+OR+%22pre-order%22+OR+%22firmware%22+OR+%22MakerWorld%22)&hl=en-US&gl=US&ceid=US:en",
         "source": "Bambu Ecosystem",
@@ -73,7 +70,7 @@ def is_strict_reddit_match(text: str) -> bool:
     return any(a in low for a in allowed)
 
 def fetch_feed_data(url: str):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadar/5.0"}
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadar/6.0"}
     try:
         resp = requests.get(url, headers=headers, timeout=12)
         if resp.status_code == 200:
@@ -89,102 +86,75 @@ def parse_entry_datetime(entry) -> datetime:
         return datetime(*entry.updated_parsed[:6], tzinfo=timezone.utc)
     return datetime.now(timezone.utc)
 
-def fetch_live_trending_prints():
+def fetch_live_prints_from_web():
     """
-    Fetches real, live trending 3D models using Printables' public GraphQL API.
-    Guarantees working CDN pictures and valid model links.
+    Pulls live popular/featured community 3D prints from Thingiverse's public explore stream.
+    Falls back gracefully if external servers are unreachable.
     """
-    graphql_url = "https://api.printables.com/graphql/"
-    query = """
-    query GetFeaturedPrints {
-      prints(limit: 8, ordering: "-rating") {
-        items {
-          id
-          name
-          slug
-          ratingAvg
-          downloadCount
-          image {
-            filePath
-          }
-        }
-      }
-    }
-    """
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Content-Type": "application/json"
-    }
-
+    prints = []
+    # Query live RSS stream of featured 3D prints
+    tv_rss = "https://www.thingiverse.com/rss/featured"
     try:
-        resp = requests.post(graphql_url, json={"query": query}, headers=headers, timeout=10)
-        if resp.status_code == 200:
-            data = resp.json()
-            items = data.get("data", {}).get("prints", {}).get("items", [])
-            prints = []
-            for item in items[:4]:
-                name = item.get("name", "Featured 3D Model")
-                slug = item.get("slug", "")
-                m_id = item.get("id", "")
-                img_path = item.get("image", {}).get("filePath", "")
-                downloads = item.get("downloadCount", 0)
+        parsed = fetch_feed_data(tv_rss)
+        for entry in parsed.entries[:6]:
+            title = clean_text(entry.get("title", ""))
+            summary = clean_text(entry.get("summary", entry.get("description", "")))
+            link = entry.get("link", "").strip()
 
-                # Build legitimate Printables CDN photo URL
-                img_url = f"https://media.printables.com/media/prints/{img_path}" if img_path else "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80"
-                model_url = f"https://www.printables.com/model/{m_id}-{slug}"
+            # Extract image from HTML enclosure or media thumbnail
+            img_url = ""
+            if "media_thumbnail" in entry and len(entry["media_thumbnail"]) > 0:
+                img_url = entry["media_thumbnail"][0].get("url", "")
+            elif "enclosures" in entry and len(entry["enclosures"]) > 0:
+                img_url = entry["enclosures"][0].get("href", "")
+            else:
+                # Search description for img tags
+                raw_desc = entry.get("description", "")
+                m = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', raw_desc)
+                if m:
+                    img_url = m.group(1)
 
+            if title and link:
                 prints.append({
-                    "name": name,
-                    "badge": "Popular Community Print",
-                    "meta": f"⭐ 4.9 • {downloads:,} Downloads",
-                    "desc": "Trending design from the maker community. High-rated print with verified slicer profiles.",
+                    "name": title,
+                    "badge": "Live Featured Print",
+                    "meta": "⭐ Featured Community Design",
+                    "desc": (summary[:180] + "...") if len(summary) > 180 else summary or "Open model to view slicing details, STL files, and print settings.",
                     "img": img_url,
-                    "url": model_url
+                    "url": link
                 })
-            if len(prints) >= 4:
-                print("Successfully fetched live trending prints from Printables API.")
-                return prints
     except Exception as e:
-        print(f"Printables API fetch failed: {e}. Using verified defaults.")
+        print(f"Error fetching live print stream: {e}")
 
-    # High-quality fallback models
-    return [
-        {
-            "name": "Bambu Scraper Grip Pro",
-            "badge": "Bed Maintenance",
-            "meta": "⭐ 4.9 • 52k Downloads",
-            "desc": "Ergonomic bed scraper handle designed for standard Bambu replacement razor blades.",
-            "img": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=600&auto=format&fit=crop&q=80",
-            "url": "https://www.printables.com/model/12702-bambu-scraper-grip"
-        },
-        {
-            "name": "AMS Dry-Box Desiccant Pod",
-            "badge": "AMS Upgrade",
-            "meta": "⭐ 4.9 • 34k Downloads",
-            "desc": "Slide-in silica desiccant pods designed to keep engineering filaments moisture-free.",
-            "img": "https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?w=600&auto=format&fit=crop&q=80",
-            "url": "https://www.printables.com/model/519731-bambu-lab-ams-silica-gel-dry-box"
-        },
-        {
-            "name": "Articulated Flexi Leviathan",
-            "badge": "Showcase Print",
-            "meta": "⭐ 4.9 • 19k Downloads",
-            "desc": "Print-in-place multi-segmented model engineered to test multi-color switches and overhangs.",
-            "img": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80",
-            "url": "https://www.printables.com/model/1163767-shadowcoil-articulated-dragon"
-        },
-        {
-            "name": "Spiral Accent Lamp 001",
-            "badge": "LED Hardware Kit",
-            "meta": "⭐ 4.9 • 14k Downloads",
-            "desc": "Decorative geometric desktop lamp designed around quick-plug USB LED lamp kits.",
-            "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&auto=format&fit=crop&q=80",
-            "url": "https://www.printables.com/model/13717-led-lamp-001"
-        }
-    ]
+    # Fallback to Reddit r/3Dprinting popular designs if RSS yielded fewer than 4
+    if len(prints) < 4:
+        try:
+            r_prints = fetch_feed_data("https://www.reddit.com/r/3Dprinting/search.rss?q=flair%3A%22Print%22+OR+flair%3A%22Design%22&sort=hot&restrict_sr=1")
+            for entry in r_prints.entries[:8]:
+                title = clean_text(entry.get("title", ""))
+                link = entry.get("link", "")
+                raw_desc = entry.get("description", "")
+                m = re.search(r'https://preview\.redd\.it/[^"\'>\s]+', raw_desc)
+                img_url = m.group(0).replace("&amp;", "&") if m else ""
+
+                if title and link:
+                    prints.append({
+                        "name": title,
+                        "badge": "Community Project",
+                        "meta": "💬 Reddit Showcase",
+                        "desc": "Fresh daily 3D print project shared by the maker community with settings and design notes.",
+                        "img": img_url,
+                        "url": link
+                    })
+                if len(prints) >= 4:
+                    break
+        except Exception as e:
+            print(f"Reddit showcase fetch error: {e}")
+
+    return prints[:4]
 
 def main():
-    print("Executing morning scan for H3C and X2D Pro...")
+    print("Executing morning scan for H3C, X2D Pro, and live daily prints...")
     now = datetime.now(timezone.utc)
     cutoff_date = now - timedelta(days=MAX_DAYS_OLD)
 
@@ -232,7 +202,7 @@ def main():
         except Exception as e:
             print(f"Error reading feed {feed_info['source']}: {e}")
 
-    # 2. Reddit Discussions (Strict Next-Gen Leaks)
+    # 2. Filtered Reddit Discussions
     for r_url in REDDIT_RSS_URLS:
         try:
             parsed = fetch_feed_data(r_url)
@@ -269,7 +239,6 @@ def main():
         except Exception as e:
             print(f"Error fetching Reddit {r_url}: {e}")
 
-    # Chronological sort
     priority_articles.sort(key=lambda x: x["_sort_ts"], reverse=True)
     general_articles.sort(key=lambda x: x["_sort_ts"], reverse=True)
     reddit_articles.sort(key=lambda x: x["_sort_ts"], reverse=True)
@@ -277,7 +246,7 @@ def main():
     for a in priority_articles + general_articles + reddit_articles:
         del a["_sort_ts"]
 
-    # Permanent reference anchors covering the verified filings
+    # Permanent reference anchors
     anchors = [
         {
             "id": "fcc-pf008p",
@@ -305,13 +274,13 @@ def main():
         if not any(a["id"] == anchor["id"] for a in priority_articles):
             priority_articles.append(anchor)
 
-    # Fetch live suggestions from the community
-    daily_prints = fetch_live_trending_prints()
+    # Fetch fresh live prints from the internet
+    daily_prints = fetch_live_prints_from_web()
 
     payload = {
         "scan_iso": now.isoformat(),
         "last_updated": now.strftime("%B %d, %Y at %I:%M %p UTC"),
-        "makerworld_picks": daily_prints,
+        "live_daily_prints": daily_prints,
         "priority_articles": priority_articles[:20],
         "general_articles": general_articles[:12],
         "reddit_articles": reddit_articles[:15],
@@ -320,7 +289,7 @@ def main():
     with open("news.json", "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2, ensure_ascii=False)
 
-    print(f"Generated news.json: {len(priority_articles)} priority, {len(general_articles)} Bambu general, {len(reddit_articles)} reddit.")
+    print(f"Generated news.json: {len(priority_articles)} priority, {len(general_articles)} Bambu general, {len(reddit_articles)} reddit, {len(daily_prints)} live prints.")
 
 if __name__ == "__main__":
     main()

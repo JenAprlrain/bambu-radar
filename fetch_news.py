@@ -5,9 +5,9 @@ from datetime import datetime, timezone, timedelta
 import feedparser
 import requests
 
-MAX_DAYS_OLD = 60
+MAX_DAYS_OLD = 75
 
-# 12 Verified MakerWorld Models: Exact model URLs paired with reliable matching previews
+# 12 Verified MakerWorld Models with exact model IDs and matching previews
 MAKERWORLD_DATABASE = [
     {
         "name": "Bambu Scraper Grip Pro",
@@ -53,7 +53,7 @@ MAKERWORLD_DATABASE = [
         "name": "Magnetic Purge Chute Bin",
         "badge": "Clean Setup",
         "meta": "⭐ 4.8 • Model #14902",
-        "desc": "Slide-on magnetic waste bucket that fits flush against the rear poop chute to catch multi-color purge coils.",
+        "desc": "Slide-on magnetic waste bucket that fits flush against the rear poop chute to collect extruded coils.",
         "img": "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80",
         "url": "https://makerworld.com/en/models/14902-bambu-poop-chute"
     },
@@ -107,68 +107,82 @@ MAKERWORLD_DATABASE = [
     }
 ]
 
-# Bambu-Exclusive Web Searches
+# Targeted Bambu-Exclusive Feeds
 FEEDS = [
-    # Dedicated H3C & X2D Pro Search with broadened leak keywords
+    # 1. Exact hardware identifiers & patent registry keywords
     {
-        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22X2D%22+OR+%22PF008P%22+OR+%22PF004E%22+OR+%22toolchanger%22+OR+%2210-nozzle%22+OR+%22Vortek%22)&hl=en-US&gl=US&ceid=US:en",
-        "source": "Bambu Radar",
+        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22+OR+%22CN122560413%22+OR+%22CN122560409%22)&hl=en-US&gl=US&ceid=US:en",
+        "source": "FCC & Patent Registry",
         "category": "Priority Radar",
     },
-    # General Bambu Lab ecosystem only (No generic Ender/Prusa/Creality news)
+    # 2. Kinematic & Mechanism disclosures (10-nozzle rack, Vision Encoder, Vortek)
     {
-        "url": "https://news.google.com/rss/search?q=%22Bambu+Lab%22+(%22patent%22+OR+%22firmware%22+OR+%22MakerWorld%22+OR+%22flagship%22+OR+%22pre-order%22)&hl=en-US&gl=US&ceid=US:en",
+        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%2210-nozzle%22+OR+%2210+nozzle%22+OR+%22docking+rack%22+OR+%22Vortek%22+OR+%22Vision+Encoder%22)&hl=en-US&gl=US&ceid=US:en",
+        "source": "Bambu Hardware Watch",
+        "category": "Hardware Leaks",
+    },
+    # 3. Official Bambu software, firmware, and MakerWorld ecosystem
+    {
+        "url": "https://news.google.com/rss/search?q=%22Bambu+Lab%22+(%22flagship%22+OR+%22pre-order%22+OR+%22firmware%22+OR+%22MakerWorld%22)&hl=en-US&gl=US&ceid=US:en",
         "source": "Bambu Ecosystem",
         "category": "Bambu News",
     }
 ]
 
-# Strict Reddit queries targeting exclusively next-gen releases and leaks
 REDDIT_RSS_URLS = [
     "https://www.reddit.com/r/BambuLab/search.rss?q=%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22&sort=new&restrict_sr=1",
-    "https://www.reddit.com/r/BambuLab/search.rss?q=(%22new+flagship%22+OR+%22toolchanger%22+OR+%22patent%22+OR+%22Vortek%22)&sort=new&restrict_sr=1"
+    "https://www.reddit.com/r/BambuLab/search.rss?q=(%22new+flagship%22+OR+%2210-nozzle%22+OR+%22toolchanger%22+OR+%22Vortek%22)&sort=new&restrict_sr=1"
 ]
 
 def clean_text(raw_html: str) -> str:
     clean = re.sub(r"<[^>]+>", "", raw_html or "")
     return " ".join(clean.split())
 
+def is_strict_priority_target(text: str) -> bool:
+    """
+    Returns True ONLY if text relates strictly to H3C or X2D Pro.
+    Excludes articles about the base X2D if 'Pro' is absent.
+    """
+    low = text.lower()
+
+    # If it talks about X2D, PRO must be present
+    if "x2d" in low and not any(k in low for k in ["x2d pro", "x2d-pro", "pf004e", "pf008p", "h3c"]):
+        return False
+
+    priority_tokens = [
+        "h3c", "x2d pro", "x2d-pro", "pf008p", "pf004e",
+        "10-nozzle", "10 nozzle", "placement rack", "docking rack",
+        "cn 122560413", "cn122560413", "cn 122560409", "cn122560409",
+        "vortek", "ams 3h", "vision encoder"
+    ]
+    return any(t in low for t in priority_tokens)
+
 def classify_target(text: str) -> str:
     low = text.lower()
-    has_h3c = bool(re.search(r"\bh3c\b|10-nozzle|10 nozzle|placement rack|carousel|cn\s*122560413|ams\s*3h", low))
-    has_x2d = bool(re.search(r"\bx2d\s*pro\b|\bx2d-pro\b|\bpf004e\b|\bx2d\b", low))
+    has_h3c = bool(re.search(r"\bh3c\b|10-nozzle|10 nozzle|placement rack|docking rack|cn\s*122560413|vortek", low))
+    has_x2d_pro = bool(re.search(r"\bx2d\s*pro\b|\bx2d-pro\b|\bpf004e\b", low))
     has_fcc = bool(re.search(r"2a6j8-pf008p|pf008p", low))
 
-    if (has_h3c and has_x2d) or has_fcc:
+    if (has_h3c and has_x2d_pro) or has_fcc:
         return "H3C / X2D Pro"
     if has_h3c:
         return "H3C"
-    if has_x2d:
+    if has_x2d_pro:
         return "X2D Pro"
-    if "toolchanger" in low or "vortek" in low:
-        return "H3C"
     return "Bambu Lab"
 
-def is_priority_target(text: str) -> bool:
-    low = text.lower()
-    priority_signals = [
-        "h3c", "x2d pro", "x2d-pro", "x2d", "pf008p", "pf004e",
-        "10-nozzle", "10 nozzle", "toolchanger", "vortek", "cn122560413"
-    ]
-    return any(p in low for p in priority_signals)
-
 def is_strict_reddit_match(text: str) -> bool:
-    """Discards troubleshooting, beginner print defects, and generic banter."""
+    """Drops generic troubleshooting, beginner print defects, and existing printers."""
     low = text.lower()
-    blacklist = ["first layer", "clog", "troubleshooting", "stringing", "a1 mini", "p1p", "p1s", "why is my", "print failed", "adhesion"]
+    blacklist = ["first layer", "clog", "troubleshooting", "stringing", "a1 mini", "p1p", "p1s", "why is my", "print failed", "adhesion", "bed level"]
     if any(b in low for b in blacklist) and not any(t in low for t in ["h3c", "x2d pro", "pf008p", "pf004e"]):
         return False
-    allowed = ["h3c", "x2d pro", "x2d-pro", "pf008p", "pf004e", "toolchanger", "vortek", "new flagship", "fcc", "patent"]
+    allowed = ["h3c", "x2d pro", "x2d-pro", "pf008p", "pf004e", "10-nozzle", "toolchanger", "vortek", "new flagship", "fcc", "patent"]
     return any(a in low for a in allowed)
 
 def fetch_feed_data(url: str):
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadar/4.0"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadar/4.2"
     }
     try:
         resp = requests.get(url, headers=headers, timeout=12)
@@ -186,7 +200,7 @@ def parse_entry_datetime(entry) -> datetime:
     return datetime.now(timezone.utc)
 
 def main():
-    print("Executing Bambu-exclusive scan...")
+    print("Executing focused scan for H3C and X2D Pro...")
     now = datetime.now(timezone.utc)
     cutoff_date = now - timedelta(days=MAX_DAYS_OLD)
 
@@ -195,7 +209,7 @@ def main():
     reddit_articles = []
     seen_urls = set()
 
-    # 1. Web News (Bambu Exclusive)
+    # 1. Web News Feeds
     for feed_info in FEEDS:
         try:
             parsed = fetch_feed_data(feed_info["url"])
@@ -227,14 +241,14 @@ def main():
                     "_sort_ts": pub_dt.timestamp(),
                 }
 
-                if is_priority_target(full_text):
+                if is_strict_priority_target(full_text):
                     priority_articles.append(item)
                 else:
                     general_articles.append(item)
         except Exception as e:
-            print(f"Error parsing {feed_info['source']}: {e}")
+            print(f"Error reading feed {feed_info['source']}: {e}")
 
-    # 2. Reddit Discussions (Strict Next-Gen Leaks)
+    # 2. Filtered Reddit Discussions
     for r_url in REDDIT_RSS_URLS:
         try:
             parsed = fetch_feed_data(r_url)
@@ -279,7 +293,7 @@ def main():
     for a in priority_articles + general_articles + reddit_articles:
         del a["_sort_ts"]
 
-    # Permanent anchors covering the official filings
+    # Permanent reference anchors covering the verified filings
     anchors = [
         {
             "id": "fcc-pf008p",
@@ -287,7 +301,7 @@ def main():
             "source": "FCC Registry",
             "category": "Regulatory Filing",
             "target": "H3C / X2D Pro",
-            "summary": "FCC filings confirm dual releases: the 10-nozzle H3C flagship alongside the industrial-spec X2D Pro combo.",
+            "summary": "FCC filings identify model numbers confirming dual releases: the 10-nozzle H3C flagship alongside the industrial-spec X2D Pro combo.",
             "url": "https://forum.bambulab.com/t/h3c-edit-and-x2d-pro-printer-registered-with-fcc/259692",
             "timestamp": "Sept 12, 2026",
         },

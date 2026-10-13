@@ -1,0 +1,33 @@
+{
+    "last_updated": "Today at 07:00 AM EST",
+    "total": 3,
+    "articles": [
+      {
+        "id": "starter-1",
+        "title": "Bambu Lab Next-Gen Flagship Speculation & Kinematics",
+        "source": "Bambu Community",
+        "category": "Bambu Leaks",
+        "summary": "Discussions surrounding Bambu Lab's upcoming flagship indicate potential CoreXY acceleration upgrades, larger build volume, and enhanced active chamber temperature control.",
+        "url": "https://forum.bambulab.com/",
+        "timestamp": "Latest"
+      },
+      {
+        "id": "starter-2",
+        "title": "High-Flow Hotend & Extrusion Advances for High Speed Prints",
+        "source": "3D Printing Industry",
+        "category": "Tech & Filament",
+        "summary": "How next-generation 3D printers are addressing volumetric flow rate limits to maintain layer adhesion above 500 mm/s.",
+        "url": "https://3dprintingindustry.com/",
+        "timestamp": "Latest"
+      },
+      {
+        "id": "starter-3",
+        "title": "Official Firmware and Bambu Studio Release Tracking",
+        "source": "Bambu Lab News",
+        "category": "Official Bambu",
+        "summary": "Track official updates and software patches preparing for future hardware generations.",
+        "url": "https://bambulab.com/",
+        "timestamp": "Latest"
+      }
+    ]
+  }

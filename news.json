@@ -1,30 +1,22 @@
 {
-  "last_updated": "October 13, 2026 at 06:10 PM UTC",
-  "total": 31,
+  "last_updated": "October 13, 2026 at 06:22 PM UTC",
+  "total": 11,
   "makerworld_picks": [
     {
-      "name": "Desiccant Container for Spools",
-      "badge": "AMS Upgrade",
-      "meta": "⭐ 4.9 • Model #973318",
-      "desc": "Screws directly into spool hubs to keep engineering filaments dry inside the AMS.",
-      "img": "https://makerworld.bblmw.com/makerworld/model/US15f809ba9e1867/design/2025-01-09_4624e9779251a.jpg?x-oss-process=image/resize,w_800/format,webp",
-      "url": "https://makerworld.com/en/models/973318-desiccant-container-for-bambu-lab-spool"
-    },
-    {
-      "name": "Shadowcoil Articulated Dragon",
-      "badge": "Multi-Color",
-      "meta": "⭐ 4.9 • Model #1163767",
-      "desc": "Print-in-place flexi showpiece for testing color switches, retractions, and overhangs.",
+      "name": "Magnetic Purge Chute Bin",
+      "badge": "Clean Setup",
+      "meta": "⭐ 4.8 • 44k Downloads",
+      "desc": "Slide-on magnetic bucket for the rear poop chute to catch multi-color purge coils.",
       "img": "https://makerworld.bblmw.com/makerworld/model/USf0764dc7070e2c/design/2025-03-01_a443aa6c1fd3a.png",
-      "url": "https://makerworld.com/en/models/1163767-shadowcoil-articulated-dragon"
+      "url": "https://makerworld.com/en/search/models?keyword=poop%20chute"
     },
     {
-      "name": "Bambu Official LED Lamp 001",
-      "badge": "Official Kit",
-      "meta": "⭐ 4.9 • Model #13717",
-      "desc": "Bambu Lab's spiral desktop accent lamp powered by their official USB lamp hardware kit.",
+      "name": "Build Plate Alignment Guides",
+      "badge": "Print Mod",
+      "meta": "⭐ 4.9 • 19k Downloads",
+      "desc": "Corner tabs that guide textured PEI sheets directly into alignment during bed changes.",
       "img": "https://makerworld.bblmw.com/makerworld/model/DSM00000000013717/design/2023-09-19_9f3e533f94456.jpg?x-oss-process=image/format,webp",
-      "url": "https://makerworld.com/en/models/13717-led-lamp-001"
+      "url": "https://makerworld.com/en/search/models?keyword=build%20plate%20guide"
     },
     {
       "name": "Bambu Universal Tool Box",
@@ -33,31 +25,29 @@
       "desc": "Rugged snap-fit container tailored for Bambu hotends, wipers, and hex wrenches.",
       "img": "https://makerworld.bblmw.com/makerworld/model/US9e840b13a3714f/design/2025-10-16_797d4777c3f6b8.jpg",
       "url": "https://makerworld.com/en/models/1892987-bambu-universal-toolbox-model"
+    },
+    {
+      "name": "Desiccant Container for Spools",
+      "badge": "AMS Upgrade",
+      "meta": "⭐ 4.9 • Model #973318",
+      "desc": "Screws directly into spool hubs to keep engineering filaments dry inside the AMS.",
+      "img": "https://makerworld.bblmw.com/makerworld/model/US15f809ba9e1867/design/2025-01-09_4624e9779251a.jpg?x-oss-process=image/resize,w_800/format,webp",
+      "url": "https://makerworld.com/en/models/973318-desiccant-container-for-bambu-lab-spool"
     }
   ],
   "articles": [
     {
-      "id": "art-2597887425913378553",
-      "title": "Feed filament into PTFE tube",
+      "id": "red-3296972127583047779",
+      "title": "Searching for the next level",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "New bambu owner trying to print with new X2D. Although I'm able to print the test models that the printer had stored from factory, I still get the &quot;error&quot; that occurred every time I try to print from USB (picture attache...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x5058s/feed_filament_into_ptfe_tube/",
+      "target": "H3C",
+      "summary": "Currently i have the a1 and i have a lot of fun with it but i do have lots of time the trouble that i cant use multi collor now the qeustion should i wait for the h3c or should i get the h2c some advice is also welcome 😅😎 &#32; su...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1x54c4z/searching_for_the_next_level/",
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "art-7912746997006901219",
-      "title": "Contemplating an Upgrade",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "I currently have a P1S. When I bought it, I really didn’t do a lot of research for features. I just knew I wanted a printer and finally pulled the trigger. There’s nothing wrong with my P1S—prints great! But I’ve been wanting to b...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x4z4e5/contemplating_an_upgrade/",
-      "timestamp": "Oct 13, 2026"
-    },
-    {
-      "id": "art-2056339633178867284",
+      "id": "red-1148091828592513582",
       "title": "Panda Station or U.S. General for H series printer",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
@@ -67,17 +57,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "art-3010654977813426531",
-      "title": "Which printer as an upgrade?",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "New to 3D printing, last Christmas we got the kids the A1 mini and it’s been great. The kids mostly use it for toys and we have printed a few more practical things but are limited because of the size. We would like to upgrade this...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x4m9n3/which_printer_as_an_upgrade/",
-      "timestamp": "Oct 13, 2026"
-    },
-    {
-      "id": "art-6318085216551359485",
+      "id": "red-7228864763862387792",
       "title": "New H3C machine incoming? Real photo or AI art?",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
@@ -87,204 +67,84 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "art-3109504853728462334",
-      "title": "Another printer…..",
+      "id": "red-6396355335116940423",
+      "title": "Faster Multi Color printing",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "Just bought a X2D did I need it? Nope did I want it? Absolutely lol I already have an X1C and an H2S. I sand and paint 90% of the stuff I make so never really cared for a multi nozzle. But I recently I started thinking about thing...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x4l1lk/another_printer/",
-      "timestamp": "Oct 13, 2026"
+      "target": "H3C",
+      "summary": "Hi all I need some help picking out a new printer, i am planning to sell my X2D for an upgrade. I have been using my X2D nonstop for 2 weeks now. I love it but starting to see the limitations on multi color prints. I printed some ...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1x36qw1/faster_multi_color_printing/",
+      "timestamp": "Oct 11, 2026"
     },
     {
-      "id": "art-4837635851009254027",
-      "title": "Bambu X2d skipping aux nozzle",
+      "id": "red-6910397268229608462",
+      "title": "Predictions for H3C Price",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "Hello guys I was printing a model from maker world I wanted to use pla as support for my petg So I set it up in the slicer Anyway i read that you should turn off the right and left fan when printing petg to stop it from warping so...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x4ice8/bambu_x2d_skipping_aux_nozzle/",
-      "timestamp": "Oct 13, 2026"
+      "target": "H3C",
+      "summary": "This is just for fun (think of it like guessing the score of a football game or how many drinks that guy who puked on his girlfriend had)... What is your prediction for the cost of the H3C? Let's assume a few things: It will have ...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1x1pb96/predictions_for_h3c_price/",
+      "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "art-6156584466281781797",
-      "title": "My first routine maintenance on my very first 3D printer (X2D) – and some documentation inconsistencies",
+      "id": "red-2930504097815128926",
+      "title": "H2C color changing limits",
       "source": "r/BambuLab",
       "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "I’d like to share my experience doing routine maintenance for the first time on my very first 3D printer, because I was honestly afraid of this day. I got my X2D Combo in July, and it’s now been three months since the unboxing. My...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x4dubu/my_first_routine_maintenance_on_my_very_first_3d/",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "art-3672303950049139234",
-      "title": "Printing slightly beyond the build plate limits on an X2D. Is it possible?",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "Hey everyone! I have an X2D and I'm trying to print two models that are just slightly larger than the 256 mm build plate: 1st model: 257.88 mm (+1.88 mm) 2nd model: 259.90 mm (+3.90 mm) https://preview.redd.it/vn60ar9e63vh1.png?wi...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x4ba40/printing_slightly_beyond_the_build_plate_limits/",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "art-6954807375991411464",
-      "title": "Struggling with PETG layer adhesion after fixing stringing — Bambu X2D, multiple PETGs + PLA supports through one nozzle",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "&#32; submitted by &#32; /u/vprodigyhq [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x4b6db/struggling_with_petg_layer_adhesion_after_fixing/",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "art-1643598795926668018",
-      "title": "I NEED HELP",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "When I am trying to slice my plate in bamboo studio, I get two color options which is good then after I slice it trying to print the plate it will not give me a second option for the auxiliary nozzle. I’m trying to print the main ...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x49ene/i_need_help/",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "art-5285041069452696909",
-      "title": "Drastic variance in print times for different modes",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "So I'm still fairly new to 3d printing and I just got my X2D about two weeks ago. I don't understand the variance in the two different modes and what i really don't understand is the requirement to move the filament for these mode...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x46t9c/drastic_variance_in_print_times_for_different/",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "art-7442437092377444144",
-      "title": "Any concern with any of these debris/dust covers for X2D?",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "https://www.youtube.com/watch?v=DO991tgKJGc recommends several prints to prevent debris/dust getting into screws/holes. Do you think any of these are more harmful than helpful? Z-axis protective cover: https://makerworld.com/en/mo...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x46jyu/any_concern_with_any_of_these_debrisdust_covers/",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "art-4422661250316844505",
-      "title": "Build up on printer head led to locking arms stuck open",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "After no printing for about a month I did a dry cycle using my ams on a roll of petg then set it to print a benchy to see where I was at - the tool head has a build up which I stopped but it was already about the size of a quarter...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x44wuh/build_up_on_printer_head_led_to_locking_arms/",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "art-823294377791218477",
-      "title": "Bambu Lab Teases S1 3D Scanner, Its First, for November 2026 - Glitchwire",
-      "source": "Google News",
-      "category": "Regulatory & Leaks",
-      "target": "General",
-      "summary": "Bambu Lab Teases S1 3D Scanner, Its First, for November 2026&nbsp;&nbsp;Glitchwire",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPb2FRbFlrbGVPZ05RQU5iZW50UEdUd3VraXZNdkxjME10NGxTamZrbTR4UWJTYVB3dWJGTi1aaC1yel85RFVOdGV6NGlQSUJ3LXlET1ZkdUtoRlJKTWF0TE5SR3VtcnhMYTFDcHdLNXNRbGtxcE90dFFEYWZ6Q1VLOXEyRlhrT1FzQjJDc1JKLWM",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "art-2410800037939999485",
-      "title": "Toying with the idea of moving from A1 Mini to X2D",
-      "source": "r/BambuLab",
-      "category": "Reddit Discussion",
-      "target": "X2D Pro",
-      "summary": "Now that the cooler temps are here, I tend to focus on indoor hobbies, and as such, playing with 3d printing is bubbling to the top. I have an A1 mini, largely happy with it, except for 1 minor thing and what I would consider one ...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1x42o0t/toying_with_the_idea_of_moving_from_a1_mini_to_x2d/",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "art-391499412868912790",
-      "title": "Bambu Lab S1: Manufacturer Officially Announces Its First 3D Scanner for November 2026 - 3Druck.com",
-      "source": "Google News",
-      "category": "Regulatory & Leaks",
-      "target": "General",
-      "summary": "Bambu Lab S1: Manufacturer Officially Announces Its First 3D Scanner for November 2026&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPenNJT1FZUzdzWkJlSVVRMDdqN3FRRHRHYjNOZlJEZUlnM0wtSWdmWC1meF9IOG4ycjhTaDk5cTAtaGlqYjgwc3dYZTQ2QzlMMWNCdTBENWlZT0lPYlIxMXV3VEsxR2dEYU1rdFJPeTg3YS1LcUlkMUtKS29uNWxaUTNXVlVJdVdCYnNZREo2N2dFc0tCXzBVanhYdGxqbWgySWFnUU93VmhxcVhXSlhjU01ZckctVHdHRHVGLVNRYm0zTk0",
-      "timestamp": "Oct 12, 2026"
-    },
-    {
-      "id": "art-548349858601586489",
-      "title": "After Losing in Court: Bambu Lab Prevails Against Four Stratasys Patents at the U.S. Patent and Trademark Office - 3Druck.com",
-      "source": "Bambu Radar",
-      "category": "Hardware Leaks",
-      "target": "General",
-      "summary": "After Losing in Court: Bambu Lab Prevails Against Four Stratasys Patents at the U.S. Patent and Trademark Office&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOa3hNT0N0SDdLY3d1SVhEX1h4R1ZVcWxRcXctSFkwdHBwb1dWci1kNERSbzlLQ0ZVeXRSX0Y4LWx0Zm05NkhuREh6ZmlIT1JYc1BiZ3I2UEJDX2l1d0FJcTlNM0VneF9WTXhETVMxUFU0dHBHUXpocmU1NDh1YXBIYmRieHdmTUptSG0tbFZ1U3l2bk1mRUR3OEdxTVcwOUhNTHdMNXRJWWhKbVp5elpzSkNPb3l0ZFZWb2w3ZGxkdHo5WXVidk9lZWw0emQtRkV5aGRVeFEyOU9IV2pkeGpGdHh1LVMwbHF0",
-      "timestamp": "Oct 10, 2026"
-    },
-    {
-      "id": "art-5010834354565058153",
-      "title": "Bambu Lab’s 3D printing patent application for a new heatbed design may improve peeling issues — replacement costs could possibly rise as a consequence - Tom's Hardware",
-      "source": "Bambu Radar",
-      "category": "Hardware Leaks",
-      "target": "General",
-      "summary": "Bambu Lab’s 3D printing patent application for a new heatbed design may improve peeling issues — replacement costs could possibly rise as a consequence&nbsp;&nbsp;Tom's Hardware",
-      "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxNOTZWc3FUbE9yZ2xyTjREakFMQXFrNTNGRGZjOE1XZ1BzVlFzaDRhME9kUUt1bDB0NGY3a0o1SDFHTzlJbEl5MmZZY1lDYmdwb0tOWmJkZk4xaEk4akwzdTVPaElzS3RNbHpxLUVGZWJic2JXallSU29oMEtVUEtETnpzTGF5THptYXNFdUtZelVkNUFDc2VRMGRCMFNKeHpnQTVJSUx2ZElYSEdMYTdsWmV4TVZBQXEwaDhFV0VCWW41Yks4bUNZTnhVT0JXOEExNnlDMWZhZlA3cjJHMWRZMkotcENhSlM2Z1NyN2wxYUJ1b3RuekpqbHd0UTFoN1FKYVNFQXFIaThKREhGaUZqOFJjN09lelVu",
-      "timestamp": "Oct 08, 2026"
-    },
-    {
-      "id": "art-1665070575296477850",
-      "title": "Bambu Lab Wins Four Patent Office Rulings Weeks After Losing $27.6 Million Verdict - All3DP",
-      "source": "Bambu Radar",
-      "category": "Hardware Leaks",
-      "target": "General",
-      "summary": "Bambu Lab Wins Four Patent Office Rulings Weeks After Losing $27.6 Million Verdict&nbsp;&nbsp;All3DP",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYzRTcHcyTmxHa0p6cW53cXVLeHNnQ01KT3ZlckhPRmlDQkdZTzNYSjRkRm9PM181c0tvemxYaVcwNlJMQVI5Yzh2TUh5b1dCYW81dXpmd1RVYjVIQVh6RmFTTEw1SFpVLTVTOTVERS1wZl9qb2FKMGxWZkN5V0xVakhHZGVzX2FYZXFpTHN2X2N6UHJET1NCcXhZUFV2OENvdzctdGxn",
+      "target": "H3C",
+      "summary": "Has anyone really tried to push the limit of color changing speeds on an h2c? I haven’t found a single print file for raising an ams as close as possible to the inlet, and likely will make my own. I love my h2c but it’s so signifi...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1x01qqt/h2c_color_changing_limits/",
       "timestamp": "Oct 07, 2026"
     },
     {
-      "id": "art-2453657828957859369",
-      "title": "Bambu Lab 3D Printers Compared: Which to Buy (2026) - https://3dprinting.com/",
-      "source": "Google News",
-      "category": "Regulatory & Leaks",
-      "target": "General",
-      "summary": "Bambu Lab 3D Printers Compared: Which to Buy (2026)&nbsp;&nbsp;https://3dprinting.com/",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9ZUE4tNzhwbVFjb3c1SC1sbTN5dlZCbEpBWEVrdi16ZTRYWEVtUXZFZmN3WjdXRkxkOXN5OEtOeEs1eTV2MjJPVU1nUzdCZW9rLUxoMjZDeXdiTDktUUJJNXYyeFZLQzF4c0NFRmw2ZmxlVkdv",
-      "timestamp": "Sep 30, 2026"
+      "id": "red-5469932392419972050",
+      "title": "The H3C",
+      "source": "r/BambuLab",
+      "category": "Reddit Discussion",
+      "target": "H3C",
+      "summary": "&#32; submitted by &#32; /u/SnooConfections1271 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1wzhvkg/the_h3c/",
+      "timestamp": "Oct 06, 2026"
     },
     {
-      "id": "art-3074714620280550254",
-      "title": "Bambu Lab’s massive Halloween sale is all treat, with up to 30% off 3D printing supplies - Creative Bloq",
-      "source": "Google News",
-      "category": "Regulatory & Leaks",
-      "target": "General",
-      "summary": "Bambu Lab’s massive Halloween sale is all treat, with up to 30% off 3D printing supplies&nbsp;&nbsp;Creative Bloq",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVWN4dXBxd01fOVdoRVV6bnlIOHZMVlRlQWlrUGh6eWU0VU0xMkh6cDVDQXB2aE41YWM2aDVtNGNKRm90NWg0MkpMQV9iSUtpZWx6b29DSDlBTU1KWnIwOGZJTTFRYVZjdnd0QzNSQlVRbVpfeHUwQVU4NUp6SHJnSHoxbGVIUWUxRDU0aGVlV3BrSllfcUpnV0JNVVB2WUIwWVVkV21sVEFfYm40OXo0NU8xTm1iWERJOW1qTGx4Y1pUZmlIT2loeWJDcUxOYi0xZmc",
-      "timestamp": "Sep 29, 2026"
+      "id": "red-3700993432890864241",
+      "title": "What are the chances, really, for new printers before Black Friday?",
+      "source": "r/BambuLab",
+      "category": "Reddit Discussion",
+      "target": "H3C",
+      "summary": "I was about to pull the trigger on a Snapmaker U1, but some friends told me to wait for Black Friday to get one of Bambu Lab’s new printers (the p3c or h3c) Instead. What are the actual chances of Bambu releasing those printers be...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1ww0tsv/what_are_the_chances_really_for_new_printers/",
+      "timestamp": "Oct 02, 2026"
     },
     {
-      "id": "art-1167791979894423056",
-      "title": "Stratasys vs. Bambu Lab: What’s Really Behind the $27.6M Patent Verdict? - 3DPrint.com",
-      "source": "Bambu Radar",
-      "category": "Hardware Leaks",
-      "target": "General",
-      "summary": "Stratasys vs. Bambu Lab: What’s Really Behind the $27.6M Patent Verdict?&nbsp;&nbsp;3DPrint.com",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQWRiM29EMk44Y2NHcWpXSjczMUw2ZEkzZjEzdGxSTzRMRWNYMUN3cWhvX0cwaGl6dTJlb05vQ0JZQm0zeVo4SDBORVJreUtsMmdtcDdJSnBueXQ3ZWFGQkhQS01BdWFMcVpXcTdvWmc2ZERSc1Yyc0pIR0NFQzdGdWFzQkpEZUhlT1hHR1ptY24xNzU5NW51R2liUdIBoAFBVV95cUxNanVGdWEwZm1renRhN2M0Wm04WUl0cndjbTI4ZmpTY2FFbnZyX1oxb1NnbzNfTTlUNjlQTkVDQ2tiTnE1MmdVb3ZVUGdtVEROdnpVOWM0aGFSajRhTDNYNE9CekNWS2FjV2NvbzFkcFlkdFR2dDRzRWE0UGVnc1lJcVFhTTU0a1ZNUjI4dVRXc3ZlaGlWNXNqRjJ3Z2VJRjdD",
-      "timestamp": "Sep 29, 2026"
+      "id": "red-7723536102945998984",
+      "title": "Possible Bambu Lab Upcoming Releases - Full List",
+      "source": "r/BambuLab",
+      "category": "Reddit Discussion",
+      "target": "H3C / X2D Pro",
+      "summary": "As you probably have heard, there are a bunch of new products on the horizon for Bambu. I have tried to consolidate everything I have seen in one thread. I am not a Bambu employee, just someone who follows the industry. All the in...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1wrjqzz/possible_bambu_lab_upcoming_releases_full_list/",
+      "timestamp": "Sep 27, 2026"
     },
     {
-      "id": "art-8203863315453212336",
-      "title": "Bambu Lab Paying Out $27.6M In Massive 3D Printer Tech Lawsuit - BGR",
-      "source": "Bambu Radar",
-      "category": "Hardware Leaks",
-      "target": "General",
-      "summary": "Bambu Lab Paying Out $27.6M In Massive 3D Printer Tech Lawsuit&nbsp;&nbsp;BGR",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNZ2VyQWJ3QlhCajNzMUdOc3FkRlJkdHEwYWVoLWpUd1VrbzRFa2tvaXpmRllfb3llRHk2TGgyQXAwUGh3LXNjck9hd0JZUS13UEFJQ3N1LTUtcGRSU09vRE5kazNra3g2SEdibk0zRW5pbldaX0Q0eF8yVlROd1NQb0VBM21QeDU0ZG1J",
+      "id": "red-6308945470299083901",
+      "title": "Beginner: $300 Bambu first, or go $1k–1.5k multi-filament now?",
+      "source": "r/BambuLab",
+      "category": "Reddit Discussion",
+      "target": "X2D Pro",
+      "summary": "Cheap Bambu now, or jump to multi-filament in the $1k–1.5k range? Never printed before. I can draw in 2d/3d CAD and I program (python, pytorch). What I want to make - small engineering parts that need some strength (ABS is probabl...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1wqmeyz/beginner_300_bambu_first_or_go_1k15k/",
       "timestamp": "Sep 26, 2026"
     },
     {
-      "id": "art-5316095089224935430",
-      "title": "Bambu Lab Loses Big In $27M 3D Printer Lawsuit - SlashGear",
-      "source": "Bambu Radar",
-      "category": "Hardware Leaks",
-      "target": "General",
-      "summary": "Bambu Lab Loses Big In $27M 3D Printer Lawsuit&nbsp;&nbsp;SlashGear",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPMUFuYjRfbExqTExhR1NITHBSLUxWSk5qMnNPR0R4S2dpM21vTUhGdUFmdlg1YUNCLXZtMktRVncwb1lIenJTOVMxSW80NkhxNkVsSlpqTlVuMWFLb1Jaam5JMFVsVVE5Mk9LS0xIVmdpWGMtM2NaU0Y5NlRXanB1TmlvSzV3em5IUFBYaQ",
-      "timestamp": "Sep 25, 2026"
+      "id": "web-5853362722655707970",
+      "title": "Bambu Lab: FCC filings reveal two new 3D printers, H3C and X2D Pro - 3Druck.com",
+      "source": "Google News",
+      "category": "Regulatory & Leaks",
+      "target": "H3C / X2D Pro",
+      "summary": "Bambu Lab: FCC filings reveal two new 3D printers, H3C and X2D Pro&nbsp;&nbsp;3Druck.com",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVWs2RmU5MW9SSkxTMmozb081QnlMdTZ0eXNkM01IdGQtVXhhSWdIWFVMZ1kwaVplamIwQ0ZMN2U3S2Zsa2FUS2lveG0wUTVrWVlpb1J6N3JBbFRLaHl5d0dkc3QwUHJIQjhTRExrUE0xUXVuSkp0U1o2dmZHaWZ4XzlSZ2JoOTVrOEJETmg5U0NFNmlLSDBDTVBYdnhOSWNxUzZSWXBmeTB5WWJaTGJmdnBhMW5qY3BvSnc",
+      "timestamp": "Sep 14, 2026"
     }
   ]
 }

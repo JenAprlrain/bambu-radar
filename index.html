@@ -367,6 +367,7 @@
       margin-left: 6px;
       font-weight: 600;
     }
+    .source-priority { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
     .source-web { background: rgba(56, 189, 248, 0.12); color: #38bdf8; }
     .source-reddit { background: rgba(255, 69, 0, 0.18); color: #ff5722; border: 1px solid rgba(255, 69, 0, 0.3); }
 
@@ -388,7 +389,7 @@
         <span class="alert-icon">⚡</span>
         <div>
           <div class="alert-title" id="alertTitleText">PRE-ORDER DETECTED!</div>
-          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's scan.</div>
+          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's morning scan.</div>
         </div>
       </div>
       <a href="https://store.bambulab.com/" target="_blank" rel="noopener noreferrer" class="alert-btn" id="bannerStoreBtn">
@@ -534,7 +535,7 @@
 
     </div>
 
-    <!-- MAKERWORLD PICKS GALLERY -->
+    <!-- MAKERWORLD PICKS GALLERY (DYNAMIC CONTAINER) -->
     <div class="makerworld-box">
       <div class="maker-header">
         <div class="maker-title">
@@ -549,20 +550,28 @@
       </div>
     </div>
 
-    <!-- SECTION 1: PRIMARY NEWS & ARTICLES -->
+    <!-- SECTION 1: PRIORITY LAUNCH RADAR (H3C & X2D PRO) -->
     <div class="feed-controls">
-      <div class="section-title" style="margin-bottom:0;"><span>📡</span> Morning News & Regulatory Reports</div>
+      <div class="section-title" style="margin-bottom:0;"><span>🎯</span> Priority Launch Radar (H3C & X2D Pro)</div>
       <div class="filter-tabs">
-        <button class="tab-btn active" onclick="filterWebTab('all', this)">All</button>
-        <button class="tab-btn" onclick="filterWebTab('H3C', this)">H3C</button>
-        <button class="tab-btn" onclick="filterWebTab('X2D', this)">X2D Pro</button>
+        <button class="tab-btn active" onclick="filterPriorityTab('all', this)">All</button>
+        <button class="tab-btn" onclick="filterPriorityTab('H3C', this)">H3C</button>
+        <button class="tab-btn" onclick="filterPriorityTab('X2D', this)">X2D Pro</button>
       </div>
     </div>
-    <div id="webNewsContainer" class="news-list">
-      <p style="color: var(--text-dim); padding: 12px;">Loading latest news articles...</p>
+    <div id="priorityContainer" class="news-list">
+      <p style="color: var(--text-dim); padding: 12px;">Loading priority launch reports...</p>
     </div>
 
-    <!-- SECTION 2: DEDICATED REDDIT COMMUNITY FEED -->
+    <!-- SECTION 2: GENERAL 3D PRINTING & HARDWARE NEWS -->
+    <div class="feed-controls">
+      <div class="section-title" style="margin-bottom:0;"><span>📡</span> General 3D Printing & Ecosystem News</div>
+    </div>
+    <div id="generalContainer" class="news-list">
+      <p style="color: var(--text-dim); padding: 12px;">Loading general news...</p>
+    </div>
+
+    <!-- SECTION 3: DEDICATED REDDIT COMMUNITY FEED -->
     <div class="feed-controls">
       <div class="section-title" style="margin-bottom:0;"><span style="color: var(--reddit-orange)">💬</span> r/BambuLab Community Intel</div>
       <div class="filter-tabs">
@@ -578,9 +587,10 @@
   </div>
 
   <script>
-    let webArticles = [];
+    let priorityArticles = [];
+    let generalArticles = [];
     let redditArticles = [];
-    let currentWebFilter = 'all';
+    let currentPriorityFilter = 'all';
     let currentRedditFilter = 'all';
 
     function formatToLocalTime(dateInput) {
@@ -613,7 +623,7 @@
         card.className = 'maker-card';
         card.innerHTML = `
           <div class="maker-img-wrap">
-            <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&auto=format&fit=crop&q=80'" />
+            <img src="${p.img}" alt="${p.name}" loading="lazy" />
             <span class="maker-badge-overlay">${p.badge}</span>
           </div>
           <div class="maker-info">
@@ -627,11 +637,11 @@
       });
     }
 
-    function filterWebTab(target, btn) {
-      currentWebFilter = target;
+    function filterPriorityTab(target, btn) {
+      currentPriorityFilter = target;
       btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      renderWebNews();
+      renderPriorityNews();
     }
 
     function filterRedditTab(target, btn) {
@@ -641,17 +651,17 @@
       renderRedditNews();
     }
 
-    function renderWebNews() {
-      const container = document.getElementById('webNewsContainer');
+    function renderPriorityNews() {
+      const container = document.getElementById('priorityContainer');
       if (!container) return;
 
-      const filtered = webArticles.filter(item => {
-        if (currentWebFilter === 'all') return true;
-        return (item.target || '').toLowerCase().includes(currentWebFilter.toLowerCase());
+      const filtered = priorityArticles.filter(item => {
+        if (currentPriorityFilter === 'all') return true;
+        return (item.target || '').toLowerCase().includes(currentPriorityFilter.toLowerCase());
       });
 
       if (filtered.length === 0) {
-        container.innerHTML = '<p style="color: var(--text-dim); padding: 12px;">No matching news articles found.</p>';
+        container.innerHTML = '<p style="color: var(--text-dim); padding: 12px;">No matching priority articles found.</p>';
         return;
       }
 
@@ -668,6 +678,39 @@
           <div class="news-card-header">
             <div>
               <span class="news-tag ${tagClass}">${item.target} • ${item.category}</span>
+              <span class="source-badge source-priority">${item.source}</span>
+            </div>
+            <span class="news-timestamp">📅 ${item.timestamp}</span>
+          </div>
+          <div class="news-title">${item.title}</div>
+          <div class="news-summary">${item.summary}</div>
+          <div class="news-footer">
+            <span class="news-source">Source: ${item.source}</span>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="read-btn">Read Article &rarr;</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function renderGeneralNews() {
+      const container = document.getElementById('generalContainer');
+      if (!container) return;
+
+      if (generalArticles.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-dim); padding: 12px;">No general news items in this cycle.</p>';
+        return;
+      }
+
+      container.innerHTML = '';
+      generalArticles.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'news-card';
+
+        card.innerHTML = `
+          <div class="news-card-header">
+            <div>
+              <span class="news-tag tag-general">${item.target} • ${item.category}</span>
               <span class="source-badge source-web">${item.source}</span>
             </div>
             <span class="news-timestamp">📅 ${item.timestamp}</span>
@@ -831,7 +874,8 @@
 
     async function loadRadarData() {
       try {
-        const res = await fetch('./news.json');
+        // Cache-busting timestamp query param guarantees the freshest JSON on load
+        const res = await fetch('./news.json?t=' + Date.now());
         if (res.ok) {
           const data = await res.json();
           const timeVal = data.scan_iso || data.last_updated;
@@ -844,13 +888,15 @@
             renderMakerWorld(data.makerworld_picks);
           }
 
-          webArticles = data.web_articles || data.articles || [];
+          priorityArticles = data.priority_articles || [];
+          generalArticles = data.general_articles || [];
           redditArticles = data.reddit_articles || [];
 
-          renderWebNews();
+          renderPriorityNews();
+          renderGeneralNews();
           renderRedditNews();
 
-          checkPreorderSignals(webArticles.concat(redditArticles));
+          checkPreorderSignals(priorityArticles.concat(generalArticles, redditArticles));
         }
       } catch (e) {
         console.warn('news.json fetch error:', e);

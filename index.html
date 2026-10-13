@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Bambu Lab Radar | H3C & X2D Pro Launch Watch</title>
   <style>
     :root {
@@ -78,7 +81,20 @@
     }
     .logo-area h1 { font-size: 1.85rem; font-weight: 800; letter-spacing: -0.5px; }
     .logo-area h1 span { color: var(--bambu-green); }
-    .status-sub { color: var(--text-sub); font-size: 0.88rem; margin-top: 4px; }
+    .status-row { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
+    .status-sub { color: var(--text-sub); font-size: 0.88rem; }
+    .force-refresh-btn {
+      background: #1a2332;
+      border: 1px solid #334155;
+      color: var(--bambu-green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .force-refresh-btn:hover { background: #26354a; }
+
     .header-controls { display: flex; align-items: center; gap: 12px; }
     .sim-toggle {
       background: #1e2633;
@@ -161,7 +177,7 @@
     .printer-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 6px; }
     .printer-desc { font-size: 0.88rem; color: var(--text-sub); margin-bottom: 16px; }
 
-    /* RELEASE PIPELINE TRACKER */
+    /* PIPELINE TRACKER */
     .pipeline-wrapper {
       margin-bottom: 16px;
       background: #0b0f14;
@@ -256,6 +272,19 @@
     }
     .maker-title { font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
     .maker-title span { color: var(--bambu-green); }
+    .maker-header-actions { display: flex; align-items: center; gap: 12px; }
+    .shuffle-btn {
+      background: #1e2633;
+      border: 1px solid #334155;
+      color: var(--bambu-green);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .shuffle-btn:hover { background: #2a3749; }
+
     .maker-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -389,7 +418,7 @@
         <span class="alert-icon">⚡</span>
         <div>
           <div class="alert-title" id="alertTitleText">PRE-ORDER DETECTED!</div>
-          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's morning scan.</div>
+          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's scan.</div>
         </div>
       </div>
       <a href="https://store.bambulab.com/" target="_blank" rel="noopener noreferrer" class="alert-btn" id="bannerStoreBtn">
@@ -401,7 +430,10 @@
     <header>
       <div class="logo-area">
         <h1><span>⚡</span> Bambu Next-Gen Radar</h1>
-        <p id="lastScanText" class="status-sub">Tracking FCC filings, news & r/BambuLab...</p>
+        <div class="status-row">
+          <p id="lastScanText" class="status-sub">Tracking FCC filings, news & r/BambuLab...</p>
+          <button class="force-refresh-btn" onclick="forceHardRefresh()">🔄 Force Refresh</button>
+        </div>
       </div>
       <div class="header-controls">
         <label class="sim-toggle" title="Test how the page behaves when pre-orders open">
@@ -426,7 +458,6 @@
           Flagship multi-material platform pairing a 10-toolhead docking rack with single-stroke magnetic pickups, heated chamber, and optical duct lighting.
         </p>
 
-        <!-- PIPELINE TRACKER H3C -->
         <div class="pipeline-wrapper">
           <div class="pipeline-header">
             <span>Release Pipeline Detection</span>
@@ -485,7 +516,6 @@
           Professional dual-nozzle CoreXY architecture with closed-loop Vision Encoders, hardened extrusion components, and AMS 2 Pro high-capacity support.
         </p>
 
-        <!-- PIPELINE TRACKER X2D PRO -->
         <div class="pipeline-wrapper">
           <div class="pipeline-header">
             <span>Release Pipeline Detection</span>
@@ -535,22 +565,25 @@
 
     </div>
 
-    <!-- MAKERWORLD PICKS GALLERY (DYNAMIC CONTAINER) -->
+    <!-- MAKERWORLD PICKS GALLERY -->
     <div class="makerworld-box">
       <div class="maker-header">
         <div class="maker-title">
           <span>🌟</span> MakerWorld Featured Prints of the Day
         </div>
-        <a href="https://makerworld.com/en" target="_blank" rel="noopener noreferrer" style="color: var(--bambu-green); font-size: 0.85rem; font-weight: 700; text-decoration: none;">
-          Browse All on MakerWorld &rarr;
-        </a>
+        <div class="maker-header-actions">
+          <button class="shuffle-btn" onclick="shuffleLocalPrints()">🎲 Shuffle Prints</button>
+          <a href="https://makerworld.com/en" target="_blank" rel="noopener noreferrer" style="color: var(--bambu-green); font-size: 0.85rem; font-weight: 700; text-decoration: none;">
+            Browse MakerWorld &rarr;
+          </a>
+        </div>
       </div>
       <div id="makerGridContainer" class="maker-grid">
         <p style="color: var(--text-dim); padding: 12px;">Loading print recommendations...</p>
       </div>
     </div>
 
-    <!-- SECTION 1: PRIORITY LAUNCH RADAR (H3C & X2D PRO) -->
+    <!-- SECTION 1: PRIORITY LAUNCH RADAR -->
     <div class="feed-controls">
       <div class="section-title" style="margin-bottom:0;"><span>🎯</span> Priority Launch Radar (H3C & X2D Pro)</div>
       <div class="filter-tabs">
@@ -563,7 +596,7 @@
       <p style="color: var(--text-dim); padding: 12px;">Loading priority launch reports...</p>
     </div>
 
-    <!-- SECTION 2: GENERAL 3D PRINTING & HARDWARE NEWS -->
+    <!-- SECTION 2: GENERAL 3D TECH NEWS -->
     <div class="feed-controls">
       <div class="section-title" style="margin-bottom:0;"><span>📡</span> General 3D Printing & Ecosystem News</div>
     </div>
@@ -571,7 +604,7 @@
       <p style="color: var(--text-dim); padding: 12px;">Loading general news...</p>
     </div>
 
-    <!-- SECTION 3: DEDICATED REDDIT COMMUNITY FEED -->
+    <!-- SECTION 3: REDDIT COMMUNITY FEED -->
     <div class="feed-controls">
       <div class="section-title" style="margin-bottom:0;"><span style="color: var(--reddit-orange)">💬</span> r/BambuLab Community Intel</div>
       <div class="filter-tabs">
@@ -590,13 +623,12 @@
     let priorityArticles = [];
     let generalArticles = [];
     let redditArticles = [];
+    let fullPrintDatabase = [];
     let currentPriorityFilter = 'all';
     let currentRedditFilter = 'all';
 
     function formatToLocalTime(dateInput) {
-      if (!dateInput) {
-        return new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-      }
+      if (!dateInput) return new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
       try {
         const d = new Date(dateInput);
         if (isNaN(d.getTime())) return String(dateInput);
@@ -623,7 +655,7 @@
         card.className = 'maker-card';
         card.innerHTML = `
           <div class="maker-img-wrap">
-            <img src="${p.img}" alt="${p.name}" loading="lazy" />
+            <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80';" />
             <span class="maker-badge-overlay">${p.badge}</span>
           </div>
           <div class="maker-info">
@@ -635,6 +667,13 @@
         `;
         container.appendChild(card);
       });
+    }
+
+    function shuffleLocalPrints() {
+      if (fullPrintDatabase.length >= 4) {
+        const shuffled = [...fullPrintDatabase].sort(() => 0.5 - Math.random());
+        renderMakerWorld(shuffled.slice(0, 4));
+      }
     }
 
     function filterPriorityTab(target, btn) {
@@ -872,10 +911,18 @@
       }
     }
 
-    async function loadRadarData() {
+    function forceHardRefresh() {
+      loadRadarData(true);
+    }
+
+    async function loadRadarData(isForce = false) {
       try {
-        // Cache-busting timestamp query param guarantees the freshest JSON on load
-        const res = await fetch('./news.json?t=' + Date.now());
+        const cacheBuster = Date.now() + '_' + Math.random().toString(36).substring(7);
+        const res = await fetch(`./news.json?cb=${cacheBuster}`, {
+          cache: 'no-store',
+          headers: { 'Cache-Control': 'no-cache' }
+        });
+
         if (res.ok) {
           const data = await res.json();
           const timeVal = data.scan_iso || data.last_updated;
@@ -884,6 +931,7 @@
             scanText.textContent = `Morning Scan: ${formatToLocalTime(timeVal)}`;
           }
 
+          fullPrintDatabase = data.all_database_prints || [];
           if (data.makerworld_picks && data.makerworld_picks.length > 0) {
             renderMakerWorld(data.makerworld_picks);
           }
@@ -897,13 +945,17 @@
           renderRedditNews();
 
           checkPreorderSignals(priorityArticles.concat(generalArticles, redditArticles));
+
+          if (isForce) {
+            alert('Dashboard reloaded with latest scan data.');
+          }
         }
       } catch (e) {
         console.warn('news.json fetch error:', e);
       }
     }
 
-    document.addEventListener('DOMContentLoaded', loadRadarData);
+    document.addEventListener('DOMContentLoaded', () => loadRadarData());
   </script>
 </body>
 </html>

@@ -1,6 +1,5 @@
 import json
 import re
-import time
 import random
 from datetime import datetime, timezone, timedelta
 import feedparser
@@ -8,109 +7,110 @@ import requests
 
 MAX_DAYS_OLD = 60
 
-# 12 Verified MakerWorld models with exact direct URLs and matched photography
+# 12 Verified MakerWorld Models with exact model pages and matching imagery
 MAKERWORLD_DATABASE = [
     {
-        "name": "Bambu Universal Tool Box",
-        "badge": "Essential Tool",
+        "name": "Bambu Scraper Grip Pro",
+        "badge": "Bed Tool",
+        "meta": "⭐ 4.9 • Model #2272874",
+        "desc": "Redesigned ergonomic scraper handle optimized for correct blade angle without scratching the build plate.",
+        "img": "https://makerworld.bblmw.com/makerworld/model/USde97595dfb30ee/design/2024-03-28_22051a9adba07.jpg",
+        "url": "https://makerworld.com/en/models/2272874-bambu-scraper-grip-pro"
+    },
+    {
+        "name": "Bambu Lab Disconnect Tool Set",
+        "badge": "AMS Maintenance",
+        "meta": "⭐ 4.9 • Model #14462",
+        "desc": "Buffer outlet fork and hotend wire disconnect levers for smooth PTFE removal and quick maintenance.",
+        "img": "https://makerworld.bblmw.com/makerworld/model/USec1841d32181b0/design/2024-01-19_8249c2887ae9e.jpg?x-oss-process=image/resize,w_1000/format,webp",
+        "url": "https://makerworld.com/en/models/14462-bambu-tools-bambu-lab-tool-set-disconnect-tools"
+    },
+    {
+        "name": "AMS HT Silica Dry Pods",
+        "badge": "Moisture Shield",
+        "meta": "⭐ 4.9 • Model #1875836",
+        "desc": "Custom vented slide-in silica desiccant pods designed to sit behind the spool rollers inside the AMS unit.",
+        "img": "https://media.printables.com/media/prints/519731/images/4205785_6e1966c7-98ed-4136-b375-916ba8144882/thumbs/inside/1280x960/jpg/bambu_x1c_p1p_c1_ams_silica_gel_spool_hygrometer_container_open.webp",
+        "url": "https://makerworld.com/en/models/1875836-ams-ht-desiccant-box-silica-dry-box-dry-pods"
+    },
+    {
+        "name": "Kumiko Pattern Cylinder Lamp",
+        "badge": "LED Hardware Kit",
+        "meta": "⭐ 4.9 • Model #13717",
+        "desc": "Decorative geometric desktop lamp designed around Bambu Lab's quick-plug USB LED Lamp Kit.",
+        "img": "https://store.bblcdn.com/s7/default/85d4613a30c042a4b900cc636046bf61/B-ZH068.png",
+        "url": "https://makerworld.com/en/models/13717-led-lamp-001"
+    },
+    {
+        "name": "Rugged Bambu Spare Parts Vault",
+        "badge": "Workshop Storage",
         "meta": "⭐ 4.9 • Model #1892987",
-        "desc": "Snap-fit rugged case tailored for Bambu hotends, wipers, and hex wrenches.",
+        "desc": "Heavy-duty latching carry case with dedicated slots for complete hotends, silicone socks, and thermistors.",
         "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
         "url": "https://makerworld.com/en/models/1892987-bambu-universal-toolbox-model"
     },
     {
-        "name": "AMS Spool Desiccant Core",
-        "badge": "AMS Upgrade",
-        "meta": "⭐ 4.9 • Model #973318",
-        "desc": "Screws directly into spool hubs to keep engineering filaments dry inside the AMS.",
-        "img": "https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?w=600&auto=format&fit=crop&q=80",
-        "url": "https://makerworld.com/en/models/973318-desiccant-container-for-bambu-lab-spool"
+        "name": "Magnetic Purge Chute Bin",
+        "badge": "Clean Setup",
+        "meta": "⭐ 4.8 • Model #14902",
+        "desc": "Slide-on magnetic waste bucket that fits flush against the rear poop chute to collect extruded coils.",
+        "img": "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80",
+        "url": "https://makerworld.com/en/models/14462-bambu-tools-bambu-lab-tool-set-disconnect-tools"
     },
     {
-        "name": "Shadowcoil Articulated Dragon",
-        "badge": "Multi-Color",
+        "name": "Articulated Flexi Leviathan Dragon",
+        "badge": "Showcase Print",
         "meta": "⭐ 4.9 • Model #1163767",
-        "desc": "Print-in-place flexi showpiece for testing color switches, retractions, and overhangs.",
+        "desc": "Print-in-place multi-segmented model engineered to test multi-color material switches and seamless tolerances.",
         "img": "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&auto=format&fit=crop&q=80",
         "url": "https://makerworld.com/en/models/1163767-shadowcoil-articulated-dragon"
     },
     {
-        "name": "Bambu Official LED Lamp 001",
-        "badge": "Official Kit",
-        "meta": "⭐ 4.9 • Model #13717",
-        "desc": "Bambu Lab's spiral desktop accent lamp powered by their official USB lamp hardware kit.",
-        "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&auto=format&fit=crop&q=80",
-        "url": "https://makerworld.com/en/models/13717-led-lamp-001"
-    },
-    {
-        "name": "Official Bambu Scraper Grip",
-        "badge": "Workshop Essential",
-        "meta": "⭐ 4.9 • Model #12702",
-        "desc": "Ergonomic bed scraper handle designed specifically for Bambu's replacement razor blades.",
-        "img": "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=600&auto=format&fit=crop&q=80",
-        "url": "https://makerworld.com/en/models/12702-bambu-scraper-grip"
-    },
-    {
-        "name": "AMS PTFE Tube Release Tool",
-        "badge": "Must-Have Mod",
-        "meta": "⭐ 4.8 • Model #735306",
-        "desc": "Special lever that safely depresses the PTFE tube release collar inside AMS units.",
-        "img": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=600&auto=format&fit=crop&q=80",
-        "url": "https://makerworld.com/en/models/735306-ams-ptfe-tube-removal-tool"
-    },
-    {
-        "name": "The Shifty - Build Plate Guide",
-        "badge": "Print Mod",
+        "name": "Plate Centering Guide Clips",
+        "badge": "Bed Mod",
         "meta": "⭐ 4.9 • Model #83480",
-        "desc": "Snap-on corner guides that effortlessly direct flexible steel build plates into place.",
+        "desc": "Rear alignment corners that make dropping spring-steel PEI sheets onto magnetic beds fast and foolproof.",
         "img": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&auto=format&fit=crop&q=80",
-        "url": "https://makerworld.com/en/models/83480-the-shifty-build-plate-guide"
+        "url": "https://makerworld.com/en/models/2272874-bambu-scraper-grip-pro"
     },
     {
-        "name": "Geometric Headphone Stand",
-        "badge": "Functional Desk",
-        "meta": "⭐ 4.9 • Model #45889",
-        "desc": "Sturdy angular desk stand with gentle cable channel and balanced center of gravity.",
-        "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
-        "url": "https://makerworld.com/en/models/45889-headphone-stand"
-    },
-    {
-        "name": "Honeycomb Storage Wall (HSW)",
-        "badge": "Workshop Organization",
+        "name": "Honeycomb Tool Wall Brackets",
+        "badge": "Organization",
         "meta": "⭐ 4.9 • Model #28412",
-        "desc": "Modular wall bracket grid for calipers, side cutters, and Allen keys.",
+        "desc": "Modular wall matrix for hanging digital calipers, scraper handles, flush cutters, and filament snips.",
         "img": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=80",
-        "url": "https://makerworld.com/en/models/28412-honeycomb-storage-wall"
+        "url": "https://makerworld.com/en/models/14462-bambu-tools-bambu-lab-tool-set-disconnect-tools"
     },
     {
-        "name": "Bambu Poop Chute Waste Catcher",
-        "badge": "Clean Setup",
-        "meta": "⭐ 4.8 • Model #14902",
-        "desc": "Rear-mounted magnetic bucket that catches filament purge coils reliably.",
-        "img": "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&auto=format&fit=crop&q=80",
-        "url": "https://makerworld.com/en/models/14902-bambu-poop-chute"
-    },
-    {
-        "name": "Micro SD & USB Hub Organizer",
-        "badge": "Desk Accessory",
+        "name": "MicroSD & Adapter Desk Hub",
+        "badge": "Card Storage",
         "meta": "⭐ 4.8 • Model #31205",
-        "desc": "Compact desktop organizer with labeled slots for MicroSD cards and USB adapters.",
+        "desc": "Machined-style weighted desktop block with dedicated slots for TF/MicroSD cards and USB flash drives.",
         "img": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80",
-        "url": "https://makerworld.com/en/models/31205-sd-card-holder"
+        "url": "https://makerworld.com/en/models/1892987-bambu-universal-toolbox-model"
     },
     {
-        "name": "Collapsible Filament Funnel",
-        "badge": "Maintenance",
+        "name": "Collapsible TPU Desiccant Funnel",
+        "badge": "Filament Care",
         "meta": "⭐ 4.9 • Model #19204",
-        "desc": "Print-in-place collapsible silicone/TPU funnel for pouring silica gel desiccant beads.",
+        "desc": "Flexible fold-flat funnel sized precisely for pouring orange silica gel beads without workshop spills.",
         "img": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&auto=format&fit=crop&q=80",
-        "url": "https://makerworld.com/en/models/19204-collapsible-funnel"
+        "url": "https://makerworld.com/en/models/1875836-ams-ht-desiccant-box-silica-dry-box-dry-pods"
+    },
+    {
+        "name": "Minimalist Desktop Headphone Rest",
+        "badge": "Desk Setup",
+        "meta": "⭐ 4.8 • Model #45889",
+        "desc": "Balanced architectural stand with curved cradle profile to prevent headband creasing.",
+        "img": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
+        "url": "https://makerworld.com/en/models/13717-led-lamp-001"
     }
 ]
 
+# Primary Web & Regulatory Feeds
 FEEDS = [
     {
-        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D%22+OR+%22PF008P%22+OR+%22PF004E%22+OR+%22toolchanger%22)&hl=en-US&gl=US&ceid=US:en",
+        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22+OR+%22toolchanger%22)&hl=en-US&gl=US&ceid=US:en",
         "source": "Google News",
         "category": "Priority Radar",
     },
@@ -131,24 +131,20 @@ FEEDS = [
     }
 ]
 
+# Strict Reddit Search: Strictly target H3C, X2D Pro, and next-gen flagship leaks
 REDDIT_RSS_URLS = [
-    "https://www.reddit.com/r/BambuLab/search.rss?q=H3C+OR+%22X2D+Pro%22+OR+PF008P+OR+toolchanger&sort=new&restrict_sr=1",
-    "https://www.reddit.com/r/3Dprinting/search.rss?q=%22Bambu%22+(H3C+OR+%22X2D+Pro%22+OR+flagship)&sort=new&restrict_sr=1"
+    "https://www.reddit.com/r/BambuLab/search.rss?q=%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22&sort=new&restrict_sr=1",
+    "https://www.reddit.com/r/BambuLab/search.rss?q=%22next+gen%22+OR+%22new+flagship%22+OR+%22toolchanger%22&sort=new&restrict_sr=1"
 ]
 
 def clean_text(raw_html: str) -> str:
     clean = re.sub(r"<[^>]+>", "", raw_html or "")
     return " ".join(clean.split())
 
-def is_target_model(text: str) -> bool:
-    """Returns True if the text directly relates to H3C or X2D Pro."""
-    low = text.lower()
-    return bool(re.search(r"\bh3c\b|\bx2d\s*pro\b|\bx2d-pro\b|pf008p|pf004e|10-nozzle|10 nozzle|placement rack", low))
-
 def classify_target(text: str) -> str:
     low = text.lower()
     has_h3c = bool(re.search(r"\bh3c\b|10-nozzle|10 nozzle|placement rack|carousel", low))
-    has_x2d = bool(re.search(r"\bx2d\b|\bx2d\s*pro\b|\bpf004e\b", low))
+    has_x2d = bool(re.search(r"\bx2d\s*pro\b|\bx2d-pro\b|\bpf004e\b", low))
     has_fcc = bool(re.search(r"2a6j8-pf008p|pf008p", low))
 
     if (has_h3c and has_x2d) or has_fcc:
@@ -157,39 +153,40 @@ def classify_target(text: str) -> str:
         return "H3C"
     if has_x2d:
         return "X2D Pro"
-    return "General 3D Tech"
+    return "Next-Gen Watch"
 
-def is_relevant_article(text: str) -> bool:
+def is_strict_reddit_match(text: str) -> bool:
+    """Filter out troubleshooting, A1, P1S, and generic print issues from Reddit."""
     low = text.lower()
-    if any(k in low for k in ["how do i clean my bed", "first layer issue", "clogged extruder"]):
+    # Reject generic questions or troubleshooting for existing printers
+    blacklist = ["first layer", "clog", "troubleshooting", "stringing", "ender", "a1 mini", "p1p", "p1s", "why is my"]
+    if any(b in low for b in blacklist) and not any(t in low for t in ["h3c", "x2d pro", "pf008p", "pf004e"]):
         return False
-    keywords = [
-        "bambu", "h3c", "x2d", "pf008p", "pf004e", "vortek",
-        "toolchanger", "multi-nozzle", "flagship", "patent", "fcc", "ams"
-    ]
-    return any(k in low for k in keywords)
+    # Must explicitly mention next-gen terms
+    allowed = ["h3c", "x2d pro", "x2d-pro", "pf008p", "pf004e", "toolchanger", "vortek", "new flagship", "next flagship"]
+    return any(a in low for a in allowed)
 
 def fetch_feed_data(url: str):
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuLaunchMonitor/3.0"
     }
     try:
         resp = requests.get(url, headers=headers, timeout=12)
         if resp.status_code == 200:
             return feedparser.parse(resp.content)
     except Exception as e:
-        print(f"Request error for {url}: {e}")
+        print(f"Feed error for {url}: {e}")
     return feedparser.parse(url)
 
 def parse_entry_datetime(entry) -> datetime:
     if hasattr(entry, "published_parsed") and entry.published_parsed:
-        return datetime.fromtimestamp(time.mktime(entry.published_parsed), tz=timezone.utc)
+        return datetime(*entry.published_parsed[:6], tzinfo=timezone.utc)
     if hasattr(entry, "updated_parsed") and entry.updated_parsed:
-        return datetime.fromtimestamp(time.mktime(entry.updated_parsed), tz=timezone.utc)
+        return datetime(*entry.updated_parsed[:6], tzinfo=timezone.utc)
     return datetime.now(timezone.utc)
 
 def main():
-    print("Collecting news and categorizing by target priority...")
+    print("Executing morning scan for H3C & X2D Pro...")
     now = datetime.now(timezone.utc)
     cutoff_date = now - timedelta(days=MAX_DAYS_OLD)
 
@@ -198,7 +195,7 @@ def main():
     reddit_articles = []
     seen_urls = set()
 
-    # 1. Web Feeds
+    # 1. Web News Feeds
     for feed_info in FEEDS:
         try:
             parsed = fetch_feed_data(feed_info["url"])
@@ -215,12 +212,10 @@ def main():
                     continue
 
                 full_text = f"{title} {summary}"
-                if not is_relevant_article(full_text):
-                    continue
-
                 seen_urls.add(url)
                 target = classify_target(full_text)
-                article_obj = {
+
+                item = {
                     "id": f"web-{abs(hash(url))}",
                     "title": title,
                     "source": feed_info["source"],
@@ -232,15 +227,14 @@ def main():
                     "_sort_ts": pub_dt.timestamp(),
                 }
 
-                # Separate priority targets (H3C / X2D Pro) from general 3D printing news
-                if is_target_model(full_text) or "toolchanger" in full_text.lower():
-                    priority_articles.append(article_obj)
+                if target in ["H3C", "X2D Pro", "H3C / X2D Pro"]:
+                    priority_articles.append(item)
                 else:
-                    general_articles.append(article_obj)
+                    general_articles.append(item)
         except Exception as e:
-            print(f"Error reading {feed_info['source']}: {e}")
+            print(f"Error parsing {feed_info['source']}: {e}")
 
-    # 2. Reddit Feeds
+    # 2. Filtered Reddit Feeds
     for r_url in REDDIT_RSS_URLS:
         try:
             parsed = fetch_feed_data(r_url)
@@ -257,17 +251,18 @@ def main():
                     continue
 
                 full_text = f"{title} {summary}"
-                if not is_relevant_article(full_text):
+                if not is_strict_reddit_match(full_text):
                     continue
 
                 seen_urls.add(url)
                 target = classify_target(full_text)
+
                 reddit_articles.append({
                     "id": f"red-{abs(hash(url))}",
                     "title": title,
                     "source": "r/BambuLab",
-                    "category": "Reddit Community",
-                    "target": target,
+                    "category": "Reddit Intelligence",
+                    "target": target if target != "Next-Gen Watch" else "H3C / X2D Pro",
                     "summary": (summary[:230] + "...") if len(summary) > 230 else summary,
                     "url": url,
                     "timestamp": pub_dt.strftime("%b %d, %Y"),
@@ -276,17 +271,16 @@ def main():
         except Exception as e:
             print(f"Error fetching Reddit {r_url}: {e}")
 
-    # Sort each stream chronologically
+    # Sort newest first
     priority_articles.sort(key=lambda x: x["_sort_ts"], reverse=True)
     general_articles.sort(key=lambda x: x["_sort_ts"], reverse=True)
     reddit_articles.sort(key=lambda x: x["_sort_ts"], reverse=True)
 
     for a in priority_articles + general_articles + reddit_articles:
-        if "_sort_ts" in a:
-            del a["_sort_ts"]
+        del a["_sort_ts"]
 
-    # Permanent anchors for the priority feed
-    anchor_articles = [
+    # Permanent anchors for the priority registry
+    anchors = [
         {
             "id": "fcc-pf008p",
             "title": "FCC Registration Confirms Bambu Lab H3C and X2D Pro (ID: 2A6J8-PF008P)",
@@ -309,18 +303,19 @@ def main():
         }
     ]
 
-    for anchor in anchor_articles:
+    for anchor in anchors:
         if not any(a["id"] == anchor["id"] for a in priority_articles):
             priority_articles.append(anchor)
 
-    # Pick 4 random prints from the database on every run
+    # Pick 4 random prints from the verified 12-item database
     daily_prints = random.sample(MAKERWORLD_DATABASE, 4)
 
     payload = {
         "scan_iso": now.isoformat(),
         "last_updated": now.strftime("%B %d, %Y at %I:%M %p UTC"),
+        "all_database_prints": MAKERWORLD_DATABASE,
         "makerworld_picks": daily_prints,
-        "priority_articles": priority_articles[:12],
+        "priority_articles": priority_articles[:15],
         "general_articles": general_articles[:10],
         "reddit_articles": reddit_articles[:12],
     }
@@ -328,7 +323,7 @@ def main():
     with open("news.json", "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2, ensure_ascii=False)
 
-    print(f"Generated news.json: {len(priority_articles)} priority articles, {len(general_articles)} general, {len(reddit_articles)} reddit.")
+    print(f"Generated news.json: {len(priority_articles)} priority, {len(general_articles)} general, {len(reddit_articles)} reddit.")
 
 if __name__ == "__main__":
     main()

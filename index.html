@@ -1,0 +1,47 @@
+// Function to load the daily compiled news.json
+async function loadDailyNews() {
+  const container = document.getElementById('newsFeedContainer');
+  const lastUpdatedEl = document.getElementById('lastUpdatedTime');
+
+  try {
+    const res = await fetch('./news.json');
+    if (!res.ok) throw new Error('news.json not found, using cached state.');
+    
+    const data = await res.json();
+
+    if (lastUpdatedEl && data.last_updated) {
+      lastUpdatedEl.textContent = `Auto-refreshed: ${data.last_updated}`;
+    }
+
+    if (data.articles && data.articles.length > 0) {
+      // Clear out placeholder cards and render latest items
+      container.innerHTML = '';
+      data.articles.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'news-card';
+        card.innerHTML = `
+          <div class="card-header">
+            <span class="badge ${item.category.includes('Leaks') ? 'badge-leak' : 'badge-general'}">
+              ${item.category}
+            </span>
+            <span class="news-date">${item.timestamp}</span>
+          </div>
+          <h3 class="news-title">${item.title}</h3>
+          <p class="news-summary">${item.summary}</p>
+          <div class="card-footer">
+            <span class="news-source">${item.source}</span>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="read-link">
+              Read Thread &rarr;
+            </a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+  } catch (err) {
+    console.warn("Could not load news.json dynamically:", err);
+  }
+}
+
+// Call on startup
+document.addEventListener('DOMContentLoaded', loadDailyNews);

@@ -160,7 +160,54 @@
     }
 
     .printer-name { font-size: 1.45rem; font-weight: 800; margin-bottom: 6px; }
-    .printer-desc { font-size: 0.88rem; color: var(--text-sub); margin-bottom: 16px; }
+    .printer-desc { font-size: 0.88rem; color: var(--text-sub); margin-bottom: 14px; }
+
+    /* RELEASE PIPELINE STEP TRACKER */
+    .pipeline-wrapper {
+      margin-bottom: 16px;
+      background: #0d131a;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #1a2332;
+    }
+    .pipeline-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .pipeline-stage-title { font-weight: 700; color: #cbd5e1; }
+    .pipeline-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .pipeline-step {
+      height: 6px;
+      background: #1f2937;
+      border-radius: 3px;
+      transition: background 0.3s ease;
+    }
+    .pipeline-step.active {
+      background: var(--bambu-green);
+      box-shadow: 0 0 8px var(--bambu-green-glow);
+    }
+    .pipeline-step.pending {
+      background: var(--alert-gold);
+    }
+    .pipeline-labels {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      text-align: center;
+    }
+    .pipeline-labels span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pipeline-labels span.highlight { color: #f3f4f6; font-weight: 700; }
 
     .specs-grid {
       display: grid;
@@ -317,12 +364,33 @@
       <div class="printer-hero-card" id="cardX2C">
         <div class="card-top">
           <span class="model-badge badge-x2c">Target #1 • Desktop Toolchanger</span>
-          <span class="status-pill" id="pillX2C">Speculation / Leaks</span>
+          <span class="status-pill" id="pillX2C">Stage 2: Patent Disclosed</span>
         </div>
         <div class="printer-name">Bambu Lab X2C</div>
         <p class="printer-desc">
           Compact CoreXY toolchanger utilizing the Vortek hotend-swapping mechanism. Designed for instantaneous swaps without purge towers or filament waste.
         </p>
+
+        <!-- PIPELINE TRACKER X2C -->
+        <div class="pipeline-wrapper">
+          <div class="pipeline-header">
+            <span>Release Pipeline Detection</span>
+            <span class="pipeline-stage-title" id="stageTextX2C">Stage 2 of 4</span>
+          </div>
+          <div class="pipeline-bar">
+            <div class="pipeline-step active" id="pX2C-1" title="Stage 1: Leaks & Rumors"></div>
+            <div class="pipeline-step active" id="pX2C-2" title="Stage 2: Patent Disclosed"></div>
+            <div class="pipeline-step" id="pX2C-3" title="Stage 3: FCC / Teaser"></div>
+            <div class="pipeline-step" id="pX2C-4" title="Stage 4: Pre-Order Live"></div>
+          </div>
+          <div class="pipeline-labels">
+            <span class="highlight">1. Rumors</span>
+            <span class="highlight">2. Patent</span>
+            <span id="labelX2C-3">3. FCC/Teaser</span>
+            <span id="labelX2C-4">4. Pre-Order</span>
+          </div>
+        </div>
+
         <div class="specs-grid">
           <div class="spec-item">
             <span class="spec-label">Mechanism</span>
@@ -355,12 +423,33 @@
       <div class="printer-hero-card" id="cardH3C">
         <div class="card-top">
           <span class="model-badge badge-h3c">Target #2 • Industrial Flagship</span>
-          <span class="status-pill" id="pillH3C">Patent Disclosed</span>
+          <span class="status-pill" id="pillH3C">Stage 2: Patent Disclosed</span>
         </div>
         <div class="printer-name">Bambu Lab H3C</div>
         <p class="printer-desc">
           High-end commercial flagship featuring an automated 9–10 nozzle pick-and-place carousel, heated chamber, and high-flow rate kinematics.
         </p>
+
+        <!-- PIPELINE TRACKER H3C -->
+        <div class="pipeline-wrapper">
+          <div class="pipeline-header">
+            <span>Release Pipeline Detection</span>
+            <span class="pipeline-stage-title" id="stageTextH3C">Stage 2 of 4</span>
+          </div>
+          <div class="pipeline-bar">
+            <div class="pipeline-step active" id="pH3C-1" title="Stage 1: Leaks & Rumors"></div>
+            <div class="pipeline-step active" id="pH3C-2" title="Stage 2: Patent Disclosed"></div>
+            <div class="pipeline-step" id="pH3C-3" title="Stage 3: FCC / Teaser"></div>
+            <div class="pipeline-step" id="pH3C-4" title="Stage 4: Pre-Order Live"></div>
+          </div>
+          <div class="pipeline-labels">
+            <span class="highlight">1. Rumors</span>
+            <span class="highlight">2. Patent</span>
+            <span id="labelH3C-3">3. FCC/Teaser</span>
+            <span id="labelH3C-4">4. Pre-Order</span>
+          </div>
+        </div>
+
         <div class="specs-grid">
           <div class="spec-item">
             <span class="spec-label">Capacity</span>
@@ -396,7 +485,7 @@
       <div class="calc-header">
         <div>
           <div class="calc-title">⏱️ Toolchanger Time & Purge Savings Estimator</div>
-          <div class="calc-sub">See how much filament and time the X2C toolchanger saves your dad compared to standard AMS single-nozzle purge cycles.</div>
+          <div class="calc-sub">Calculate hours and filament saved with the X2C toolchanger compared to standard single-nozzle AMS purge cycles.</div>
         </div>
       </div>
       <div class="slider-row">
@@ -439,9 +528,6 @@
     let allArticles = [];
     let currentFilter = 'all';
 
-    // Toolchanger savings calculation:
-    // AMS typical purge: ~60 seconds and ~0.75g waste per swap.
-    // Toolchanger typical swap: ~5 seconds and 0g waste.
     function updateSavings(swaps) {
       document.getElementById('swapValText').textContent = swaps + ' swaps';
       const amsSeconds = swaps * 60;
@@ -457,7 +543,6 @@
         Math.round(tcSeconds / 60) + 'm vs ' + (amsSeconds / 3600).toFixed(1) + 'h';
     }
 
-    // Tab filtering
     function filterTab(target, btn) {
       currentFilter = target;
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -465,7 +550,6 @@
       renderNews();
     }
 
-    // Render cards
     function renderNews() {
       const container = document.getElementById('newsContainer');
       const filtered = allArticles.filter(item => {
@@ -500,23 +584,69 @@
       });
     }
 
-    // Pre-order detection scanner
     function checkPreorderSignals(articles) {
       const alertTokens = ['pre-order', 'preorder', 'available now', 'order live', 'add to cart'];
-      let foundX2C = false;
-      let foundH3C = false;
+      const teaserTokens = ['fcc', 'teaser', 'announcement coming', 'countdown'];
+
+      let foundX2C_live = false;
+      let foundH3C_live = false;
+      let foundX2C_teaser = false;
+      let foundH3C_teaser = false;
 
       articles.forEach(a => {
         const text = (a.title + " " + a.summary).toLowerCase();
-        const hasToken = alertTokens.some(tok => text.includes(tok));
-        if (hasToken) {
-          if (a.target === 'X2C' || text.includes('x2c')) foundX2C = true;
-          if (a.target === 'H3C' || text.includes('h3c')) foundH3C = true;
+        const hasOrder = alertTokens.some(tok => text.includes(tok));
+        const hasTeaser = teaserTokens.some(tok => text.includes(tok));
+
+        if (hasOrder) {
+          if (a.target === 'X2C' || text.includes('x2c')) foundX2C_live = true;
+          if (a.target === 'H3C' || text.includes('h3c')) foundH3C_live = true;
+        } else if (hasTeaser) {
+          if (a.target === 'X2C' || text.includes('x2c')) foundX2C_teaser = true;
+          if (a.target === 'H3C' || text.includes('h3c')) foundH3C_teaser = true;
         }
       });
 
-      if (foundX2C || foundH3C) {
-        triggerPreorderAlarm(foundX2C, foundH3C);
+      if (foundX2C_live || foundH3C_live) {
+        triggerPreorderAlarm(foundX2C_live, foundH3C_live);
+      } else {
+        if (foundX2C_teaser) setPipelineStage('X2C', 3);
+        if (foundH3C_teaser) setPipelineStage('H3C', 3);
+      }
+    }
+
+    function setPipelineStage(model, stage) {
+      const stageText = document.getElementById(`stageText${model}`);
+      const pill = document.getElementById(`pill${model}`);
+      const step3 = document.getElementById(`p${model}-3`);
+      const step4 = document.getElementById(`p${model}-4`);
+      const label3 = document.getElementById(`label${model}-3`);
+      const label4 = document.getElementById(`label${model}-4`);
+
+      if (stage === 4) {
+        stageText.textContent = 'Stage 4 of 4 (LIVE)';
+        pill.className = 'status-pill pill-live';
+        pill.textContent = '🔥 Pre-Order Live';
+        step3.className = 'pipeline-step active';
+        step4.className = 'pipeline-step active';
+        label3.className = 'highlight';
+        label4.className = 'highlight';
+      } else if (stage === 3) {
+        stageText.textContent = 'Stage 3 of 4';
+        pill.className = 'status-pill';
+        pill.textContent = 'Stage 3: FCC / Teaser';
+        step3.className = 'pipeline-step active';
+        step4.className = 'pipeline-step';
+        label3.className = 'highlight';
+        label4.className = '';
+      } else {
+        stageText.textContent = 'Stage 2 of 4';
+        pill.className = 'status-pill';
+        pill.textContent = 'Stage 2: Patent Disclosed';
+        step3.className = 'pipeline-step';
+        step4.className = 'pipeline-step';
+        label3.className = '';
+        label4.className = '';
       }
     }
 
@@ -540,8 +670,7 @@
 
       if (x2cLive) {
         document.getElementById('cardX2C').classList.add('live-order');
-        document.getElementById('pillX2C').className = 'status-pill pill-live';
-        document.getElementById('pillX2C').textContent = '🔥 Pre-Order Live';
+        setPipelineStage('X2C', 4);
         const btn = document.getElementById('actionBtnX2C');
         btn.classList.add('btn-active-order');
         btn.textContent = 'Order X2C Now';
@@ -549,19 +678,16 @@
 
       if (h3cLive) {
         document.getElementById('cardH3C').classList.add('live-order');
-        document.getElementById('pillH3C').className = 'status-pill pill-live';
-        document.getElementById('pillH3C').textContent = '🔥 Pre-Order Live';
+        setPipelineStage('H3C', 4);
         const btn = document.getElementById('actionBtnH3C');
         btn.classList.add('btn-active-order');
         btn.textContent = 'Order H3C Now';
       }
     }
 
-    // Toggle simulation for testing
     function toggleSimulation(enabled) {
       const banner = document.getElementById('preorderBanner');
       const cardX2C = document.getElementById('cardX2C');
-      const pillX2C = document.getElementById('pillX2C');
       const btnX2C = document.getElementById('actionBtnX2C');
 
       if (enabled) {
@@ -569,14 +695,12 @@
       } else {
         banner.classList.remove('active');
         cardX2C.classList.remove('live-order');
-        pillX2C.className = 'status-pill';
-        pillX2C.textContent = 'Speculation / Leaks';
+        setPipelineStage('X2C', 2);
         btnX2C.classList.remove('btn-active-order');
         btnX2C.textContent = 'Official Store Check';
       }
     }
 
-    // Fetch and initialize news
     async function loadRadarData() {
       try {
         const res = await fetch('./news.json');

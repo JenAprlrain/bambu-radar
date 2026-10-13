@@ -108,7 +108,7 @@
     /* HARDWARE CARDS */
     .grid-duo {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
       gap: 18px;
       margin-bottom: 30px;
     }
@@ -250,6 +250,8 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
     .maker-title { font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
     .maker-title span { color: var(--bambu-green); }
@@ -288,8 +290,7 @@
       position: absolute;
       top: 8px;
       right: 8px;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(4px);
+      background: rgba(0, 0, 0, 0.75);
       color: #fff;
       font-size: 0.68rem;
       font-weight: 700;
@@ -298,7 +299,7 @@
     }
     .maker-info { padding: 12px; display: flex; flex-direction: column; flex: 1; }
     .maker-name { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; color: #fff; }
-    .maker-meta { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 10px; }
+    .maker-meta { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 8px; }
     .maker-desc { font-size: 0.8rem; color: var(--text-sub); margin-bottom: 12px; flex: 1; }
     .maker-download-btn {
       background: #1f2937;
@@ -374,4 +375,461 @@
         <span class="alert-icon">⚡</span>
         <div>
           <div class="alert-title" id="alertTitleText">PRE-ORDER DETECTED!</div>
-          <div class="alert-desc" id="alertDescText">Official store listings or order
+          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's scan.</div>
+        </div>
+      </div>
+      <a href="https://store.bambulab.com/" target="_blank" rel="noopener noreferrer" class="alert-btn" id="bannerStoreBtn">
+        Open Bambu Store &rarr;
+      </a>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header>
+      <div class="logo-area">
+        <h1><span>⚡</span> Bambu Next-Gen Radar</h1>
+        <p id="lastScanText" class="status-sub">Tracking FCC filings & hardware registries...</p>
+      </div>
+      <div class="header-controls">
+        <label class="sim-toggle" title="Test how the page behaves when pre-orders open">
+          <input type="checkbox" id="simCheckbox" onchange="toggleSimulation(this.checked)" />
+          Simulate Pre-Order Alert
+        </label>
+      </div>
+    </header>
+
+    <!-- DUAL HARDWARE RADAR -->
+    <div class="section-title"><span>🎯</span> Target Hardware Launch Trackers</div>
+    <div class="grid-duo">
+
+      <!-- CARD 1: BAMBU LAB X2D PRO -->
+      <div class="printer-hero-card" id="cardX2D">
+        <div class="card-top">
+          <span class="model-badge badge-x2d">Target #1 • Precision Dual-Extrusion</span>
+          <span class="status-pill" id="pillX2D">Stage 3: FCC Registered</span>
+        </div>
+        <div class="printer-name">Bambu Lab X2D Pro</div>
+        <p class="printer-desc">
+          Professional dual-nozzle CoreXY architecture with closed-loop Vision Encoders, hardened extrusion components, and AMS 2 Pro high-capacity support.
+        </p>
+
+        <!-- PIPELINE TRACKER X2D PRO -->
+        <div class="pipeline-wrapper">
+          <div class="pipeline-header">
+            <span>Release Pipeline Detection</span>
+            <span class="pipeline-stage-title" id="stageTextX2D">Stage 3 of 4 (FCC Filed)</span>
+          </div>
+          <div class="pipeline-bar">
+            <div class="pipeline-step active" id="pX2D-1" title="Stage 1: Leaks"></div>
+            <div class="pipeline-step active" id="pX2D-2" title="Stage 2: Patent Disclosed"></div>
+            <div class="pipeline-step active" id="pX2D-3" title="Stage 3: FCC Registered"></div>
+            <div class="pipeline-step" id="pX2D-4" title="Stage 4: Pre-Order Live"></div>
+          </div>
+          <div class="pipeline-labels">
+            <span class="highlight">1. Rumors</span>
+            <span class="highlight">2. Patent</span>
+            <span class="highlight" id="labelX2D-3">3. FCC Filed</span>
+            <span id="labelX2D-4">4. Pre-Order</span>
+          </div>
+        </div>
+
+        <div class="specs-grid">
+          <div class="spec-item">
+            <span class="spec-label">Extrusion System</span>
+            <span class="spec-value">Direct Drive + Bowden Aux</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Volumetric Flow</span>
+            <span class="spec-value">Up to 65 mm³/s</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Chamber Temp</span>
+            <span class="spec-value">65°C Actively Heated</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Motion Telemetry</span>
+            <span class="spec-value">50 µm Vision Encoder</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="https://store.bambulab.com/" target="_blank" class="primary-card-btn" id="actionBtnX2D">
+            Official Store Check
+          </a>
+          <a href="https://forum.bambulab.com/" target="_blank" class="primary-card-btn">
+            Bambu Forum
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD 2: BAMBU LAB H3C -->
+      <div class="printer-hero-card" id="cardH3C">
+        <div class="card-top">
+          <span class="model-badge badge-h3c">Target #2 • 10-Toolhead Flagship</span>
+          <span class="status-pill" id="pillH3C">Stage 3: FCC Registered</span>
+        </div>
+        <div class="printer-name">Bambu Lab H3C</div>
+        <p class="printer-desc">
+          Flagship multi-material platform pairing a 10-toolhead docking rack with single-stroke magnetic pickups, heated chamber, and optical duct lighting.
+        </p>
+
+        <!-- PIPELINE TRACKER H3C -->
+        <div class="pipeline-wrapper">
+          <div class="pipeline-header">
+            <span>Release Pipeline Detection</span>
+            <span class="pipeline-stage-title" id="stageTextH3C">Stage 3 of 4 (FCC Filed)</span>
+          </div>
+          <div class="pipeline-bar">
+            <div class="pipeline-step active" id="pH3C-1" title="Stage 1: Leaks"></div>
+            <div class="pipeline-step active" id="pH3C-2" title="Stage 2: Patent Disclosed"></div>
+            <div class="pipeline-step active" id="pH3C-3" title="Stage 3: FCC Registered"></div>
+            <div class="pipeline-step" id="pH3C-4" title="Stage 4: Pre-Order Live"></div>
+          </div>
+          <div class="pipeline-labels">
+            <span class="highlight">1. Rumors</span>
+            <span class="highlight">2. Patent</span>
+            <span class="highlight" id="labelH3C-3">3. FCC Filed</span>
+            <span id="labelH3C-4">4. Pre-Order</span>
+          </div>
+        </div>
+
+        <div class="specs-grid">
+          <div class="spec-item">
+            <span class="spec-label">Capacity</span>
+            <span class="spec-value">10 Toolheads (9+1 Rack)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Docking Motion</span>
+            <span class="spec-value">Single-Stroke Magnetic Pick</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Expected Volume</span>
+            <span class="spec-value">350 × 350 × 350 mm+</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Nozzle Lighting</span>
+            <span class="spec-value">Split Matte Duct Optics</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <a href="https://store.bambulab.com/" target="_blank" class="primary-card-btn" id="actionBtnH3C">
+            Official Store Check
+          </a>
+          <a href="https://forum.bambulab.com/" target="_blank" class="primary-card-btn">
+            Bambu Forum
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAKERWORLD PICKS GALLERY -->
+    <div class="makerworld-box">
+      <div class="maker-header">
+        <div class="maker-title">
+          <span>🌟</span> MakerWorld Featured Prints of the Day
+        </div>
+        <a href="https://makerworld.com/en" target="_blank" rel="noopener noreferrer" style="color: var(--bambu-green); font-size: 0.85rem; font-weight: 700; text-decoration: none;">
+          Browse All on MakerWorld &rarr;
+        </a>
+      </div>
+      <div class="maker-grid">
+
+        <!-- ITEM 1 -->
+        <div class="maker-card">
+          <div class="maker-img-wrap">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&auto=format&fit=crop&q=80" alt="Bambu Modular Tool Box" />
+            <span class="maker-badge-overlay">Trending #1</span>
+          </div>
+          <div class="maker-info">
+            <div class="maker-name">Rugged Modular Tool Caddy</div>
+            <div class="maker-meta">⭐ 4.9 • 18.4k Downloads</div>
+            <div class="maker-desc">Snap-fit organizer tailored for Bambu nozzles, Allen keys, and scraper blades. Clean print without supports.</div>
+            <a href="https://makerworld.com/en/search/models?keyword=tool%20box" target="_blank" class="maker-download-btn">Open on MakerWorld</a>
+          </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="maker-card">
+          <div class="maker-img-wrap">
+            <img src="https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?w=500&auto=format&fit=crop&q=80" alt="AMS Desiccant Core" />
+            <span class="maker-badge-overlay">Essential</span>
+          </div>
+          <div class="maker-info">
+            <div class="maker-name">AMS Dry-Box Desiccant Spool Pod</div>
+            <div class="maker-meta">⭐ 4.9 • 34.2k Downloads</div>
+            <div class="maker-desc">Screws directly into spool centers inside AMS modules to keep engineering filaments crisp and dry.</div>
+            <a href="https://makerworld.com/en/search/models?keyword=ams%20desiccant" target="_blank" class="maker-download-btn">Open on MakerWorld</a>
+          </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="maker-card">
+          <div class="maker-img-wrap">
+            <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&auto=format&fit=crop&q=80" alt="Articulated Print-in-Place" />
+            <span class="maker-badge-overlay">Dual-Color</span>
+          </div>
+          <div class="maker-info">
+            <div class="maker-name">Articulated Flexi Leviathan</div>
+            <div class="maker-meta">⭐ 4.8 • 12.1k Downloads</div>
+            <div class="maker-desc">Print-in-place multi-material showpiece. Ideal for testing dual-nozzle transitions and clean overhangs.</div>
+            <a href="https://makerworld.com/en/search/models?keyword=articulated" target="_blank" class="maker-download-btn">Open on MakerWorld</a>
+          </div>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="maker-card">
+          <div class="maker-img-wrap">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=80" alt="Universal Headphone Stand" />
+            <span class="maker-badge-overlay">Functional</span>
+          </div>
+          <div class="maker-info">
+            <div class="maker-name">Geometric Desk Headphone Stand</div>
+            <div class="maker-meta">⭐ 4.8 • 8.6k Downloads</div>
+            <div class="maker-desc">Sturdy desktop stand designed with minimal infill and clean aesthetic angles for workshop or desk setups.</div>
+            <a href="https://makerworld.com/en/search/models?keyword=headphone%20stand" target="_blank" class="maker-download-btn">Open on MakerWorld</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- NEWS FEED SECTION -->
+    <div class="feed-controls">
+      <div class="section-title" style="margin-bottom:0;"><span>📡</span> Morning Radar Intelligence (Newest First)</div>
+      <div class="filter-tabs">
+        <button class="tab-btn active" onclick="filterTab('all', this)">All Feeds</button>
+        <button class="tab-btn" onclick="filterTab('X2D Pro', this)">X2D Pro Leaks</button>
+        <button class="tab-btn" onclick="filterTab('H3C', this)">H3C Leaks</button>
+      </div>
+    </div>
+
+    <div id="newsContainer" class="news-list">
+      <!-- Fallback cards render immediately on page load -->
+      <article class="news-card">
+        <div class="news-card-header">
+          <span class="news-tag tag-h3c">H3C • Regulatory & Leaks</span>
+          <span class="news-timestamp">📅 Latest FCC Filing</span>
+        </div>
+        <div class="news-title">FCC Registration Confirms Bambu Lab H3C and X2D Pro (ID: 2A6J8-PF008P)</div>
+        <div class="news-summary">FCC filings identify model numbers confirming dual releases: the 10-nozzle H3C flagship alongside the industrial-spec X2D Pro combo.</div>
+        <div class="news-footer">
+          <span class="news-source">Source: Bambu Lab Community</span>
+          <a href="https://forum.bambulab.com/" target="_blank" rel="noopener noreferrer" class="read-btn">Read Article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-card-header">
+          <span class="news-tag tag-x2d">X2D Pro • Specs & Kinematics</span>
+          <span class="news-timestamp">📅 Hardware Leak</span>
+        </div>
+        <div class="news-title">X2D Pro: Vision Encoder Calibration & 65 mm³/s Volumetric Flow Capabilities</div>
+        <div class="news-summary">Details surface on the Pro's PMSM servo control, real-time belt tension telemetry, and expanded AMS 2 Pro multi-spool parallel routing.</div>
+        <div class="news-footer">
+          <span class="news-source">Source: Hardware Leaks</span>
+          <a href="https://forum.bambulab.com/" target="_blank" rel="noopener noreferrer" class="read-btn">Read Article &rarr;</a>
+        </div>
+      </article>
+    </div>
+
+  </div>
+
+  <script>
+    // Built-in starter articles to ensure the page is never blank
+    let allArticles = [
+      {
+        id: "fcc-pf008p",
+        title: "FCC Registration Confirms Bambu Lab H3C and X2D Pro (ID: 2A6J8-PF008P)",
+        source: "Bambu Lab Community",
+        category: "Regulatory & Leaks",
+        target: "H3C",
+        summary: "FCC filings identify model numbers confirming dual releases: the 10-nozzle H3C flagship alongside the industrial-spec X2D Pro combo.",
+        url: "https://forum.bambulab.com/",
+        timestamp: "Latest FCC Filing"
+      },
+      {
+        id: "x2dpro-spec",
+        title: "X2D Pro: Vision Encoder Calibration & 65 mm³/s Volumetric Flow Capabilities",
+        source: "Hardware Leaks",
+        category: "Specs & Kinematics",
+        target: "X2D Pro",
+        summary: "Details surface on the Pro's PMSM servo control, real-time belt tension telemetry, and expanded AMS 2 Pro multi-spool parallel routing.",
+        url: "https://forum.bambulab.com/",
+        timestamp: "Hardware Leak"
+      }
+    ];
+
+    let currentFilter = 'all';
+
+    function filterTab(target, btn) {
+      currentFilter = target;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderNews();
+    }
+
+    function renderNews() {
+      const container = document.getElementById('newsContainer');
+      if (!container) return;
+
+      const filtered = allArticles.filter(item => {
+        if (currentFilter === 'all') return true;
+        return item.target === currentFilter;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-dim); padding: 12px;">No matching articles found in this filter.</p>';
+        return;
+      }
+
+      container.innerHTML = '';
+      filtered.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'news-card';
+        const tagClass = item.target === 'X2D Pro' ? 'tag-x2d' : item.target === 'H3C' ? 'tag-h3c' : 'tag-general';
+
+        card.innerHTML = `
+          <div class="news-card-header">
+            <span class="news-tag ${tagClass}">${item.target} • ${item.category}</span>
+            <span class="news-timestamp">📅 ${item.timestamp}</span>
+          </div>
+          <div class="news-title">${item.title}</div>
+          <div class="news-summary">${item.summary}</div>
+          <div class="news-footer">
+            <span class="news-source">Source: ${item.source}</span>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="read-btn">Read Article &rarr;</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function checkPreorderSignals(articles) {
+      const alertTokens = ['pre-order', 'preorder', 'available now', 'order live', 'add to cart'];
+      let foundX2D_live = false;
+      let foundH3C_live = false;
+
+      articles.forEach(a => {
+        const text = ((a.title || '') + ' ' + (a.summary || '')).toLowerCase();
+        const hasOrder = alertTokens.some(tok => text.includes(tok));
+        if (hasOrder) {
+          if (a.target === 'X2D Pro' || text.includes('x2d')) foundX2D_live = true;
+          if (a.target === 'H3C' || text.includes('h3c')) foundH3C_live = true;
+        }
+      });
+
+      if (foundX2D_live || foundH3C_live) {
+        triggerPreorderAlarm(foundX2D_live, foundH3C_live);
+      }
+    }
+
+    function setPipelineStage(model, stage) {
+      const stageText = document.getElementById(`stageText${model}`);
+      const pill = document.getElementById(`pill${model}`);
+      const step4 = document.getElementById(`p${model}-4`);
+      const label4 = document.getElementById(`label${model}-4`);
+
+      if (!stageText || !pill || !step4 || !label4) return;
+
+      if (stage === 4) {
+        stageText.textContent = 'Stage 4 of 4 (PRE-ORDER LIVE)';
+        pill.className = 'status-pill pill-live';
+        pill.textContent = '🔥 Pre-Order Live';
+        step4.className = 'pipeline-step active';
+        label4.className = 'highlight';
+      } else {
+        stageText.textContent = 'Stage 3 of 4 (FCC Filed)';
+        pill.className = 'status-pill';
+        pill.textContent = 'Stage 3: FCC Registered';
+        step4.className = 'pipeline-step';
+        label4.className = '';
+      }
+    }
+
+    function triggerPreorderAlarm(x2dLive, h3cLive) {
+      const banner = document.getElementById('preorderBanner');
+      const bannerTitle = document.getElementById('alertTitleText');
+      const bannerDesc = document.getElementById('alertDescText');
+
+      if (banner) banner.classList.add('active');
+
+      if (bannerTitle && bannerDesc) {
+        if (x2dLive && h3cLive) {
+          bannerTitle.textContent = '🔥 BAMBU LAB X2D PRO & H3C PRE-ORDERS ARE LIVE!';
+          bannerDesc.textContent = 'Pre-order listings confirmed for both models in today\'s scan.';
+        } else if (x2dLive) {
+          bannerTitle.textContent = '🔥 BAMBU LAB X2D PRO PRE-ORDER IS LIVE!';
+          bannerDesc.textContent = 'Pre-order listings detected for the X2D Pro combo.';
+        } else {
+          bannerTitle.textContent = '🔥 BAMBU LAB H3C PRE-ORDER IS LIVE!';
+          bannerDesc.textContent = 'Pre-order listings detected for the H3C flagship.';
+        }
+      }
+
+      if (x2dLive) {
+        const cardX2D = document.getElementById('cardX2D');
+        if (cardX2D) cardX2D.classList.add('live-order');
+        setPipelineStage('X2D', 4);
+        const btn = document.getElementById('actionBtnX2D');
+        if (btn) {
+          btn.classList.add('btn-active-order');
+          btn.textContent = 'Order X2D Pro Now';
+        }
+      }
+
+      if (h3cLive) {
+        const cardH3C = document.getElementById('cardH3C');
+        if (cardH3C) cardH3C.classList.add('live-order');
+        setPipelineStage('H3C', 4);
+        const btn = document.getElementById('actionBtnH3C');
+        if (btn) {
+          btn.classList.add('btn-active-order');
+          btn.textContent = 'Order H3C Now';
+        }
+      }
+    }
+
+    function toggleSimulation(enabled) {
+      const banner = document.getElementById('preorderBanner');
+      const cardX2D = document.getElementById('cardX2D');
+      const btnX2D = document.getElementById('actionBtnX2D');
+
+      if (enabled) {
+        triggerPreorderAlarm(true, false);
+      } else {
+        if (banner) banner.classList.remove('active');
+        if (cardX2D) cardX2D.classList.remove('live-order');
+        setPipelineStage('X2D', 3);
+        if (btnX2D) {
+          btnX2D.classList.remove('btn-active-order');
+          btnX2D.textContent = 'Official Store Check';
+        }
+      }
+    }
+
+    async function loadRadarData() {
+      try {
+        const res = await fetch('./news.json');
+        if (res.ok) {
+          const data = await res.json();
+          if (data.last_updated) {
+            const scanText = document.getElementById('lastScanText');
+            if (scanText) scanText.textContent = `Morning Scan: ${data.last_updated}`;
+          }
+          if (data.articles && data.articles.length > 0) {
+            allArticles = data.articles;
+            renderNews();
+            checkPreorderSignals(allArticles);
+          }
+        }
+      } catch (e) {
+        console.warn('news.json fetch error, using default cards:', e);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderNews();
+      loadRadarData();
+    });
+  </script>
+</body>
+</html>

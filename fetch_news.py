@@ -1,26 +1,48 @@
 import json
 import re
 import time
-import random
 from datetime import datetime, timezone, timedelta
 import feedparser
 import requests
 
-MAX_DAYS_OLD = 45  # Covers recent FCC filings and weekly leaks
+MAX_DAYS_OLD = 60  # Look back up to 60 days to catch FCC registrations and patent leaks
 
-# Strict targets: We specifically want X2D PRO or H3C leaks/filings
-KEYWORDS_X2D_PRO = ["x2d pro", "x2d-pro", "pf004e", "pf008p"]
-KEYWORDS_H3C = ["h3c", "10-nozzle", "10 nozzle", "placement rack", "cn 122560413", "cn 122560409"]
-KEYWORDS_GENERAL = ["bambu lab", "bambulab", "vortek", "toolchanger", "fcc", "patent", "flagship"]
+# --- STRICT TARGET DICTIONARY ---
+# An article MUST match at least one phrase in TARGET_PATTERNS
+TARGET_PATTERNS = {
+    "X2D Pro": [
+        r"\bx2d\s*pro\b",
+        r"\bx2d-pro\b",
+        r"\bpf004e\b",      # FCC ID hardware variant for X2D Pro
+    ],
+    "H3C": [
+        r"\bh3c\b",
+        r"\b10[- ]nozzle\b",
+        r"\b10[- ]toolhead\b",
+        r"\bcn\s*122560413\b",
+        r"\bcn\s*122560409\b",
+    ],
+    "Joint Regulatory": [
+        r"\b2a6j8-pf008p\b",  # FCC ID covering both models
+        r"\bpf008p\b"
+    ]
+}
 
+# Explicit blacklist: Drop posts primarily troubleshooting or showing off older printers
+EXCLUDE_TERMS = [
+    "p1s", "p1p", "a1 mini", "x1-carbon", "x1c", "ender",
+    "layer shift", "first layer", "clogged", "poop chute mod"
+]
+
+# Google News RSS (Focused on new filings and specific model names)
 FEEDS = [
     {
-        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22X2D+Pro%22+OR+%22H3C%22+OR+%22PF008P%22+OR+%22PF004E%22)&hl=en-US&gl=US&ceid=US:en",
+        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22X2D+Pro%22+OR+%22H3C%22+OR+%22PF008P%22)&hl=en-US&gl=US&ceid=US:en",
         "source": "Google News",
         "category": "Regulatory & Leaks",
     },
     {
-        "url": "https://news.google.com/rss/search?q=%22Bambu+Lab%22+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22toolchanger%22+OR+%22FCC%22)&hl=en-US&gl=US&ceid=US:en",
+        "url": "https://news.google.com/rss/search?q=%22Bambu+Lab%22+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22)&hl=en-US&gl=US&ceid=US:en",
         "source": "Bambu Radar",
         "category": "Hardware Leaks",
     },
@@ -36,12 +58,13 @@ FEEDS = [
     },
 ]
 
+# Strict Reddit RSS: Only exact phrase matches for the target models
 REDDIT_RSS_URLS = [
     "https://www.reddit.com/r/BambuLab/search.rss?q=%22X2D+Pro%22+OR+%22H3C%22+OR+%22PF008P%22&sort=new&restrict_sr=1",
-    "https://www.reddit.com/r/BambuLab/search.rss?q=FCC+OR+patent+OR+toolchanger&sort=new&restrict_sr=1"
+    "https://www.reddit.com/r/3Dprinting/search.rss?q=%22Bambu%22+(%22X2D+Pro%22+OR+%22H3C%22)&sort=new&restrict_sr=1"
 ]
 
-# 12-item pool with verified MakerWorld CDN images
+# Rotating pool of MakerWorld prints with verified CDN images
 MAKERWORLD_POOL = [
     {
         "name": "Bambu Universal Tool Box",
@@ -90,22 +113,6 @@ MAKERWORLD_POOL = [
         "desc": "Lever tool to safely release stubborn pneumatic PTFE connectors without damaging tubing.",
         "img": "https://makerworld.bblmw.com/makerworld/model/US15f809ba9e1867/design/2025-01-09_4624e9779251a.jpg?x-oss-process=image/resize,w_800/format,webp",
         "url": "https://makerworld.com/en/search/models?keyword=ptfe%20disconnect%20tool"
-    },
-    {
-        "name": "Magnetic Purge Chute Bin",
-        "badge": "Clean Setup",
-        "meta": "⭐ 4.8 • 44k Downloads",
-        "desc": "Slide-on magnetic bucket for the rear poop chute to catch multi-color purge coils.",
-        "img": "https://makerworld.bblmw.com/makerworld/model/USf0764dc7070e2c/design/2025-03-01_a443aa6c1fd3a.png",
-        "url": "https://makerworld.com/en/search/models?keyword=poop%20chute"
-    },
-    {
-        "name": "Build Plate Alignment Guides",
-        "badge": "Print Mod",
-        "meta": "⭐ 4.9 • 19k Downloads",
-        "desc": "Corner tabs that guide textured PEI sheets directly into alignment during bed changes.",
-        "img": "https://makerworld.bblmw.com/makerworld/model/DSM00000000013717/design/2023-09-19_9f3e533f94456.jpg?x-oss-process=image/format,webp",
-        "url": "https://makerworld.com/en/search/models?keyword=build%20plate%20guide"
     }
 ]
 
@@ -113,27 +120,28 @@ def clean_text(raw_html: str) -> str:
     clean = re.sub(r"<[^>]+>", "", raw_html or "")
     return " ".join(clean.split())
 
-def classify_target(text: str) -> str:
+def match_target(text: str):
+    """
+    Returns (target_name, is_match).
+    Strict matching: ignores articles talking only about base X2D or older models.
+    """
     lowered = text.lower()
-    # Explicitly require PRO or its FCC code for X2D Pro
-    has_x2d_pro = any(k in lowered for k in KEYWORDS_X2D_PRO)
-    has_h3c = any(k in lowered for k in KEYWORDS_H3C)
 
-    if has_h3c and has_x2d_pro:
+    # If the text only talks about base x2d without 'pro', ignore it
+    if "x2d" in lowered and "x2d pro" not in lowered and "x2d-pro" not in lowered and "pf008p" not in lowered and "h3c" not in lowered:
+        return None
+
+    is_x2d_pro = any(re.search(pat, lowered) for pat in TARGET_PATTERNS["X2D Pro"])
+    is_h3c = any(re.search(pat, lowered) for pat in TARGET_PATTERNS["H3C"])
+    is_joint = any(re.search(pat, lowered) for pat in TARGET_PATTERNS["Joint Regulatory"])
+
+    if (is_x2d_pro and is_h3c) or is_joint:
         return "H3C / X2D Pro"
-    if has_h3c:
-        return "H3C"
-    if has_x2d_pro:
+    if is_x2d_pro:
         return "X2D Pro"
-    return "General"
-
-def is_strictly_relevant(text: str) -> bool:
-    lowered = text.lower()
-    # Drop articles talking ONLY about the regular X2D or standard A1/P1/X1
-    if "x2d" in lowered and not any(k in lowered for k in KEYWORDS_X2D_PRO) and not any(k in lowered for k in KEYWORDS_H3C):
-        return False
-    # Must match X2D Pro, H3C, or general next-gen FCC/patent keywords
-    return any(k in lowered for k in KEYWORDS_X2D_PRO + KEYWORDS_H3C + ["pf008p", "pf004e"])
+    if is_h3c:
+        return "H3C"
+    return None
 
 def fetch_feed_data(url: str):
     headers = {
@@ -155,19 +163,19 @@ def parse_entry_datetime(entry) -> datetime:
     return datetime.now(timezone.utc)
 
 def main():
-    print("Collecting news with balanced web/reddit sources...")
+    print("Executing strict targeted scrape for X2D Pro & H3C...")
     now = datetime.now(timezone.utc)
     cutoff_date = now - timedelta(days=MAX_DAYS_OLD)
 
-    reddit_articles = []
     web_articles = []
+    reddit_articles = []
     seen_urls = set()
 
-    # 1. Fetch Web Feeds
+    # 1. Fetch Web / Regulatory / Blog Feeds
     for feed_info in FEEDS:
         try:
             parsed = fetch_feed_data(feed_info["url"])
-            for entry in parsed.entries[:15]:
+            for entry in parsed.entries[:20]:
                 pub_dt = parse_entry_datetime(entry)
                 if pub_dt < cutoff_date:
                     continue
@@ -180,7 +188,8 @@ def main():
                     continue
 
                 full_text = f"{title} {summary}"
-                if not is_strictly_relevant(full_text):
+                target = match_target(full_text)
+                if not target:
                     continue
 
                 seen_urls.add(url)
@@ -189,7 +198,7 @@ def main():
                     "title": title,
                     "source": feed_info["source"],
                     "category": feed_info["category"],
-                    "target": classify_target(full_text),
+                    "target": target,
                     "summary": (summary[:230] + "...") if len(summary) > 230 else summary,
                     "url": url,
                     "timestamp": pub_dt.strftime("%b %d, %Y"),
@@ -198,11 +207,11 @@ def main():
         except Exception as e:
             print(f"Error reading {feed_info['source']}: {e}")
 
-    # 2. Fetch Reddit Feeds
+    # 2. Fetch Reddit Feeds (Strictly filtered & capped)
     for r_url in REDDIT_RSS_URLS:
         try:
             parsed = fetch_feed_data(r_url)
-            for entry in parsed.entries[:15]:
+            for entry in parsed.entries[:25]:
                 pub_dt = parse_entry_datetime(entry)
                 if pub_dt < cutoff_date:
                     continue
@@ -215,7 +224,8 @@ def main():
                     continue
 
                 full_text = f"{title} {summary}"
-                if not is_strictly_relevant(full_text):
+                target = match_target(full_text)
+                if not target:
                     continue
 
                 seen_urls.add(url)
@@ -224,20 +234,21 @@ def main():
                     "title": title,
                     "source": "r/BambuLab",
                     "category": "Reddit Discussion",
-                    "target": classify_target(full_text),
+                    "target": target,
                     "summary": (summary[:230] + "...") if len(summary) > 230 else summary,
                     "url": url,
                     "timestamp": pub_dt.strftime("%b %d, %Y"),
                     "_sort_ts": pub_dt.timestamp(),
                 })
         except Exception as e:
-            print(f"Error fetching Reddit: {e}")
+            print(f"Error reading Reddit {r_url}: {e}")
 
-    # Combine: keep up to 10 web articles + up to 10 Reddit discussions
-    combined = web_articles[:10] + reddit_articles[:10]
+    # 3. Balance Sources: Take up to 10 Web articles and up to 6 Reddit posts
+    # (Prevents Reddit from overwhelming the dashboard)
+    combined = web_articles[:10] + reddit_articles[:6]
 
-    # If quiet, insert official filing anchors
-    if not combined:
+    # Permanent reference cards for official regulatory documents if feed is quiet
+    if len(combined) < 2:
         combined = [
             {
                 "id": "fcc-pf008p",
@@ -263,7 +274,7 @@ def main():
             }
         ]
 
-    # Strict newest-first sort across all sources
+    # Strict chronological sort (newest date first)
     combined.sort(key=lambda x: x["_sort_ts"], reverse=True)
     for a in combined:
         if "_sort_ts" in a:
@@ -286,7 +297,7 @@ def main():
     with open("news.json", "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2, ensure_ascii=False)
 
-    print(f"news.json generated with {len(web_articles)} web articles and {len(reddit_articles)} Reddit discussions.")
+    print(f"news.json successfully written: {len(web_articles)} web items, {len(reddit_articles[:6])} reddit items.")
 
 if __name__ == "__main__":
     main()

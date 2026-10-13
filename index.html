@@ -242,7 +242,7 @@
       color: #fff;
     }
 
-    /* MAKERWORLD PICKS SECTION */
+    /* RECOMMENDED PRINTS GALLERY */
     .makerworld-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -260,19 +260,6 @@
     }
     .maker-title { font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
     .maker-title span { color: var(--bambu-green); }
-    .maker-header-actions { display: flex; align-items: center; gap: 12px; }
-    .shuffle-btn {
-      background: #1e2633;
-      border: 1px solid #334155;
-      color: var(--bambu-green);
-      font-size: 0.8rem;
-      font-weight: 700;
-      padding: 5px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .shuffle-btn:hover { background: #2a3749; }
 
     .maker-grid {
       display: grid;
@@ -401,7 +388,7 @@
 <body>
   <div class="container">
 
-    <!-- URGENT PRE-ORDER ALERT BANNER -->
+    <!-- PRE-ORDER ALERT BANNER -->
     <div id="preorderBanner" class="preorder-alert-banner">
       <div class="alert-left">
         <span class="alert-icon">⚡</span>
@@ -551,18 +538,15 @@
 
     </div>
 
-    <!-- MAKERWORLD PICKS GALLERY -->
+    <!-- RECOMMENDED PRINTS GALLERY -->
     <div class="makerworld-box">
       <div class="maker-header">
         <div class="maker-title">
-          <span>🌟</span> MakerWorld Featured Prints of the Day
+          <span>🌟</span> Trending 3D Prints of the Day
         </div>
-        <div class="maker-header-actions">
-          <button class="shuffle-btn" onclick="shuffleLocalPrints()">🎲 Shuffle Prints</button>
-          <a href="https://makerworld.com/en" target="_blank" rel="noopener noreferrer" style="color: var(--bambu-green); font-size: 0.85rem; font-weight: 700; text-decoration: none;">
-            Browse MakerWorld &rarr;
-          </a>
-        </div>
+        <a href="https://www.printables.com/model" target="_blank" rel="noopener noreferrer" style="color: var(--bambu-green); font-size: 0.85rem; font-weight: 700; text-decoration: none;">
+          Explore Printables &rarr;
+        </a>
       </div>
       <div id="makerGridContainer" class="maker-grid">
         <p style="color: var(--text-dim); padding: 12px;">Loading print recommendations...</p>
@@ -609,7 +593,6 @@
     let priorityArticles = [];
     let generalArticles = [];
     let redditArticles = [];
-    let fullPrintDatabase = [];
     let currentPriorityFilter = 'all';
     let currentRedditFilter = 'all';
 
@@ -631,7 +614,7 @@
       }
     }
 
-    function renderMakerWorld(picks) {
+    function renderPrints(picks) {
       const container = document.getElementById('makerGridContainer');
       if (!container || !picks || picks.length === 0) return;
 
@@ -641,25 +624,18 @@
         card.className = 'maker-card';
         card.innerHTML = `
           <div class="maker-img-wrap">
-            <img src="${p.img}" alt="${p.name}" loading="lazy" />
+            <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80';" />
             <span class="maker-badge-overlay">${p.badge}</span>
           </div>
           <div class="maker-info">
             <div class="maker-name">${p.name}</div>
             <div class="maker-meta">${p.meta}</div>
             <div class="maker-desc">${p.desc}</div>
-            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="maker-download-btn">Open on MakerWorld</a>
+            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="maker-download-btn">View Model &rarr;</a>
           </div>
         `;
         container.appendChild(card);
       });
-    }
-
-    function shuffleLocalPrints() {
-      if (fullPrintDatabase && fullPrintDatabase.length >= 4) {
-        const shuffled = [...fullPrintDatabase].sort(() => 0.5 - Math.random());
-        renderMakerWorld(shuffled.slice(0, 4));
-      }
     }
 
     function filterPriorityTab(target, btn) {
@@ -913,9 +889,8 @@
             scanText.textContent = `Morning Scan: ${formatToLocalTime(timeVal)}`;
           }
 
-          fullPrintDatabase = data.all_database_prints || [];
           if (data.makerworld_picks && data.makerworld_picks.length > 0) {
-            renderMakerWorld(data.makerworld_picks);
+            renderPrints(data.makerworld_picks);
           }
 
           priorityArticles = data.priority_articles || [];

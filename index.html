@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -642,7 +643,7 @@
         card.className = 'maker-card';
         card.innerHTML = `
           <div class="maker-img-wrap">
-            ${p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ''}
+            ${p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ''}
             <div class="img-fallback" style="${!p.img ? 'display:flex;' : 'display:none;'}">
               <span>📐 3D Blueprint Model</span>
               <span style="font-size:0.65rem; color:#94a3b8;">Preview Direct Link</span>

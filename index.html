@@ -13,6 +13,7 @@
       --bambu-green: #00ae42;
       --bambu-glow: rgba(0, 174, 66, 0.25);
       --bambu-amber: #f59e0b;
+      --reddit-orange: #ff4500;
       --text-main: #f9fafb;
       --text-sub: #9ca3af;
       --text-dim: #6b7280;
@@ -358,6 +359,16 @@
     .tag-x2d { background: rgba(0, 174, 66, 0.15); color: var(--bambu-green); }
     .tag-h3c { background: rgba(245, 158, 11, 0.15); color: var(--bambu-amber); }
     .tag-general { background: rgba(156, 163, 175, 0.15); color: var(--text-sub); }
+    .source-badge {
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+    .source-reddit { background: rgba(255, 69, 0, 0.18); color: #ff5722; border: 1px solid rgba(255, 69, 0, 0.3); }
+    .source-default { background: rgba(56, 189, 248, 0.12); color: #38bdf8; }
+
     .news-timestamp { font-size: 0.78rem; color: var(--text-dim); }
     .news-title { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
     .news-summary { font-size: 0.88rem; color: #cbd5e1; margin-bottom: 10px; }
@@ -388,7 +399,7 @@
     <header>
       <div class="logo-area">
         <h1><span>⚡</span> Bambu Next-Gen Radar</h1>
-        <p id="lastScanText" class="status-sub">Tracking FCC filings & hardware registries...</p>
+        <p id="lastScanText" class="status-sub">Tracking FCC filings, Reddit r/BambuLab & news...</p>
       </div>
       <div class="header-controls">
         <label class="sim-toggle" title="Test how the page behaves when pre-orders open">
@@ -522,7 +533,7 @@
 
     </div>
 
-    <!-- MAKERWORLD PICKS GALLERY (REAL MAKERWORLD CDN PHOTOS) -->
+    <!-- MAKERWORLD PICKS GALLERY (DYNAMIC CONTAINER) -->
     <div class="makerworld-box">
       <div class="maker-header">
         <div class="maker-title">
@@ -532,64 +543,8 @@
           Browse All on MakerWorld &rarr;
         </a>
       </div>
-      <div class="maker-grid">
-
-        <!-- REAL MAKERWORLD ITEM 1 -->
-        <div class="maker-card">
-          <div class="maker-img-wrap">
-            <img src="https://makerworld.bblmw.com/makerworld/model/US9e840b13a3714f/design/2025-10-16_797d4777c3f6b8.jpg" alt="Bambu Universal Tool Box" loading="lazy" />
-            <span class="maker-badge-overlay">Essential #1</span>
-          </div>
-          <div class="maker-info">
-            <div class="maker-name">Bambu Universal Tool Box</div>
-            <div class="maker-meta">⭐ 4.9 • Model #1892987</div>
-            <div class="maker-desc">Snap-fit rugged case tailored for Bambu hotends, Allen wrenches, spare wipers, and grease packets. Zero supports.</div>
-            <a href="https://makerworld.com/en/models/1892987-bambu-universal-toolbox-model" target="_blank" class="maker-download-btn">Open on MakerWorld</a>
-          </div>
-        </div>
-
-        <!-- REAL MAKERWORLD ITEM 2 -->
-        <div class="maker-card">
-          <div class="maker-img-wrap">
-            <img src="https://makerworld.bblmw.com/makerworld/model/US15f809ba9e1867/design/2025-01-09_4624e9779251a.jpg?x-oss-process=image/resize,w_800/format,webp" alt="AMS Desiccant Spool Container" loading="lazy" />
-            <span class="maker-badge-overlay">AMS Upgrade</span>
-          </div>
-          <div class="maker-info">
-            <div class="maker-name">Desiccant Container for Spools</div>
-            <div class="maker-meta">⭐ 4.9 • Model #973318</div>
-            <div class="maker-desc">Screws directly into spool centers inside AMS modules to keep engineering filaments dry and moisture-free.</div>
-            <a href="https://makerworld.com/en/models/973318-desiccant-container-for-bambu-lab-spool" target="_blank" class="maker-download-btn">Open on MakerWorld</a>
-          </div>
-        </div>
-
-        <!-- REAL MAKERWORLD ITEM 3 -->
-        <div class="maker-card">
-          <div class="maker-img-wrap">
-            <img src="https://makerworld.bblmw.com/makerworld/model/USf0764dc7070e2c/design/2025-03-01_a443aa6c1fd3a.png" alt="Shadowcoil Articulated Dragon" loading="lazy" />
-            <span class="maker-badge-overlay">Multi-Color</span>
-          </div>
-          <div class="maker-info">
-            <div class="maker-name">Shadowcoil Articulated Dragon</div>
-            <div class="maker-meta">⭐ 4.9 • Model #1163767</div>
-            <div class="maker-desc">Stunning print-in-place flexi showpiece. Ideal for testing multi-color transitions, retractions, and overhangs.</div>
-            <a href="https://makerworld.com/en/models/1163767-shadowcoil-articulated-dragon" target="_blank" class="maker-download-btn">Open on MakerWorld</a>
-          </div>
-        </div>
-
-        <!-- REAL MAKERWORLD ITEM 4 -->
-        <div class="maker-card">
-          <div class="maker-img-wrap">
-            <img src="https://makerworld.bblmw.com/makerworld/model/DSM00000000013717/design/2023-09-19_9f3e533f94456.jpg?x-oss-process=image/format,webp" alt="Bambu Official LED Lamp 001" loading="lazy" />
-            <span class="maker-badge-overlay">Official Bambu</span>
-          </div>
-          <div class="maker-info">
-            <div class="maker-name">Bambu Official LED Lamp 001</div>
-            <div class="maker-meta">⭐ 4.9 • Model #13717</div>
-            <div class="maker-desc">Bambu Lab's flagship spiral table lamp. Clean vase-style spiral design powered by their quick-plug LED Lamp Kit.</div>
-            <a href="https://makerworld.com/en/models/13717-led-lamp-001" target="_blank" class="maker-download-btn">Open on MakerWorld</a>
-          </div>
-        </div>
-
+      <div id="makerGridContainer" class="maker-grid">
+        <p style="color: var(--text-dim); padding: 12px;">Loading print recommendations...</p>
       </div>
     </div>
 
@@ -598,66 +553,44 @@
       <div class="section-title" style="margin-bottom:0;"><span>📡</span> Morning Radar Intelligence (Newest First)</div>
       <div class="filter-tabs">
         <button class="tab-btn active" onclick="filterTab('all', this)">All Feeds</button>
-        <button class="tab-btn" onclick="filterTab('X2D Pro', this)">X2D Pro Leaks</button>
-        <button class="tab-btn" onclick="filterTab('H3C', this)">H3C Leaks</button>
+        <button class="tab-btn" onclick="filterTab('X2D Pro', this)">X2D Pro</button>
+        <button class="tab-btn" onclick="filterTab('H3C', this)">H3C</button>
       </div>
     </div>
 
     <div id="newsContainer" class="news-list">
-      <article class="news-card">
-        <div class="news-card-header">
-          <span class="news-tag tag-h3c">H3C • Regulatory & Leaks</span>
-          <span class="news-timestamp">📅 Latest FCC Filing</span>
-        </div>
-        <div class="news-title">FCC Registration Confirms Bambu Lab H3C and X2D Pro (ID: 2A6J8-PF008P)</div>
-        <div class="news-summary">FCC filings identify model numbers confirming dual releases: the 10-nozzle H3C flagship alongside the industrial-spec X2D Pro combo.</div>
-        <div class="news-footer">
-          <span class="news-source">Source: Bambu Lab Community</span>
-          <a href="https://forum.bambulab.com/" target="_blank" rel="noopener noreferrer" class="read-btn">Read Article &rarr;</a>
-        </div>
-      </article>
-
-      <article class="news-card">
-        <div class="news-card-header">
-          <span class="news-tag tag-x2d">X2D Pro • Specs & Kinematics</span>
-          <span class="news-timestamp">📅 Hardware Leak</span>
-        </div>
-        <div class="news-title">X2D Pro: Vision Encoder Calibration & 65 mm³/s Volumetric Flow Capabilities</div>
-        <div class="news-summary">Details surface on the Pro's PMSM servo control, real-time belt tension telemetry, and expanded AMS 2 Pro multi-spool parallel routing.</div>
-        <div class="news-footer">
-          <span class="news-source">Source: Hardware Leaks</span>
-          <a href="https://forum.bambulab.com/" target="_blank" rel="noopener noreferrer" class="read-btn">Read Article &rarr;</a>
-        </div>
-      </article>
+      <p style="color: var(--text-dim); padding: 12px;">Loading latest news & Reddit threads...</p>
     </div>
 
   </div>
 
   <script>
-    let allArticles = [
-      {
-        id: "fcc-pf008p",
-        title: "FCC Registration Confirms Bambu Lab H3C and X2D Pro (ID: 2A6J8-PF008P)",
-        source: "Bambu Lab Community",
-        category: "Regulatory & Leaks",
-        target: "H3C",
-        summary: "FCC filings identify model numbers confirming dual releases: the 10-nozzle H3C flagship alongside the industrial-spec X2D Pro combo.",
-        url: "https://forum.bambulab.com/",
-        timestamp: "Latest FCC Filing"
-      },
-      {
-        id: "x2dpro-spec",
-        title: "X2D Pro: Vision Encoder Calibration & 65 mm³/s Volumetric Flow Capabilities",
-        source: "Hardware Leaks",
-        category: "Specs & Kinematics",
-        target: "X2D Pro",
-        summary: "Details surface on the Pro's PMSM servo control, real-time belt tension telemetry, and expanded AMS 2 Pro multi-spool parallel routing.",
-        url: "https://forum.bambulab.com/",
-        timestamp: "Hardware Leak"
-      }
-    ];
-
+    let allArticles = [];
     let currentFilter = 'all';
+
+    function renderMakerWorld(picks) {
+      const container = document.getElementById('makerGridContainer');
+      if (!container || !picks || picks.length === 0) return;
+
+      container.innerHTML = '';
+      picks.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'maker-card';
+        card.innerHTML = `
+          <div class="maker-img-wrap">
+            <img src="${p.img}" alt="${p.name}" loading="lazy" />
+            <span class="maker-badge-overlay">${p.badge}</span>
+          </div>
+          <div class="maker-info">
+            <div class="maker-name">${p.name}</div>
+            <div class="maker-meta">${p.meta}</div>
+            <div class="maker-desc">${p.desc}</div>
+            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="maker-download-btn">Open on MakerWorld</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
 
     function filterTab(target, btn) {
       currentFilter = target;
@@ -685,17 +618,24 @@
         const card = document.createElement('article');
         card.className = 'news-card';
         const tagClass = item.target === 'X2D Pro' ? 'tag-x2d' : item.target === 'H3C' ? 'tag-h3c' : 'tag-general';
+        const isReddit = item.source.toLowerCase().includes('reddit');
+        const sourceBadgeClass = isReddit ? 'source-reddit' : 'source-default';
 
         card.innerHTML = `
           <div class="news-card-header">
-            <span class="news-tag ${tagClass}">${item.target} • ${item.category}</span>
+            <div>
+              <span class="news-tag ${tagClass}">${item.target} • ${item.category}</span>
+              <span class="source-badge ${sourceBadgeClass}">${item.source}</span>
+            </div>
             <span class="news-timestamp">📅 ${item.timestamp}</span>
           </div>
           <div class="news-title">${item.title}</div>
           <div class="news-summary">${item.summary}</div>
           <div class="news-footer">
-            <span class="news-source">Source: ${item.source}</span>
-            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="read-btn">Read Article &rarr;</a>
+            <span class="news-source">${isReddit ? 'r/BambuLab Community Thread' : 'Source: ' + item.source}</span>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="read-btn">
+              ${isReddit ? 'View on Reddit &rarr;' : 'Read Article &rarr;'}
+            </a>
           </div>
         `;
         container.appendChild(card);
@@ -814,6 +754,9 @@
             const scanText = document.getElementById('lastScanText');
             if (scanText) scanText.textContent = `Morning Scan: ${data.last_updated}`;
           }
+          if (data.makerworld_picks && data.makerworld_picks.length > 0) {
+            renderMakerWorld(data.makerworld_picks);
+          }
           if (data.articles && data.articles.length > 0) {
             allArticles = data.articles;
             renderNews();
@@ -821,14 +764,11 @@
           }
         }
       } catch (e) {
-        console.warn('news.json fetch error, using default cards:', e);
+        console.warn('news.json fetch error:', e);
       }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      renderNews();
-      loadRadarData();
-    });
+    document.addEventListener('DOMContentLoaded', loadRadarData);
   </script>
 </body>
 </html>

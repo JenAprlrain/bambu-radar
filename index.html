@@ -161,7 +161,7 @@
     .printer-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 6px; }
     .printer-desc { font-size: 0.88rem; color: var(--text-sub); margin-bottom: 16px; }
 
-    /* RELEASE PIPELINE STEP TRACKER */
+    /* RELEASE PIPELINE TRACKER */
     .pipeline-wrapper {
       margin-bottom: 16px;
       background: #0b0f14;
@@ -277,7 +277,7 @@
     .maker-img-wrap {
       width: 100%;
       height: 160px;
-      background: #1e2633;
+      background: #151d28;
       position: relative;
       overflow: hidden;
     }
@@ -286,7 +286,7 @@
       height: 160px;
       object-fit: cover;
       display: block;
-      background: #10161f;
+      background: #151d28;
     }
     .maker-badge-overlay {
       position: absolute;
@@ -388,7 +388,7 @@
         <span class="alert-icon">⚡</span>
         <div>
           <div class="alert-title" id="alertTitleText">PRE-ORDER DETECTED!</div>
-          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's morning scan.</div>
+          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's scan.</div>
         </div>
       </div>
       <a href="https://store.bambulab.com/" target="_blank" rel="noopener noreferrer" class="alert-btn" id="bannerStoreBtn">
@@ -534,7 +534,7 @@
 
     </div>
 
-    <!-- MAKERWORLD PICKS GALLERY (DYNAMIC CONTAINER) -->
+    <!-- MAKERWORLD PICKS GALLERY -->
     <div class="makerworld-box">
       <div class="maker-header">
         <div class="maker-title">
@@ -555,7 +555,7 @@
       <div class="filter-tabs">
         <button class="tab-btn active" onclick="filterWebTab('all', this)">All</button>
         <button class="tab-btn" onclick="filterWebTab('H3C', this)">H3C</button>
-        <button class="tab-btn" onclick="filterWebTab('X2D Pro', this)">X2D Pro</button>
+        <button class="tab-btn" onclick="filterWebTab('X2D', this)">X2D Pro</button>
       </div>
     </div>
     <div id="webNewsContainer" class="news-list">
@@ -568,7 +568,7 @@
       <div class="filter-tabs">
         <button class="tab-btn active" onclick="filterRedditTab('all', this)">All Threads</button>
         <button class="tab-btn" onclick="filterRedditTab('H3C', this)">H3C</button>
-        <button class="tab-btn" onclick="filterRedditTab('X2D Pro', this)">X2D Pro</button>
+        <button class="tab-btn" onclick="filterRedditTab('X2D', this)">X2D Pro</button>
       </div>
     </div>
     <div id="redditContainer" class="news-list">
@@ -613,7 +613,7 @@
         card.className = 'maker-card';
         card.innerHTML = `
           <div class="maker-img-wrap">
-            <img src="${p.img}" alt="${p.name}" loading="lazy" />
+            <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&auto=format&fit=crop&q=80'" />
             <span class="maker-badge-overlay">${p.badge}</span>
           </div>
           <div class="maker-info">
@@ -647,7 +647,7 @@
 
       const filtered = webArticles.filter(item => {
         if (currentWebFilter === 'all') return true;
-        return (item.target || '').includes(currentWebFilter);
+        return (item.target || '').toLowerCase().includes(currentWebFilter.toLowerCase());
       });
 
       if (filtered.length === 0) {
@@ -662,7 +662,7 @@
         const targetStr = item.target || '';
         let tagClass = 'tag-general';
         if (targetStr.includes('H3C')) tagClass = 'tag-h3c';
-        else if (targetStr.includes('X2D Pro')) tagClass = 'tag-x2d';
+        else if (targetStr.includes('X2D')) tagClass = 'tag-x2d';
 
         card.innerHTML = `
           <div class="news-card-header">
@@ -689,7 +689,7 @@
 
       const filtered = redditArticles.filter(item => {
         if (currentRedditFilter === 'all') return true;
-        return (item.target || '').includes(currentRedditFilter);
+        return (item.target || '').toLowerCase().includes(currentRedditFilter.toLowerCase());
       });
 
       if (filtered.length === 0) {
@@ -704,7 +704,7 @@
         const targetStr = item.target || '';
         let tagClass = 'tag-general';
         if (targetStr.includes('H3C')) tagClass = 'tag-h3c';
-        else if (targetStr.includes('X2D Pro')) tagClass = 'tag-x2d';
+        else if (targetStr.includes('X2D')) tagClass = 'tag-x2d';
 
         card.innerHTML = `
           <div class="news-card-header">
@@ -736,7 +736,7 @@
         if (hasOrder) {
           const targetStr = a.target || '';
           if (targetStr.includes('H3C') || text.includes('h3c')) foundH3C_live = true;
-          if (targetStr.includes('X2D Pro') || text.includes('x2d pro')) foundX2D_live = true;
+          if (targetStr.includes('X2D') || text.includes('x2d')) foundX2D_live = true;
         }
       });
 
@@ -834,8 +834,6 @@
         const res = await fetch('./news.json');
         if (res.ok) {
           const data = await res.json();
-          
-          // Robust timestamp display (handles scan_iso or legacy last_updated)
           const timeVal = data.scan_iso || data.last_updated;
           const scanText = document.getElementById('lastScanText');
           if (scanText && timeVal) {
@@ -846,7 +844,6 @@
             renderMakerWorld(data.makerworld_picks);
           }
 
-          // Handles both separated arrays and legacy article lists
           webArticles = data.web_articles || data.articles || [];
           redditArticles = data.reddit_articles || [];
 

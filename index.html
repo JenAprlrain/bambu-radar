@@ -81,19 +81,7 @@
     }
     .logo-area h1 { font-size: 1.85rem; font-weight: 800; letter-spacing: -0.5px; }
     .logo-area h1 span { color: var(--bambu-green); }
-    .status-row { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
-    .status-sub { color: var(--text-sub); font-size: 0.88rem; }
-    .force-refresh-btn {
-      background: #1a2332;
-      border: 1px solid #334155;
-      color: var(--bambu-green);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .force-refresh-btn:hover { background: #26354a; }
+    .status-sub { color: var(--text-sub); font-size: 0.88rem; margin-top: 4px; }
 
     .header-controls { display: flex; align-items: center; gap: 12px; }
     .sim-toggle {
@@ -279,9 +267,10 @@
       color: var(--bambu-green);
       font-size: 0.8rem;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 6px;
       cursor: pointer;
+      transition: background 0.15s;
     }
     .shuffle-btn:hover { background: #2a3749; }
 
@@ -418,7 +407,7 @@
         <span class="alert-icon">⚡</span>
         <div>
           <div class="alert-title" id="alertTitleText">PRE-ORDER DETECTED!</div>
-          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's scan.</div>
+          <div class="alert-desc" id="alertDescText">Official store listings or order pages detected in today's morning scan.</div>
         </div>
       </div>
       <a href="https://store.bambulab.com/" target="_blank" rel="noopener noreferrer" class="alert-btn" id="bannerStoreBtn">
@@ -430,10 +419,7 @@
     <header>
       <div class="logo-area">
         <h1><span>⚡</span> Bambu Next-Gen Radar</h1>
-        <div class="status-row">
-          <p id="lastScanText" class="status-sub">Tracking FCC filings, news & r/BambuLab...</p>
-          <button class="force-refresh-btn" onclick="forceHardRefresh()">🔄 Force Refresh</button>
-        </div>
+        <p id="lastScanText" class="status-sub">Tracking FCC filings, news & r/BambuLab...</p>
       </div>
       <div class="header-controls">
         <label class="sim-toggle" title="Test how the page behaves when pre-orders open">
@@ -596,15 +582,15 @@
       <p style="color: var(--text-dim); padding: 12px;">Loading priority launch reports...</p>
     </div>
 
-    <!-- SECTION 2: GENERAL 3D TECH NEWS -->
+    <!-- SECTION 2: BAMBU ECOSYSTEM NEWS -->
     <div class="feed-controls">
-      <div class="section-title" style="margin-bottom:0;"><span>📡</span> General 3D Printing & Ecosystem News</div>
+      <div class="section-title" style="margin-bottom:0;"><span>📡</span> Bambu Lab Ecosystem News</div>
     </div>
     <div id="generalContainer" class="news-list">
-      <p style="color: var(--text-dim); padding: 12px;">Loading general news...</p>
+      <p style="color: var(--text-dim); padding: 12px;">Loading ecosystem updates...</p>
     </div>
 
-    <!-- SECTION 3: REDDIT COMMUNITY FEED -->
+    <!-- SECTION 3: REDDIT COMMUNITY INTEL -->
     <div class="feed-controls">
       <div class="section-title" style="margin-bottom:0;"><span style="color: var(--reddit-orange)">💬</span> r/BambuLab Community Intel</div>
       <div class="filter-tabs">
@@ -655,7 +641,7 @@
         card.className = 'maker-card';
         card.innerHTML = `
           <div class="maker-img-wrap">
-            <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80';" />
+            <img src="${p.img}" alt="${p.name}" loading="lazy" />
             <span class="maker-badge-overlay">${p.badge}</span>
           </div>
           <div class="maker-info">
@@ -670,7 +656,7 @@
     }
 
     function shuffleLocalPrints() {
-      if (fullPrintDatabase.length >= 4) {
+      if (fullPrintDatabase && fullPrintDatabase.length >= 4) {
         const shuffled = [...fullPrintDatabase].sort(() => 0.5 - Math.random());
         renderMakerWorld(shuffled.slice(0, 4));
       }
@@ -737,7 +723,7 @@
       if (!container) return;
 
       if (generalArticles.length === 0) {
-        container.innerHTML = '<p style="color: var(--text-dim); padding: 12px;">No general news items in this cycle.</p>';
+        container.innerHTML = '<p style="color: var(--text-dim); padding: 12px;">No general ecosystem items in this cycle.</p>';
         return;
       }
 
@@ -799,7 +785,7 @@
           <div class="news-title">${item.title}</div>
           <div class="news-summary">${item.summary}</div>
           <div class="news-footer">
-            <span class="news-source">Reddit Community Thread</span>
+            <span class="news-source">Reddit Community Intel</span>
             <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="read-btn">Open Thread &rarr;</a>
           </div>
         `;
@@ -911,11 +897,7 @@
       }
     }
 
-    function forceHardRefresh() {
-      loadRadarData(true);
-    }
-
-    async function loadRadarData(isForce = false) {
+    async function loadRadarData() {
       try {
         const cacheBuster = Date.now() + '_' + Math.random().toString(36).substring(7);
         const res = await fetch(`./news.json?cb=${cacheBuster}`, {
@@ -945,10 +927,6 @@
           renderRedditNews();
 
           checkPreorderSignals(priorityArticles.concat(generalArticles, redditArticles));
-
-          if (isForce) {
-            alert('Dashboard reloaded with latest scan data.');
-          }
         }
       } catch (e) {
         console.warn('news.json fetch error:', e);

@@ -30,14 +30,27 @@ jobs:
       - name: Run news scraper
         run: python fetch_news.py
 
-      - name: Verify news.json was created
+      - name: Verify and Commit news.json
         run: |
+          echo "=== 1. Checking generated file ==="
           ls -la news.json
-          head -n 10 news.json
+          head -n 5 news.json
 
-      - name: Commit and push changes
-        run: |
+          echo "=== 2. Staging news.json ==="
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add news.json
-          git diff --staged --quiet || (git commit -m "Auto-update morning radar data [skip ci]" && git push origin main)
+          
+          # Force add in case .gitignore has *.json
+          git add -f news.json
+          
+          echo "=== 3. Git Status ==="
+          git status
+
+          echo "=== 4. Committing and Pushing ==="
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Auto-update morning radar data [skip ci]"
+            git push
+            echo "Successfully committed and pushed news.json!"
+          else
+            echo "No changes detected between the newly generated news.json and the repo."
+          fi

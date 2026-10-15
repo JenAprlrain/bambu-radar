@@ -31,7 +31,6 @@ REDDIT_RSS_URLS = [
     "https://www.reddit.com/r/BambuLab/search.rss?q=(%22new+flagship%22+OR+%2210-nozzle%22+OR+%22toolchanger%22+OR+%22Vortek%22)&sort=new&restrict_sr=1"
 ]
 
-# Reliable fallbacks using Unsplash CDN - no hotlink blocks, no thumbnail size errors
 RELIABLE_FALLBACKS = [
     {
         "name": "Heavy-Duty Workshop Spool Caddy",
@@ -39,7 +38,7 @@ RELIABLE_FALLBACKS = [
         "meta": "⭐ 4.9 • Community Build",
         "desc": "Ball-bearing supported desktop roller to ensure smooth, unhindered filament feeding.",
         "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
-        "url": "https://www.reddit.com/r/functionalprint/"
+        "url": "https://thangs.com/search/spool%20holder?scope=all"
     },
     {
         "name": "AMS High-Capacity Desiccant Pods",
@@ -47,7 +46,7 @@ RELIABLE_FALLBACKS = [
         "meta": "⭐ 4.9 • Moisture Guard",
         "desc": "Slide-in vented canisters designed to hold orange silica beads and drop humidity below 15%.",
         "img": "https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?w=800&auto=format&fit=crop&q=80",
-        "url": "https://www.reddit.com/r/functionalprint/"
+        "url": "https://thangs.com/search/bambu%20desiccant?scope=all"
     },
     {
         "name": "Honeycomb Wall Tool Matrix",
@@ -55,7 +54,7 @@ RELIABLE_FALLBACKS = [
         "meta": "⭐ 4.9 • Workbench Mod",
         "desc": "Modular wall bracket grid designed to cleanly hold hex wrenches, calipers, and scrapers.",
         "img": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80",
-        "url": "https://www.reddit.com/r/functionalprint/"
+        "url": "https://thangs.com/search/honeycomb%20storage%20wall?scope=all"
     },
     {
         "name": "Geometric LED Ambient Desk Lamp",
@@ -63,7 +62,7 @@ RELIABLE_FALLBACKS = [
         "meta": "⭐ 4.9 • Modern Make",
         "desc": "Architectural spiral lamp shade printed in translucent filament over a USB LED kit.",
         "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop&q=80",
-        "url": "https://www.reddit.com/r/functionalprint/"
+        "url": "https://thangs.com/search/3d%20printed%20lamp?scope=all"
     }
 ]
 
@@ -106,7 +105,7 @@ def is_strict_reddit_match(text: str) -> bool:
     return any(a in low for a in allowed)
 
 def fetch_feed_data(url: str):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/11.0"}
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/12.0"}
     try:
         resp = requests.get(url, headers=headers, timeout=12)
         if resp.status_code == 200:
@@ -124,53 +123,51 @@ def parse_entry_datetime(entry) -> datetime:
 
 def fetch_live_community_prints():
     """
-    Pulls live daily prints from Reddit's RSS feeds.
-    Extracts direct preview images without triggering API 429 rate-limits.
+    Pulls live trending 3D designs from Thangs official search API.
+    Provides direct 1:1 image CDN links paired with verified model URLs.
     """
     prints = []
-    rss_feeds = [
-        "https://www.reddit.com/r/functionalprint/top/.rss?t=week",
-        "https://www.reddit.com/r/3Dprinting/search.rss?q=flair%3A%22Print%22+OR+flair%3A%22Design%22&sort=hot&restrict_sr=1"
-    ]
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Referer": "https://thangs.com/"
+    }
 
-    for feed_url in rss_feeds:
-        try:
-            parsed = fetch_feed_data(feed_url)
-            for entry in parsed.entries[:8]:
-                title = clean_text(entry.get("title", ""))
-                link = entry.get("link", "").strip()
-                content = entry.get("content", [{}])[0].get("value", "") or entry.get("summary", "")
+    # Query Thangs trending models API endpoint
+    api_url = "https://thangs.com/api/search/v1/mesh-search?searchTerm=functional&pageSize=12"
 
-                # Extract Reddit's direct image CDN URL
-                img_url = ""
-                m = re.search(r'https://preview\.redd\.it/[^"\'>\s]+', content)
-                if m:
-                    img_url = m.group(0).replace("&amp;", "&")
-                elif "media_thumbnail" in entry and len(entry["media_thumbnail"]) > 0:
-                    img_url = entry["media_thumbnail"][0].get("url", "")
+    try:
+        resp = requests.get(api_url, headers=headers, timeout=10)
+        if resp.status_code == 200:
+            data = resp.json()
+            items = data.get("results", []) or data.get("items", [])
+            for item in items:
+                name = item.get("modelTitle") or item.get("title") or item.get("name", "")
+                name = clean_text(name)
+                
+                # Direct model landing page URL
+                slug = item.get("modelId") or item.get("id") or ""
+                model_url = item.get("attributionUrl") or item.get("modelUrl") or f"https://thangs.com/m/{slug}"
 
-                # Skip posts with missing images or moderator announcements
-                if not img_url or "announcement" in title.lower() or "moderator" in title.lower():
-                    continue
+                # High-res thumbnail
+                img_url = item.get("thumbnailUrl") or item.get("previewUrl") or ""
+                author = item.get("ownerName") or item.get("author") or "Community Designer"
 
-                prints.append({
-                    "name": title[:65] + "..." if len(title) > 65 else title,
-                    "badge": "Live Community Make",
-                    "meta": "⭐ r/functionalprint Showcase",
-                    "desc": "Fresh functional project from today's maker community. Click below for creator slicer settings and design notes.",
-                    "img": img_url,
-                    "url": link
-                })
+                if name and img_url and model_url and not img_url.endswith(".gif"):
+                    prints.append({
+                        "name": name[:60] + "..." if len(name) > 60 else name,
+                        "badge": "Verified 3D Model",
+                        "meta": f"👤 {author} • Thangs 3D",
+                        "desc": "Popular functional print design. Click below to view dimensions, slice previews, and download STL/3MF files.",
+                        "img": img_url,
+                        "url": model_url
+                    })
 
                 if len(prints) >= 4:
                     break
-        except Exception as e:
-            print(f"Error fetching prints from {feed_url}: {e}")
+    except Exception as e:
+        print(f"Error fetching Thangs API: {e}")
 
-        if len(prints) >= 4:
-            break
-
-    # If feeds were quiet or blocked, supplement from the reliable Unsplash pool
+    # Fallback only if Thangs API is unreachable
     if len(prints) < 4:
         for fb in RELIABLE_FALLBACKS:
             if not any(p["name"] == fb["name"] for p in prints):
@@ -191,7 +188,6 @@ def main():
     seen_urls = set()
 
     try:
-        # 1. Google News / Regulatory Feeds
         for feed_info in FEEDS:
             try:
                 parsed = fetch_feed_data(feed_info["url"])
@@ -230,7 +226,6 @@ def main():
             except Exception as e:
                 print(f"Error reading feed {feed_info['source']}: {e}")
 
-        # 2. Strict Next-Gen Leaks Feed
         for r_url in REDDIT_RSS_URLS:
             try:
                 parsed = fetch_feed_data(r_url)
@@ -274,7 +269,6 @@ def main():
         for a in priority_articles + general_articles + reddit_articles:
             del a["_sort_ts"]
 
-        # Permanent FCC & Patent Anchor Items
         anchors = [
             {
                 "id": "fcc-pf008p",

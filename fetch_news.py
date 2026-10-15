@@ -9,27 +9,32 @@ import requests
 
 MAX_DAYS_OLD = 75
 
+# Primary Targeted Bambu Feeds with explicit recency windows (when:14d, when:7d)
 FEEDS = [
+    # 1. H3C & X2D Pro: Catches filings, patent breakdowns, and flagship leaks from the last 14 days
     {
-        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22+OR+%22CN122560413%22+OR+%22CN122560409%22)&hl=en-US&gl=US&ceid=US:en",
+        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22+OR+%22CN122560413%22+OR+%2210-nozzle%22)+when:14d&hl=en-US&gl=US&ceid=US:en",
         "source": "FCC & Patent Registry",
         "category": "Priority Radar",
     },
+    # 2. Hardware Watch: Catches toolchanger, Vision Encoder, and Vortek updates from the past 7 days
     {
-        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%2210-nozzle%22+OR+%2210+nozzle%22+OR+%22docking+rack%22+OR+%22Vortek%22+OR+%22Vision+Encoder%22)&hl=en-US&gl=US&ceid=US:en",
+        "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22toolchanger%22+OR+%22Vortek%22+OR+%22Vision+Encoder%22+OR+%22docking+rack%22)+when:7d&hl=en-US&gl=US&ceid=US:en",
         "source": "Bambu Hardware Watch",
         "category": "Hardware Leaks",
     },
+    # 3. Ecosystem & Launch Watch: Catches the latest 7 days of Bambu announcements (S1 scanner, firmware, MakerWorld)
     {
-        "url": "https://news.google.com/rss/search?q=%22Bambu+Lab%22+(%22flagship%22+OR+%22pre-order%22+OR+%22firmware%22+OR+%22MakerWorld%22)&hl=en-US&gl=US&ceid=US:en",
+        "url": "https://news.google.com/rss/search?q=%22Bambu+Lab%22+(%22flagship%22+OR+%22pre-order%22+OR+%22firmware%22+OR+%22S1%22+OR+%22scanner%22+OR+%22MakerWorld%22)+when:7d&hl=en-US&gl=US&ceid=US:en",
         "source": "Bambu Ecosystem",
         "category": "Bambu News",
     }
 ]
 
+# Strict Reddit Feeds sorted by newest first
 REDDIT_RSS_URLS = [
     "https://www.reddit.com/r/BambuLab/search.rss?q=%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22&sort=new&restrict_sr=1",
-    "https://www.reddit.com/r/BambuLab/search.rss?q=(%22new+flagship%22+OR+%2210-nozzle%22+OR+%22toolchanger%22+OR+%22Vortek%22)&sort=new&restrict_sr=1"
+    "https://www.reddit.com/r/BambuLab/search.rss?q=(%22new+flagship%22+OR+%2210-nozzle%22+OR+%22toolchanger%22+OR+%22Vortek%22+OR+%22S1%22)&sort=new&restrict_sr=1"
 ]
 
 # Emergency fail-safe fallback pool with direct Thangs browse links
@@ -89,13 +94,13 @@ def classify_target(text: str) -> str:
 def is_strict_reddit_match(text: str) -> bool:
     low = text.lower()
     blacklist = ["first layer", "clog", "troubleshooting", "stringing", "a1 mini", "p1p", "p1s", "why is my", "print failed", "adhesion", "bed level"]
-    if any(b in low for b in blacklist) and not any(t in low for t in ["h3c", "x2d pro", "pf008p", "pf004e"]):
+    if any(b in low for b in blacklist) and not any(t in low for t in ["h3c", "x2d pro", "pf008p", "pf004e", "s1"]):
         return False
-    allowed = ["h3c", "x2d pro", "x2d-pro", "pf008p", "pf004e", "10-nozzle", "toolchanger", "vortek", "new flagship", "fcc", "patent"]
+    allowed = ["h3c", "x2d pro", "x2d-pro", "pf008p", "pf004e", "10-nozzle", "toolchanger", "vortek", "new flagship", "fcc", "patent", "s1"]
     return any(a in low for a in allowed)
 
 def fetch_feed_data(url: str):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/13.0"}
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/14.0"}
     try:
         resp = requests.get(url, headers=headers, timeout=12)
         if resp.status_code == 200:
@@ -163,7 +168,6 @@ def fetch_trending_from_thangs():
 
             # Method 2: Direct Regex match for model links and images in HTML
             if len(prints) < 4:
-                # Pattern: capture /m/<id> blocks containing an <img src="...">
                 pattern = r'<a[^>]+href=["\'](/m/[^"\']+)["\'][^>]*>.*?<img[^>]+src=["\']([^"\']+)["\']'
                 matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
                 for model_rel, img_src in matches:
@@ -189,7 +193,6 @@ def fetch_trending_from_thangs():
     except Exception as e:
         print(f"Error fetching Thangs trending page: {e}")
 
-    # Remove duplicate URLs while preserving order
     unique_prints = []
     seen = set()
     for p in prints:
@@ -198,7 +201,6 @@ def fetch_trending_from_thangs():
             seen.add(p["img"])
             unique_prints.append(p)
 
-    # Pick 4 random items from the discovered trending models
     if len(unique_prints) >= 4:
         selected = random.sample(unique_prints, 4)
         print(f"Successfully scraped {len(unique_prints)} models from Thangs trending. Selected 4.")
@@ -218,6 +220,7 @@ def main():
     seen_urls = set()
 
     try:
+        # 1. Google News / Regulatory Feeds with recency constraints
         for feed_info in FEEDS:
             try:
                 parsed = fetch_feed_data(feed_info["url"])
@@ -256,6 +259,7 @@ def main():
             except Exception as e:
                 print(f"Error reading feed {feed_info['source']}: {e}")
 
+        # 2. Strict Next-Gen Leaks Feed
         for r_url in REDDIT_RSS_URLS:
             try:
                 parsed = fetch_feed_data(r_url)
@@ -299,6 +303,7 @@ def main():
         for a in priority_articles + general_articles + reddit_articles:
             del a["_sort_ts"]
 
+        # Permanent FCC & Patent Anchor Items
         anchors = [
             {
                 "id": "fcc-pf008p",
@@ -340,7 +345,7 @@ def main():
         with open("news.json", "w", encoding="utf-8") as f:
             json.dump(payload, f, indent=2, ensure_ascii=False)
 
-        print(f"Successfully generated news.json with {len(priority_articles)} priority items and {len(daily_prints)} trending prints.")
+        print(f"Successfully generated news.json with {len(priority_articles)} priority items, {len(general_articles)} general items, and {len(daily_prints)} trending prints.")
 
     except Exception as fatal_e:
         print(f"Fatal error caught in main loop: {fatal_e}")

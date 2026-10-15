@@ -243,7 +243,7 @@
       color: #fff;
     }
 
-    /* RECOMMENDED PRINTS GALLERY */
+    /* RECOMMENDED PRINTS GALLERY (CLEAN VISUAL CARDS) */
     .makerworld-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -282,7 +282,7 @@
     }
     .maker-img-wrap {
       width: 100%;
-      height: 160px;
+      height: 190px;
       background: #151d28;
       position: relative;
       overflow: hidden;
@@ -292,10 +292,14 @@
     }
     .maker-img-wrap img {
       width: 100%;
-      height: 160px;
+      height: 190px;
       object-fit: cover;
       display: block;
       background: #151d28;
+      transition: transform 0.25s ease;
+    }
+    .maker-card:hover .maker-img-wrap img {
+      transform: scale(1.03);
     }
     .img-fallback {
       display: none;
@@ -312,26 +316,20 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .maker-badge-overlay {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background: rgba(0, 0, 0, 0.75);
-      color: #fff;
-      font-size: 0.68rem;
+    .maker-info { padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+    .maker-name {
+      font-size: 0.9rem;
       font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 4px;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .maker-info { padding: 12px; display: flex; flex-direction: column; flex: 1; }
-    .maker-name { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; color: #fff; }
-    .maker-meta { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 8px; }
-    .maker-desc { font-size: 0.8rem; color: var(--text-sub); margin-bottom: 12px; flex: 1; line-height: 1.4; }
     .maker-download-btn {
       background: #1f2937;
       border: 1px solid #374151;
       color: var(--text-main);
-      padding: 7px 10px;
+      padding: 8px 10px;
       border-radius: 6px;
       text-decoration: none;
       font-size: 0.8rem;
@@ -339,7 +337,11 @@
       text-align: center;
       transition: background 0.15s;
     }
-    .maker-download-btn:hover { background: #374151; }
+    .maker-download-btn:hover {
+      background: #374151;
+      border-color: var(--bambu-green);
+      color: #fff;
+    }
 
     /* FEEDS SECTION */
     .feed-controls {
@@ -561,14 +563,14 @@
     <div class="makerworld-box">
       <div class="maker-header">
         <div class="maker-title">
-          <span>🌟</span> Trending Daily Community Prints
+          <span>🌟</span> Trending 3D Models
         </div>
-        <a href="https://www.reddit.com/r/functionalprint/top/?t=week" target="_blank" rel="noopener noreferrer" style="color: var(--bambu-green); font-size: 0.85rem; font-weight: 700; text-decoration: none;">
-          Browse All on Community Feed &rarr;
+        <a href="https://thangs.com/browse/trending" target="_blank" rel="noopener noreferrer" style="color: var(--bambu-green); font-size: 0.85rem; font-weight: 700; text-decoration: none;">
+          Explore Thangs Trending &rarr;
         </a>
       </div>
       <div id="makerGridContainer" class="maker-grid">
-        <p style="color: var(--text-dim); padding: 12px;">Loading today's prints from community feeds...</p>
+        <p style="color: var(--text-dim); padding: 12px;">Loading today's trending prints...</p>
       </div>
     </div>
 
@@ -643,18 +645,15 @@
         card.className = 'maker-card';
         card.innerHTML = `
           <div class="maker-img-wrap">
-            ${p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ''}
-            <div class="img-fallback" style="${!p.img ? 'display:flex;' : 'display:none;'}">
-              <span>📐 3D Blueprint Model</span>
+            <img src="${p.img}" alt="${p.name || '3D Model'}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback">
+              <span>📐 3D Blueprint</span>
               <span style="font-size:0.65rem; color:#94a3b8;">Preview Link</span>
             </div>
-            <span class="maker-badge-overlay">${p.badge}</span>
           </div>
           <div class="maker-info">
-            <div class="maker-name">${p.name}</div>
-            <div class="maker-meta">${p.meta}</div>
-            <div class="maker-desc">${p.desc}</div>
-            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="maker-download-btn">View Build & Discussion &rarr;</a>
+            <div class="maker-name">${p.name || 'Trending 3D Model'}</div>
+            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="maker-download-btn">View on Thangs &rarr;</a>
           </div>
         `;
         container.appendChild(card);

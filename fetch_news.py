@@ -1,6 +1,7 @@
 import json
 import re
 import sys
+import random
 import traceback
 from datetime import datetime, timezone, timedelta
 import feedparser
@@ -31,38 +32,27 @@ REDDIT_RSS_URLS = [
     "https://www.reddit.com/r/BambuLab/search.rss?q=(%22new+flagship%22+OR+%2210-nozzle%22+OR+%22toolchanger%22+OR+%22Vortek%22)&sort=new&restrict_sr=1"
 ]
 
-RELIABLE_FALLBACKS = [
+# Emergency fail-safe fallback pool with direct Thangs browse links
+FALLBACK_PRINTS = [
     {
-        "name": "Heavy-Duty Workshop Spool Caddy",
-        "badge": "Functional Print",
-        "meta": "⭐ 4.9 • Community Build",
-        "desc": "Ball-bearing supported desktop roller to ensure smooth, unhindered filament feeding.",
+        "name": "Trending Model Showcase #1",
         "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
-        "url": "https://thangs.com/search/spool%20holder?scope=all"
+        "url": "https://thangs.com/browse/trending"
     },
     {
-        "name": "AMS High-Capacity Desiccant Pods",
-        "badge": "Filament Care",
-        "meta": "⭐ 4.9 • Moisture Guard",
-        "desc": "Slide-in vented canisters designed to hold orange silica beads and drop humidity below 15%.",
+        "name": "Trending Model Showcase #2",
         "img": "https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?w=800&auto=format&fit=crop&q=80",
-        "url": "https://thangs.com/search/bambu%20desiccant?scope=all"
+        "url": "https://thangs.com/browse/trending"
     },
     {
-        "name": "Honeycomb Wall Tool Matrix",
-        "badge": "Shop Organization",
-        "meta": "⭐ 4.9 • Workbench Mod",
-        "desc": "Modular wall bracket grid designed to cleanly hold hex wrenches, calipers, and scrapers.",
+        "name": "Trending Model Showcase #3",
         "img": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80",
-        "url": "https://thangs.com/search/honeycomb%20storage%20wall?scope=all"
+        "url": "https://thangs.com/browse/trending"
     },
     {
-        "name": "Geometric LED Ambient Desk Lamp",
-        "badge": "Showcase Build",
-        "meta": "⭐ 4.9 • Modern Make",
-        "desc": "Architectural spiral lamp shade printed in translucent filament over a USB LED kit.",
+        "name": "Trending Model Showcase #4",
         "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop&q=80",
-        "url": "https://thangs.com/search/3d%20printed%20lamp?scope=all"
+        "url": "https://thangs.com/browse/trending"
     }
 ]
 
@@ -105,7 +95,7 @@ def is_strict_reddit_match(text: str) -> bool:
     return any(a in low for a in allowed)
 
 def fetch_feed_data(url: str):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/12.0"}
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/13.0"}
     try:
         resp = requests.get(url, headers=headers, timeout=12)
         if resp.status_code == 200:
@@ -121,64 +111,104 @@ def parse_entry_datetime(entry) -> datetime:
         return datetime(*entry.updated_parsed[:6], tzinfo=timezone.utc)
     return datetime.now(timezone.utc)
 
-def fetch_live_community_prints():
+def fetch_trending_from_thangs():
     """
-    Pulls live trending 3D designs from Thangs official search API.
-    Provides direct 1:1 image CDN links paired with verified model URLs.
+    Scrapes https://thangs.com/browse/trending directly.
+    Extracts the model link and its matching preview photo.
     """
     prints = []
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.5",
         "Referer": "https://thangs.com/"
     }
 
-    # Query Thangs trending models API endpoint
-    api_url = "https://thangs.com/api/search/v1/mesh-search?searchTerm=functional&pageSize=12"
-
     try:
-        resp = requests.get(api_url, headers=headers, timeout=10)
+        url = "https://thangs.com/browse/trending"
+        resp = requests.get(url, headers=headers, timeout=12)
         if resp.status_code == 200:
-            data = resp.json()
-            items = data.get("results", []) or data.get("items", [])
-            for item in items:
-                name = item.get("modelTitle") or item.get("title") or item.get("name", "")
-                name = clean_text(name)
-                
-                # Direct model landing page URL
-                slug = item.get("modelId") or item.get("id") or ""
-                model_url = item.get("attributionUrl") or item.get("modelUrl") or f"https://thangs.com/m/{slug}"
+            html = resp.text
 
-                # High-res thumbnail
-                img_url = item.get("thumbnailUrl") or item.get("previewUrl") or ""
-                author = item.get("ownerName") or item.get("author") or "Community Designer"
+            # Method 1: Check embedded Next.js JSON hydrate payload (__NEXT_DATA__)
+            json_match = re.search(r'<script id="__NEXT_DATA__" type="application/json">({.*?})</script>', html, re.DOTALL)
+            if json_match:
+                try:
+                    payload = json.loads(json_match.group(1))
+                    models = []
+                    
+                    def find_models(obj):
+                        if isinstance(obj, dict):
+                            if ("modelId" in obj or "id" in obj) and ("thumbnailUrl" in obj or "previewUrl" in obj or "image" in obj):
+                                models.append(obj)
+                            for v in obj.values():
+                                find_models(v)
+                        elif isinstance(obj, list):
+                            for elem in obj:
+                                find_models(elem)
 
-                if name and img_url and model_url and not img_url.endswith(".gif"):
-                    prints.append({
-                        "name": name[:60] + "..." if len(name) > 60 else name,
-                        "badge": "Verified 3D Model",
-                        "meta": f"👤 {author} • Thangs 3D",
-                        "desc": "Popular functional print design. Click below to view dimensions, slice previews, and download STL/3MF files.",
-                        "img": img_url,
-                        "url": model_url
-                    })
+                    find_models(payload)
+                    for m in models:
+                        m_id = m.get("modelId") or m.get("id")
+                        img = m.get("thumbnailUrl") or m.get("previewUrl") or m.get("image") or ""
+                        title = m.get("modelTitle") or m.get("title") or m.get("name") or "Trending 3D Model"
+                        if m_id and img and img.startswith("http") and not img.endswith(".svg"):
+                            prints.append({
+                                "name": clean_text(title)[:60],
+                                "img": img,
+                                "url": f"https://thangs.com/m/{m_id}"
+                            })
+                except Exception as je:
+                    print(f"Error parsing Next.js JSON: {je}")
 
-                if len(prints) >= 4:
-                    break
+            # Method 2: Direct Regex match for model links and images in HTML
+            if len(prints) < 4:
+                # Pattern: capture /m/<id> blocks containing an <img src="...">
+                pattern = r'<a[^>]+href=["\'](/m/[^"\']+)["\'][^>]*>.*?<img[^>]+src=["\']([^"\']+)["\']'
+                matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
+                for model_rel, img_src in matches:
+                    if img_src.startswith("http") and not img_src.endswith((".svg", ".gif", "avatar", "icon")):
+                        prints.append({
+                            "name": "Trending 3D Model",
+                            "img": img_src,
+                            "url": "https://thangs.com" + model_rel
+                        })
+
+            # Method 3: Reverse pattern (<img ...> wrapped in <a href="/m/...">)
+            if len(prints) < 4:
+                pattern_rev = r'<img[^>]+src=["\']([^"\']+)["\'][^>]*>.*?<a[^>]+href=["\'](/m/[^"\']+)["\']'
+                matches_rev = re.findall(pattern_rev, html, re.DOTALL | re.IGNORECASE)
+                for img_src, model_rel in matches_rev:
+                    if img_src.startswith("http") and not img_src.endswith((".svg", ".gif", "avatar", "icon")):
+                        prints.append({
+                            "name": "Trending 3D Model",
+                            "img": img_src,
+                            "url": "https://thangs.com" + model_rel
+                        })
+
     except Exception as e:
-        print(f"Error fetching Thangs API: {e}")
+        print(f"Error fetching Thangs trending page: {e}")
 
-    # Fallback only if Thangs API is unreachable
-    if len(prints) < 4:
-        for fb in RELIABLE_FALLBACKS:
-            if not any(p["name"] == fb["name"] for p in prints):
-                prints.append(fb)
-            if len(prints) >= 4:
-                break
+    # Remove duplicate URLs while preserving order
+    unique_prints = []
+    seen = set()
+    for p in prints:
+        if p["url"] not in seen and p["img"] not in seen:
+            seen.add(p["url"])
+            seen.add(p["img"])
+            unique_prints.append(p)
 
-    return prints[:4]
+    # Pick 4 random items from the discovered trending models
+    if len(unique_prints) >= 4:
+        selected = random.sample(unique_prints, 4)
+        print(f"Successfully scraped {len(unique_prints)} models from Thangs trending. Selected 4.")
+        return selected
+
+    print("Trending scraper retrieved fewer than 4 items. Using verified fallbacks.")
+    return FALLBACK_PRINTS
 
 def main():
-    print("Executing morning scan for H3C, X2D Pro, and live daily prints...")
+    print("Executing morning scan for H3C, X2D Pro, and Thangs trending models...")
     now = datetime.now(timezone.utc)
     cutoff_date = now - timedelta(days=MAX_DAYS_OLD)
 
@@ -296,7 +326,7 @@ def main():
             if not any(a["id"] == anchor["id"] for a in priority_articles):
                 priority_articles.append(anchor)
 
-        daily_prints = fetch_live_community_prints()
+        daily_prints = fetch_trending_from_thangs()
 
         payload = {
             "scan_iso": now.isoformat(),
@@ -310,7 +340,7 @@ def main():
         with open("news.json", "w", encoding="utf-8") as f:
             json.dump(payload, f, indent=2, ensure_ascii=False)
 
-        print(f"Successfully generated news.json with {len(priority_articles)} priority items and {len(daily_prints)} prints.")
+        print(f"Successfully generated news.json with {len(priority_articles)} priority items and {len(daily_prints)} trending prints.")
 
     except Exception as fatal_e:
         print(f"Fatal error caught in main loop: {fatal_e}")
@@ -318,7 +348,7 @@ def main():
         fallback_payload = {
             "scan_iso": now.isoformat(),
             "last_updated": now.strftime("%B %d, %Y at %I:%M %p UTC"),
-            "live_daily_prints": RELIABLE_FALLBACKS,
+            "live_daily_prints": FALLBACK_PRINTS,
             "priority_articles": [],
             "general_articles": [],
             "reddit_articles": [],

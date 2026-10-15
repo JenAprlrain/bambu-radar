@@ -1,6 +1,6 @@
 {
-  "scan_iso": "2026-10-15T14:35:57.981321+00:00",
-  "last_updated": "October 15, 2026 at 02:35 PM UTC",
+  "scan_iso": "2026-10-15T14:50:44.716671+00:00",
+  "last_updated": "October 15, 2026 at 02:50 PM UTC",
   "live_daily_prints": [
     {
       "name": "Chunksaw - Jigsaw Kit | No Supports, No AMS, No Glue",
@@ -8,32 +8,22 @@
       "url": "https://thangs.com/m/1625510"
     },
     {
-      "name": "The Rail Tripod V2",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/e0312d62-9008-4d85-b06d-f1d7637f7710/9.jpg",
-      "url": "https://thangs.com/m/1500067"
+      "name": "Designers, you can gift memberships!",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/e10735bd-a15a-4204-8bf5-9e19a9943b4c/How%20to%20Gift%20Months%20%26%20Memberships-Cover.jpg",
+      "url": "https://thangs.com/m/1588117"
     },
     {
-      "name": "Holiday Treats Multi Clicker Keychain Fidget Toy Bundle",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/72bc1dba-3f93-40a5-ae24-7fb2f729dd7b/IMG_8589.jpg",
-      "url": "https://thangs.com/m/1617579"
+      "name": "Mrs Claus Goose Gear for Porch Goose",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/b9ed70b7-875b-4f7d-a844-e11026a4e187/3D-Printed-Porch-Goose-Mrs-Claus-FunFam3D-11.jpg",
+      "url": "https://thangs.com/m/1621897"
     },
     {
-      "name": "Halloween Cake Clicker & Jar [FREE!]",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/f108397e-5557-4bec-a928-fd9b5c0397c4/CoverImage_Clicker_And_Jar-01.jpg",
-      "url": "https://thangs.com/m/1625675"
+      "name": "Articulating Piranha — Movable Jaw",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/ef73c73c-b499-479f-a43b-03f3b9090def/piranha%20main%20.png",
+      "url": "https://thangs.com/m/1615419"
     }
   ],
   "priority_articles": [
-    {
-      "id": "web-7904898519847534654",
-      "title": "Bambu Lab: FCC filings reveal two new 3D printers, H3C and X2D Pro - 3Druck.com",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
-      "target": "H3C / X2D Pro",
-      "summary": "Bambu Lab: FCC filings reveal two new 3D printers, H3C and X2D Pro&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVWs2RmU5MW9SSkxTMmozb081QnlMdTZ0eXNkM01IdGQtVXhhSWdIWFVMZ1kwaVplamIwQ0ZMN2U3S2Zsa2FUS2lveG0wUTVrWVlpb1J6N3JBbFRLaHl5d0dkc3QwUHJIQjhTRExrUE0xUXVuSkp0U1o2dmZHaWZ4XzlSZ2JoOTVrOEJETmg5U0NFNmlLSDBDTVBYdnhOSWNxUzZSWXBmeTB5WWJaTGJmdnBhMW5qY3BvSnc",
-      "timestamp": "Sep 14, 2026"
-    },
     {
       "id": "fcc-pf008p",
       "title": "FCC Registration Confirms Bambu Lab H3C and X2D Pro (ID: 2A6J8-PF008P)",
@@ -57,89 +47,129 @@
   ],
   "general_articles": [
     {
-      "id": "web-6706591743664352852",
-      "title": "This firmware update will make your 3D printer less capable than the day you bought it - MakeUseOf",
+      "id": "web-1688797619932014202",
+      "title": "Nothing’s First CMF Speakers Support 3D Printed Knobs and Panels - 3D Printing Industry",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "This firmware update will make your 3D printer less capable than the day you bought it&nbsp;&nbsp;MakeUseOf",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9qVnEwQjlyMVY4em1uY1VuU29rbWFjbDl3ZVlHNDR2cGM0SElDQ0lReFh6cVhKQ0Y0Z09JY1NwcG1VNDhKTy1MRzBWY1h2NnlpeU0xV1FZM0hQZjRPNDFocjk0ZXE0OWtheUN6dEZxTnpwX3dSRjAxYzVrWQ",
-      "timestamp": "Oct 09, 2026"
+      "summary": "Nothing’s First CMF Speakers Support 3D Printed Knobs and Panels&nbsp;&nbsp;3D Printing Industry",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQajY3ZU5nTWhNMExtQks1eUdCd1ZUV1Q4VXQ5bHdjUUp6Y1BPbzgwVEpxeHBQa2xZem05N2xnUHlFMXR4T180bmQwX1pmTW9KdFl3czlGX3p1bkVYYlZpV1R4dlZvUEZsYkhzUlRIZGNhQTExSnQ3clZQdWRTMnlneXRxMHdJRVEzTUJmampTRk9Cc1VaVVp4ZmFaUC1HZV91QVpWbjVZTUFOLW8",
+      "timestamp": "Oct 15, 2026"
     },
     {
-      "id": "web-8378034409891535941",
-      "title": "How Susan Fang Used Bambu Lab Printers to Create Runway Illusions - 3Dnatives",
+      "id": "web-1542493092000490386",
+      "title": "Bambu Lab Is Building More Than 3D Printers. Now Comes the S1 Scanner - 3DPrint.com",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "How Susan Fang Used Bambu Lab Printers to Create Runway Illusions&nbsp;&nbsp;3Dnatives",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE43M3NkLVpWQnRVWjZHYkFVX2pGZVdGaVYtMU1MSnhIZVJPVU90UkVFanFXYUtGdXVTOGtvYzNSY0dCVUFxVzVlS0o3NDl0bnFBMTNNMXpoay02WXdiTndqVm43Zl9RUVRHX1BDVWtVZ2VFdlg4ZjYweUZYWdIBgAFBVV95cUxPM19iakxQTE9wVnl3MlYzMEdKbS1UYy1WR3p0eWhOXzJJRzRQOU05eW1pYUpzUFBUNnR6dmdaeGVEa05aeWJ3SFV3Rkw0cnVlNVVXQTZaWFdadEVvOUFhU1pmc3puNmd3em0waHZvYkZqdXBtczRDcHA4MnQxbG1KWQ",
-      "timestamp": "Oct 09, 2026"
+      "summary": "Bambu Lab Is Building More Than 3D Printers. Now Comes the S1 Scanner&nbsp;&nbsp;3DPrint.com",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPeGJBVFJJVjRxQy1fYkpQX2xsUmh2M0RfUXNmcnVLZEpsMDEyem5lRWVZMHdJV2V2N0VreVFrWUowOUpKRTJTTjBSa1ZuWmlJNVhrcEd1VEQ1Q2ZFOGtYTjctOTZaNXZ6MkppYnNBNWl3dFlCMmRWa3JOVU5rTHF0Xy1aanZ5VTVRNlpjQk91eGx0TDF1UHMyTFR6NlDSAaIBQVVfeXFMUExLVF9KVmEwOTloeU1pUTVZN2ZfOFBCVERrX1RmSFE2LXNrRTdXVlFkdjJiVDJJTGxiTG5nX1o5NjJzdWt5VFQ0eG5IVDBRbG1yWHEzOEJMbXhLN202OWRWZm1JeXpOUTVaNWp4SnU0SkZBVld6UmNncm1YOHdyb3dIY1BZNThRN2xURlJraWZHT0Utczd4ME1jc0cyOUsxNzFB",
+      "timestamp": "Oct 15, 2026"
     },
     {
-      "id": "web-1568181357900876055",
-      "title": "Bambu Lab & 7 Accessibility Organizations Launch Design Challenge for 3D Printed Assistive Devices - 3DPrint.com",
+      "id": "web-4666023647444920426",
+      "title": "Latest PTAB Rulings on Stratasys Patents Complicate Bambu Lab Lawsuit - 3D Printing Industry",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "Bambu Lab & 7 Accessibility Organizations Launch Design Challenge for 3D Printed Assistive Devices&nbsp;&nbsp;3DPrint.com",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcUtDa2hRSmVDWnEzMWlLWUZ1ZDFCdXdidzNGWFVaMWRjdWZVMnBJRXFXWC1OQzhOc0RPMktNTGxnbnBnby1OVW5teWtna2k1aVVGcXBKSTJVM1ozTEtGZE01V0pSR21CWFc2ekhSaFd2bjgzZjhacC1Pc19NdGFkRW9LRklJNFc3YzNqcnB0RVotLTI4eGtieThOeWVORkM5Z2V5X0dtZ1N4STlmWmp6S2VIblFPZmo0Q1VIMzBZaXdvZ9IBxwFBVV95cUxOejd5bjhIcXRUVFBaWmpKUzlWRnh3MGMweFBFWC1nTkdIR1NIM1NValYwRFRZZy1mRHB0WVoybVBZdVlxOTJKSms4aUpqVkxtV3RHeVlUc2RJRVVLRjl5SUVIS0w3cTh1MEtVVGFCejNRZk9tOFZITnBrQVJGTWR6VURzc1M5aWpEZ3VTb3NSRlRIVW1NbzZIb3RWNmFwRkhybTFrVWpWYWNWbWVsdGtqUkNwcVMwajlpNF9heVpOUWl5eHA2LTJn",
-      "timestamp": "Oct 04, 2026"
+      "summary": "Latest PTAB Rulings on Stratasys Patents Complicate Bambu Lab Lawsuit&nbsp;&nbsp;3D Printing Industry",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPY29Pd1ByN1FpRWg2UDJzZ2Z0UC1ITmRwV180YjdKSFhranJobTRhTXV0M3lLdVFSZjhJUFp5VEhadWdINkdJNlV3THJUazBWWEFyNGNYZWlkU01aZ1NJTFdWa19DaXRucFpkSVh5Zm8xSUVJRF9DZzhxTUVYd1pGTFQ5a2V4a3hVcTNuR2JyVFUta3RiSnBCdUE5YjlDTzhxMWdQSlVaQ2RDU2d1b0NSd0lWSQ",
+      "timestamp": "Oct 14, 2026"
     },
     {
-      "id": "web-6798368901622207496",
-      "title": "Bambu Lab 3D Printers Compared: Which to Buy (2026) - https://3dprinting.com/",
+      "id": "web-6040576783363274364",
+      "title": "Bambu Lab teases its first 3D scanner, the S1 - OC3D",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "Bambu Lab 3D Printers Compared: Which to Buy (2026)&nbsp;&nbsp;https://3dprinting.com/",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9ZUE4tNzhwbVFjb3c1SC1sbTN5dlZCbEpBWEVrdi16ZTRYWEVtUXZFZmN3WjdXRkxkOXN5OEtOeEs1eTV2MjJPVU1nUzdCZW9rLUxoMjZDeXdiTDktUUJJNXYyeFZLQzF4c0NFRmw2ZmxlVkdv",
-      "timestamp": "Sep 30, 2026"
+      "summary": "Bambu Lab teases its first 3D scanner, the S1&nbsp;&nbsp;OC3D",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNODIzWU9mX1A4MUo2TER5YUNtZjZJY211SGtEYzB6aUNGdGxGTW1fVjhZdDZ2RkpxdUtXdGQxTEtHYjFmeUpPMWt6ZkhheWRhdi0tbUFRei1tUGlMVmRqOWtKZmRncnJHOTg2bWJXRUZ1NXRuMi1iSUEyeFp5YWhGS0ZGcHgzQQ",
+      "timestamp": "Oct 14, 2026"
     },
     {
-      "id": "web-2063945951920858431",
-      "title": "Makers Making Change and Bambu Lab launch global assistive technology 3D printing challenge - 3D Printing Industry",
+      "id": "web-3246978996642833213",
+      "title": "BolloPrint: Platform Combines Order Management, Cost Control, and 3D Printer Monitoring - 3Druck.com",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "Makers Making Change and Bambu Lab launch global assistive technology 3D printing challenge&nbsp;&nbsp;3D Printing Industry",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNOWFUN1AxSVZaRS1pT0JuSkJuQmNFR0xPdUVmOGpNbGJnSHhBYldETk1tLWxFOXAwU1lFVHpEc1YxeGFfUS1VNVVCbGNXSzRqa2gzMm9oQU5JZF9PMGUweHZfSG9SM20xZWRQeGhOX2JyTURaZ0V6TkFsWWtab2I5MnozZ1RiUDBha0F5ODFXSElzeFVCY3hJSGQ0M3RkTS1qeGFIaW1LMU5DV1ZEN2lfZDkwTkFMY1F5QnRldXFFTnhHYVNXaTY1NjkxVklIaUFS",
-      "timestamp": "Sep 28, 2026"
+      "summary": "BolloPrint: Platform Combines Order Management, Cost Control, and 3D Printer Monitoring&nbsp;&nbsp;3Druck.com",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMGVHVDZZcmNIQ0RYcUQxZC1PRjFQcU1Fd3BlYWYwMEtKSnE5ci0wcVVsYnQ5N0lXRXVEeFpuc1hZWGszY3U5TVdnbDV3WkVUcVBoVTBaelE4UGc1NlM5UnN1cGxtN1pLYVJlZExEaGNGMGttMV9EeW1TME53RUozMjV0Z0UzYzhQMHRTVFkyNU9hVHg4aHpBVVotckFtSUh4UzU4TlJuejdEYzNOZ095clYwTE0tdzNpVzlkWnBWQkdRRGJXc05ydQ",
+      "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "web-1482497013105978105",
-      "title": "Bambu Lab S1: FCC Approval Marks Bambu Lab's First Portable 3D Scanner - 3Druck.com",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab S1: FCC Approval Marks Bambu Lab's First Portable 3D Scanner&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPWlZnQ05xQmd3VzJCU3A1Z2FadHFRTTdTYzhqSEx0MmMyM1ZBMDY3VlE4Um9JSUJsSVFVWVVOd3lIckZ2WS11Q3ZscXNrbFZrOURLYzFIdUlEVWdLVU53RWp3UVZGUTZTU1pTNV94WkQ4UElySWYxWEFXOUtraVE4Q0k4NVFZNTZkOUx0eE1ucjhlVEZfQV9tdzR5cWxFblpaNFVWX2JOLWxRSG4y",
-      "timestamp": "Sep 23, 2026"
-    },
-    {
-      "id": "web-5265795396079997999",
-      "title": "Bambu Lab P3C: FCC approval reveals new 3D printer with model number PF006P - 3Druck.com",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab P3C: FCC approval reveals new 3D printer with model number PF006P&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPTlJmZ1ROM3IyRTVMX2ZsUkpycDF4OTNYd3F4UVFtMUhrczRxSWhETDJHd0hoN2wwV21yX2JfenRWZlpXY1RPVEtycEtHY0g0aHlMMzlBQTFzWGV4QmhkQXVRaWhuSVUzUmhtdXdTSE9HX1E1aDNvaDZrcng3SEJ5WF8teXBKUDQzQlpiOE90Y1J1TlJNQ2RlVm9ROFV5bTJzSGVpQUU2SGg1eUZUejRRaktMOUhQdVZjWld2cmZaY1JFb19V",
-      "timestamp": "Sep 19, 2026"
-    },
-    {
-      "id": "web-3232308886011182150",
-      "title": "Bambu Lab and Accessibility Organizations Launch MakerWorld 3D-Printing Challenge - PR Newswire",
+      "id": "web-1960846338398276581",
+      "title": "Bambu Lab P2S Wins Awards for 3D Printing in the Family and Education Sectors - 3Druck.com",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "Bambu Lab and Accessibility Organizations Launch MakerWorld 3D-Printing Challenge&nbsp;&nbsp;PR Newswire",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNbkwydGFhN18wZnl4WFdjY0FNTVFkWkhZSHRZUnpxMkotOVhuOUx1MVZqc25tY0JCZUxhU3B6STd5QllnRzZUY1lhLVRqb3ZPWHkyTDFKY3pVRmlZZng3VlBjWUdWVm9Ba2ZTd0JVelh0c0VEMVl4ZGRadFpBQ2kxcHVxUmVmUE9xSzlrVV8tTGZPd0xUQTBiQnJrOUd5dzZuempNLW9PemZJU3JyaFpjVWRwQUpDZk5CaHhDVUFnMkphM0VTOGhEcVp2NzhtZi1CUzJz",
-      "timestamp": "Sep 16, 2026"
+      "summary": "Bambu Lab P2S Wins Awards for 3D Printing in the Family and Education Sectors&nbsp;&nbsp;3Druck.com",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNcDZWV3hGcjUxUFhjaHlBNnp5MkNvejJlUlZnU3k4TTJFTkVhaDFTQmtGZ3pNWXRtMHBTSWp1LXZfNzJ2bXVyNGxpc05NWm9ReUp5QjVWMWVwM29pUXZiYUpzQnhXakpBTDVCUGt1Vjg0bHdVNzVrYWNEMTJKQTY4LU5nc0Z3MVdTdzBvLWxoekd4VWVCTkpjQnI5dEVnZXBKY0gyVy16eGZkbkpxTldOOWVINGRYX0NVcHo2aXpselM3Y3BX",
+      "timestamp": "Oct 13, 2026"
+    },
+    {
+      "id": "web-5668854556871710678",
+      "title": "Bambu Lab S1 3D Scanner Is Coming in November 2026 - Gadget Bridge",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab S1 3D Scanner Is Coming in November 2026&nbsp;&nbsp;Gadget Bridge",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYlMxbTlQVU9RLWgxemprcVpwVmVGR0dwclJqNDF3SWpibmpoSTc2QW50d1ZHa2JzeUhSOG1QQzl0S0pCRDNuUHZxUFpERzlUSUpyRXZtbGJvTVNSODlKUDcyT3BGTkVoZW0zdDh3bHZSMGxvbkM4cFBZcnFLdkp2c2RtTXdwS0xTV2preNIBjAFBVV95cUxPYlMxbTlQVU9RLWgxemprcVpwVmVGR0dwclJqNDF3SWpibmpoSTc2QW50d1ZHa2JzeUhSOG1QQzl0S0pCRDNuUHZxUFpERzlUSUpyRXZtbGJvTVNSODlKUDcyT3BGTkVoZW0zdDh3bHZSMGxvbkM4cFBZcnFLdkp2c2RtTXdwS0xTV2preA",
+      "timestamp": "Oct 13, 2026"
+    },
+    {
+      "id": "web-6569304473212161821",
+      "title": "Bambu Lab just entered the 3D scanning scene, and you can sign up to hear more right now - XDA",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab just entered the 3D scanning scene, and you can sign up to hear more right now&nbsp;&nbsp;XDA",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOdVVZVkRkUEhHUmJXdUNpSl9PdFA3V0dVTjBpQ2c1SFRQemk1WkQ2TTNTdFI3MEdOcUtBRGstWFh2MGZJSzFVM3k4MC1ldDRDQnNiQTJiOTlQMS1GcURsMFI2REZkTTNiM25zUkV6ZjFKLXIyYnpCOXdPcGxfYnRKN0gxZnBpaEFSd0N4Q1VQRUxHclhhbzNKaVZLOHItOEJZYUJpa0dLZDlpMkc3RlplTjMwNA",
+      "timestamp": "Oct 12, 2026"
+    },
+    {
+      "id": "web-9183767539794513509",
+      "title": "Citroën Unveils Electric 2CV Revival at Paris Motor Show, With a Van Variant That May Never Arrive - Glitchwire",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Citroën Unveils Electric 2CV Revival at Paris Motor Show, With a Van Variant That May Never Arrive&nbsp;&nbsp;Glitchwire",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQjBhbDZLXzMxWUFmbk9IT00xLVNTWFViMkJDaTBuQVJQVGVvb2RiRjNKbm1xX3VzYkxFX0E1YWJhWmh4bklOcmhWVWJldWxqM1N3WlRscjJxZDVPNTVfdllBaXlwQXQ2QjBEUkoyOVMwdl9WaHRZYkxaQWhrM3Y4NWs1M1c1M1J3NDk5b0dDTE5ta1dPU0VPdnFEdGR1V0hPM1hkcEcycHM2a011",
+      "timestamp": "Oct 12, 2026"
+    },
+    {
+      "id": "web-7365516224482799090",
+      "title": "One Developer's AI-Built Adobe Clones Mark a New Era of Build-Your-Own Software - Glitchwire",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "One Developer's AI-Built Adobe Clones Mark a New Era of Build-Your-Own Software&nbsp;&nbsp;Glitchwire",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZGNfUnRrVGw1UkVLcGh1Q1owVzB3SWZKb3FybmgwQzdGRlVGWE5WTFl5TWhZeUJ3VnpkYm1YMEJnQWE3d0ItTGdjQzdCRWViSFdZQnl5TDJxOW9nRzk5M1RVMDBZNF9jdEh2eVludml6U180ZVBtRFZMRUJJSTh1T3FlRnpPeGFjOWRtcHF0REpBNWRQbW9zY2tndnpQS01QU0M0QkRsaWYxZmc",
+      "timestamp": "Oct 12, 2026"
+    },
+    {
+      "id": "web-5995869372920665951",
+      "title": "Bambu Lab officially teases its first 3D scanner — S1 3D set for launch in November 2026 - Tom's Hardware",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab officially teases its first 3D scanner — S1 3D set for launch in November 2026&nbsp;&nbsp;Tom's Hardware",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQemZ2LUNpcFBjMEdiZ0VOZnQ1ZmVfb1hWOWdBRjZ4Z0d1U2hNSmx2a3NkeWgtMEJoSFNNSXlIblZOMmRhT29SRlFGclpLN1B6QXl0clJ0TWJsWEMwamNqbGpZTGVaR0QzbDVPMm9YUXZ0Q0xPS0lyQ2J6azNMb1BpRTNOM016WElYdHN5bkJUb04xOXpZQ2tmeFE0czN0VERaOVpKYm85X1ROQzZXalJGdXJxNkFZRzktSEpJ",
+      "timestamp": "Oct 12, 2026"
+    },
+    {
+      "id": "web-2236349826826441405",
+      "title": "Bambu Lab Teases New S1 Handheld 3D Scanner - All3DP",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab Teases New S1 Handheld 3D Scanner&nbsp;&nbsp;All3DP",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1ka1lBMGhQZkpRZG9SU0ZkSmlUZVpGN2R2aGdMQWpFaHNneVVFaHhSQUl0Z0ktc3hIbEVhXzE2X0hCOGtMNmMyR3BUNkNBSjBKNmxJeWQ0QkcxWnRaX0kzc2E1REdkQ0NFcHdaakFtajYzX2c",
+      "timestamp": "Oct 12, 2026"
     }
   ],
   "reddit_articles": [
     {
-      "id": "red-4262272988123108971",
+      "id": "red-2877637465064400291",
       "title": "BambuLab is no longer selling H2C on their taobao shop",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -149,7 +179,7 @@
       "timestamp": "Oct 15, 2026"
     },
     {
-      "id": "red-358751713720145107",
+      "id": "red-1519873205686818144",
       "title": "I want to get a X2D need final advise",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -159,7 +189,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-5519380209152347665",
+      "id": "red-6056062265899178982",
       "title": "Searching for the next level",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -169,7 +199,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-3531033061612202918",
+      "id": "red-7103258848312234127",
       "title": "Panda Station or U.S. General for H series printer",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -179,7 +209,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-3852436126007482166",
+      "id": "red-8977262985691507215",
       "title": "New H3C machine incoming? Real photo or AI art?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -189,7 +219,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-1625833491841775108",
+      "id": "red-7400797550252721818",
       "title": "Faster Multi Color printing",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -199,7 +229,7 @@
       "timestamp": "Oct 11, 2026"
     },
     {
-      "id": "red-5136000633863835170",
+      "id": "red-4059022754001341712",
       "title": "Predictions for H3C Price",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -209,7 +239,7 @@
       "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "red-6216013544242648200",
+      "id": "red-8330429157148157906",
       "title": "H2C color changing limits",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -219,7 +249,7 @@
       "timestamp": "Oct 07, 2026"
     },
     {
-      "id": "red-8132448473182330170",
+      "id": "red-1145840972477655867",
       "title": "The H3C",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -229,7 +259,7 @@
       "timestamp": "Oct 06, 2026"
     },
     {
-      "id": "red-3197425982794809718",
+      "id": "red-8972458651371822779",
       "title": "What are the chances, really, for new printers before Black Friday?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -239,7 +269,7 @@
       "timestamp": "Oct 02, 2026"
     },
     {
-      "id": "red-5545998882072141838",
+      "id": "red-3841703696717400366",
       "title": "Possible Bambu Lab Upcoming Releases - Full List",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -249,7 +279,7 @@
       "timestamp": "Sep 27, 2026"
     },
     {
-      "id": "red-1939429587887972364",
+      "id": "red-3822283369703507785",
       "title": "Beginner: $300 Bambu first, or go $1k–1.5k multi-filament now?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -259,7 +289,7 @@
       "timestamp": "Sep 26, 2026"
     },
     {
-      "id": "red-5002963185291600249",
+      "id": "red-6800696254865145652",
       "title": "Bambu 3D scanner",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -269,7 +299,7 @@
       "timestamp": "Sep 24, 2026"
     },
     {
-      "id": "red-6800141010199958394",
+      "id": "red-3701568647606026848",
       "title": "More H3C news, and possible AMS3",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -279,7 +309,7 @@
       "timestamp": "Sep 22, 2026"
     },
     {
-      "id": "red-688196131935006348",
+      "id": "red-3458355044065106461",
       "title": "I can’t decide if I should open H2C since H3C application went to FCC!!!",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",

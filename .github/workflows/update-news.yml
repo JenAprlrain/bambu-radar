@@ -28,7 +28,9 @@ jobs:
           pip install feedparser requests
 
       - name: Run news scraper
-        run: python fetch_news.py
+        run: |
+          rm -f news.json
+          python -u fetch_news.py
 
       - name: Verify and Commit news.json
         run: |
@@ -39,18 +41,14 @@ jobs:
           echo "=== 2. Staging news.json ==="
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Force add in case .gitignore has *.json
           git add -f news.json
-          
-          echo "=== 3. Git Status ==="
           git status
 
-          echo "=== 4. Committing and Pushing ==="
+          echo "=== 3. Committing and Pushing ==="
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Auto-update morning radar data [skip ci]"
             git push
             echo "Successfully committed and pushed news.json!"
           else
-            echo "No changes detected between the newly generated news.json and the repo."
+            echo "No changes detected between newly generated news.json and repo."
           fi

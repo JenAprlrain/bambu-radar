@@ -561,10 +561,10 @@
     <div class="makerworld-box">
       <div class="maker-header">
         <div class="maker-title">
-          <span>🌟</span> Trending Daily Community Prints
+          <span>🌟</span> Trending Community Prints of the Day
         </div>
-        <a href="https://www.thingiverse.com/featured" target="_blank" rel="noopener noreferrer" style="color: var(--bambu-green); font-size: 0.85rem; font-weight: 700; text-decoration: none;">
-          Browse All &rarr;
+        <a href="https://www.reddit.com/r/functionalprint/top/?t=week" target="_blank" rel="noopener noreferrer" style="color: var(--bambu-green); font-size: 0.85rem; font-weight: 700; text-decoration: none;">
+          Browse All on Community Feed &rarr;
         </a>
       </div>
       <div id="makerGridContainer" class="maker-grid">
@@ -646,7 +646,7 @@
             ${p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ''}
             <div class="img-fallback" style="${!p.img ? 'display:flex;' : 'display:none;'}">
               <span>📐 3D Blueprint Model</span>
-              <span style="font-size:0.65rem; color:#94a3b8;">Preview Direct Link</span>
+              <span style="font-size:0.65rem; color:#94a3b8;">Preview Link</span>
             </div>
             <span class="maker-badge-overlay">${p.badge}</span>
           </div>
@@ -654,7 +654,7 @@
             <div class="maker-name">${p.name}</div>
             <div class="maker-meta">${p.meta}</div>
             <div class="maker-desc">${p.desc}</div>
-            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="maker-download-btn">Open 3D Model Page &rarr;</a>
+            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="maker-download-btn">View Build & Discussion &rarr;</a>
           </div>
         `;
         container.appendChild(card);

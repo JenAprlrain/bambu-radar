@@ -748,7 +748,12 @@
 
     function renderYouTubeVideos(videos) {
       const container = document.getElementById('youtubeGridContainer');
-      if (!container || !videos || videos.length === 0) return;
+      if (!container) return;
+
+      if (!videos || videos.length === 0) {
+        container.innerHTML = '<p style="color: var(--text-dim); padding: 12px;">No new H3C video breakdowns found in this scan.</p>';
+        return;
+      }
 
       container.innerHTML = '';
       videos.forEach(v => {

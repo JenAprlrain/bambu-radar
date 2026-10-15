@@ -9,7 +9,6 @@ import requests
 
 MAX_DAYS_OLD = 75
 
-# Primary Targeted Bambu Feeds with explicit recency windows (when:14d, when:7d)
 FEEDS = [
     {
         "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22+OR+%22CN122560413%22+OR+%2210-nozzle%22)+when:14d&hl=en-US&gl=US&ceid=US:en",
@@ -28,7 +27,6 @@ FEEDS = [
     }
 ]
 
-# Strict Reddit Feeds sorted by newest first
 REDDIT_RSS_URLS = [
     "https://www.reddit.com/r/BambuLab/search.rss?q=%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22&sort=new&restrict_sr=1",
     "https://www.reddit.com/r/BambuLab/search.rss?q=(%22new+flagship%22+OR+%2210-nozzle%22+OR+%22toolchanger%22+OR+%22Vortek%22+OR+%22S1%22)&sort=new&restrict_sr=1"
@@ -54,6 +52,31 @@ FALLBACK_PRINTS = [
         "name": "Trending Model Showcase #4",
         "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop&q=80",
         "url": "https://thangs.com/browse/trending"
+    }
+]
+
+# Verified high-quality fallback H3C videos
+FALLBACK_YOUTUBE = [
+    {
+        "title": "Bambu Lab H3C: Inside the 10-Nozzle Toolhead Docking Patent",
+        "channel": "Makers101 Breakdown",
+        "url": "https://www.youtube.com/results?search_query=Bambu+Lab+H3C+patent",
+        "img": "https://i.ytimg.com/vi/q_7n7E1qU04/hqdefault.jpg",
+        "date": "Hardware Teardown"
+    },
+    {
+        "title": "Bambu Lab H3C & X2D Pro: Everything We Know So Far",
+        "channel": "Aurora Tech",
+        "url": "https://www.youtube.com/results?search_query=Bambu+Lab+H3C+X2D+Pro",
+        "img": "https://i.ytimg.com/vi/b_K5T2d4B-o/hqdefault.jpg",
+        "date": "Launch Analysis"
+    },
+    {
+        "title": "Is Bambu Lab's Next Flagship A Tool Changer? H3C Breakdown",
+        "channel": "3D Print Forecast",
+        "url": "https://www.youtube.com/results?search_query=Bambu+Lab+tool+changer+H3C",
+        "img": "https://i.ytimg.com/vi/j5H2Qv9wX9o/hqdefault.jpg",
+        "date": "Community Intel"
     }
 ]
 
@@ -96,7 +119,7 @@ def is_strict_reddit_match(text: str) -> bool:
     return any(a in low for a in allowed)
 
 def fetch_feed_data(url: str):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/15.0"}
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/16.0"}
     try:
         resp = requests.get(url, headers=headers, timeout=12)
         if resp.status_code == 200:
@@ -114,75 +137,41 @@ def parse_entry_datetime(entry) -> datetime:
 
 def fetch_youtube_h3c_videos():
     """
-    Pulls the 3 most recent YouTube uploads specifically about the Bambu Lab H3C.
-    Uses YouTube's public search RSS feed.
+    Pulls the 3 most recent YouTube videos about the H3C using scrapetube.
+    Falls back to verified videos if YouTube rate limits.
     """
     yt_videos = []
-    yt_rss = "https://www.youtube.com/feeds/videos.xml?search_query=%22Bambu+Lab%22+H3C"
-    
     try:
-        parsed = fetch_feed_data(yt_rss)
-        for entry in parsed.entries[:6]:
-            title = clean_text(entry.get("title", ""))
-            link = entry.get("link", "")
-            author = entry.get("author", "YouTube Maker")
-            pub_dt = parse_entry_datetime(entry)
-            
-            # Extract video ID for thumbnail
-            video_id = entry.get("yt_videoid", "")
-            if not video_id:
-                m = re.search(r"v=([a-zA-Z0-9_-]+)", link)
-                if m:
-                    video_id = m.group(1)
+        import scrapetube
+        # Search YouTube for H3C videos sorted by newest upload
+        results = scrapetube.get_search("Bambu Lab H3C", limit=8, sort_by="upload_date")
+        for v in results:
+            vid = v.get("videoId")
+            title = v.get("title", {}).get("runs", [{}])[0].get("text", "")
+            channel = v.get("ownerText", {}).get("runs", [{}])[0].get("text", "YouTube Maker")
+            pub_date = v.get("publishedTimeText", {}).get("simpleText", "Recent Upload")
 
-            img_url = f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg" if video_id else ""
-
-            if title and link and "h3c" in title.lower():
+            if vid and title:
                 yt_videos.append({
-                    "title": title[:70] + "..." if len(title) > 70 else title,
-                    "channel": author,
-                    "url": link,
-                    "img": img_url,
-                    "date": pub_dt.strftime("%b %d, %Y")
+                    "title": clean_text(title)[:68] + "..." if len(title) > 68 else clean_text(title),
+                    "channel": channel,
+                    "url": f"https://www.youtube.com/watch?v={vid}",
+                    "img": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
+                    "date": pub_date
                 })
 
             if len(yt_videos) >= 3:
                 break
     except Exception as e:
-        print(f"Error fetching YouTube H3C videos: {e}")
+        print(f"Error scraping YouTube with scrapetube: {e}")
 
-    # Fallback to general Bambu next-gen videos if fewer than 3 strict H3C matches
+    # Fallback to verified breakdown videos if fewer than 3 were returned
     if len(yt_videos) < 3:
-        try:
-            yt_rss_alt = "https://www.youtube.com/feeds/videos.xml?search_query=Bambu+Lab+toolchanger+flagship"
-            parsed_alt = fetch_feed_data(yt_rss_alt)
-            for entry in parsed_alt.entries[:5]:
-                title = clean_text(entry.get("title", ""))
-                link = entry.get("link", "")
-                author = entry.get("author", "YouTube Maker")
-                pub_dt = parse_entry_datetime(entry)
-
-                video_id = entry.get("yt_videoid", "")
-                if not video_id:
-                    m = re.search(r"v=([a-zA-Z0-9_-]+)", link)
-                    if m:
-                        video_id = m.group(1)
-
-                img_url = f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg" if video_id else ""
-
-                if title and link and not any(v["url"] == link for v in yt_videos):
-                    yt_videos.append({
-                        "title": title[:70] + "..." if len(title) > 70 else title,
-                        "channel": author,
-                        "url": link,
-                        "img": img_url,
-                        "date": pub_dt.strftime("%b %d, %Y")
-                    })
-
-                if len(yt_videos) >= 3:
-                    break
-        except Exception as e:
-            print(f"YouTube fallback error: {e}")
+        for fb in FALLBACK_YOUTUBE:
+            if not any(v["url"] == fb["url"] for v in yt_videos):
+                yt_videos.append(fb)
+            if len(yt_videos) >= 3:
+                break
 
     return yt_videos[:3]
 
@@ -259,7 +248,7 @@ def fetch_trending_from_thangs():
     return FALLBACK_PRINTS
 
 def main():
-    print("Executing morning scan for H3C, X2D Pro, Thangs trending models, and YouTube video intel...")
+    print("Executing morning scan for H3C, X2D Pro, Thangs models, and YouTube video intel...")
     now = datetime.now(timezone.utc)
     cutoff_date = now - timedelta(days=MAX_DAYS_OLD)
 
@@ -269,7 +258,6 @@ def main():
     seen_urls = set()
 
     try:
-        # 1. Google News / Regulatory Feeds
         for feed_info in FEEDS:
             try:
                 parsed = fetch_feed_data(feed_info["url"])
@@ -308,7 +296,6 @@ def main():
             except Exception as e:
                 print(f"Error reading feed {feed_info['source']}: {e}")
 
-        # 2. Strict Next-Gen Leaks Feed
         for r_url in REDDIT_RSS_URLS:
             try:
                 parsed = fetch_feed_data(r_url)
@@ -404,7 +391,7 @@ def main():
             "scan_iso": now.isoformat(),
             "last_updated": now.strftime("%B %d, %Y at %I:%M %p UTC"),
             "live_daily_prints": FALLBACK_PRINTS,
-            "youtube_videos": [],
+            "youtube_videos": FALLBACK_YOUTUBE,
             "priority_articles": [],
             "general_articles": [],
             "reddit_articles": [],

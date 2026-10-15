@@ -1,6 +1,6 @@
 {
-  "scan_iso": "2026-10-15T13:45:33.479951+00:00",
-  "last_updated": "October 15, 2026 at 01:45 PM UTC",
+  "scan_iso": "2026-10-15T14:16:15.856461+00:00",
+  "last_updated": "October 15, 2026 at 02:16 PM UTC",
   "live_daily_prints": [
     {
       "name": "Heavy-Duty Workshop Spool Caddy",
@@ -37,7 +37,7 @@
   ],
   "priority_articles": [
     {
-      "id": "web-1576062770819864748",
+      "id": "web-384855996129931833",
       "title": "Bambu Lab: FCC filings reveal two new 3D printers, H3C and X2D Pro - 3Druck.com",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -69,7 +69,7 @@
   ],
   "general_articles": [
     {
-      "id": "web-1861993378161516072",
+      "id": "web-5157937918662114493",
       "title": "This firmware update will make your 3D printer less capable than the day you bought it - MakeUseOf",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -79,7 +79,7 @@
       "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "web-3106993563249035255",
+      "id": "web-4615678635541226509",
       "title": "How Susan Fang Used Bambu Lab Printers to Create Runway Illusions - 3Dnatives",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -89,7 +89,7 @@
       "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "web-8987875088921306319",
+      "id": "web-4778358665796565894",
       "title": "Bambu Lab & 7 Accessibility Organizations Launch Design Challenge for 3D Printed Assistive Devices - 3DPrint.com",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -99,7 +99,7 @@
       "timestamp": "Oct 04, 2026"
     },
     {
-      "id": "web-915688005555480748",
+      "id": "web-2220063456287229145",
       "title": "Bambu Lab 3D Printers Compared: Which to Buy (2026) - https://3dprinting.com/",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -109,7 +109,7 @@
       "timestamp": "Sep 30, 2026"
     },
     {
-      "id": "web-774624373290931595",
+      "id": "web-5487280785419718733",
       "title": "Makers Making Change and Bambu Lab launch global assistive technology 3D printing challenge - 3D Printing Industry",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -119,7 +119,7 @@
       "timestamp": "Sep 28, 2026"
     },
     {
-      "id": "web-1511519328824633029",
+      "id": "web-3530517449947582084",
       "title": "Bambu Lab S1: FCC Approval Marks Bambu Lab's First Portable 3D Scanner - 3Druck.com",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -129,7 +129,7 @@
       "timestamp": "Sep 23, 2026"
     },
     {
-      "id": "web-6201194881629786118",
+      "id": "web-3213342333733404173",
       "title": "Bambu Lab P3C: FCC approval reveals new 3D printer with model number PF006P - 3Druck.com",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -139,7 +139,7 @@
       "timestamp": "Sep 19, 2026"
     },
     {
-      "id": "web-682258169992775347",
+      "id": "web-8344949372814663749",
       "title": "Bambu Lab and Accessibility Organizations Launch MakerWorld 3D-Printing Challenge - PR Newswire",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -151,7 +151,7 @@
   ],
   "reddit_articles": [
     {
-      "id": "red-6196208420784042127",
+      "id": "red-5583711463217309636",
       "title": "BambuLab is no longer selling H2C on their taobao shop",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -161,7 +161,7 @@
       "timestamp": "Oct 15, 2026"
     },
     {
-      "id": "red-7892701615906382294",
+      "id": "red-8245041449475913467",
       "title": "I want to get a X2D need final advise",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -171,7 +171,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-3846023367398888608",
+      "id": "red-7995019564991237424",
       "title": "Searching for the next level",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -181,7 +181,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-3832051561638974767",
+      "id": "red-2101351081802197013",
       "title": "Panda Station or U.S. General for H series printer",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -191,7 +191,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-5398028174145086217",
+      "id": "red-8963810613592520390",
       "title": "New H3C machine incoming? Real photo or AI art?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -201,7 +201,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-1875378342316895317",
+      "id": "red-471791024816437705",
       "title": "Faster Multi Color printing",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -211,7 +211,7 @@
       "timestamp": "Oct 11, 2026"
     },
     {
-      "id": "red-1008061639571952735",
+      "id": "red-4698754247811041187",
       "title": "Predictions for H3C Price",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -221,7 +221,7 @@
       "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "red-779296120678374137",
+      "id": "red-7850716888906810280",
       "title": "H2C color changing limits",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -231,7 +231,7 @@
       "timestamp": "Oct 07, 2026"
     },
     {
-      "id": "red-7153248931370666106",
+      "id": "red-2879386578555372052",
       "title": "The H3C",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -241,7 +241,7 @@
       "timestamp": "Oct 06, 2026"
     },
     {
-      "id": "red-8936566590945490150",
+      "id": "red-8599605071027058702",
       "title": "What are the chances, really, for new printers before Black Friday?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -251,7 +251,7 @@
       "timestamp": "Oct 02, 2026"
     },
     {
-      "id": "red-6145314600330043258",
+      "id": "red-2688245037484977019",
       "title": "Possible Bambu Lab Upcoming Releases - Full List",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -261,7 +261,7 @@
       "timestamp": "Sep 27, 2026"
     },
     {
-      "id": "red-751368970478529669",
+      "id": "red-6555488884643987635",
       "title": "Beginner: $300 Bambu first, or go $1k–1.5k multi-filament now?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -271,7 +271,7 @@
       "timestamp": "Sep 26, 2026"
     },
     {
-      "id": "red-2910442164706400159",
+      "id": "red-2386182006489941725",
       "title": "Bambu 3D scanner",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -281,7 +281,7 @@
       "timestamp": "Sep 24, 2026"
     },
     {
-      "id": "red-4788986204732601692",
+      "id": "red-6760320593273793174",
       "title": "More H3C news, and possible AMS3",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -291,7 +291,7 @@
       "timestamp": "Sep 22, 2026"
     },
     {
-      "id": "red-7913074413845841355",
+      "id": "red-5122983006694372484",
       "title": "I can’t decide if I should open H2C since H3C application went to FCC!!!",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",

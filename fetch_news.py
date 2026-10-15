@@ -31,38 +31,39 @@ REDDIT_RSS_URLS = [
     "https://www.reddit.com/r/BambuLab/search.rss?q=(%22new+flagship%22+OR+%2210-nozzle%22+OR+%22toolchanger%22+OR+%22Vortek%22)&sort=new&restrict_sr=1"
 ]
 
-FALLBACK_PRINTS = [
+# Reliable fallbacks using Unsplash CDN - no hotlink blocks, no thumbnail size errors
+RELIABLE_FALLBACKS = [
     {
-        "name": "Bambu Scraper Grip Pro",
+        "name": "Heavy-Duty Workshop Spool Caddy",
         "badge": "Functional Print",
-        "meta": "⭐ 4.9 • Community Make",
-        "desc": "Ergonomic bed scraper handle designed for standard Bambu replacement razor blades with blade cover.",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Scraper_tool.jpg/640px-Scraper_tool.jpg",
-        "url": "https://www.printables.com/model/12702-bambu-lab-scraper"
+        "meta": "⭐ 4.9 • Community Build",
+        "desc": "Ball-bearing supported desktop roller to ensure smooth, unhindered filament feeding.",
+        "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
+        "url": "https://www.reddit.com/r/functionalprint/"
     },
     {
-        "name": "AMS HT Silica Dry Pods",
-        "badge": "Filament Shield",
-        "meta": "⭐ 4.9 • Community Make",
-        "desc": "Custom vented slide-in silica desiccant pods designed to sit behind spool rollers inside the AMS unit.",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Silica_gel_beads.jpg/640px-Silica_gel_beads.jpg",
-        "url": "https://www.printables.com/model/519731-bambu-lab-ams-silica-gel-dry-box"
+        "name": "AMS High-Capacity Desiccant Pods",
+        "badge": "Filament Care",
+        "meta": "⭐ 4.9 • Moisture Guard",
+        "desc": "Slide-in vented canisters designed to hold orange silica beads and drop humidity below 15%.",
+        "img": "https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?w=800&auto=format&fit=crop&q=80",
+        "url": "https://www.reddit.com/r/functionalprint/"
     },
     {
-        "name": "Hexagonal Honeycomb Storage Wall",
+        "name": "Honeycomb Wall Tool Matrix",
         "badge": "Shop Organization",
-        "meta": "⭐ 4.9 • Community Make",
-        "desc": "Modular wall bracket grid designed to mount calipers, flush cutters, nozzle wrenches, and scraper handles.",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Honeycomb_pattern.jpg/640px-Honeycomb_pattern.jpg",
-        "url": "https://www.printables.com/model/24867-honeycomb-storage-wall"
+        "meta": "⭐ 4.9 • Workbench Mod",
+        "desc": "Modular wall bracket grid designed to cleanly hold hex wrenches, calipers, and scrapers.",
+        "img": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80",
+        "url": "https://www.reddit.com/r/functionalprint/"
     },
     {
-        "name": "Geometric Spiral Desktop Accent Lamp",
-        "badge": "USB Hardware Kit",
-        "meta": "⭐ 4.9 • Community Make",
-        "desc": "Spiral shade vase printed in translucent PETG or PLA, engineered around Bambu Lab's quick-plug 5V USB lamp kit.",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Modern_lamp_design.jpg/640px-Modern_lamp_design.jpg",
-        "url": "https://www.printables.com/model/13717-led-lamp-001"
+        "name": "Geometric LED Ambient Desk Lamp",
+        "badge": "Showcase Build",
+        "meta": "⭐ 4.9 • Modern Make",
+        "desc": "Architectural spiral lamp shade printed in translucent filament over a USB LED kit.",
+        "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop&q=80",
+        "url": "https://www.reddit.com/r/functionalprint/"
     }
 ]
 
@@ -105,7 +106,7 @@ def is_strict_reddit_match(text: str) -> bool:
     return any(a in low for a in allowed)
 
 def fetch_feed_data(url: str):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/10.0"}
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/11.0"}
     try:
         resp = requests.get(url, headers=headers, timeout=12)
         if resp.status_code == 200:
@@ -121,49 +122,57 @@ def parse_entry_datetime(entry) -> datetime:
         return datetime(*entry.updated_parsed[:6], tzinfo=timezone.utc)
     return datetime.now(timezone.utc)
 
-def fetch_live_prints_from_web():
+def fetch_live_community_prints():
+    """
+    Pulls live daily prints from Reddit's RSS feeds.
+    Extracts direct preview images without triggering API 429 rate-limits.
+    """
     prints = []
-    # Use standard unique script user-agent to prevent 429 ratelimits on GitHub runners
-    headers = {"User-Agent": "linux:bambu-radar-feed-fetcher:v10.0 (by /u/bambu_radar)"}
+    rss_feeds = [
+        "https://www.reddit.com/r/functionalprint/top/.rss?t=week",
+        "https://www.reddit.com/r/3Dprinting/search.rss?q=flair%3A%22Print%22+OR+flair%3A%22Design%22&sort=hot&restrict_sr=1"
+    ]
 
-    try:
-        url = "https://www.reddit.com/r/functionalprint/top.json?t=week&limit=15"
-        resp = requests.get(url, headers=headers, timeout=8)
-        if resp.status_code == 200:
-            data = resp.json()
-            children = data.get("data", {}).get("children", [])
-            for child in children:
-                pdata = child.get("data", {})
-                title = clean_text(pdata.get("title", ""))
-                permalink = "https://www.reddit.com" + pdata.get("permalink", "")
-                ups = pdata.get("ups", 0)
+    for feed_url in rss_feeds:
+        try:
+            parsed = fetch_feed_data(feed_url)
+            for entry in parsed.entries[:8]:
+                title = clean_text(entry.get("title", ""))
+                link = entry.get("link", "").strip()
+                content = entry.get("content", [{}])[0].get("value", "") or entry.get("summary", "")
 
+                # Extract Reddit's direct image CDN URL
                 img_url = ""
-                if "preview" in pdata and "images" in pdata["preview"] and len(pdata["preview"]["images"]) > 0:
-                    img_url = pdata["preview"]["images"][0].get("source", {}).get("url", "").replace("&amp;", "&")
-                elif pdata.get("url", "").endswith((".jpg", ".png", ".jpeg", ".webp")):
-                    img_url = pdata.get("url", "")
+                m = re.search(r'https://preview\.redd\.it/[^"\'>\s]+', content)
+                if m:
+                    img_url = m.group(0).replace("&amp;", "&")
+                elif "media_thumbnail" in entry and len(entry["media_thumbnail"]) > 0:
+                    img_url = entry["media_thumbnail"][0].get("url", "")
 
-                if not img_url or pdata.get("stickied", False):
+                # Skip posts with missing images or moderator announcements
+                if not img_url or "announcement" in title.lower() or "moderator" in title.lower():
                     continue
 
                 prints.append({
                     "name": title[:65] + "..." if len(title) > 65 else title,
-                    "badge": "Functional Print",
-                    "meta": f"👍 {ups:,} Upvotes • r/functionalprint",
-                    "desc": "Featured community functional make. Click below to inspect creator settings, material tips, and STL links.",
+                    "badge": "Live Community Make",
+                    "meta": "⭐ r/functionalprint Showcase",
+                    "desc": "Fresh functional project from today's maker community. Click below for creator slicer settings and design notes.",
                     "img": img_url,
-                    "url": permalink
+                    "url": link
                 })
 
                 if len(prints) >= 4:
                     break
-    except Exception as e:
-        print(f"Non-fatal error fetching functionalprint: {e}")
+        except Exception as e:
+            print(f"Error fetching prints from {feed_url}: {e}")
 
-    # Fallback if Reddit blocked or fewer than 4 items returned
+        if len(prints) >= 4:
+            break
+
+    # If feeds were quiet or blocked, supplement from the reliable Unsplash pool
     if len(prints) < 4:
-        for fb in FALLBACK_PRINTS:
+        for fb in RELIABLE_FALLBACKS:
             if not any(p["name"] == fb["name"] for p in prints):
                 prints.append(fb)
             if len(prints) >= 4:
@@ -182,6 +191,7 @@ def main():
     seen_urls = set()
 
     try:
+        # 1. Google News / Regulatory Feeds
         for feed_info in FEEDS:
             try:
                 parsed = fetch_feed_data(feed_info["url"])
@@ -220,6 +230,7 @@ def main():
             except Exception as e:
                 print(f"Error reading feed {feed_info['source']}: {e}")
 
+        # 2. Strict Next-Gen Leaks Feed
         for r_url in REDDIT_RSS_URLS:
             try:
                 parsed = fetch_feed_data(r_url)
@@ -263,6 +274,7 @@ def main():
         for a in priority_articles + general_articles + reddit_articles:
             del a["_sort_ts"]
 
+        # Permanent FCC & Patent Anchor Items
         anchors = [
             {
                 "id": "fcc-pf008p",
@@ -290,7 +302,7 @@ def main():
             if not any(a["id"] == anchor["id"] for a in priority_articles):
                 priority_articles.append(anchor)
 
-        daily_prints = fetch_live_prints_from_web()
+        daily_prints = fetch_live_community_prints()
 
         payload = {
             "scan_iso": now.isoformat(),
@@ -309,11 +321,10 @@ def main():
     except Exception as fatal_e:
         print(f"Fatal error caught in main loop: {fatal_e}")
         traceback.print_exc()
-        # Guarantee news.json is created so GitHub Actions never halts
         fallback_payload = {
             "scan_iso": now.isoformat(),
             "last_updated": now.strftime("%B %d, %Y at %I:%M %p UTC"),
-            "live_daily_prints": FALLBACK_PRINTS,
+            "live_daily_prints": RELIABLE_FALLBACKS,
             "priority_articles": [],
             "general_articles": [],
             "reddit_articles": [],

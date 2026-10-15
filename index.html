@@ -18,6 +18,7 @@
       --bambu-glow: rgba(0, 174, 66, 0.25);
       --bambu-amber: #f59e0b;
       --reddit-orange: #ff4500;
+      --youtube-red: #ff0000;
       --text-main: #f9fafb;
       --text-sub: #9ca3af;
       --text-dim: #6b7280;
@@ -243,7 +244,102 @@
       color: #fff;
     }
 
-    /* RECOMMENDED PRINTS GALLERY (CLEAN VISUAL CARDS) */
+    /* YOUTUBE SECTION */
+    .youtube-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .youtube-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .youtube-title { font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .youtube-title span { color: var(--youtube-red); }
+
+    .youtube-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .youtube-card {
+      background: #0b0f14;
+      border: 1px solid #1a2332;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .youtube-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--card-hover);
+    }
+    .youtube-thumb-wrap {
+      width: 100%;
+      height: 160px;
+      background: #151d28;
+      position: relative;
+      overflow: hidden;
+    }
+    .youtube-thumb-wrap img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+    .youtube-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .youtube-info { padding: 12px; display: flex; flex-direction: column; flex: 1; }
+    .youtube-card-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+      line-height: 1.35;
+      flex: 1;
+    }
+    .youtube-card-meta {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .youtube-watch-btn {
+      background: #1f2937;
+      border: 1px solid #374151;
+      color: var(--text-main);
+      padding: 7px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .youtube-watch-btn:hover {
+      background: #374151;
+      border-color: var(--youtube-red);
+      color: #fff;
+    }
+
+    /* RECOMMENDED PRINTS GALLERY */
     .makerworld-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -559,6 +655,21 @@
 
     </div>
 
+    <!-- YOUTUBE H3C VIDEO SECTION -->
+    <div class="youtube-box">
+      <div class="youtube-header">
+        <div class="youtube-title">
+          <span>▶</span> Latest H3C Video Intelligence
+        </div>
+        <a href="https://www.youtube.com/results?search_query=Bambu+Lab+H3C&sp=CAI%253D" target="_blank" rel="noopener noreferrer" style="color: var(--bambu-green); font-size: 0.85rem; font-weight: 700; text-decoration: none;">
+          Search YouTube &rarr;
+        </a>
+      </div>
+      <div id="youtubeGridContainer" class="youtube-grid">
+        <p style="color: var(--text-dim); padding: 12px;">Scanning YouTube for latest H3C breakdowns...</p>
+      </div>
+    </div>
+
     <!-- RECOMMENDED PRINTS GALLERY -->
     <div class="makerworld-box">
       <div class="maker-header">
@@ -633,6 +744,32 @@
       } catch (e) {
         return String(dateInput);
       }
+    }
+
+    function renderYouTubeVideos(videos) {
+      const container = document.getElementById('youtubeGridContainer');
+      if (!container || !videos || videos.length === 0) return;
+
+      container.innerHTML = '';
+      videos.forEach(v => {
+        const card = document.createElement('div');
+        card.className = 'youtube-card';
+        card.innerHTML = `
+          <div class="youtube-thumb-wrap">
+            <img src="${v.img}" alt="${v.title}" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80';" />
+            <span class="youtube-badge">YouTube</span>
+          </div>
+          <div class="youtube-info">
+            <div class="youtube-card-title">${v.title}</div>
+            <div class="youtube-card-meta">
+              <span>👤 ${v.channel}</span>
+              <span>📅 ${v.date}</span>
+            </div>
+            <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="youtube-watch-btn">Watch Video &rarr;</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
     }
 
     function renderPrints(picks) {
@@ -909,6 +1046,10 @@
           const scanText = document.getElementById('lastScanText');
           if (scanText && timeVal) {
             scanText.textContent = `Morning Scan: ${formatToLocalTime(timeVal)}`;
+          }
+
+          if (data.youtube_videos && data.youtube_videos.length > 0) {
+            renderYouTubeVideos(data.youtube_videos);
           }
 
           if (data.live_daily_prints && data.live_daily_prints.length > 0) {

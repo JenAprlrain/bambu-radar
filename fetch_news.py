@@ -11,19 +11,16 @@ MAX_DAYS_OLD = 75
 
 # Primary Targeted Bambu Feeds with explicit recency windows (when:14d, when:7d)
 FEEDS = [
-    # 1. H3C & X2D Pro: Catches filings, patent breakdowns, and flagship leaks from the last 14 days
     {
         "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22+OR+%22CN122560413%22+OR+%2210-nozzle%22)+when:14d&hl=en-US&gl=US&ceid=US:en",
         "source": "FCC & Patent Registry",
         "category": "Priority Radar",
     },
-    # 2. Hardware Watch: Catches toolchanger, Vision Encoder, and Vortek updates from the past 7 days
     {
         "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22toolchanger%22+OR+%22Vortek%22+OR+%22Vision+Encoder%22+OR+%22docking+rack%22)+when:7d&hl=en-US&gl=US&ceid=US:en",
         "source": "Bambu Hardware Watch",
         "category": "Hardware Leaks",
     },
-    # 3. Ecosystem & Launch Watch: Catches the latest 7 days of Bambu announcements (S1 scanner, firmware, MakerWorld)
     {
         "url": "https://news.google.com/rss/search?q=%22Bambu+Lab%22+(%22flagship%22+OR+%22pre-order%22+OR+%22firmware%22+OR+%22S1%22+OR+%22scanner%22+OR+%22MakerWorld%22)+when:7d&hl=en-US&gl=US&ceid=US:en",
         "source": "Bambu Ecosystem",
@@ -37,7 +34,6 @@ REDDIT_RSS_URLS = [
     "https://www.reddit.com/r/BambuLab/search.rss?q=(%22new+flagship%22+OR+%2210-nozzle%22+OR+%22toolchanger%22+OR+%22Vortek%22+OR+%22S1%22)&sort=new&restrict_sr=1"
 ]
 
-# Emergency fail-safe fallback pool with direct Thangs browse links
 FALLBACK_PRINTS = [
     {
         "name": "Trending Model Showcase #1",
@@ -100,7 +96,7 @@ def is_strict_reddit_match(text: str) -> bool:
     return any(a in low for a in allowed)
 
 def fetch_feed_data(url: str):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/14.0"}
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/15.0"}
     try:
         resp = requests.get(url, headers=headers, timeout=12)
         if resp.status_code == 200:
@@ -116,11 +112,81 @@ def parse_entry_datetime(entry) -> datetime:
         return datetime(*entry.updated_parsed[:6], tzinfo=timezone.utc)
     return datetime.now(timezone.utc)
 
+def fetch_youtube_h3c_videos():
+    """
+    Pulls the 3 most recent YouTube uploads specifically about the Bambu Lab H3C.
+    Uses YouTube's public search RSS feed.
+    """
+    yt_videos = []
+    yt_rss = "https://www.youtube.com/feeds/videos.xml?search_query=%22Bambu+Lab%22+H3C"
+    
+    try:
+        parsed = fetch_feed_data(yt_rss)
+        for entry in parsed.entries[:6]:
+            title = clean_text(entry.get("title", ""))
+            link = entry.get("link", "")
+            author = entry.get("author", "YouTube Maker")
+            pub_dt = parse_entry_datetime(entry)
+            
+            # Extract video ID for thumbnail
+            video_id = entry.get("yt_videoid", "")
+            if not video_id:
+                m = re.search(r"v=([a-zA-Z0-9_-]+)", link)
+                if m:
+                    video_id = m.group(1)
+
+            img_url = f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg" if video_id else ""
+
+            if title and link and "h3c" in title.lower():
+                yt_videos.append({
+                    "title": title[:70] + "..." if len(title) > 70 else title,
+                    "channel": author,
+                    "url": link,
+                    "img": img_url,
+                    "date": pub_dt.strftime("%b %d, %Y")
+                })
+
+            if len(yt_videos) >= 3:
+                break
+    except Exception as e:
+        print(f"Error fetching YouTube H3C videos: {e}")
+
+    # Fallback to general Bambu next-gen videos if fewer than 3 strict H3C matches
+    if len(yt_videos) < 3:
+        try:
+            yt_rss_alt = "https://www.youtube.com/feeds/videos.xml?search_query=Bambu+Lab+toolchanger+flagship"
+            parsed_alt = fetch_feed_data(yt_rss_alt)
+            for entry in parsed_alt.entries[:5]:
+                title = clean_text(entry.get("title", ""))
+                link = entry.get("link", "")
+                author = entry.get("author", "YouTube Maker")
+                pub_dt = parse_entry_datetime(entry)
+
+                video_id = entry.get("yt_videoid", "")
+                if not video_id:
+                    m = re.search(r"v=([a-zA-Z0-9_-]+)", link)
+                    if m:
+                        video_id = m.group(1)
+
+                img_url = f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg" if video_id else ""
+
+                if title and link and not any(v["url"] == link for v in yt_videos):
+                    yt_videos.append({
+                        "title": title[:70] + "..." if len(title) > 70 else title,
+                        "channel": author,
+                        "url": link,
+                        "img": img_url,
+                        "date": pub_dt.strftime("%b %d, %Y")
+                    })
+
+                if len(yt_videos) >= 3:
+                    break
+        except Exception as e:
+            print(f"YouTube fallback error: {e}")
+
+    return yt_videos[:3]
+
 def fetch_trending_from_thangs():
-    """
-    Scrapes https://thangs.com/browse/trending directly.
-    Extracts the model link and its matching preview photo.
-    """
     prints = []
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -135,7 +201,6 @@ def fetch_trending_from_thangs():
         if resp.status_code == 200:
             html = resp.text
 
-            # Method 1: Check embedded Next.js JSON hydrate payload (__NEXT_DATA__)
             json_match = re.search(r'<script id="__NEXT_DATA__" type="application/json">({.*?})</script>', html, re.DOTALL)
             if json_match:
                 try:
@@ -166,7 +231,6 @@ def fetch_trending_from_thangs():
                 except Exception as je:
                     print(f"Error parsing Next.js JSON: {je}")
 
-            # Method 2: Direct Regex match for model links and images in HTML
             if len(prints) < 4:
                 pattern = r'<a[^>]+href=["\'](/m/[^"\']+)["\'][^>]*>.*?<img[^>]+src=["\']([^"\']+)["\']'
                 matches = re.findall(pattern, html, re.DOTALL | re.IGNORECASE)
@@ -177,19 +241,6 @@ def fetch_trending_from_thangs():
                             "img": img_src,
                             "url": "https://thangs.com" + model_rel
                         })
-
-            # Method 3: Reverse pattern (<img ...> wrapped in <a href="/m/...">)
-            if len(prints) < 4:
-                pattern_rev = r'<img[^>]+src=["\']([^"\']+)["\'][^>]*>.*?<a[^>]+href=["\'](/m/[^"\']+)["\']'
-                matches_rev = re.findall(pattern_rev, html, re.DOTALL | re.IGNORECASE)
-                for img_src, model_rel in matches_rev:
-                    if img_src.startswith("http") and not img_src.endswith((".svg", ".gif", "avatar", "icon")):
-                        prints.append({
-                            "name": "Trending 3D Model",
-                            "img": img_src,
-                            "url": "https://thangs.com" + model_rel
-                        })
-
     except Exception as e:
         print(f"Error fetching Thangs trending page: {e}")
 
@@ -203,14 +254,12 @@ def fetch_trending_from_thangs():
 
     if len(unique_prints) >= 4:
         selected = random.sample(unique_prints, 4)
-        print(f"Successfully scraped {len(unique_prints)} models from Thangs trending. Selected 4.")
         return selected
 
-    print("Trending scraper retrieved fewer than 4 items. Using verified fallbacks.")
     return FALLBACK_PRINTS
 
 def main():
-    print("Executing morning scan for H3C, X2D Pro, and Thangs trending models...")
+    print("Executing morning scan for H3C, X2D Pro, Thangs trending models, and YouTube video intel...")
     now = datetime.now(timezone.utc)
     cutoff_date = now - timedelta(days=MAX_DAYS_OLD)
 
@@ -220,7 +269,7 @@ def main():
     seen_urls = set()
 
     try:
-        # 1. Google News / Regulatory Feeds with recency constraints
+        # 1. Google News / Regulatory Feeds
         for feed_info in FEEDS:
             try:
                 parsed = fetch_feed_data(feed_info["url"])
@@ -303,7 +352,6 @@ def main():
         for a in priority_articles + general_articles + reddit_articles:
             del a["_sort_ts"]
 
-        # Permanent FCC & Patent Anchor Items
         anchors = [
             {
                 "id": "fcc-pf008p",
@@ -332,11 +380,13 @@ def main():
                 priority_articles.append(anchor)
 
         daily_prints = fetch_trending_from_thangs()
+        h3c_videos = fetch_youtube_h3c_videos()
 
         payload = {
             "scan_iso": now.isoformat(),
             "last_updated": now.strftime("%B %d, %Y at %I:%M %p UTC"),
             "live_daily_prints": daily_prints,
+            "youtube_videos": h3c_videos,
             "priority_articles": priority_articles[:20],
             "general_articles": general_articles[:12],
             "reddit_articles": reddit_articles[:15],
@@ -345,7 +395,7 @@ def main():
         with open("news.json", "w", encoding="utf-8") as f:
             json.dump(payload, f, indent=2, ensure_ascii=False)
 
-        print(f"Successfully generated news.json with {len(priority_articles)} priority items, {len(general_articles)} general items, and {len(daily_prints)} trending prints.")
+        print(f"Successfully generated news.json with {len(priority_articles)} priority items, {len(daily_prints)} prints, and {len(h3c_videos)} H3C YouTube videos.")
 
     except Exception as fatal_e:
         print(f"Fatal error caught in main loop: {fatal_e}")
@@ -354,6 +404,7 @@ def main():
             "scan_iso": now.isoformat(),
             "last_updated": now.strftime("%B %d, %Y at %I:%M %p UTC"),
             "live_daily_prints": FALLBACK_PRINTS,
+            "youtube_videos": [],
             "priority_articles": [],
             "general_articles": [],
             "reddit_articles": [],

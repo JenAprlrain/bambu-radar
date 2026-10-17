@@ -1,26 +1,26 @@
 {
-  "scan_iso": "2026-10-16T14:54:52.312946+00:00",
-  "last_updated": "October 16, 2026 at 02:54 PM UTC",
+  "scan_iso": "2026-10-17T13:47:23.296692+00:00",
+  "last_updated": "October 17, 2026 at 01:47 PM UTC",
   "live_daily_prints": [
     {
-      "name": "Cute Flexi Starfish (Toy, Keychain, Magnet) + Pirate version",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/1198a5e9-0663-4be5-bd59-2a2bfdab7721/Starfish_thangs.png",
-      "url": "https://thangs.com/m/1553837"
+      "name": "Bonnie the Magnetic Flexi Skeleton Cat - Magnetic Hand-Holdi",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/dfcaea01-eea5-49ab-aefa-e1db4979abce/FlexiSkullCat_06_magnets.jpg",
+      "url": "https://thangs.com/m/1628385"
     },
     {
-      "name": "Shroom Stress Button",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/122825d1-9890-4978-81f3-8ee50ab0216b/Shroom%20Stress%20Button%20Render.jpg",
-      "url": "https://thangs.com/m/1628362"
+      "name": "Articulating Piranha — Movable Jaw",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/ef73c73c-b499-479f-a43b-03f3b9090def/piranha%20main%20.png",
+      "url": "https://thangs.com/m/1615419"
     },
     {
-      "name": "Frankenstein Nutcracker - Halloween Kit | No Supports, No AM",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/4d9c0276-a2ec-4203-84d5-b62c73615f0c/Image%205.png",
-      "url": "https://thangs.com/m/1628354"
+      "name": "Infinite Notebook",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/b4b6cc4e-ac96-4ce1-9dcf-fa91f9fc7050/0_8.jpg",
+      "url": "https://thangs.com/m/1553629"
     },
     {
-      "name": "Scooby-Doo & Shaggy – Collectible 3D Figurine",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/d67d132b-0dc1-4806-ab0a-ecca7389e25e/4364_img_2.jpg",
-      "url": "https://thangs.com/m/1627312"
+      "name": "Universal Bathroom Holder | Philips Sonicare & OneBlade | Se",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/15477280-b723-4ed8-91ee-12c7e89073a0/Thangs.gif",
+      "url": "https://thangs.com/m/1621369"
     }
   ],
   "youtube_videos": [
@@ -29,21 +29,21 @@
       "channel": "Keo Prints",
       "url": "https://www.youtube.com/watch?v=_ihZCNKRVR4",
       "img": "https://i.ytimg.com/vi/_ihZCNKRVR4/hqdefault.jpg",
-      "date": "6d ago"
+      "date": "7d ago"
     },
     {
-      "title": "DO NOT BUY A BAMBU LAB 3D PRINTER! (At least not right now...)",
-      "channel": "Lukas Engstrom",
-      "url": "https://www.youtube.com/watch?v=K0CzAjxbAhA",
-      "img": "https://i.ytimg.com/vi/K0CzAjxbAhA/hqdefault.jpg",
-      "date": "2d ago"
-    },
-    {
-      "title": "Bambu Lab Scanner? H3C Soon?! Formlabs Budget Printer And More! | 3D...",
+      "title": "Bambu Lab’s H3C Just Got Confirmed",
       "channel": "3DPrinterMike",
-      "url": "https://www.youtube.com/watch?v=khKWPduLUIE",
-      "img": "https://i.ytimg.com/vi/khKWPduLUIE/hqdefault.jpg",
-      "date": "12h ago"
+      "url": "https://www.youtube.com/watch?v=SvqOZ3hrnD8",
+      "img": "https://i.ytimg.com/vi/SvqOZ3hrnD8/hqdefault.jpg",
+      "date": "1mo ago"
+    },
+    {
+      "title": "H3C Leaked! Bambu Lab's Next Printer",
+      "channel": "3DPrinterMike",
+      "url": "https://www.youtube.com/watch?v=Joz1pD_W6Yg",
+      "img": "https://i.ytimg.com/vi/Joz1pD_W6Yg/hqdefault.jpg",
+      "date": "10d ago"
     }
   ],
   "priority_articles": [
@@ -70,7 +70,7 @@
   ],
   "general_articles": [
     {
-      "id": "web-6349333970430217547",
+      "id": "web-367875991909518411",
       "title": "Bambu Lab is now selling 3D scanners - 3d adept media",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -80,7 +80,7 @@
       "timestamp": "Oct 16, 2026"
     },
     {
-      "id": "web-2349663579521282494",
+      "id": "web-5439777191327696924",
       "title": "Nothing’s First CMF Speakers Support 3D Printed Knobs and Panels - 3D Printing Industry",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -90,7 +90,7 @@
       "timestamp": "Oct 15, 2026"
     },
     {
-      "id": "web-5992143361941040871",
+      "id": "web-4913809976875095002",
       "title": "Bambu Lab Is Building More Than 3D Printers. Now Comes the S1 Scanner - 3DPrint.com",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -100,7 +100,7 @@
       "timestamp": "Oct 15, 2026"
     },
     {
-      "id": "web-353910160621264722",
+      "id": "web-8887737076773527041",
       "title": "Bambu Lab teases its first 3D scanner, the S1 - OC3D",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -110,27 +110,7 @@
       "timestamp": "Oct 14, 2026"
     },
     {
-      "id": "web-2861250514071324563",
-      "title": "HomePod mini 2 Launched With Siri AI and Surround Sound, Here Is How Much It Costs - Gadget Bridge",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "HomePod mini 2 Launched With Siri AI and Surround Sound, Here Is How Much It Costs&nbsp;&nbsp;Gadget Bridge",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNaUtkX181emtLMlRWVkxYTUtXVHdSMzEzdGU2Wm1JRm96eFZHUGNWdC1WQlBVRzh0REpyZG5ZdVdFOHNOLWxmQVYwbXVENkowRGJJeWExTVpKWTlwZDhGRlNoTnpsMndiYUJ4RE1UNWhORkU5Z0dvaHd2ekM3T09zTU9qemIwYTNQY1FMeU1WZDk5SzBpb01VMVBwZml5NGEwbFREV2tpQklMS1c0NkJrY9IBtgFBVV95cUxNdGNRaWgxczRwWGdqbHYzd29NcDg5TGxKbzFNREIwOWRYSk5MY3F3enRmSjFoN0gwNS1TT0xDZF9NNDVVSk5QOTdyNk1uMVRueFBNSjA1LWJ2OWJEYW5KMy1ldV9wVEF0SVEwTW9fMzd3a2xHblJ6MHFTRlhRVkQzaVNNZjFBTXRValhkcGxYSEVYT3ZOM1Bkc0NRRFhUSktYeXpXTFZtdmFyZjBmSk83and1LVA0QQ",
-      "timestamp": "Oct 13, 2026"
-    },
-    {
-      "id": "web-3865101885159486431",
-      "title": "BolloPrint: Platform Combines Order Management, Cost Control, and 3D Printer Monitoring - 3Druck.com",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "BolloPrint: Platform Combines Order Management, Cost Control, and 3D Printer Monitoring&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMGVHVDZZcmNIQ0RYcUQxZC1PRjFQcU1Fd3BlYWYwMEtKSnE5ci0wcVVsYnQ5N0lXRXVEeFpuc1hZWGszY3U5TVdnbDV3WkVUcVBoVTBaelE4UGc1NlM5UnN1cGxtN1pLYVJlZExEaGNGMGttMV9EeW1TME53RUozMjV0Z0UzYzhQMHRTVFkyNU9hVHg4aHpBVVotckFtSUh4UzU4TlJuejdEYzNOZ095clYwTE0tdzNpVzlkWnBWQkdRRGJXc05ydQ",
-      "timestamp": "Oct 13, 2026"
-    },
-    {
-      "id": "web-2994549810201034989",
+      "id": "web-6198276933828379204",
       "title": "Bambu Lab S1 3D Scanner Is Coming in November 2026 - Gadget Bridge",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -140,7 +120,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "web-99808509133967015",
+      "id": "web-4781715529060719510",
       "title": "Nokia 3310 gets Raspberry Pi Pico transplant, runs Doom and retro emulators - news.lavx.hu",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -150,7 +130,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "web-3999253076319199377",
+      "id": "web-6895558123304763760",
       "title": "Bambu Lab just entered the 3D scanning scene, and you can sign up to hear more right now - XDA",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -160,7 +140,7 @@
       "timestamp": "Oct 12, 2026"
     },
     {
-      "id": "web-7290778549488962382",
+      "id": "web-4264446009178941376",
       "title": "Citroën Unveils Electric 2CV Revival at Paris Motor Show, With a Van Variant That May Never Arrive - Glitchwire",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -170,7 +150,7 @@
       "timestamp": "Oct 12, 2026"
     },
     {
-      "id": "web-325268421100125618",
+      "id": "web-3635240194727620803",
       "title": "One Developer's AI-Built Adobe Clones Mark a New Era of Build-Your-Own Software - Glitchwire",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -180,7 +160,7 @@
       "timestamp": "Oct 12, 2026"
     },
     {
-      "id": "web-4018010854001110701",
+      "id": "web-276878988398621891",
       "title": "Bambu Lab officially teases its first 3D scanner — S1 3D set for launch in November 2026 - Tom's Hardware",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -188,11 +168,31 @@
       "summary": "Bambu Lab officially teases its first 3D scanner — S1 3D set for launch in November 2026&nbsp;&nbsp;Tom's Hardware",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQemZ2LUNpcFBjMEdiZ0VOZnQ1ZmVfb1hWOWdBRjZ4Z0d1U2hNSmx2a3NkeWgtMEJoSFNNSXlIblZOMmRhT29SRlFGclpLN1B6QXl0clJ0TWJsWEMwamNqbGpZTGVaR0QzbDVPMm9YUXZ0Q0xPS0lyQ2J6azNMb1BpRTNOM016WElYdHN5bkJUb04xOXpZQ2tmeFE0czN0VERaOVpKYm85X1ROQzZXalJGdXJxNkFZRzktSEpJ",
       "timestamp": "Oct 12, 2026"
+    },
+    {
+      "id": "web-5766671155701266495",
+      "title": "Bambu Lab Teases New S1 Handheld 3D Scanner - All3DP",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab Teases New S1 Handheld 3D Scanner&nbsp;&nbsp;All3DP",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1ka1lBMGhQZkpRZG9SU0ZkSmlUZVpGN2R2aGdMQWpFaHNneVVFaHhSQUl0Z0ktc3hIbEVhXzE2X0hCOGtMNmMyR3BUNkNBSjBKNmxJeWQ0QkcxWnRaX0kzc2E1REdkQ0NFcHdaakFtajYzX2c",
+      "timestamp": "Oct 12, 2026"
+    },
+    {
+      "id": "web-7102697654522643602",
+      "title": "Bambu Lab Teases S1 3D Scanner, Its First, for November 2026 - Glitchwire",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab Teases S1 3D Scanner, Its First, for November 2026&nbsp;&nbsp;Glitchwire",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPb2FRbFlrbGVPZ05RQU5iZW50UEdUd3VraXZNdkxjME10NGxTamZrbTR4UWJTYVB3dWJGTi1aaC1yel85RFVOdGV6NGlQSUJ3LXlET1ZkdUtoRlJKTWF0TE5SR3VtcnhMYTFDcHdLNXNRbGtxcE90dFFEYWZ6Q1VLOXEyRlhrT1FzQjJDc1JKLWM",
+      "timestamp": "Oct 12, 2026"
     }
   ],
   "reddit_articles": [
     {
-      "id": "red-4906625617206956950",
+      "id": "red-6281122036226230806",
       "title": "Heard H3C will switch to 2.85mm filament for printing TPU",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -202,7 +202,7 @@
       "timestamp": "Oct 16, 2026"
     },
     {
-      "id": "red-7771404655811583600",
+      "id": "red-2113164181372414574",
       "title": "$1800 H2C or $3000 H3C - Which Are You Buying?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -212,7 +212,7 @@
       "timestamp": "Oct 15, 2026"
     },
     {
-      "id": "red-3818323001410671520",
+      "id": "red-325988821076514553",
       "title": "I want to get a X2D need final advise",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -222,7 +222,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-3684747697884587351",
+      "id": "red-2960666151420254858",
       "title": "Searching for the next level",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -232,7 +232,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-7607236917864174833",
+      "id": "red-5965103383799411689",
       "title": "Panda Station or U.S. General for H series printer",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -242,7 +242,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-3616115133390365264",
+      "id": "red-1668466781591120473",
       "title": "New H3C machine incoming? Real photo or AI art?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -252,7 +252,7 @@
       "timestamp": "Oct 13, 2026"
     },
     {
-      "id": "red-3716814077650948601",
+      "id": "red-2185582843637573785",
       "title": "Faster Multi Color printing",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -262,7 +262,7 @@
       "timestamp": "Oct 11, 2026"
     },
     {
-      "id": "red-2584573149897451159",
+      "id": "red-1541098491573396999",
       "title": "Predictions for H3C Price",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -272,7 +272,7 @@
       "timestamp": "Oct 09, 2026"
     },
     {
-      "id": "red-5095294237201256598",
+      "id": "red-7027010350524641717",
       "title": "H2C color changing limits",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -282,7 +282,7 @@
       "timestamp": "Oct 07, 2026"
     },
     {
-      "id": "red-5781307589853419166",
+      "id": "red-1696579652011158914",
       "title": "The H3C",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -292,7 +292,7 @@
       "timestamp": "Oct 06, 2026"
     },
     {
-      "id": "red-845057482008338023",
+      "id": "red-3706767295492681023",
       "title": "What are the chances, really, for new printers before Black Friday?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -302,7 +302,7 @@
       "timestamp": "Oct 02, 2026"
     },
     {
-      "id": "red-4506376757306059539",
+      "id": "red-3701811967342032354",
       "title": "Possible Bambu Lab Upcoming Releases - Full List",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -312,7 +312,7 @@
       "timestamp": "Sep 27, 2026"
     },
     {
-      "id": "red-6992440569693607328",
+      "id": "red-7424684582689709043",
       "title": "Beginner: $300 Bambu first, or go $1k–1.5k multi-filament now?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -322,7 +322,7 @@
       "timestamp": "Sep 26, 2026"
     },
     {
-      "id": "red-1003118600161898176",
+      "id": "red-6492368972296558196",
       "title": "Bambu 3D scanner",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
@@ -332,7 +332,7 @@
       "timestamp": "Sep 24, 2026"
     },
     {
-      "id": "red-2462539242615113236",
+      "id": "red-835813029394963375",
       "title": "More H3C news, and possible AMS3",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",

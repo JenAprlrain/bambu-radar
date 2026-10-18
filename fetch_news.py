@@ -9,6 +9,65 @@ import requests
 
 MAX_DAYS_OLD = 75
 
+# --- HELPER FUNCTIONS (Must be defined first) ---
+
+def clean_text(raw_html: str) -> str:
+    clean = re.sub(r"<[^>]+>", "", raw_html or "")
+    return " ".join(clean.split())
+
+def fetch_feed_data(url: str):
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/18.0"}
+    try:
+        resp = requests.get(url, headers=headers, timeout=12)
+        if resp.status_code == 200:
+            return feedparser.parse(resp.content)
+    except Exception as e:
+        print(f"Feed error for {url}: {e}")
+    return feedparser.parse(url)
+
+def parse_entry_datetime(entry) -> datetime:
+    if hasattr(entry, "published_parsed") and entry.published_parsed:
+        return datetime(*entry.published_parsed[:6], tzinfo=timezone.utc)
+    if hasattr(entry, "updated_parsed") and entry.updated_parsed:
+        return datetime(*entry.updated_parsed[:6], tzinfo=timezone.utc)
+    return datetime.now(timezone.utc)
+
+def is_strict_priority_target(text: str) -> bool:
+    low = text.lower()
+    if "x2d" in low and not any(k in low for k in ["x2d pro", "x2d-pro", "pf004e", "pf008p", "h3c"]):
+        return False
+    priority_tokens = [
+        "h3c", "x2d pro", "x2d-pro", "pf008p", "pf004e",
+        "10-nozzle", "10 nozzle", "placement rack", "docking rack",
+        "cn 122560413", "cn122560413", "cn 122560409", "cn122560409",
+        "vortek", "ams 3h", "vision encoder"
+    ]
+    return any(t in low for t in priority_tokens)
+
+def classify_target(text: str) -> str:
+    low = text.lower()
+    has_h3c = bool(re.search(r"\bh3c\b|10-nozzle|10 nozzle|placement rack|docking rack|cn\s*122560413|vortek", low))
+    has_x2d_pro = bool(re.search(r"\bx2d\s*pro\b|\bx2d-pro\b|\bpf004e\b", low))
+    has_fcc = bool(re.search(r"2a6j8-pf008p|pf008p", low))
+
+    if (has_h3c and has_x2d_pro) or has_fcc:
+        return "H3C / X2D Pro"
+    if has_h3c:
+        return "H3C"
+    if has_x2d_pro:
+        return "X2D Pro"
+    return "Bambu Lab"
+
+def is_strict_reddit_match(text: str) -> bool:
+    low = text.lower()
+    blacklist = ["first layer", "clog", "troubleshooting", "stringing", "a1 mini", "p1p", "p1s", "why is my", "print failed", "adhesion", "bed level"]
+    if any(b in low for b in blacklist) and not any(t in low for t in ["h3c", "x2d pro", "pf008p", "pf004e", "s1"]):
+        return False
+    allowed = ["h3c", "x2d pro", "x2d-pro", "pf008p", "pf004e", "10-nozzle", "toolchanger", "vortek", "new flagship", "fcc", "patent", "s1"]
+    return any(a in low for a in allowed)
+
+# --- FEED DEFINITIONS ---
+
 FEEDS = [
     {
         "url": "https://news.google.com/rss/search?q=(%22Bambu+Lab%22+OR+Bambu)+(%22H3C%22+OR+%22X2D+Pro%22+OR+%22PF008P%22+OR+%22PF004E%22+OR+%22CN122560413%22+OR+%2210-nozzle%22)+when:14d&hl=en-US&gl=US&ceid=US:en",
@@ -32,30 +91,7 @@ REDDIT_RSS_URLS = [
     "https://www.reddit.com/r/BambuLab/search.rss?q=(%22new+flagship%22+OR+%2210-nozzle%22+OR+%22toolchanger%22+OR+%22Vortek%22+OR+%22S1%22)&sort=new&restrict_sr=1"
 ]
 
-FALLBACK_PRINTS = [
-    {
-        "name": "Trending Model Showcase #1",
-        "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
-        "url": "https://thangs.com/browse/trending"
-    },
-    {
-        "name": "Trending Model Showcase #2",
-        "img": "https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?w=800&auto=format&fit=crop&q=80",
-        "url": "https://thangs.com/browse/trending"
-    },
-    {
-        "name": "Trending Model Showcase #3",
-        "img": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80",
-        "url": "https://thangs.com/browse/trending"
-    },
-    {
-        "name": "Trending Model Showcase #4",
-        "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop&q=80",
-        "url": "https://thangs.com/browse/trending"
-    }
-]
-
-# Verified, live YouTube uploads on the Bambu Lab H3C with working thumbnails and links
+# Verified, working YouTube H3C videos
 VERIFIED_H3C_VIDEOS = [
     {
         "title": "New Bambu Lab H3C Leaked Image & AMS 3 Patent Breakdown!",
@@ -94,12 +130,32 @@ VERIFIED_H3C_VIDEOS = [
     }
 ]
 
+FALLBACK_PRINTS = [
+    {
+        "name": "Trending Model Showcase #1",
+        "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
+        "url": "https://thangs.com/browse/trending"
+    },
+    {
+        "name": "Trending Model Showcase #2",
+        "img": "https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?w=800&auto=format&fit=crop&q=80",
+        "url": "https://thangs.com/browse/trending"
+    },
+    {
+        "name": "Trending Model Showcase #3",
+        "img": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80",
+        "url": "https://thangs.com/browse/trending"
+    },
+    {
+        "name": "Trending Model Showcase #4",
+        "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop&q=80",
+        "url": "https://thangs.com/browse/trending"
+    }
+]
+
+# --- SCRAPING ROUTINES ---
+
 def fetch_youtube_h3c_videos():
-    """
-    Pulls recent YouTube videos covering the Bambu Lab H3C.
-    Uses DuckDuckGo HTML search to bypass datacenter IP blocks,
-    with verified live videos ensuring working links and thumbnails.
-    """
     yt_videos = []
     seen_ids = set()
 
@@ -108,22 +164,11 @@ def fetch_youtube_h3c_videos():
         "Accept-Language": "en-US,en;q=0.9",
     }
 
-    # 1. Scrape live video URLs via DuckDuckGo HTML search (not blocked on GitHub runners)
     try:
         ddg_url = "https://html.duckduckgo.com/html/?q=site%3Ayoutube.com+Bambu+Lab+H3C"
         resp = requests.get(ddg_url, headers=headers, timeout=10)
         if resp.status_code == 200:
             html = resp.text
-            # Match results: capture title and YouTube link
-            matches = re.findall(
-                r'<a[^>]+class="result__snippet"[^>]*href="[^"]*(?:youtube\.com/watch\?v=|youtu\.be/)([a-zA-Z0-9_-]{11})"[^>]*>.*?</a>|<a[^>]+class="result__url"[^>]*href="[^"]*(?:youtube\.com/watch\?v=|youtu\.be/)([a-zA-Z0-9_-]{11})"',
-                html,
-                re.DOTALL
-            )
-            # Flatten matched tuples
-            found_ids = [m[0] or m[1] for m in matches if (m[0] or m[1])]
-            
-            # Extract corresponding titles from result links
             result_blocks = re.findall(
                 r'<h2 class="result__title">.*?<a[^>]+href="[^"]*(?:youtube\.com/watch\?v=|youtu\.be/)([a-zA-Z0-9_-]{11})"[^>]*>(.*?)</a>',
                 html,
@@ -146,7 +191,6 @@ def fetch_youtube_h3c_videos():
     except Exception as e:
         print(f"DuckDuckGo video scrape error: {e}")
 
-    # 2. Fill remaining slots from our verified real H3C video pool
     for real_video in VERIFIED_H3C_VIDEOS:
         vid_match = re.search(r"v=([a-zA-Z0-9_-]{11})", real_video["url"])
         if vid_match:
@@ -226,10 +270,11 @@ def fetch_trending_from_thangs():
             unique_prints.append(p)
 
     if len(unique_prints) >= 4:
-        selected = random.sample(unique_prints, 4)
-        return selected
+        return random.sample(unique_prints, 4)
 
     return FALLBACK_PRINTS
+
+# --- MAIN EXECUTION ---
 
 def main():
     print("Executing morning scan for H3C, X2D Pro, Thangs models, and YouTube video intel...")
@@ -242,6 +287,7 @@ def main():
     seen_urls = set()
 
     try:
+        # 1. Google News / Regulatory Feeds
         for feed_info in FEEDS:
             try:
                 parsed = fetch_feed_data(feed_info["url"])
@@ -280,6 +326,7 @@ def main():
             except Exception as e:
                 print(f"Error reading feed {feed_info['source']}: {e}")
 
+        # 2. Strict Next-Gen Leaks Feed
         for r_url in REDDIT_RSS_URLS:
             try:
                 parsed = fetch_feed_data(r_url)
@@ -323,6 +370,7 @@ def main():
         for a in priority_articles + general_articles + reddit_articles:
             del a["_sort_ts"]
 
+        # Permanent FCC & Patent Anchor Items
         anchors = [
             {
                 "id": "fcc-pf008p",
@@ -366,7 +414,7 @@ def main():
         with open("news.json", "w", encoding="utf-8") as f:
             json.dump(payload, f, indent=2, ensure_ascii=False)
 
-        print(f"Successfully generated news.json with {len(priority_articles)} priority items, {len(daily_prints)} prints, and {len(h3c_videos)} H3C YouTube videos.")
+        print(f"Successfully generated news.json with {len(priority_articles)} priority items, {len(general_articles)} general items, {len(reddit_articles)} reddit items, {len(daily_prints)} prints, and {len(h3c_videos)} H3C YouTube videos.")
 
     except Exception as fatal_e:
         print(f"Fatal error caught in main loop: {fatal_e}")
@@ -375,7 +423,7 @@ def main():
             "scan_iso": now.isoformat(),
             "last_updated": now.strftime("%B %d, %Y at %I:%M %p UTC"),
             "live_daily_prints": FALLBACK_PRINTS,
-            "youtube_videos": FALLBACK_YOUTUBE,
+            "youtube_videos": VERIFIED_H3C_VIDEOS[:3],
             "priority_articles": [],
             "general_articles": [],
             "reddit_articles": [],

@@ -137,35 +137,66 @@ def parse_entry_datetime(entry) -> datetime:
 
 def fetch_youtube_h3c_videos():
     """
-    Pulls the 3 most recent YouTube videos about the H3C using scrapetube.
-    Falls back to verified videos if YouTube rate limits.
+    Pulls genuine, recently uploaded YouTube videos about the Bambu Lab H3C.
+    Uses Google's unblocked video index to prevent cloud datacenter IP blocks.
     """
     yt_videos = []
-    try:
-        import scrapetube
-        # Search YouTube for H3C videos sorted by newest upload
-        results = scrapetube.get_search("Bambu Lab H3C", limit=8, sort_by="upload_date")
-        for v in results:
-            vid = v.get("videoId")
-            title = v.get("title", {}).get("runs", [{}])[0].get("text", "")
-            channel = v.get("ownerText", {}).get("runs", [{}])[0].get("text", "YouTube Maker")
-            pub_date = v.get("publishedTimeText", {}).get("simpleText", "Recent Upload")
+    seen_ids = set()
 
-            if vid and title:
+    # Search queries targeting H3C and next-gen Bambu flagship coverage
+    queries = [
+        "https://news.google.com/rss/search?q=site:youtube.com+(%22Bambu+Lab%22+OR+Bambu)+H3C&hl=en-US&gl=US&ceid=US:en",
+        "https://news.google.com/rss/search?q=site:youtube.com+%22Bambu+Lab%22+(%22toolchanger%22+OR+%22X2D+Pro%22+OR+%22flagship%22)&hl=en-US&gl=US&ceid=US:en"
+    ]
+
+    for q_url in queries:
+        try:
+            parsed = fetch_feed_data(q_url)
+            for entry in parsed.entries[:10]:
+                title = clean_text(entry.get("title", ""))
+                link = entry.get("link", "").strip()
+                pub_dt = parse_entry_datetime(entry)
+                source_meta = entry.get("source", {}).get("title", "YouTube Maker")
+
+                # Clean up Google News redirect to get direct YouTube link
+                video_id = ""
+                m = re.search(r"v=([a-zA-Z0-9_-]{11})", link)
+                if m:
+                    video_id = m.group(1)
+                else:
+                    # Sometimes the ID is in the title or description text
+                    m_desc = re.search(r"watch\?v=([a-zA-Z0-9_-]{11})", entry.get("description", ""))
+                    if m_desc:
+                        video_id = m_desc.group(1)
+
+                # Skip non-video links or duplicate IDs
+                if not video_id or video_id in seen_ids:
+                    continue
+
+                seen_ids.add(video_id)
+                direct_url = f"https://www.youtube.com/watch?v={video_id}"
+                img_url = f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg"
+
+                # Filter out generic YouTube titles
+                clean_title = title.replace(" - YouTube", "").strip()
+
                 yt_videos.append({
-                    "title": clean_text(title)[:68] + "..." if len(title) > 68 else clean_text(title),
-                    "channel": channel,
-                    "url": f"https://www.youtube.com/watch?v={vid}",
-                    "img": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
-                    "date": pub_date
+                    "title": clean_title[:68] + "..." if len(clean_title) > 68 else clean_title,
+                    "channel": source_meta if source_meta != "YouTube" else "YouTube Maker",
+                    "url": direct_url,
+                    "img": img_url,
+                    "date": pub_dt.strftime("%b %d, %Y")
                 })
 
-            if len(yt_videos) >= 3:
-                break
-    except Exception as e:
-        print(f"Error scraping YouTube with scrapetube: {e}")
+                if len(yt_videos) >= 3:
+                    break
+        except Exception as e:
+            print(f"Error fetching YouTube videos via Google index: {e}")
 
-    # Fallback to verified breakdown videos if fewer than 3 were returned
+        if len(yt_videos) >= 3:
+            break
+
+    # If the ecosystem had fewer than 3 new uploads, fill the remaining slots from the fallback pool
     if len(yt_videos) < 3:
         for fb in FALLBACK_YOUTUBE:
             if not any(v["url"] == fb["url"] for v in yt_videos):

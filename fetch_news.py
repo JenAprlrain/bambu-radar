@@ -55,26 +55,25 @@ FALLBACK_PRINTS = [
     }
 ]
 
-# Verified high-quality fallback H3C videos
 FALLBACK_YOUTUBE = [
     {
         "title": "Bambu Lab H3C: Inside the 10-Nozzle Toolhead Docking Patent",
         "channel": "Makers101 Breakdown",
-        "url": "https://www.youtube.com/results?search_query=Bambu+Lab+H3C+patent",
+        "url": "https://www.youtube.com/watch?v=q_7n7E1qU04",
         "img": "https://i.ytimg.com/vi/q_7n7E1qU04/hqdefault.jpg",
         "date": "Hardware Teardown"
     },
     {
         "title": "Bambu Lab H3C & X2D Pro: Everything We Know So Far",
         "channel": "Aurora Tech",
-        "url": "https://www.youtube.com/results?search_query=Bambu+Lab+H3C+X2D+Pro",
+        "url": "https://www.youtube.com/watch?v=b_K5T2d4B-o",
         "img": "https://i.ytimg.com/vi/b_K5T2d4B-o/hqdefault.jpg",
         "date": "Launch Analysis"
     },
     {
         "title": "Is Bambu Lab's Next Flagship A Tool Changer? H3C Breakdown",
         "channel": "3D Print Forecast",
-        "url": "https://www.youtube.com/results?search_query=Bambu+Lab+tool+changer+H3C",
+        "url": "https://www.youtube.com/watch?v=j5H2Qv9wX9o",
         "img": "https://i.ytimg.com/vi/j5H2Qv9wX9o/hqdefault.jpg",
         "date": "Community Intel"
     }
@@ -137,66 +136,59 @@ def parse_entry_datetime(entry) -> datetime:
 
 def fetch_youtube_h3c_videos():
     """
-    Pulls genuine, recently uploaded YouTube videos about the Bambu Lab H3C.
-    Uses Google's unblocked video index to prevent cloud datacenter IP blocks.
+    Fetches genuine, recently uploaded YouTube videos about the Bambu Lab H3C
+    via Invidious API instances to bypass datacenter IP blocks and get clean video IDs.
     """
     yt_videos = []
     seen_ids = set()
 
-    # Search queries targeting H3C and next-gen Bambu flagship coverage
-    queries = [
-        "https://news.google.com/rss/search?q=site:youtube.com+(%22Bambu+Lab%22+OR+Bambu)+H3C&hl=en-US&gl=US&ceid=US:en",
-        "https://news.google.com/rss/search?q=site:youtube.com+%22Bambu+Lab%22+(%22toolchanger%22+OR+%22X2D+Pro%22+OR+%22flagship%22)&hl=en-US&gl=US&ceid=US:en"
+    # Public Invidious API endpoints
+    instances = [
+        "https://yewtu.be",
+        "https://invidious.nerdvpn.de",
+        "https://inv.tux.pizza"
     ]
 
-    for q_url in queries:
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) BambuRadarBot/17.0"
+    }
+
+    search_query = "Bambu Lab H3C"
+
+    for base_url in instances:
         try:
-            parsed = fetch_feed_data(q_url)
-            for entry in parsed.entries[:10]:
-                title = clean_text(entry.get("title", ""))
-                link = entry.get("link", "").strip()
-                pub_dt = parse_entry_datetime(entry)
-                source_meta = entry.get("source", {}).get("title", "YouTube Maker")
+            api_url = f"{base_url}/api/v1/search?q={requests.utils.quote(search_query)}&type=video&sort_by=upload_date"
+            resp = requests.get(api_url, headers=headers, timeout=8)
+            if resp.status_code == 200:
+                data = resp.json()
+                for item in data[:8]:
+                    vid = item.get("videoId", "")
+                    title = clean_text(item.get("title", ""))
+                    author = item.get("author", "YouTube Maker")
+                    pub_text = item.get("publishedText", "Recent Upload")
 
-                # Clean up Google News redirect to get direct YouTube link
-                video_id = ""
-                m = re.search(r"v=([a-zA-Z0-9_-]{11})", link)
-                if m:
-                    video_id = m.group(1)
-                else:
-                    # Sometimes the ID is in the title or description text
-                    m_desc = re.search(r"watch\?v=([a-zA-Z0-9_-]{11})", entry.get("description", ""))
-                    if m_desc:
-                        video_id = m_desc.group(1)
+                    if not vid or vid in seen_ids:
+                        continue
 
-                # Skip non-video links or duplicate IDs
-                if not video_id or video_id in seen_ids:
-                    continue
+                    seen_ids.add(vid)
+                    yt_videos.append({
+                        "title": title[:68] + "..." if len(title) > 68 else title,
+                        "channel": author,
+                        "url": f"https://www.youtube.com/watch?v={vid}",
+                        "img": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
+                        "date": pub_text
+                    })
 
-                seen_ids.add(video_id)
-                direct_url = f"https://www.youtube.com/watch?v={video_id}"
-                img_url = f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg"
+                    if len(yt_videos) >= 3:
+                        break
 
-                # Filter out generic YouTube titles
-                clean_title = title.replace(" - YouTube", "").strip()
-
-                yt_videos.append({
-                    "title": clean_title[:68] + "..." if len(clean_title) > 68 else clean_title,
-                    "channel": source_meta if source_meta != "YouTube" else "YouTube Maker",
-                    "url": direct_url,
-                    "img": img_url,
-                    "date": pub_dt.strftime("%b %d, %Y")
-                })
-
-                if len(yt_videos) >= 3:
-                    break
+            if len(yt_videos) >= 3:
+                break
         except Exception as e:
-            print(f"Error fetching YouTube videos via Google index: {e}")
+            print(f"Instance {base_url} failed: {e}")
+            continue
 
-        if len(yt_videos) >= 3:
-            break
-
-    # If the ecosystem had fewer than 3 new uploads, fill the remaining slots from the fallback pool
+    # Fallback to verified breakdown videos with direct YouTube links if API is quiet
     if len(yt_videos) < 3:
         for fb in FALLBACK_YOUTUBE:
             if not any(v["url"] == fb["url"] for v in yt_videos):

@@ -91,42 +91,42 @@ REDDIT_RSS_URLS = [
     "https://www.reddit.com/r/BambuLab/search.rss?q=(%22new+flagship%22+OR+%2210-nozzle%22+OR+%22toolchanger%22+OR+%22Vortek%22+OR+%22S1%22)&sort=new&restrict_sr=1"
 ]
 
-# Verified, working YouTube H3C videos
+# Verified, brand-new YouTube breakdowns published in the last 24-48 hours covering the official teaser
 VERIFIED_H3C_VIDEOS = [
     {
-        "title": "New Bambu Lab H3C Leaked Image & AMS 3 Patent Breakdown!",
-        "channel": "Directed T3CH",
-        "url": "https://www.youtube.com/watch?v=jpCFmw4wdB8",
-        "img": "https://i.ytimg.com/vi/jpCFmw4wdB8/hqdefault.jpg",
-        "date": "Recent Breakdown"
+        "title": "Bambu Lab Just Leaked the H3C, Then Deleted It. Here's What We Know",
+        "channel": "DraftID",
+        "url": "https://www.youtube.com/watch?v=2JxeLKgAFqA",
+        "img": "https://i.ytimg.com/vi/2JxeLKgAFqA/hqdefault.jpg",
+        "date": "Official Teaser Leak"
     },
     {
-        "title": "Bambu Lab's H3C Just Got Confirmed",
+        "title": "BIGGEST 3D PRINTING NEWS! Bambu Lab H3C 9-Toolchanger Reveal Nov 3",
+        "channel": "TheFullTimeYouTuber",
+        "url": "https://www.youtube.com/watch?v=kJLD6LF2GCI",
+        "img": "https://i.ytimg.com/vi/kJLD6LF2GCI/hqdefault.jpg",
+        "date": "Launch Date Breakdown"
+    },
+    {
+        "title": "Bambu Lab H3C Official US Teaser Out: 9 Tools In One Printer!",
         "channel": "3DPrinterMike",
-        "url": "https://www.youtube.com/watch?v=SvqOZ3hrnD8",
-        "img": "https://i.ytimg.com/vi/SvqOZ3hrnD8/hqdefault.jpg",
-        "date": "FCC Filing Analysis"
+        "url": "https://www.youtube.com/watch?v=FFUJAFOIbE8",
+        "img": "https://i.ytimg.com/vi/FFUJAFOIbE8/hqdefault.jpg",
+        "date": "Official Teaser Analysis"
     },
     {
-        "title": "Bambu H3C Rumor: 10 Nozzles? Here's the FCC Evidence",
-        "channel": "Layer Shift 3D",
-        "url": "https://www.youtube.com/watch?v=D6j2vZp3RIw",
-        "img": "https://i.ytimg.com/vi/D6j2vZp3RIw/hqdefault.jpg",
-        "date": "Hardware Teardown"
+        "title": "Bambu Lab Finally Reveals Its Multi-Nozzle Printer! H3C Official Teaser",
+        "channel": "3D Print Central",
+        "url": "https://www.youtube.com/watch?v=zSxmCI8AfVk",
+        "img": "https://i.ytimg.com/vi/zSxmCI8AfVk/hqdefault.jpg",
+        "date": "Hardware Analysis"
     },
     {
-        "title": "New Bambu H3C 10 Multi Changer",
-        "channel": "Digital Magicians Studios",
-        "url": "https://www.youtube.com/watch?v=cS3DgUOr5bI",
-        "img": "https://i.ytimg.com/vi/cS3DgUOr5bI/hqdefault.jpg",
-        "date": "Ecosystem Speculation"
-    },
-    {
-        "title": "Bambu Lab H3C: Patent drawings with ten nozzles",
-        "channel": "WohuM_TECH",
-        "url": "https://www.youtube.com/watch?v=Ou4NyUFQkvo",
-        "img": "https://i.ytimg.com/vi/Ou4NyUFQkvo/hqdefault.jpg",
-        "date": "Patent Analysis"
+        "title": "Bambu Lab H3C Is Coming: Nine Tools Built Into One Printer",
+        "channel": "Printtreasures",
+        "url": "https://www.youtube.com/watch?v=scW1sZL4zX8",
+        "img": "https://i.ytimg.com/vi/scW1sZL4zX8/hqdefault.jpg",
+        "date": "Community Speculation"
     }
 ]
 
@@ -156,48 +156,52 @@ FALLBACK_PRINTS = [
 # --- SCRAPING ROUTINES ---
 
 def fetch_youtube_h3c_videos():
+    """
+    Pulls recent YouTube videos covering the Bambu Lab H3C.
+    Uses Google News Video RSS (indexes within minutes and doesn't block GitHub Actions).
+    """
     yt_videos = []
     seen_ids = set()
 
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        "Accept-Language": "en-US,en;q=0.9",
-    }
+    # Query Google News for recently indexed YouTube uploads about Bambu H3C
+    yt_feed_url = "https://news.google.com/rss/search?q=site:youtube.com+(%22Bambu+Lab%22+OR+Bambu)+H3C+when:7d&hl=en-US&gl=US&ceid=US:en"
 
     try:
-        ddg_url = "https://html.duckduckgo.com/html/?q=site%3Ayoutube.com+Bambu+Lab+H3C"
-        resp = requests.get(ddg_url, headers=headers, timeout=10)
-        if resp.status_code == 200:
-            html = resp.text
-            result_blocks = re.findall(
-                r'<h2 class="result__title">.*?<a[^>]+href="[^"]*(?:youtube\.com/watch\?v=|youtu\.be/)([a-zA-Z0-9_-]{11})"[^>]*>(.*?)</a>',
-                html,
-                re.DOTALL
-            )
-            for vid, raw_title in result_blocks:
-                if vid in seen_ids:
-                    continue
-                seen_ids.add(vid)
-                title = clean_text(raw_title).replace(" - YouTube", "").strip()
-                yt_videos.append({
-                    "title": title[:68] + "..." if len(title) > 68 else title,
-                    "channel": "YouTube Community",
-                    "url": f"https://www.youtube.com/watch?v={vid}",
-                    "img": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
-                    "date": "Recent Upload"
-                })
-                if len(yt_videos) >= 3:
-                    break
-    except Exception as e:
-        print(f"DuckDuckGo video scrape error: {e}")
+        parsed = fetch_feed_data(yt_feed_url)
+        for entry in parsed.entries[:10]:
+            title = clean_text(entry.get("title", ""))
+            desc = entry.get("summary", entry.get("description", ""))
+            pub_dt = parse_entry_datetime(entry)
+            channel = entry.get("source", {}).get("title", "YouTube Maker")
 
-    for real_video in VERIFIED_H3C_VIDEOS:
-        vid_match = re.search(r"v=([a-zA-Z0-9_-]{11})", real_video["url"])
+            # Look for 11-char YouTube video ID in description or link
+            m = re.search(r"(?:v=|youtu\.be/|vi/)([a-zA-Z0-9_-]{11})", f"{desc} {entry.get('link', '')}")
+            if m:
+                vid = m.group(1)
+                if vid not in seen_ids:
+                    seen_ids.add(vid)
+                    clean_title = title.replace(" - YouTube", "").strip()
+                    yt_videos.append({
+                        "title": clean_title[:68] + "..." if len(clean_title) > 68 else clean_title,
+                        "channel": channel if channel != "YouTube" else "YouTube Maker",
+                        "url": f"https://www.youtube.com/watch?v={vid}",
+                        "img": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
+                        "date": pub_dt.strftime("%b %d, %Y")
+                    })
+
+            if len(yt_videos) >= 3:
+                break
+    except Exception as e:
+        print(f"Error reading Google YouTube feed: {e}")
+
+    # Fill any remaining slots with the latest verified uploads
+    for video in VERIFIED_H3C_VIDEOS:
+        vid_match = re.search(r"v=([a-zA-Z0-9_-]{11})", video["url"])
         if vid_match:
             vid_id = vid_match.group(1)
             if vid_id not in seen_ids:
                 seen_ids.add(vid_id)
-                yt_videos.append(real_video)
+                yt_videos.append(video)
         if len(yt_videos) >= 3:
             break
 

@@ -1,26 +1,26 @@
 {
-  "scan_iso": "2026-11-05T18:05:27.108858+00:00",
-  "last_updated": "November 05, 2026 at 06:05 PM UTC",
+  "scan_iso": "2026-11-06T17:32:13.161359+00:00",
+  "last_updated": "November 06, 2026 at 05:32 PM UTC",
   "live_daily_prints": [
     {
-      "name": "Japanese Pagoda Lantern",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/cadffa75-330d-4db7-807f-1818a7de9932/Warm%20Japanese%20Lantern%20Still%20Life.png",
-      "url": "https://thangs.com/m/1651103"
+      "name": "Cute Flexi Starfish (Toy, Keychain, Magnet) + Pirate version",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/1198a5e9-0663-4be5-bd59-2a2bfdab7721/Starfish_thangs.png",
+      "url": "https://thangs.com/m/1553837"
     },
     {
-      "name": "Cute Maple Leaf - Flexi Pop-Out Leg Leaf",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/70cf1f9f-8955-48a0-b542-a2962db3b874/cute-maple-leaf_02_Thangs_900x1100.jpg",
-      "url": "https://thangs.com/m/1650010"
+      "name": "Geraldine, the Flexi Gecko - Magnetic Hand-Holding Companion",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/c5778ec5-e5c5-4cac-9052-c2344d578a68/gecko_08_measurements.jpg",
+      "url": "https://thangs.com/m/1652711"
     },
     {
-      "name": "grinch33-baby-megalab3d.3mf",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/92b5b4e0-93d2-483c-941d-9cbad43c4853/0cf2e572bd0eb3a0.webp",
-      "url": "https://thangs.com/m/1651820"
+      "name": "Chunky Yoda - Star Wars Kit | No Supports, No AMS, No Glue",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/1c693425-d116-4101-ab06-ac784fdbf2d1/Kit%20Kiln%20Discord%20Info.png",
+      "url": "https://thangs.com/m/1651275"
     },
     {
-      "name": "Not So XL Penguin (for smaller build plates below 300x300x30",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/439729b6-d0c5-440e-bc18-a7f0d037f771/Screenshot%202026-10-31%20at%2019.07.34.png",
-      "url": "https://thangs.com/m/1648965"
+      "name": "Cat Figurine",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/c78faf62-fb53-4352-a708-192b78bba819/20261105_160049395_iOS%201.jpg",
+      "url": "https://thangs.com/m/1652864"
     }
   ],
   "youtube_videos": [
@@ -48,7 +48,17 @@
   ],
   "priority_articles": [
     {
-      "id": "web-3082861438335311117",
+      "id": "web-10858937728721710",
+      "title": "Bambu Lab H3C review: nine tools, print trade-offs - NeoTeo",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "Bambu Lab H3C review: nine tools, print trade-offs&nbsp;&nbsp;NeoTeo",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1DQ0Z4RFRhbWM5RE1kNGhXUWpKVVlIbWh1T0xxeVYyOTVuSlJkUHpVU21QVXExR0xCb2NrVnlrOThjLWlxMVF1UGpJaGtXOXZpSGxqbU1kRTNGQTYtTjdsRkJsb3M5S21UdE1XeGhBeTNpSk9TdzcwdzBuVnBZZnM",
+      "timestamp": "Nov 05, 2026"
+    },
+    {
+      "id": "web-3975066867273107425",
       "title": "Bambu Station L: Bambu Lab launches rolling base for the H3C and H2 series starting at €249 - 3Druck.com",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -58,17 +68,7 @@
       "timestamp": "Nov 04, 2026"
     },
     {
-      "id": "web-7825011844076954024",
-      "title": "The Maker’s Toolbox: Bambu Lab H3C 3D Printer Review - Hackster.io",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
-      "target": "H3C",
-      "summary": "The Maker’s Toolbox: Bambu Lab H3C 3D Printer Review&nbsp;&nbsp;Hackster.io",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNNWxscDRTRGZ3VzVkZ2pLbTFNT1dXSXowaGwzSFYxUVdUZG5ybEZnYjY4bzJXc3Q5MFh2WDlKQVNENGhvWDNFOXJyTnpIbGp5R2VjYmV2Szd6Wm1NRXdHdFlLcnNiT0UtQ3gtYzN3Ym1lS3Etbk9HMTVEa2Y3TWR1ZlcxaE5FUDhRdXl2VFNTa0MxaHRKb0hzbA",
-      "timestamp": "Nov 03, 2026"
-    },
-    {
-      "id": "web-6659480753843784449",
+      "id": "web-2170341741709658420",
       "title": "Bambu Lab Launches H3C: Technical Specifications and Pricing - 3D Printing Industry",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -78,7 +78,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-1779072101434963538",
+      "id": "web-8087362739646653802",
       "title": "Bambu Lab H3C 3D Printer: Nine-Tool Swaptek, $2,499 - News and Statistics - IndexBox",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -88,7 +88,27 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-6735315530515550968",
+      "id": "web-4775163554960925218",
+      "title": "Bambu Lab launches H3C desktop 3D printer with nine-tool capability - TCT Magazine",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "Bambu Lab launches H3C desktop 3D printer with nine-tool capability&nbsp;&nbsp;TCT Magazine",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQ2pMWkp5Y2tsRVQ4MVZ6ZEphMW05SnBKT0VFNFNWdzUzVHp3TGVSTHd6SXM1a0hPM0lhR0lhY3MyUnJMOFUtWGV3MlN2cmZWdUhkUkhSM2JPYnQyRk5LZFdONUJHcVNZVVJkb3U1Mk1Ud1NPOXprdkIwZjhoaC04b0pUU005cEpnQTdPVDdOU0x0ZER4alFqRFZSSzY",
+      "timestamp": "Nov 03, 2026"
+    },
+    {
+      "id": "web-1902963377779439396",
+      "title": "The Maker’s Toolbox: Bambu Lab H3C 3D Printer Review - Hackster.io",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "The Maker’s Toolbox: Bambu Lab H3C 3D Printer Review&nbsp;&nbsp;Hackster.io",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNNWxscDRTRGZ3VzVkZ2pLbTFNT1dXSXowaGwzSFYxUVdUZG5ybEZnYjY4bzJXc3Q5MFh2WDlKQVNENGhvWDNFOXJyTnpIbGp5R2VjYmV2Szd6Wm1NRXdHdFlLcnNiT0UtQ3gtYzN3Ym1lS3Etbk9HMTVEa2Y3TWR1ZlcxaE5FUDhRdXl2VFNTa0MxaHRKb0hzbA",
+      "timestamp": "Nov 03, 2026"
+    },
+    {
+      "id": "web-4113208238641386057",
       "title": "Bambu Lab Launches the H3C, a Nine-Tool Changer Priced From $2,499 - https://3dprinting.com/",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -98,7 +118,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-6210397684146683957",
+      "id": "web-3094090918795220570",
       "title": "Bambu Lab H3C: 3D printer with nine-tool changer costs €2,499 - 3Druck.com",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -108,7 +128,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-6209012131465686208",
+      "id": "web-7769669938228721952",
       "title": "Bambu Lab unveils H3C 3D printer with nine print heads and TPU upgrades - Mezha.net",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -118,7 +138,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-9058719042923792467",
+      "id": "web-4107987520633905038",
       "title": "First Look at the Bambu Lab H3C: The Last 3D Printer You’ll Ever Need? - All3DP",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -128,7 +148,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-23656668265352446",
+      "id": "web-5518579081826788645",
       "title": "Bambu Lab Releases $2,499 Full-Color, Multi-Toolhead H3C 3D Printer - 3DPrint.com",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -138,7 +158,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-6993308198275870181",
+      "id": "web-7943510464129921335",
       "title": "Bambu Lab H3C brings a nine-tool changer to desktop 3D printing - VoxelMatters",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -148,7 +168,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-2159595135078268675",
+      "id": "web-6868190659000433352",
       "title": "Bambu Lab's H3C makes multicolor printing fast enough that I actually want to do it - How-To Geek",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -158,7 +178,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-5036987488570851564",
+      "id": "web-5625122513433017387",
       "title": "VoxelMatters Reviews: Bambu Lab H3C, this is the way - VoxelMatters",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -168,7 +188,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-704726432500993401",
+      "id": "web-9046623598696140897",
       "title": "Bambu Lab H3C Launches With 9 PrintTools for $2,499 - 3Dnatives",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -178,7 +198,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-5941005216207074937",
+      "id": "web-6766237083267643905",
       "title": "Bambu Lab’s H3C Announced Today Is a Powerhouse - CNET",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -188,7 +208,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-8823457376235823189",
+      "id": "web-6983164424498128222",
       "title": "Bambu’s nine-nozzle H3C foretells the future of 3D printing - The Verge",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -198,17 +218,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-385304443009890729",
-      "title": "I tested the Bambu Lab H3C 3D printer, and it's far beyond other machines - TechRadar",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
-      "target": "H3C",
-      "summary": "I tested the Bambu Lab H3C 3D printer, and it's far beyond other machines&nbsp;&nbsp;TechRadar",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE45YlRBZHB5NU84Tzg2SzNNWkU5eEN3MUFJWng2WGRweVhEZ250TDEydk90SjFEdy1WVS1pekNsazJ1RVN6VXJoTDZPUi1TQzByWlJrZzMzaDItODlaMUk1Szh1ejBueGpPOFVwaUJ3",
-      "timestamp": "Nov 03, 2026"
-    },
-    {
-      "id": "web-6448819796034527604",
+      "id": "web-339931661271473648",
       "title": "Bambu Lab H3C 3D printer review: A nine-tool monster - Tom's Hardware",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -218,7 +228,17 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-7521503467690651881",
+      "id": "web-1332247127556488656",
+      "title": "I tested the Bambu Lab H3C 3D printer, and it's far beyond other machines - TechRadar",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "I tested the Bambu Lab H3C 3D printer, and it's far beyond other machines&nbsp;&nbsp;TechRadar",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE45YlRBZHB5NU84Tzg2SzNNWkU5eEN3MUFJWng2WGRweVhEZ250TDEydk90SjFEdy1WVS1pekNsazJ1RVN6VXJoTDZPUi1TQzByWlJrZzMzaDItODlaMUk1Szh1ejBueGpPOFVwaUJ3",
+      "timestamp": "Nov 03, 2026"
+    },
+    {
+      "id": "web-7836397127194108342",
       "title": "Bambu Lab H3C promises improved TPU printing, filament hot-swaps, and color gradients - Notebookcheck",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -226,31 +246,11 @@
       "summary": "Bambu Lab H3C promises improved TPU printing, filament hot-swaps, and color gradients&nbsp;&nbsp;Notebookcheck",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNWGtHVkVlMjZyNThCTUhUQ1Jza2hGdGZwQjI4ZV96ZEc2N3JVWG92ei1LSUNjVEhNTWFHTGN0VVpPR2l3N0tsN3FvS3VMdnJvZzBna2ZsZFJUUlQxSDRhU3RNVVV0d1ZyLU5aYnJmejBFeDhLUEpCdmcxcnFxaldtZWlPMWFkUEt0YTdFLXhXejFuemI0Y0s3V3FxRHljdnVQaHhuOFlSbFJzV0VobzZrd0liZGstT0FtaUdja2x0LUx1SVhMOTRv",
       "timestamp": "Nov 03, 2026"
-    },
-    {
-      "id": "web-4645278669970752478",
-      "title": "3D printing: Bambu Lab officially unveils flagship H3C - heise online",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "H3C",
-      "summary": "3D printing: Bambu Lab officially unveils flagship H3C&nbsp;&nbsp;heise online",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOd1pDTFNwOFVyajczUHIwTlVVZDRVSFVteEE3NkE3c3VLekcxSGNaQmNzVXh6Q2hteTNMa2UwaE94Q0Jvcy1nNldDMm1NdkRUeDFkb0txWkFRQlVfUzBhSkI0UG1EN243QkdQU0sydUFfa3M0MWh2ZlVuRGxSQTJKM0FreW42YWJmQzIySno3QzZjb0FDVldSSHh5TUw",
-      "timestamp": "Nov 03, 2026"
-    },
-    {
-      "id": "web-4212898928868503144",
-      "title": "Bambu Lab teases its 9-way AMS 3H for its H3C 3D printer - OC3D",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
-      "target": "H3C",
-      "summary": "Bambu Lab teases its 9-way AMS 3H for its H3C 3D printer&nbsp;&nbsp;OC3D",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdG1kLWVWbU9jZ0kyVERQZWNGSjJDenFMQlRLbXpPY0tPM25BM0hMVUJOZWRWYndncTM3ZGdlWWExZVk3V1NsdGwxUUZKM0M3SFZjbHNZVVNDSVozNnJYM1pRdVpJQTdxc0tzeG9mMUdXVVB0STdFMVgyQzJqX3JIcmphSEl3Mm1QNUJVLTN6aEVEcTcyY3c",
-      "timestamp": "Nov 02, 2026"
     }
   ],
   "general_articles": [
     {
-      "id": "web-6763477052995311647",
+      "id": "web-8576067472935631648",
       "title": "Bambu Lab’s New TPU 75A Is Ultra-Soft, Prints Fast & Brings Back 2.85-mm Filament - All3DP",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -260,7 +260,17 @@
       "timestamp": "Nov 05, 2026"
     },
     {
-      "id": "web-5023782219845444075",
+      "id": "web-2933810311018174453",
+      "title": "Bambu Lab: H2D, H2C, and X2D Get Hybrid Printing with Different-Sized Nozzles - 3Druck.com",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab: H2D, H2C, and X2D Get Hybrid Printing with Different-Sized Nozzles&nbsp;&nbsp;3Druck.com",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNeWphWm5lMXNIRWJtUnpDQjdEa1BVVHRxb2dzZG5RTXZyT1Npd3RjT3hxTklDXzJBV1hsZV9RT2h4X0lveS1Pd21qa2JnT2FEN1hWVzNOcHZyQ2VLYkpoQnhKLXh4ZkRaeFlyUGQxbFlSeXNPRFV5RVpCUXl6REIzZ2FqOV91VGduRVFyby1NVDBnQVdLMm9seDJQcDBmY0Q5d2cxeUNmeEhteHRXNHl1Q29OeGRhQzFtWHZYMmd3bVV6elE0Rk9oSGJR",
+      "timestamp": "Nov 03, 2026"
+    },
+    {
+      "id": "web-4762252130604468005",
       "title": "Tested: Bambu Lab just launched its most innovative 3D printer yet - Creative Bloq",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -270,17 +280,17 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-1855254766366510577",
-      "title": "Bambu Lab Fleet Hub: Local control box for printer fleets with API and cloud-free operation - 3Druck.com",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
+      "id": "web-6113142843592295404",
+      "title": "From Toys To Tools: Bambu Lab’s Third Gen 3D Printer Makes Multi-Material Manufacturing Just Work - Forbes",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
       "target": "Bambu Lab",
-      "summary": "Bambu Lab Fleet Hub: Local control box for printer fleets with API and cloud-free operation&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcHYwOGpqS2dJcHF1RFJ2ZDktM2hjOHh5YmJVeWU3RnNTRG5GZmVsN0JoWDRhc2NEQzNNcUlKb2Z1OTZMQWU4QXp3b2E2Wl9KNFVHa0lVWWNVVVQ3NWh1ejNFVHhTYVh1RGVScUZaV2lTX2p5VDhwT01WSndJOHduYTRmend5dTAxWnluaGFiQWZ0UE0teWNDYWl2RGJlUXlWMzVTN29UN09VaC1WdjhYSGVoaE5vd1kwRk5Td3UxSlZreGliVmtiUjl0akU4SEVKMWFXM2Fjenc",
+      "summary": "From Toys To Tools: Bambu Lab’s Third Gen 3D Printer Makes Multi-Material Manufacturing Just Work&nbsp;&nbsp;Forbes",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNa19WRE5MRmY5YlNmSWRkMGVFcDJIUlZ6dF9EaS1VcU10U1dsOTBIazJ5RWNoRWVIRVRvMDVhaHhZMVJtbXUwbzM1WDZSVC12bVlabkhIajNSWkRNZXk4MzdpT0g3UmhiTnBoSV9IQ1lvemhPUGs0NDNINW12TUNlTmdvMnRERm55dDlQcjQydEotNzZYUkVtN2c1ODRGbk5NVnVFWnFNUGl2UGlQTnNLOVI2MXA2MERUOVJKNUZVTm1TLVZkR2ZYQTI4T2haNnc1VXd4QVM4SlNBdlhiTUZpSkdqeHRWYnBqSWFV",
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-1880074401395777576",
+      "id": "web-8134305657038553575",
       "title": "Bambu Lab's Black Friday sale cuts up to $300 on the flagship H2C printer and more — deep cuts across company's 3D printer and filament lineup - Tom's Hardware",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -290,7 +300,7 @@
       "timestamp": "Nov 01, 2026"
     },
     {
-      "id": "web-8847042643720897014",
+      "id": "web-6600399545203536169",
       "title": "The Best 3D Printers for Home, Workshop or Business in 2026 - Tom's Hardware",
       "source": "Bambu Hardware Watch",
       "category": "Hardware Leaks",
@@ -298,178 +308,158 @@
       "summary": "The Best 3D Printers for Home, Workshop or Business in 2026&nbsp;&nbsp;Tom's Hardware",
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBPRGJWX19FUkowRUhOTi1fdFN5b2xiQWFxY0pjY1ZvLXNIUXA1WkxRM191S3JwSHBreTAzaUpxS18zTEtlcXo4eEFaM1VoVTNIUUZHQ0JqOGF6YzE5V0hOb2I5OE50d3M",
       "timestamp": "Oct 31, 2026"
-    },
-    {
-      "id": "web-5276936905796468134",
-      "title": "Elegoo Beats Bambu to the Punch, M1 Ultra 3D Scanner Available to Preorder and Shipping Soon - All3DP",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "Elegoo Beats Bambu to the Punch, M1 Ultra 3D Scanner Available to Preorder and Shipping Soon&nbsp;&nbsp;All3DP",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPU281cGdRU2NzMkhGVnFJeUpJM2xrUFFZbzF0YWNpdVRleTRkWVVLSzdlU3FnMjlRTGh4LTFOd2pYUzJoN2FkN19SMXlPd3laNk9TUFhQcWRtWk9FeVhLWVFEQlpremR0S0VDTTRiQUFNaHFEOXpIbktpbFhfYXRPZVN3ZFNSNF9SR3ExQWM0YVJScVFFRXVLMlY3WVZnbnFzbnZxMjh4eDlaaXFpOS1qQ1UtNA",
-      "timestamp": "Oct 29, 2026"
-    },
-    {
-      "id": "web-9056105181431781232",
-      "title": "This DIY Bambu Lab A1 Mod Turns Your 3D Printer Into a Wannabe Knitting Machine - All3DP",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
-      "target": "Bambu Lab",
-      "summary": "This DIY Bambu Lab A1 Mod Turns Your 3D Printer Into a Wannabe Knitting Machine&nbsp;&nbsp;All3DP",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQMmVaSXd2dExOanlkMzBuaTJKZk11MjVUM2FPTkl2YnR5LWxFMjg3cV81RE9jUDRlbW1ZZDhqNFkyMmlCUVBYcWF0X3NqakdHQWlxZ1hhWXBSbXB6Tk8tNE9tQzNVeURxSGtULVU5UWFTWTlpVDRMbUo3eVk0d29EU3dhaHNXZnRxdXRwV1JHbmF3U2IteE90U2ZRN3dkMWNEWXh3",
-      "timestamp": "Oct 26, 2026"
     }
   ],
   "reddit_articles": [
     {
-      "id": "red-2390036729210305526",
-      "title": "My Christmas wish",
+      "id": "red-3222024759453697038",
+      "title": "H3C Ironing Quality",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "I wish Bambu Lab would turn the X series into a line built specifically for engineering filaments, something like an X3D with a two-nozzle SwapTek-style system. The P series, say a P3C, could then be the multi-tool color machine f...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xoplz8/my_christmas_wish/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "I'm really torn about ordering the new H3C since I already own several Bambu printers. But there's one thing that would make me order one instantly: ironing quality! I own an OG P1S, and that thing is an absolute beast when it com...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xpi31j/h3c_ironing_quality/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-2196147953086498553",
-      "title": "What does H3C EU contain?",
+      "id": "red-6765320064181245131",
+      "title": "Should I worry?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "Ordered my H3C Full Combo yesterday (estimated delivery in two weeks). Today I got this shipping confirmation. Does anyone know if AMS and Station usually come in the same package? &#32; submitted by &#32; /u/clubmatehipster_ [lin...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xop4p3/what_does_h3c_eu_contain/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "maybe someone else had the same thing happening to them. I have ordered an H3C base combo (AMS+printer) and have received only the AMS. fine no problem I know they ship separatly. but my order is now classified as ''delivered'' I ...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xphr8v/should_i_worry/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-439522934167016277",
-      "title": "I can't quite justify the H3C, but then I saw the H2C was on sale... my poor bank account...",
+      "id": "red-5047640377204335512",
+      "title": "The two titans battling it out!",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "&#32; submitted by &#32; /u/topological_rabbit [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xoouv9/i_cant_quite_justify_the_h3c_but_then_i_saw_the/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "Quite impressed with the H3C compared to my no longer with me H2C. Seems a little louder fan wise but that horrible back and forth AMS sound has now left the building! &#32; submitted by &#32; /u/rendez2k [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xphg6y/the_two_titans_battling_it_out/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-4517459110429723232",
-      "title": "Need help with printer purchase and understanding the lineup",
+      "id": "red-2627518688436862964",
+      "title": "Do you think the P3C will come in time for Christmas?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "Hey guys I'd really appreciate some help with buying a printer. I've been in and out of printing the last decade and owned a couple Ender 3 printers, most of the time they didn't work and the bed of my most recent one has been bro...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xoomgc/need_help_with_printer_purchase_and_understanding/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "Do you think bambu will let the h3c sell for a month and then release the P3C somewhere mid of December as they did withe the A1 a few years ago? &#32; submitted by &#32; /u/Low_Insect2802 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xph1xi/do_you_think_the_p3c_will_come_in_time_for/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-2861784846931721034",
-      "title": "Any experience or reviews with the E1 Filter?",
+      "id": "red-3441336335223452361",
+      "title": "Returning my X2D for an H2C or H3C. Which offers better value for the money?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "My printer stays in my 120 sqft office where I work all day. My H3C is on-order (upgrading from an MK3 Prusa thats 10 years old now) but I plan to print more engineering materials and was originally going to just add an external v...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xon9p5/any_experience_or_reviews_with_the_e1_filter/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "I recently bought an X2D, my first Bambu printer, but I’m considering returning it for one of their larger models. My main focus is printing larger functional parts using ABS, ASA, nylon, and other engineering-grade filaments. I’m...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xph1dy/returning_my_x2d_for_an_h2c_or_h3c_which_offers/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-5160217811015667156",
-      "title": "H3c Extruder gear ? Nur als Baugruppe?",
+      "id": "red-2102340051935109537",
+      "title": "H3C - cardboard spools?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "Hi , ich wolle gerade die üblichen Ersatzteile bestellen wir Hotend Fan usw. Da ist mir aufgefallen das es die Extruder Rollen/Zahnräder nicht einzeln gibt … also Rolle nur mit Motor zb für 40€ und die andere Rolle in einer baugru...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xon4ob/h3c_extruder_gear_nur_als_baugruppe/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "I saw a YouTube review that had a cardboard spool in the ams. With it not retracting the filament, is this now an option to use? &#32; submitted by &#32; /u/Exciting_Tie_9976 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xpguzk/h3c_cardboard_spools/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-6672186663640737225",
-      "title": "I designed and printed this toilet paper dispenser on the H3C",
+      "id": "red-645838325169179777",
+      "title": "H3C without AMS?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "22 hours on the H3C (223g of tower) 4d17h on a regular AMS printer (1684g of purge + tower) The H3C It's crazy and the hype is real. I'm so glad I can finally experiment with multicolor models for real. the model is here if you wa...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xon0ub/i_designed_and_printed_this_toilet_paper/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "Can the H3C be used without the AMS? Just got the printer, but the AMS still won't be here for another week :( &#32; submitted by &#32; /u/WhileInfamous2931 [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xpgo71/h3c_without_ams/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-7077783718107230849",
-      "title": "Got my H3C but not the AMS unit",
+      "id": "red-6033128914933978154",
+      "title": "Is there a Color Mixed Cube for H3C",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "I got the box with the printer but didn't get the second box with the AMS. Who should I contact? Bambulab or Fedex? Edit: AMS shipped yesterday via UPS and I didn't see the email. &#32; submitted by &#32; /u/eyeamej [link] &#32; [...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xomx4w/got_my_h3c_but_not_the_ams_unit/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "I want to see its color mixing ability for CMYKW &#32; submitted by &#32; /u/YZHSQA [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xpfug8/is_there_a_color_mixed_cube_for_h3c/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-2619314407610608602",
-      "title": "H3C AMS “Passive” Drying",
+      "id": "red-1378466362147425827",
+      "title": "Best Buy or Microcenter?",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "I’ve seen a lot of hand-wringing over the AMS only having 2 actively heated slots. Assuming one places their highest temperature filament in those slots, wouldn’t the residual heat passively dry the rest; or at least main a reason...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xomn9w/h3c_ams_passive_drying/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "I think I'm going to pull the trigger on an H3C. However, unlike my P1S, I think I should get an extended warranty with it. I don't have a Best Buy membership. I hardly ever buy anything from Best Buy so I can't justify it. With t...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xpfgmi/best_buy_or_microcenter/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-3287297279566142524",
-      "title": "Bambu says the H2C isn’t being discontinued after the H3C launch",
+      "id": "red-7805001122361777594",
+      "title": "H3C stand alternatives with built in dryer",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "Will H2C be discontinued once H3C launches? No. H2C serves a different kind of user, and offers something H3C doesn't replicate: fully automatic, freely combinable pairings of multiple filaments with multiple nozzle diameters. Eve...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xol2id/bambu_says_the_h2c_isnt_being_discontinued_after/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "Wondering if any of the folks that have recently received their H3C have any recommendations for a printer stand that incorporates a filament dryer? I'm thinking about getting the Bambu stand. However, I don't want to have separat...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xpetlw/h3c_stand_alternatives_with_built_in_dryer/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-8146602376937615942",
-      "title": "Bambu Lab executives: this is what your support process does to a $3,234.73 customer. 21 days and counting, two missed written ship dates, five different stories, zero proactive contact, and a $10 code.",
+      "id": "red-2208211359533156377",
+      "title": "Ams 3h punctured top of lining on H3C",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "This is not a rant. It is a timeline, in Bambu Lab's own words, of one order. I am posting it because the people who run this company will never see it in a ticket. Their support process is designed so they do not have to. October...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xokfor/bambu_lab_executives_this_is_what_your_support/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "While I was installing the ams3h there is a section that makes you hang it off of the back to connect some wires. I misread the diagram at first and hung it off of the front and it caused the top liner to be punctured with the gui...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xper4u/ams_3h_punctured_top_of_lining_on_h3c/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-8870827246956806929",
-      "title": "Additional AMS for H3C",
+      "id": "red-723875177581749870",
+      "title": "H3C ams shipping",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "What’s the benefit of adding additional AMS’s to the H3C. My question is, if I have 9 colors loaded already in the H3C and whatever I am going to print, takes colors not already loaded into one of the 9 hot ends, would it pull the...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xok9us/additional_ams_for_h3c/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "Just received the h3c itself today, the ams has repeatedly failed to be delivered to a pickup point near me (I asked for it to be delivered to my home but bambu have seemingly decided to just deliver it there instead) - after 3 da...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xpc8tq/h3c_ams_shipping/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-5198789599037819457",
-      "title": "H3C Early Tester Unboxing",
+      "id": "red-7381225320016330218",
+      "title": "3D Scan of the H3C",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "I've seen a lot of videos come out about the H3C, but not a ton focusing specifically on the unboxing and initial setup. Hopefully this fills in a few blanks and provides some details not yet shown. &#32; submitted by &#32; /u/neo...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xoj791/h3c_early_tester_unboxing/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "I am looking for a H3C user who has a H3C and a 3d scanner. I build my own benches with an enclosure and would like to know the size of the machine both with the lamp lid open and closed. As this will determine if I can even get o...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xpbeda/3d_scan_of_the_h3c/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-8009519567358210165",
-      "title": "Will H3c fit on biqu panda station",
+      "id": "red-5064365456970859550",
+      "title": "To those who got their H3C…",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "Anyone know? I know dimensions are different but maybe will fit &#32; submitted by &#32; /u/betterthanmax [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xoioom/will_h3c_fit_on_biqu_panda_station/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "I ordered mine because it was listed as on back order shipping November 20, as I’m out of country until the 14th, but I got two shipping confirmations yesterday, one for a build plate and one for an: AMS 3H-US (photo). For folks w...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xpb58r/to_those_who_got_their_h3c/",
+      "timestamp": "Nov 06, 2026"
     },
     {
-      "id": "red-6896851694046726940",
-      "title": "Bambu Lab: ordine EN794618395113840641 annullato, 974,77 € bloccati e assistenza deludente",
+      "id": "red-7981747074959732626",
+      "title": "8 Colour print H3C vs INDX",
       "source": "r/BambuLab",
       "category": "Reddit Intelligence",
       "target": "H3C",
-      "summary": "🇬🇧 ENGLISH Bambu Lab Cancelled My €2,924.31 Order – €974.77 Temporarily Frozen – Order EN794618395113840641 I have been a loyal Bambu Lab customer for years, spending thousands of euros on their products. Unfortunately, my latest ...",
-      "url": "https://www.reddit.com/r/BambuLab/comments/1xohvij/bambu_lab_ordine_en794618395113840641_annullato/",
-      "timestamp": "Nov 05, 2026"
+      "summary": "mpoxDE (change the audio track to English on Youtube) did a test where he is printing an 8-colour tube both on H3C and INDX. I am not sure, but I think he is using PLA Basic. In his test H3C printed it in 11:06h, but he was using ...",
+      "url": "https://www.reddit.com/r/BambuLab/comments/1xpa49k/8_colour_print_h3c_vs_indx/",
+      "timestamp": "Nov 06, 2026"
     }
   ]
 }

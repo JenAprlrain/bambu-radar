@@ -1,26 +1,26 @@
 {
-  "scan_iso": "2026-11-15T17:15:10.738542+00:00",
-  "last_updated": "November 15, 2026 at 05:15 PM UTC",
+  "scan_iso": "2026-11-16T20:32:42.700083+00:00",
+  "last_updated": "November 16, 2026 at 08:32 PM UTC",
   "live_daily_prints": [
     {
-      "name": "Christmas Tree Hat Goose Gear for Porch Goose",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/070bcf86-8f9d-4f26-a12e-a10387057843/3d-printed-porch-goose-christmas-tree-FunFam3D-06.jpg",
-      "url": "https://thangs.com/m/1655224"
+      "name": "Trending Model Showcase #1",
+      "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
+      "url": "https://thangs.com/browse/trending"
     },
     {
-      "name": "Stow-Away-Street Nesting Tealight Houses",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/8e9adb4f-c395-41ec-b7c4-e1e321abbd74/tealight_houses_06_in_use.jpg",
-      "url": "https://thangs.com/m/1656495"
+      "name": "Trending Model Showcase #2",
+      "img": "https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?w=800&auto=format&fit=crop&q=80",
+      "url": "https://thangs.com/browse/trending"
     },
     {
-      "name": "Tiny Spider - Present Box",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/ab4c5f0b-401b-4cd9-9955-190228e8330c/present.png",
-      "url": "https://thangs.com/m/1653227"
+      "name": "Trending Model Showcase #3",
+      "img": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80",
+      "url": "https://thangs.com/browse/trending"
     },
     {
-      "name": "MEMORY BOOK | PHOTO ALBUM",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/7010867c-beeb-4c04-a859-afd52a9261ce/photo_2026-01-08_14-48-03.jpg",
-      "url": "https://thangs.com/m/1495468"
+      "name": "Trending Model Showcase #4",
+      "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop&q=80",
+      "url": "https://thangs.com/browse/trending"
     }
   ],
   "youtube_videos": [
@@ -48,7 +48,7 @@
   ],
   "priority_articles": [
     {
-      "id": "web-4443947006252173068",
+      "id": "web-8836199699627181631",
       "title": "Optimized for Bambu Lab H3C: ANTINSKY Launches Ultra‑Flexible TPE‑65A, Alongside PBST & Filament Tangle Cutter - All3DP",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -58,7 +58,7 @@
       "timestamp": "Nov 11, 2026"
     },
     {
-      "id": "web-9091128491621752030",
+      "id": "web-3946509948180307465",
       "title": "Bambu Lab H3C Mixes Layer Heights on the Same Surface - https://3dprinting.com/",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -68,17 +68,7 @@
       "timestamp": "Nov 09, 2026"
     },
     {
-      "id": "web-4579181293214721888",
-      "title": "Bambu Lab H3C: Fine and coarse nozzles print on the same surface with different layer heights - 3Druck.com",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "H3C",
-      "summary": "Bambu Lab H3C: Fine and coarse nozzles print on the same surface with different layer heights&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPUXh4UXR6VFVGc1U1R2hqWkQwd1lZZk1ucndjaDVVcUhoQkd2amI1cjAycThZa2loMDlPYnhKM2h4c0dvQ3BKR0xmcDN0TkM0YzhNN3hKcE9fZjVtYzV2LTBRWXFISFRrbTBmazFiS2lMNU16aWtuWklyOHQ4ZkFuNkd6QUFIWE9McUVrSC1HZC1uVWhhcVRzZWVVTUdFMDBvRzY4VW4tZTdVWHU1c3dWSmJxVUN3VUJ5U0hPNW5pYjhiRDQ3NzFQbDhTYnBnQTlrWW5CdDZnTFg0bnNPRkdKWFZDdUNXZFByMWRmSzNnWDE",
-      "timestamp": "Nov 09, 2026"
-    },
-    {
-      "id": "web-7773200546458761673",
+      "id": "web-7520220257828318783",
       "title": "Bambu Lab H3C review: nine tools, print trade-offs - NeoTeo",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -88,7 +78,7 @@
       "timestamp": "Nov 05, 2026"
     },
     {
-      "id": "web-6109802470687925080",
+      "id": "web-3267488772758530790",
       "title": "Bambu Lab’s H3C 3D printer keeps nine filaments ready for faster material switching - KrASIA",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -98,7 +88,7 @@
       "timestamp": "Nov 05, 2026"
     },
     {
-      "id": "web-2996237601894192730",
+      "id": "web-8401416536473542560",
       "title": "The Maker’s Toolbox: Bambu Lab H3C 3D Printer Review - Hackster.io",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -108,7 +98,7 @@
       "timestamp": "Nov 04, 2026"
     },
     {
-      "id": "web-3062192762284594593",
+      "id": "web-1999272271804430132",
       "title": "Bambu Lab H3C Tool Changer Launches With Nine PrintTools - https://3dprinting.com/",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -118,7 +108,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-3668900428842839674",
+      "id": "web-2401280940358314645",
       "title": "First Look at the Bambu Lab H3C: The Last 3D Printer You’ll Ever Need? - All3DP",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -128,7 +118,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-2083045882691294904",
+      "id": "web-5171421763114583793",
       "title": "Bambu Lab Launches H3C: Technical Specifications and Pricing - 3D Printing Industry",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -138,7 +128,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-2685626341640548942",
+      "id": "web-1584503467829799879",
       "title": "Bambu Lab’s H3C Announced Today Is a Powerhouse - CNET",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -148,17 +138,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-4596663482100911453",
-      "title": "Bambu Lab H3C Launches With 9 PrintTools for $2,499 - 3Dnatives",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
-      "target": "H3C",
-      "summary": "Bambu Lab H3C Launches With 9 PrintTools for $2,499&nbsp;&nbsp;3Dnatives",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBkOERKNVpJQ29oMHFyUmFFc0hOZ1hMeTQyQXN0RW5xYUN1aTk5ckd2UWFPaWNyOFBIUXhRMVp1TEJKMXJvRzJweTBubXhlY0dQa3pFMVU1ZjZHMDV0T3VjRkd30gFnQVVfeXFMTWs0S1pPbkk0YVc2cUlZajBoTzM2ZWNBR0pjVlZZV2J2NjdCYXRSdFBHZm9weUJpVjhGbkwzYVFKZjdab19lOUlNT18xdnZsUGRGN3k5ZEcweDlHM1VCN2pxaHA5Nk9pbw",
-      "timestamp": "Nov 03, 2026"
-    },
-    {
-      "id": "web-7005531660877442964",
+      "id": "web-5860516514567072451",
       "title": "Bambu’s nine-nozzle H3C foretells the future of 3D printing - The Verge",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -168,7 +148,17 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-9190181110144622863",
+      "id": "web-224820391817727998",
+      "title": "Bambu Lab H3C Launches With 9 PrintTools for $2,499 - 3Dnatives",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "Bambu Lab H3C Launches With 9 PrintTools for $2,499&nbsp;&nbsp;3Dnatives",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBkOERKNVpJQ29oMHFyUmFFc0hOZ1hMeTQyQXN0RW5xYUN1aTk5ckd2UWFPaWNyOFBIUXhRMVp1TEJKMXJvRzJweTBubXhlY0dQa3pFMVU1ZjZHMDV0T3VjRkd30gFnQVVfeXFMTWs0S1pPbkk0YVc2cUlZajBoTzM2ZWNBR0pjVlZZV2J2NjdCYXRSdFBHZm9weUJpVjhGbkwzYVFKZjdab19lOUlNT18xdnZsUGRGN3k5ZEcweDlHM1VCN2pxaHA5Nk9pbw",
+      "timestamp": "Nov 03, 2026"
+    },
+    {
+      "id": "web-2928269297569917940",
       "title": "Bambu Lab H3C 3D printer review: A nine-tool monster - Tom's Hardware",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -178,7 +168,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-8006847312429009682",
+      "id": "web-9136166327677868741",
       "title": "I tested the Bambu Lab H3C 3D printer, and it's far beyond other machines - TechRadar",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -188,7 +178,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-6619921794182011497",
+      "id": "web-2686010799322078124",
       "title": "Bambu Lab's H3C makes multicolor printing fast enough that I actually want to do it - How-To Geek",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -198,7 +188,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-381856266095538818",
+      "id": "web-7972473176817081752",
       "title": "Bambu Lab H3C brings a nine-tool changer to desktop 3D printing - VoxelMatters",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -208,7 +198,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-1645013717669193685",
+      "id": "web-8031909050114949683",
       "title": "Bambu Lab Launches the H3C, a Nine-Tool Changer Priced From $2,499 - https://3dprinting.com/",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -218,7 +208,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-3586064328176583362",
+      "id": "web-6617435160679431574",
       "title": "VoxelMatters Reviews: Bambu Lab H3C, this is the way - VoxelMatters",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -228,7 +218,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-7684178669218054811",
+      "id": "web-4519887144372704030",
       "title": "Bambu Lab launches H3C desktop 3D printer with nine-tool capability - TCT Magazine",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -238,7 +228,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-1269924055535254743",
+      "id": "web-1377702268635542388",
       "title": "Bambu Lab H3C promises improved TPU printing, filament hot-swaps, and color gradients - Notebookcheck",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -246,11 +236,61 @@
       "summary": "Bambu Lab H3C promises improved TPU printing, filament hot-swaps, and color gradients&nbsp;&nbsp;Notebookcheck",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNWGtHVkVlMjZyNThCTUhUQ1Jza2hGdGZwQjI4ZV96ZEc2N3JVWG92ei1LSUNjVEhNTWFHTGN0VVpPR2l3N0tsN3FvS3VMdnJvZzBna2ZsZFJUUlQxSDRhU3RNVVV0d1ZyLU5aYnJmejBFeDhLUEpCdmcxcnFxaldtZWlPMWFkUEt0YTdFLXhXejFuemI0Y0s3V3FxRHljdnVQaHhuOFlSbFJzV0VobzZrd0liZGstT0FtaUdja2x0LUx1SVhMOTRv",
       "timestamp": "Nov 03, 2026"
+    },
+    {
+      "id": "web-1975227100024502374",
+      "title": "3D printing: Bambu Lab officially unveils flagship H3C - heise online",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "3D printing: Bambu Lab officially unveils flagship H3C&nbsp;&nbsp;heise online",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOd1pDTFNwOFVyajczUHIwTlVVZDRVSFVteEE3NkE3c3VLekcxSGNaQmNzVXh6Q2hteTNMa2UwaE94Q0Jvcy1nNldDMm1NdkRUeDFkb0txWkFRQlVfUzBhSkI0UG1EN243QkdQU0sydUFfa3M0MWh2ZlVuRGxSQTJKM0FreW42YWJmQzIySno3QzZjb0FDVldSSHh5TUw",
+      "timestamp": "Nov 03, 2026"
     }
   ],
   "general_articles": [
     {
-      "id": "web-675271278012820070",
+      "id": "web-6101077170202407449",
+      "title": "Bambu Wants to Run Circles Around You - 3DPrint.com",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Bambu Wants to Run Circles Around You&nbsp;&nbsp;3DPrint.com",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1tTDRkT29HSndpYTBnMFFRTEdrclo3UldvcklJYUhoZ3BzVkxBeFlORTIxV041UHd1OHdQUjVJMUlucFh5MWdiUExOLVFOMlZHTERqQl93Y1Jia3hDMXlBZ3k1ZFBIcUFsNG1HMFAzTUhBV09UaTBjRNIBeEFVX3lxTE1tTDRkT29HSndpYTBnMFFRTEdrclo3UldvcklJYUhoZ3BzVkxBeFlORTIxV041UHd1OHdQUjVJMUlucFh5MWdiUExOLVFOMlZHTERqQl93Y1Jia3hDMXlBZ3k1ZFBIcUFsNG1HMFAzTUhBV09UaTBjRA",
+      "timestamp": "Nov 16, 2026"
+    },
+    {
+      "id": "web-8910488146082199025",
+      "title": "PrintHaus: Browser app creates free 3D-printable house models as snap-together kits for model railroads and tabletop gaming - 3Druck.com",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "PrintHaus: Browser app creates free 3D-printable house models as snap-together kits for model railroads and tabletop gaming&nbsp;&nbsp;3Druck.com",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQc1Z1dXNXcWtoMFFIZWxzSVRFXzJiSUxZdFAxa01wa1VQQ2V2dnpNTDB3YTRoQVBuck4xdVE5bTZKYjNjYWRQRkg4SVhIWWxyRmhQNXBVSnIwLUE1U1ZIeUZBSm42MlhrV0MxTGJVSHp0blJJdElZQ3JQTTM1QjRNYkt0UUFHSGFMNHJxMTl3MTFfMk0xc0NybUJwemNncTRKeVJ0QzhlcjdPa0MxeDFOR2R4V3pTSk5aN2lJTDY1TS12V3hrZS16eFpFb2pWNWF1NW5QUmdjeTRuR2t3S1psZHk2VlJ2VG1jaEo5WmRnTGYwcEE",
+      "timestamp": "Nov 15, 2026"
+    },
+    {
+      "id": "web-4897775039842285269",
+      "title": "Beginner-friendly 3D printer at best price in limited-time Amazon deal - PC Guide",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Beginner-friendly 3D printer at best price in limited-time Amazon deal&nbsp;&nbsp;PC Guide",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOajZ2NTg3RTR4M2hyUVpSUEJtQktBX3JkU0hoRXRtdHdUMW9MTm1kVVloZm9RX25yRGdHRkRCcFNteWUyTWNWTUlTMXl6bEszLV9WSTNMLXZuR0IyWWR4a2l1d2ZTa3padC1xRTZCdW1BZUhKQzFnUFB3eGVMUS1GN3hEZGl6QUdGZWliRUI4TF9maVFHVExBdXlpSnVYRGxucHhF",
+      "timestamp": "Nov 14, 2026"
+    },
+    {
+      "id": "web-5214856485521283916",
+      "title": "eSUN Expands Flexible 3D Printing Options With Upcoming 2.85mm TPU Filament Series - markets.businessinsider.com",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "eSUN Expands Flexible 3D Printing Options With Upcoming 2.85mm TPU Filament Series&nbsp;&nbsp;markets.businessinsider.com",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNMEc1WjZsZlF3M2lFcTdITXVUMnRRdzlXOGVQeFJXcDc5QWxVRjZpWW5xaF9xSXJ0VUlVVmZjZnlEUkpnRXN1NnBzYWxtbExZRm1LNlBQMW5VM3AxbmxUdGJUUjNUREpBcnF4SkgyY2R0S3pSVllFa251ejVaVk52Zklycy0tb011T1lNTjFzVVRBMjUzWkhWUTRoRnJjZ09GcTA3RGdVdGQ1bzNRQk1rQTlYU3hNQklIMWNzMW5JLXdGVFEwYnA1RWx5bzl1ajFBTTRoa01ZcnU",
+      "timestamp": "Nov 13, 2026"
+    },
+    {
+      "id": "web-7492438908039062676",
       "title": "Best 3D Printers for Beginners 2026: Easy to use printers for kids, teens and adults - Tom's Hardware",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -260,7 +300,7 @@
       "timestamp": "Nov 12, 2026"
     },
     {
-      "id": "web-3317034817239021664",
+      "id": "web-2140367947531682313",
       "title": "20 Million Requests a Day: Bambu Lab Blocks Traffic from Third-Party Software - 3Druck.com",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -270,7 +310,7 @@
       "timestamp": "Nov 12, 2026"
     },
     {
-      "id": "web-974514351197739600",
+      "id": "web-5401648213705820010",
       "title": "Bambu Lab's combination P1S 3D printer and AMS is back at its cheapest ahead of Amazon Black Friday sale - PC Guide",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -280,17 +320,7 @@
       "timestamp": "Nov 12, 2026"
     },
     {
-      "id": "web-2306121939805753612",
-      "title": "3D printing in the classroom: Bambu Lab workshops combine technology and physics - 3Druck.com",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "3D printing in the classroom: Bambu Lab workshops combine technology and physics&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSnBnN3B6SlhQRjZST2QtZUtVekJrRTU5eW9ZMTNFOE4zT2JKUGNEQ3dOREtKSjNtSm5oOGl0S0Jtcmp0cDR4eS1rX0ZJSWNCcUx0RWhSbDFFN01tSkVyYWpJZGpEckhqYXdYLVRFamZ2Ti1id1gxR1FzRnI4TjVRYUdKYm1uTTI3WnIxeWhFTEVTWkN5RGRlaEFSS2preFJwTGpoVUlFb1Uzc0lOODE4WUk2cklYeHNFNGhUNXRwdlNRUQ",
-      "timestamp": "Nov 11, 2026"
-    },
-    {
-      "id": "web-3551354206069003980",
+      "id": "web-1467151843174087090",
       "title": "Bambu Lab Plans Bambu Circle Pilot in the Netherlands - Technobezz",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -300,7 +330,7 @@
       "timestamp": "Nov 11, 2026"
     },
     {
-      "id": "web-393847307356324822",
+      "id": "web-7098423826181191680",
       "title": "Bambu Lab Wants to Help Turn Your Hobby Into a Hustle - All3DP",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -310,17 +340,7 @@
       "timestamp": "Nov 11, 2026"
     },
     {
-      "id": "web-1634249516718206380",
-      "title": "Grab These Early Black Friday Deals From Bambu Labs and 3D-Print a Masterpiece - CNET",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "Grab These Early Black Friday Deals From Bambu Labs and 3D-Print a Masterpiece&nbsp;&nbsp;CNET",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5UNVFpNGpwRWN1ckp3Vy0wdlpWTEFPYzYwT0ExSGxqN3lVV09QdFQ4X0d5WmRQNnd2SFlaNzRYODZNa1h3dkxkV0FBdUI3M3c1cVhmclZhVW9raEwyNGd3cGdadkJtRW5zaW02Q0dRS2VmckJBWFgzVHpYcW0tdw",
-      "timestamp": "Nov 09, 2026"
-    },
-    {
-      "id": "web-865714002722442926",
+      "id": "web-1496981273810275399",
       "title": "Bambu Lab’s New TPU 75A Is Ultra-Soft, Prints Fast & Brings Back 2.85-mm Filament - All3DP",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -330,7 +350,7 @@
       "timestamp": "Nov 05, 2026"
     },
     {
-      "id": "web-5344203105824032512",
+      "id": "web-8537947350767898218",
       "title": "Tested: Bambu Lab just launched its most innovative 3D printer yet - Creative Bloq",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -340,7 +360,7 @@
       "timestamp": "Nov 03, 2026"
     },
     {
-      "id": "web-6547071801829363259",
+      "id": "web-6627228016963461145",
       "title": "From Toys To Tools: Bambu Lab’s Third Gen 3D Printer Makes Multi-Material Manufacturing Just Work - Forbes",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",

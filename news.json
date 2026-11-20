@@ -1,26 +1,26 @@
 {
-  "scan_iso": "2026-11-19T19:01:52.325379+00:00",
-  "last_updated": "November 19, 2026 at 07:01 PM UTC",
+  "scan_iso": "2026-11-20T18:38:50.889685+00:00",
+  "last_updated": "November 20, 2026 at 06:38 PM UTC",
   "live_daily_prints": [
-    {
-      "name": "Albus Chunkledore - Harry Potter Kit | No Supports, No AMS, ",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/3585cf73-c8bf-4621-8ea7-f3cf3d7550d3/Image%201.png",
-      "url": "https://thangs.com/m/1659599"
-    },
     {
       "name": "Christmas Holiday Festive Fireplace Multi Clicker Keychain F",
       "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/9145b31f-0744-46f9-ad96-0a0de10d9c6f/IMG_8711-2.jpg",
       "url": "https://thangs.com/m/1656126"
     },
     {
-      "name": "KNITTED CHRISTMAS TREE / CHRISTMAS DECOR / CHRISTMAS TIME / ",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/298d4528-4a45-414c-96d2-361743186e70/KNITTED%20CHRISTMAS%20TREE.png",
-      "url": "https://thangs.com/m/1654059"
+      "name": "Christmas Donut & Mochi Donut Fidget Clickers",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/1cc476df-fc96-4131-b454-6f77904c7e97/IMG20261118151640%20copy.jpg",
+      "url": "https://thangs.com/m/1660984"
     },
     {
-      "name": "Dress Up Porch Turtle for Turtle Threads",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/e171efcb-e79a-44ff-a379-736eb85158ea/Porch-Turtle-FunFam3D-09.JPG",
-      "url": "https://thangs.com/m/1658465"
+      "name": "PAWMAS CALENDAR – COLLECTION 2026",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/8dc65780-0d29-4159-b5f9-acf3da9390a1/IMG_3515.JPG",
+      "url": "https://thangs.com/m/1657724"
+    },
+    {
+      "name": "Designers: How to set up discounts!",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/4dc7740f-9163-4a7c-a46c-b52cca15f642/How%20to%20Set%20Up%20Discounts%20-%20final-Cover.jpg",
+      "url": "https://thangs.com/m/1588124"
     }
   ],
   "youtube_videos": [
@@ -48,7 +48,7 @@
   ],
   "priority_articles": [
     {
-      "id": "web-1345270968241984058",
+      "id": "web-7443945187879192676",
       "title": "Swap Print Tools on Your Bambu Lab H3C: Simple Steps - Yahoo",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -58,7 +58,7 @@
       "timestamp": "Nov 19, 2026"
     },
     {
-      "id": "web-3932331071570625356",
+      "id": "web-8603810113957132705",
       "title": "Optimized for Bambu Lab H3C: ANTINSKY Launches Ultra‑Flexible TPE‑65A, Alongside PBST & Filament Tangle Cutter - All3DP",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -68,7 +68,7 @@
       "timestamp": "Nov 11, 2026"
     },
     {
-      "id": "web-1989851100659385730",
+      "id": "web-7649915044630299869",
       "title": "Bambu Lab unveils H3C, a tool-changing 3D printer with up to nine materials - 3D Adept",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -78,7 +78,7 @@
       "timestamp": "Nov 10, 2026"
     },
     {
-      "id": "web-4529644435020356203",
+      "id": "web-4070420511846916553",
       "title": "Bambu Lab H3C Mixes Layer Heights on the Same Surface - https://3dprinting.com/",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -88,7 +88,7 @@
       "timestamp": "Nov 09, 2026"
     },
     {
-      "id": "web-18222583491175480",
+      "id": "web-4288354626819584904",
       "title": "Bambu Lab H3C: Fine and coarse nozzles print on the same surface with different layer heights - 3Druck.com",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -98,17 +98,7 @@
       "timestamp": "Nov 09, 2026"
     },
     {
-      "id": "web-9044560002194785633",
-      "title": "Should You Wait For The Bambu H3C? Mothers Day Gifts (aatGd9VY4o) - Unisba Media",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
-      "target": "H3C",
-      "summary": "Should You Wait For The Bambu H3C? Mothers Day Gifts (aatGd9VY4o)&nbsp;&nbsp;Unisba Media",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQUWR5QWstWVlDanZCSlJQcXk5bjdUQnNTNTR6TXFOWXoxamxwRUJvVE9QSGRzaWJMZUh0ZS1HQ0VITEZHSUJyZHhlem1iYngtOUdmVWVpenprVXJKTDhDdmVWYjMwSkdYc2xUT3h1Z1JOaUhJcWoxNmRtM0luZ3liTlN2a1dmSU0",
-      "timestamp": "Nov 07, 2026"
-    },
-    {
-      "id": "web-8944803705170967173",
+      "id": "web-5002444829720657",
       "title": "Bambu Lab H3C launches in Australia: 9 toolheads, 85°C drying, and zero purge waste - tech AU",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -140,17 +130,27 @@
   ],
   "general_articles": [
     {
-      "id": "web-8743075131656243774",
+      "id": "web-8030048136433619871",
       "title": "Bambu Lab introduces Bambu Circle partner network at Formnext 2026 - 3D Printing Industry",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
       "target": "Bambu Lab",
       "summary": "Bambu Lab introduces Bambu Circle partner network at Formnext 2026&nbsp;&nbsp;3D Printing Industry",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMkkzRURYM0VqVkc3VG1Cc21nN0VLRXpoQUhWYUlzYm9TcF9kZlkyd3k2bldVTE10c0gzd253V1pELVFGZnRqbzByY2V5eXNWWmZuNmx1RGZtdzdNN1huWU5uOUk4MWY5MFliemtCQ0JTbkk3VGI1aWxwaC03T0pCcXdURWNEaHY4dnd3TGctYktiejZhSUd3aHdnMWc1eld5RFMyUHVuQ1YxaHZCaE53",
       "timestamp": "Nov 19, 2026"
     },
     {
-      "id": "web-4439795235108225362",
+      "id": "web-6314365795301183690",
+      "title": "Best Black Friday 3D printer deals 2026 — huge deals on Bambu Lab, Prusa, Creality, Elegoo, and more - Tom's Hardware",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Best Black Friday 3D printer deals 2026 — huge deals on Bambu Lab, Prusa, Creality, Elegoo, and more&nbsp;&nbsp;Tom's Hardware",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFB1QVEtZVJfWDlPeHRrOHFCa2xsWklkY0YxQTZlT3I2cU1fenFlUVVDZVo2Q2p4YTJGc18zMVZFdWtkQzNlVTZLNjRQTlN5UWRRS2JvOWNVU1hCdzdUMXlKWGdScFZ2dw",
+      "timestamp": "Nov 19, 2026"
+    },
+    {
+      "id": "web-142737286045977997",
       "title": "3D Printing with Kids: Bambu Lab Launches MakerKids - 3Druck.com",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -160,7 +160,7 @@
       "timestamp": "Nov 18, 2026"
     },
     {
-      "id": "web-5286250670373560885",
+      "id": "web-7795632158817687866",
       "title": "BIQU Infinity Bed: Conveyor belt pushes finished prints out of the Bambu Lab P1S and P2S - 3Druck.com",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -170,7 +170,7 @@
       "timestamp": "Nov 18, 2026"
     },
     {
-      "id": "web-4241995522599357867",
+      "id": "web-7793867258700651813",
       "title": "Revopoint MIRACO 2 Launches on Kickstarter: A Standalone 3D Scanner From $1,425 - https://3dprinting.com/",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -180,7 +180,17 @@
       "timestamp": "Nov 18, 2026"
     },
     {
-      "id": "web-122718377188706309",
+      "id": "web-1057789654027299820",
+      "title": "Best 3D Printers 2026: Need a 3D Printer? These Are the Ones We’d Buy - All3DP",
+      "source": "Bambu Hardware Watch",
+      "category": "Hardware Leaks",
+      "target": "Bambu Lab",
+      "summary": "Best 3D Printers 2026: Need a 3D Printer? These Are the Ones We’d Buy&nbsp;&nbsp;All3DP",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMmk2ZUFQcFg2a0FmY2xBanF4QjBQRGZnVXRXWUhFakNYcnhNb1pJakt5TnBYblBzZC1uSWUxLUg5ZGR1aGstLUFTX1FzODZhSHNhaU9WSmxIZXJWRGdMMW1tZ1hQb3VjUGZ0dWhEZll2ZXRTel9SODRWUjlNMHVHR3NnVm94RkI0",
+      "timestamp": "Nov 18, 2026"
+    },
+    {
+      "id": "web-5790936659869386226",
       "title": "Best Multicolor 3D Printers of 2026: Print the Rainbow - Tom's Hardware",
       "source": "Bambu Hardware Watch",
       "category": "Hardware Leaks",
@@ -190,7 +200,7 @@
       "timestamp": "Nov 18, 2026"
     },
     {
-      "id": "web-889918948518189917",
+      "id": "web-8425283412022453541",
       "title": "Bambu Lab Launches MakerKids Beta, 3D Printing Lessons for Families in Bambu Handy App - https://3dprinting.com/",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -200,7 +210,7 @@
       "timestamp": "Nov 18, 2026"
     },
     {
-      "id": "web-6100682667741193875",
+      "id": "web-408073981444413837",
       "title": "6 Best Multicolor 3D Printers in 2026 - Technobezz",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -210,44 +220,34 @@
       "timestamp": "Nov 18, 2026"
     },
     {
-      "id": "web-4511401214005128609",
-      "title": "Polymaker Launches G-Flex PETG, an Elastic PETG and TPU Blend That Prints Like PETG - https://3dprinting.com/",
+      "id": "web-1071435357573326653",
+      "title": "Beginner-friendly 3D printer at best price in limited-time Amazon deal - PC Guide",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "Polymaker Launches G-Flex PETG, an Elastic PETG and TPU Blend That Prints Like PETG&nbsp;&nbsp;https://3dprinting.com/",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFA2VTRYWmlpSHJwM1U3Uk9MWU42S1JDOTJvaVJEOFZSVlNQMC1IdnppelhMZ1V1Q3VJVTJJVU12MHF5bTViLXd0RC1kTnhXalVGUWx1d3gtQ0sxY2VxT1ZxTTdscEkxUDZ0ZVFMd2tXYlNEdERqMTVuOHliWXhQdw",
-      "timestamp": "Nov 17, 2026"
+      "summary": "Beginner-friendly 3D printer at best price in limited-time Amazon deal&nbsp;&nbsp;PC Guide",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOajZ2NTg3RTR4M2hyUVpSUEJtQktBX3JkU0hoRXRtdHdUMW9MTm1kVVloZm9RX25yRGdHRkRCcFNteWUyTWNWTUlTMXl6bEszLV9WSTNMLXZuR0IyWWR4a2l1d2ZTa3padC1xRTZCdW1BZUhKQzFnUFB3eGVMUS1GN3hEZGl6QUdGZWliRUI4TF9maVFHVExBdXlpSnVYRGxucHhF",
+      "timestamp": "Nov 14, 2026"
     },
     {
-      "id": "web-8656047775797474242",
-      "title": "Bambu Wants to Run Circles Around You - 3DPrint.com",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
+      "id": "web-1620663013617324732",
+      "title": "Bambu Lab Plans Bambu Circle Pilot in the Netherlands - Technobezz",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
       "target": "Bambu Lab",
-      "summary": "Bambu Wants to Run Circles Around You&nbsp;&nbsp;3DPrint.com",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1tTDRkT29HSndpYTBnMFFRTEdrclo3UldvcklJYUhoZ3BzVkxBeFlORTIxV041UHd1OHdQUjVJMUlucFh5MWdiUExOLVFOMlZHTERqQl93Y1Jia3hDMXlBZ3k1ZFBIcUFsNG1HMFAzTUhBV09UaTBjRNIBeEFVX3lxTE1tTDRkT29HSndpYTBnMFFRTEdrclo3UldvcklJYUhoZ3BzVkxBeFlORTIxV041UHd1OHdQUjVJMUlucFh5MWdiUExOLVFOMlZHTERqQl93Y1Jia3hDMXlBZ3k1ZFBIcUFsNG1HMFAzTUhBV09UaTBjRA",
-      "timestamp": "Nov 16, 2026"
+      "summary": "Bambu Lab Plans Bambu Circle Pilot in the Netherlands&nbsp;&nbsp;Technobezz",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1WSEFjeFpSWDhxcVUxWmNLUF83ZkowOHk4bWh3Qzc1OC1fQ1o0TlU5ejhLQ1VBNm9aQVpscHR4TnNaR2FueHVHNE1PVURpazJGVWtjem14TXZ4RHNiSk9DU2RiY253cG5aTHJkQUw0SDJpbFYt",
+      "timestamp": "Nov 11, 2026"
     },
     {
-      "id": "web-1703642745344514394",
-      "title": "eSUN Expands Flexible 3D Printing Options With Upcoming 2.85mm TPU Filament Series - markets.businessinsider.com",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
+      "id": "web-8704177535115325859",
+      "title": "New Biqu Upgrades Add Drying Functionality for the Original AMS, Lighting for P2S & X2D, and More - All3DP",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
       "target": "Bambu Lab",
-      "summary": "eSUN Expands Flexible 3D Printing Options With Upcoming 2.85mm TPU Filament Series&nbsp;&nbsp;markets.businessinsider.com",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNMEc1WjZsZlF3M2lFcTdITXVUMnRRdzlXOGVQeFJXcDc5QWxVRjZpWW5xaF9xSXJ0VUlVVmZjZnlEUkpnRXN1NnBzYWxtbExZRm1LNlBQMW5VM3AxbmxUdGJUUjNUREpBcnF4SkgyY2R0S3pSVllFa251ejVaVk52Zklycy0tb011T1lNTjFzVVRBMjUzWkhWUTRoRnJjZ09GcTA3RGdVdGQ1bzNRQk1rQTlYU3hNQklIMWNzMW5JLXdGVFEwYnA1RWx5bzl1ajFBTTRoa01ZcnU",
-      "timestamp": "Nov 13, 2026"
-    },
-    {
-      "id": "web-4266344714874280677",
-      "title": "Best 3D Printers for Beginners 2026: Easy to use printers for kids, teens and adults - Tom's Hardware",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "Best 3D Printers for Beginners 2026: Easy to use printers for kids, teens and adults&nbsp;&nbsp;Tom's Hardware",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVkdiMUY2WVhoUTZWV09RMmJHQlI1cUdRaGYxZ2R1TjFsV3VlTDh6S09kaDVkbnBFYk1Xc3c3YmdlcnplU0ZQT1FhdkJKZDYzenVJUDJ3elpZb2I2YzdWNEs0Z1JOenJuSmNIOUF6NExINklEQVB5bDZWbWZMektqR25B",
-      "timestamp": "Nov 12, 2026"
+      "summary": "New Biqu Upgrades Add Drying Functionality for the Original AMS, Lighting for P2S & X2D, and More&nbsp;&nbsp;All3DP",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPOF9HZkpSRVVqYjVoajVqeXlnNTVPczlXOHJwTkZycGNYN2tSbFZNQkFGU1NfbVVadU9QODR1bWxXaTB4UUxQWGEzY1FWemlkaTJGS3YwaHQ4S3VfNm9kOTlIc1hXM3lmTEJ0Mm9UUlV0V2ZjbC1vMlRPYTYydjFGS3d3WmV3YnZ1RTVfejFGSkZLN0hNTzJSb09pQmRmOWl6eC1ldEh1VUFncW5FdU5walFaZElUNXVPc1czYVlVX0JONGhiVnc2dA",
+      "timestamp": "Nov 11, 2026"
     }
   ],
   "reddit_articles": []

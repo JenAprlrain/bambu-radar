@@ -1,26 +1,26 @@
 {
-  "scan_iso": "2026-11-23T22:05:08.436278+00:00",
-  "last_updated": "November 23, 2026 at 10:05 PM UTC",
+  "scan_iso": "2026-11-24T20:41:25.690739+00:00",
+  "last_updated": "November 24, 2026 at 08:41 PM UTC",
   "live_daily_prints": [
     {
-      "name": "Trending Model Showcase #1",
-      "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
-      "url": "https://thangs.com/browse/trending"
+      "name": "Present Dragon",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/cc00b0e8-0e3b-49d7-86f9-daf62e2b5aec/pd6.png",
+      "url": "https://thangs.com/m/1664408"
     },
     {
-      "name": "Trending Model Showcase #2",
-      "img": "https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?w=800&auto=format&fit=crop&q=80",
-      "url": "https://thangs.com/browse/trending"
+      "name": "Infinite Notebook",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/b4b6cc4e-ac96-4ce1-9dcf-fa91f9fc7050/0_8.jpg",
+      "url": "https://thangs.com/m/1553629"
     },
     {
-      "name": "Trending Model Showcase #3",
-      "img": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80",
-      "url": "https://thangs.com/browse/trending"
+      "name": "Bunny Chunk Raplhie - A Christmas Story Kit | No Supports, N",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/aca2c55d-50d7-476b-81f4-42ad25037c58/Image%201.png",
+      "url": "https://thangs.com/m/1664971"
     },
     {
-      "name": "Trending Model Showcase #4",
-      "img": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop&q=80",
-      "url": "https://thangs.com/browse/trending"
+      "name": "Papai Noel.stl",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/1504e20a-fc12-4e9c-8445-1c45f553d096/Untitled.png",
+      "url": "https://thangs.com/m/1661852"
     }
   ],
   "youtube_videos": [
@@ -48,7 +48,67 @@
   ],
   "priority_articles": [
     {
-      "id": "web-5456160316634491387",
+      "id": "web-6743889318060478860",
+      "title": "Bambu Lab P3C 3D printer promises near H3C features at half price - Neowin",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "Bambu Lab P3C 3D printer promises near H3C features at half price&nbsp;&nbsp;Neowin",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVjNhTFYxTENuY3RJQ21ISzNRLTFXRnN2ZGJMSVZ0NVJmQmlhdkxLSU1TVzNHbUlic0JCeUd5cldZcHR6RW45eGV3eDk5SzJsOXhIdTFCcFk1cHpkVVJ1VC1NWkJ3bm01dWo0UDgzYmhJblR6RmNTemYyT1JvbFNIakN3NTFsd2w3ZDY0eWxjRW9EZTU4LTF6Rmhn",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-4021846932844227012",
+      "title": "Bambu Lab shows off H3C tool changer, first laser at Formnext 2026 — Prusa Research, Snapmaker, Creality, Elegoo, Anycubic, and Flashforge also on display - Tom's Hardware",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "Bambu Lab shows off H3C tool changer, first laser at Formnext 2026 — Prusa Research, Snapmaker, Creality, Elegoo, Anycubic, and Flashforge also on display&nbsp;&nbsp;Tom's Hardware",
+      "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPTlhoeGpiSjZYTzBhOVdJRnVmbnk4YUl6S2JLbmxRRnFhX0w0cmg0SFhxOHh5UHhpRVlaZ3dDZ2pSVFR4UFphd3FWRWVlTjlJdndMMjhuYi1YbVI5UnNCV3NCdnV0b1VfZzNuVkRiQVM4ak9GdnhVczFpTk83QWpOXzVJczRyeWdVTUp4cnEzVl96OVlDbUxYMFBaWGtpd2dlQ3psTkhIS2NpVkozT3ljUEdPNVJuNU5UbUg0RUNTTFl1S0NvTnZjbjVMRWxhb2lNNkdrQnVibFdFN05ybThEV1lHVUJ2MTBwYmJ0Q3BCZVVLa0FYUHZ3aENpOVoxR0VSc0NuSEF6QjhYcFB6N0h3c05ENTE0Zw",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-2676872970128365516",
+      "title": "Bambu Lab's H3C arrives in Malaysia at RM12,999; 9-tool 3D printer capable of material swapping in 6 seconds - Nasi Lemak Tech",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "Bambu Lab's H3C arrives in Malaysia at RM12,999; 9-tool 3D printer capable of material swapping in 6 seconds&nbsp;&nbsp;Nasi Lemak Tech",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE96SkxuMF9QbXpHUkF5RjItQmU2SHh4MFRsS0hlTkVheVJqUGlrdGpvb3pXSlhyM2oxOWY3NWp3MDZyTzd2TnlZNGxsSlFNekpoMkdpUkRFb2tOanhDX3F6UjFUSGdyN3ZYMFZBSzhiODQ1V29SX2s0",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-9138927387771094158",
+      "title": "Bambu’s five-nozzle P3C is cheaper than the H3C, but more hands-on - Mezha.net",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "Bambu’s five-nozzle P3C is cheaper than the H3C, but more hands-on&nbsp;&nbsp;Mezha.net",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPSUtsYVY1SjNxWnBUWU9CekdHWEgtMktwWGZZbnpjYzJtVDMtQlBfUjZ4U3Exc3dCaXlDQklmNmt4YzRKak5DYWxPS19wMXVmYnotV2hkYXpKaDAzaWRJUUpQaTJfTUptcHZmTkd0Wi1GM242Tlc3elZ2d2xoMXJZOWcyTWF1MGxWNUE",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-1472617285548347046",
+      "title": "Bambu Lab H3C Launched As A Nine-Tool Third-Generation Desktop 3D Printer - Pokde.Net",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "Bambu Lab H3C Launched As A Nine-Tool Third-Generation Desktop 3D Printer&nbsp;&nbsp;Pokde.Net",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1Bc25TYnVQdGZDZVZWN3FWeEp2QUI2M2lXLUlUdXlNdHRYUlIxUWpJc2FLbThaY004WTl6bnJ6dHNDRGdaRGtHM2V1UWxTdjJ5RFRTeXhodkZkZUloRExYRTF1OFR4Mm8",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-4626103214371226039",
+      "title": "Bambu Lab's Nine-Tool H3C Is RM12,999 in Malaysia - ProductNation Malaysia",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "Bambu Lab's Nine-Tool H3C Is RM12,999 in Malaysia&nbsp;&nbsp;ProductNation Malaysia",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQVZ4Y0Mtb0hTYjZvNTRNT0NleFlYd2RSVzN4b1ZJTGJMWEpVMTB5V01BNlRNSFhHLWhzcmxCUEViZWZ1VVg0cDdwdEtpdUxNUE9WRG95amJWTkZsNzFnUnlWeEdUUDUtZkdlQndiMWMzdXlKNmtEZl85ako4Z1BTUnlR",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-420440416129922888",
       "title": "Swap Print Tools on Your Bambu Lab H3C: Simple Steps - Yahoo",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -58,7 +118,7 @@
       "timestamp": "Nov 19, 2026"
     },
     {
-      "id": "web-6994528880348718444",
+      "id": "web-8687104243603830733",
       "title": "Optimized for Bambu Lab H3C: ANTINSKY Launches Ultra‑Flexible TPE‑65A, Alongside PBST & Filament Tangle Cutter - All3DP",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -66,16 +126,6 @@
       "summary": "Optimized for Bambu Lab H3C: ANTINSKY Launches Ultra‑Flexible TPE‑65A, Alongside PBST & Filament Tangle Cutter&nbsp;&nbsp;All3DP",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPdHd3UDRHenYydXZpM1dXYTE1WFBTQXdJYk10T21QXzFvSGxWWFUtUXA0SjlvdW9vLTMyZmdoa2ZlM0dXUy1VV0NTVV9jblpPbUlnbE44Q3NtSVF4TXQ1LXRJMEQ2OXpMTTk2c1VJZmhLbmlUcGpreDVrWmpmQWR5UnBuU1NFbVA5RE9SampmR0dDY1dBYWkxMy03azlvalJFUkNnNFhPdGlWY2Z6VUZDbVZ5am5kYVdObUpaNWxadldSZ1VaVEtv",
       "timestamp": "Nov 11, 2026"
-    },
-    {
-      "id": "web-879608159322431591",
-      "title": "Bambu Lab unveils H3C, a tool-changing 3D printer with up to nine materials - 3D Adept",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
-      "target": "H3C",
-      "summary": "Bambu Lab unveils H3C, a tool-changing 3D printer with up to nine materials&nbsp;&nbsp;3D Adept",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQdGZfS0UxeWFiWDJOaVRFc09pQmhqeWRjNUthWGVVeHIyTEs4NFVHQW9JS3lXWlNpWUdVQVpkenY5b211Q2hGQXduVG1MUUZ0S09CLXV0UlRDYU05d3IyM19URzM3d1Z4c291NzhTWlFnNG9kZmlfZjBpSG13dWYyQmZtcHpoU1RzMkhMNjVRVVdhRnRFR0NEYXU5Yw",
-      "timestamp": "Nov 10, 2026"
     },
     {
       "id": "fcc-pf008p",
@@ -100,124 +150,124 @@
   ],
   "general_articles": [
     {
-      "id": "web-7509421492919721034",
-      "title": "New Free Bambu Lab MakerWorld Tool Turns Initials Into Multicolor Name Signs - All3DP",
+      "id": "web-2316766503353528649",
+      "title": "Bambu Lab’s New P3C 3D Printer Brings Advanced Features to the Mainstream - CNET",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "New Free Bambu Lab MakerWorld Tool Turns Initials Into Multicolor Name Signs&nbsp;&nbsp;All3DP",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxORTEwd3VRLVpPenc5NHNOaXBUN2RfR3ZqcWtucTlZVF8wbGtPaWJYTDZJczQyem9tTjIxT3RJcmJZckc3MWRMUTVnWTg3UkdPUkZlS3BaSmh2dUFUOUtPMnNTbHg2aHJ4R2M4U1AtcnljV2VZU1d0bEFmeDJsdEQ2V0hGRUZGNFI4d202RGtuVkc2aTJqYnMxX0VaOGJzcE0",
-      "timestamp": "Nov 23, 2026"
+      "summary": "Bambu Lab’s New P3C 3D Printer Brings Advanced Features to the Mainstream&nbsp;&nbsp;CNET",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPbWlKRGpNU0c0dk9wUGVORkx4SzQyS3M1andGS3ZiOFNBQnctU08yTVpaX0ZkLTBwS2tDbDlGaWY3N0NTQUhyMkdkdWtURHF6dWNDcUVIZ1lwVWI3cWl1NU1TSHBJbUVHeUpaNXVJSHVFajRINU1GZVY3SkpTYWlTN1hiX0xIUTRqb1NrNUFiSktFTXBNWURKUHVHM2ZabXVn",
+      "timestamp": "Nov 24, 2026"
     },
     {
-      "id": "web-8542537866770306200",
-      "title": "Control 3D Printers with ChatGPT and Claude: These MCP Tools Support Bambu Lab, Prusa, and More. - 3Druck.com",
+      "id": "web-1421159091222251159",
+      "title": "Bambu Lab P3C 3D Printer Specs, Price and Release Date | 7-Tool Changer, $1,149 - stupidDOPE",
+      "source": "Bambu Hardware Watch",
+      "category": "Hardware Leaks",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab P3C 3D Printer Specs, Price and Release Date | 7-Tool Changer, $1,149&nbsp;&nbsp;stupidDOPE",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPTVhFUjJ5UEZ4cURNYjd0T1NHTFVmZ3g4SEtCWnhmbG5VS2UxWDdBVHhqN2U4dHFGVVdsNXdDRzRjdXpTa1ZyYzgtZDBWZ1lTVGJuVnZ5cGdjS2M5TDdRd2xuTTlaeTdEUHA5bXhRempXbW8zdmVWc1RPVTlQbnFYczdvVHJoYTdOQkZDTm9ybHl2dkI3cnVVSmgtR1M",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-439519203639508807",
+      "title": "Bambu Lab’s new P3C brings tool-changing 3D printing down to a much friendlier price - Poc Network // Tech",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "Control 3D Printers with ChatGPT and Claude: These MCP Tools Support Bambu Lab, Prusa, and More.&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPQkNHSEJQVTI5QVNQZ0hZYUtUQ3NFV1U0ajgtRWxHNmtkMF9jOGRwbnBneGtQSGkyY3cwb2pyWmtXS1NaRHh5ZWdDdjR3UncyanB5V2xXTFJQLTl0VF9qak5XaG11TDFhT0I2aHI1TF92elJ4Uk02WnNKcjI2UTVmeTlaM3QyNVNhNVB1TGd2d0k0OGZtQXVyRGtoN2dkNlNIdlJMeV9KSTRWa0pTS0JDbTZkcGttblFWc0p3WGEzdW9JaWRHQVQwYXNmMlY2VmF3",
-      "timestamp": "Nov 23, 2026"
+      "summary": "Bambu Lab’s new P3C brings tool-changing 3D printing down to a much friendlier price&nbsp;&nbsp;Poc Network // Tech",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMW4zZ3Q3ZExvNU14b05EeGc5RUdhV2s0U3RTS0czR0RscGo1dGg0bW8yRml4ellsS0R2MmJiQVItbkhzS2IzY0VNMm9FWEF3RXYxUlhQSWFRREppa3NtRXZyM1B2SFJiSU5GR2ZtaExUbF83ZDZSUUdCQmNSUWNaQnIweVJCaVF2ZzdXaS1zWkhMS3d3LWNsRGlyMHRrVXZWMHRXWkVGZVFYZnQ1WWt1TjZ4eWVTYzlMYXlPTm5OMUl2Snl4MGc",
+      "timestamp": "Nov 24, 2026"
     },
     {
-      "id": "web-1778871447749551661",
-      "title": "ELEGOO Unveils Four-Printhead Centauri X Ultra to Cut Color-Change Waste - 3D Printing Industry",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "ELEGOO Unveils Four-Printhead Centauri X Ultra to Cut Color-Change Waste&nbsp;&nbsp;3D Printing Industry",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPUzI3c25Qb2wwckxPYzh4bE1hdlB6Tk0wREZuNmgycWFMTVJ5TmhUbmNLbnhYckpNeW1Hb0J5ZlV6dHFMZ1VJNkdndDhjSU5kd0NJYlhpTTZ6R1JVTDJQdTR3ZGVrVGlGTUNmUDM1S2NqOEhBMmhuN2dJNDR4Mmg2YzZsRWlFVEc2dXYtQ1NyX3BqV2tQeTRTOG5zZVZ2QUJpM0pOaGhYWFlXaHdPVFZqZ2dfekthaGc",
-      "timestamp": "Nov 23, 2026"
-    },
-    {
-      "id": "web-7393132554866422464",
-      "title": "Maker 3D-Prints a Human Counterweight Elevator Model to Prove Pyramid Building is Possible - https://gnyouth.net/",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "Maker 3D-Prints a Human Counterweight Elevator Model to Prove Pyramid Building is Possible&nbsp;&nbsp;https://gnyouth.net/",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNZEt5WTY3MU13ejhpWDlxbFl2c285aTVacDdxUk8tSkt2cTZJbHBiRlRqMFF5UjRia3c1d0l4czhZNEZYNVZhbHNabkZhS205QjJJUU5uR3RCbUc2OFNSN3A4N3NBVklUbVdZVGFqRG51ald5aGRpTkVRTjF2aUtYT0dXR1VmSDFfcnNJZVBLcHIwcm4xZTQ0LWwyVlpCaFdSMk01bTRqSUlrQkdVQVJ3NA",
-      "timestamp": "Nov 23, 2026"
-    },
-    {
-      "id": "web-4439288713354990771",
-      "title": "OrcaSlicer 2.5 Gets More Stable: Version 2.5.2 Fixes Slicing and Import Errors - 3Druck.com",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "OrcaSlicer 2.5 Gets More Stable: Version 2.5.2 Fixes Slicing and Import Errors&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNSVpPQ0NFN2hBWTNlU3pwTkFzNDExUk52RF9PWEVGSXJCLWxwUUlORWQxVXdUNVdrZnZoUEFzWHJsRU5kd0REZWM1VUhsakdxeWZYV01kSFo1cmJ2UEYxNUt0TTRPUGV6MHFKQzNBQ0R4b0p3WmRzYVZwOGt0bXdaZG5WSjVEWm5IMHNiUjI4cy14Vk1Hc2VvSW9pMWZxb0ZrTW5jRjFlUjZRVlRiQlJmbVJQRHNCTDJaSEE",
-      "timestamp": "Nov 22, 2026"
-    },
-    {
-      "id": "web-9142424091036821413",
-      "title": "Bambu Studio via Command Line: A Guide to Automatically Slicing 3MF and STL Files - 3Druck.com",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "Bambu Studio via Command Line: A Guide to Automatically Slicing 3MF and STL Files&nbsp;&nbsp;3Druck.com",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOa2lnTEhHSFpTUm44Y1ZFM3lJVnBZamJ4YmlqSWNiZHFqaHI1Ri1neXhHajlUaVYxYThWTmNoemxfbU1CNDRhZW5fdjNFcHZiWUdJX0ctc1NwRDNEVjBuWVBwbUEteUhBS2RJVnJLQ3pNdl9SbnhXVUtPMUZHYm1LOEFNMHg1TkdwckRTelVnM1BJTjN1MnpDcjlEMHdtQ2ZURGR0alJoemYzMDAxQkcxaWFwQQ",
-      "timestamp": "Nov 22, 2026"
-    },
-    {
-      "id": "web-7414308311964095748",
-      "title": "Aerospace Engineer Uses Test Rig to Show Why Supersonic Propellers Aren’t Ever Used - https://gnyouth.net/",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "Aerospace Engineer Uses Test Rig to Show Why Supersonic Propellers Aren’t Ever Used&nbsp;&nbsp;https://gnyouth.net/",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNVE8xQjVBYWxwVEpNZzFxUmVSZjVXcWc4N0tpU1djVTRVU2p3R2MzclVVYTlaOFBvSU5VOVVzZEk2cDRVaFROWWxTdkxrNXgwd3R1QngyNV9ZZXo1ZzZMbWdIdXV2QS1xelExQkd3WU9welVDMHVFTDZUZm5KYVo4Y2NaNHZYWVBmS3BzcC1KOHpidU5fV1Zhbi1MSWlvUkxCTTFDTjZn",
-      "timestamp": "Nov 22, 2026"
-    },
-    {
-      "id": "web-6701182291881286734",
-      "title": "Formnext 2026: 4 things I loved and 1 that gives me the jeebies - Creative Bloq",
+      "id": "web-7712106928198686861",
+      "title": "Bambu Lab Launches P3C Seven-Tool 3D Printer - SuaraGarut.ID",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
       "target": "Bambu Lab",
-      "summary": "Formnext 2026: 4 things I loved and 1 that gives me the jeebies&nbsp;&nbsp;Creative Bloq",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQkdVc0Fvc0dRUEJzWmRTb052ZWNCQW5LcUxZNEN6LU9wSGVFZm50SWFDdmhwMUI2RWNLNS1jdl9neXMxNlZrbXhWSlBud2ViUnBzZWZTMlBHZkFyV0xWenlZSXJWQ3MwUmhVUFpfSFpwUUltdTVCcU1RZTZ2YXY5SW41M2E5aTV2OV84bU1tX05LVzRyT2lsUDQ3WWI",
-      "timestamp": "Nov 22, 2026"
+      "summary": "Bambu Lab Launches P3C Seven-Tool 3D Printer&nbsp;&nbsp;SuaraGarut.ID",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9feUY0MGwzXzd0UFkyNFJsRmFvVGgyblFnV2Q3ekY4MGoyQmo0SEtEcG5DWUxpdmlnUmdPY2hoSDdOSHNnX2JIZEFzM3AyRk9LWUhKX1lVN2RzbDRIVzRBSkFYcFpnX2N6",
+      "timestamp": "Nov 24, 2026"
     },
     {
-      "id": "web-4957029106250320105",
-      "title": "Bambu Lab launches MakerKids, its educational space for families - Foro3D",
+      "id": "web-2743156166738217916",
+      "title": "Bambu Lab Launches P3C 3D Printer With Seven Toolheads - SuaraGarut.ID",
+      "source": "Bambu Hardware Watch",
+      "category": "Hardware Leaks",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab Launches P3C 3D Printer With Seven Toolheads&nbsp;&nbsp;SuaraGarut.ID",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE05elYtcEJfeGxIaFdqcENEaDVqZURrR0JPRXI3Mlk1QWNNd21TSkUtTzdFVUdWLVRCalZIUGdsSW5QZWxoQ3JMenF5WWdLX0pZekN1dEVLcjZSSTJ0eEhtai1ZS2QwYzZ4cGc",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-4330690589261826811",
+      "title": "Bambu Lab Launches P3C 3D Printer With Seven-Tool System - Demokratis.co.id",
+      "source": "Bambu Hardware Watch",
+      "category": "Hardware Leaks",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab Launches P3C 3D Printer With Seven-Tool System&nbsp;&nbsp;Demokratis.co.id",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB6U1hPVy1fNHJHUzlweTFCRTg2YnFVN3haWGlXWm43WGpzaktTM25XSWloTmpFWk9leW9MdTFJWmpSMVVWTXQzQ2NnSndJQ3dxRjR6MUR0RWtHVHJVZk16VGRsNzhKWk1FTVdLSg",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-7883693826888811106",
+      "title": "Bambu Lab Launches P3C 3D Printer With Seven Tool Changer - cwibc.co.id",
+      "source": "Bambu Hardware Watch",
+      "category": "Hardware Leaks",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab Launches P3C 3D Printer With Seven Tool Changer&nbsp;&nbsp;cwibc.co.id",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1NdURiZFJNNWdKS0xtdG90Q2RUMUZZVUo3T3lSUTNqcFlMckJBbkxvdXJscmpNRmUxdE51WWlzdGxPZFloNGZPb0h1aFRPWWZ3ZGI3ZHktbkpGSXBk",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-5230494590625831510",
+      "title": "Bambu Lab Launches P3C Seven Tool 3D Printer for $1149 - Demokratis.co.id",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "Bambu Lab launches MakerKids, its educational space for families&nbsp;&nbsp;Foro3D",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPSlAyQktCVThGaWtTQzIwN0NPdFN1R0lZMUxNS0s4aXJPMVhiWWJxdTNfcTRWM0RtZmp1VFFTZ2lNLUxHUlRQWmJUSGI0eVhoM2QyQ1QtNDRWSEVYQUExUllqdDFKVi1SSVJOSk0xX2x0TzRkVzB2ejhqejdwV044Y3pWYlgzVEg3RWpmMVV6anhSTmN5OE1icWVnMERaZmhUX0R0Qw",
-      "timestamp": "Nov 22, 2026"
+      "summary": "Bambu Lab Launches P3C Seven Tool 3D Printer for $1149&nbsp;&nbsp;Demokratis.co.id",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ncUNkeHNJNHYxNk9URXFnQldfWV9xZ3BXUFE5SzVZVTlMNjd4d2dFZnlTVU5nQ3o2Yl9OcW5yVUFiUGd4MWFVcTFkZXl5dEpGSFYxLWNxZ09pRDZCV3UtZFh3MGQtT28",
+      "timestamp": "Nov 24, 2026"
     },
     {
-      "id": "web-3137518950934918225",
-      "title": "Best Laser Cutters and Engravers 2026: Diode, CO2, UV and Fiber - Tom's Hardware",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "Best Laser Cutters and Engravers 2026: Diode, CO2, UV and Fiber&nbsp;&nbsp;Tom's Hardware",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFB5NDA5eEFyWDFoQ2ZEOE1ZbFd6WFE0Q2dyNHJtNFA2QkRscFV1VkhYTEUxaHctQjQtM25manQ0NmJ3M2xudUJmamhieFpBbFhVSmFYUHoyRGh1NEh3VnpWQjYwZWpGZmYxMmo4ajJCWUlpM1hKc3J6WFRRcWo",
-      "timestamp": "Nov 20, 2026"
-    },
-    {
-      "id": "web-7392876006247195788",
-      "title": "The best 3D scanners 2026 — the top performing models we've benchmarked - Tom's Hardware",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "The best 3D scanners 2026 — the top performing models we've benchmarked&nbsp;&nbsp;Tom's Hardware",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBhWnd0clVmQUlCRGtNRmdqWWdwTEo1S0FXdE5qSlJ0bV91MWtvaTdCVl9mSFBWcS12Sl9iLThPOFdhbk15cTdvT2dkd3Y2WVprWkRPSnhnMEk5d0F4c0lEbGtyNFhid3BOWS1XcXoydDcxVW9CczR6Qw",
-      "timestamp": "Nov 20, 2026"
-    },
-    {
-      "id": "web-54832045470579929",
-      "title": "Chinese 3D printer maker Bambu Lab scales up production in Shenzhen - Nikkei Asia",
+      "id": "web-5807125663079420316",
+      "title": "Tool Changer. Now Standard. Bambu Lab Launches the P3C - Make True Multi‑Material 3D Printing Accessible to All Creators - The Manila Times",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
       "target": "Bambu Lab",
-      "summary": "Chinese 3D printer maker Bambu Lab scales up production in Shenzhen&nbsp;&nbsp;Nikkei Asia",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPOTVaeGt4WEJPbHh2Nm9aYmUwZEFZU1dPQkhTd2xmV1dUTkdmTUFlQVBNVGNZdnB4QXItNXhEeUxRWGM3TnpuLVl2U3BTUmt6cmktN2tsZjhJZy1LUHVXQkt5Z3VfRnl0WXlmRWRMUWNTS3NlMmRoVTBkajFHWGswOUdHQlR2NEJSN0wwUmo3aEpzY2E2Rm5pb19STjdSMWE0TmNfR0Zja1Z5aTFMS1NTMw",
-      "timestamp": "Nov 20, 2026"
+      "summary": "Tool Changer. Now Standard. Bambu Lab Launches the P3C - Make True Multi‑Material 3D Printing Accessible to All Creators&nbsp;&nbsp;The Manila Times",
+      "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxQQmdJdnRIT19TSjhOaVNjaG42U2xydDJvWDkyb0VBU3FKcEU1YnBJWlN3TXhaRjVjVXZ5M3dWQWV1VzBxTWtRYWJDLTd5MUJxb25Rb211SFRVWE5MU01qWHZBdl9nVlV1VnotU2cwbGVDY3ZqSjgxYUlDeHRDak40al9laXRGYlJSMVpfR1dmOWhFUFFiSURBaThTYnRaXzRCdVB6d1VmM0pHN2lsMjRYXy1zSUxzcnhDU2lRZFJxWW1FNjNmYjR4NUhqR0dEVDkyaHVad2hqRHNtMXRFRkZ5WHZnd0pSd3JpZDFUQ3o0RVQySVkxZ2I0a3NLb2ZhaGRqbW9HUVBUTXJnV3BxVVBhUFVyTllqSnZqRG040gGbAkFVX3lxTFBCZ0l2dEhPX1NKOE5pU2NobjZTbHJ0Mm9YOTJvRUFTcUpwRTVicElaU3dNeFpGNWNVdnkzd1ZBZXVXMHFNa1FhYkMtN3kxQnFvblFvbXVIVFVYTkxTTWpYdkF2X2dWVXVWei1TZzBsZUNjdmpKODFhSUN4dENqTjRqX2VpdEZiUlIxWl9HV2Y5aEVQUWJJREFpOFNidFpfNEJ1UHp3VWYzSkc3aWwyNFhfLXNJTHNyeENTaVFkUnFZbUU2M2ZiNHg1SGpHR0RUOTJodVp3aGpEc20xdEVGRnlYdmd3SlJ3cmlkMVRDejRFVDJJWTFnYjRrc0tvZmFoZGptb0dRUFRNcmdXcHFVUGFQVXJOWWpKdmpEbTg",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-1978361023969946137",
+      "title": "Bambu Lab Launches the P3C, the Bambu Lab Toolchanger Most of You Will Actually Buy - All3DP",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab Launches the P3C, the Bambu Lab Toolchanger Most of You Will Actually Buy&nbsp;&nbsp;All3DP",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUGpPNkJ4eUlTa2JDaE4tQ2NIVFVFMEhPWEoyMUs5eC1za0JrNzZYbHFMMDRKbjFvbmthNm52MTRCT1JRaUJXcHVua3gyVTZfXzM3WlVJd3EwUG5meVp2U3lWb3ZVZnNiRmhpUTlqQzZqV0pIakdTb1dvMlFLQXpnSDBTUTJ3MHFDanl3bUNaUTM3ZGhDcHFiQzJRXzJGTDBReDBmSEZXUQ",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-1383831574585627277",
+      "title": "Smartphone Giant Honor Quietly Shows Six-Head 3D Printer at Formnext - All3DP",
+      "source": "Bambu Hardware Watch",
+      "category": "Hardware Leaks",
+      "target": "Bambu Lab",
+      "summary": "Smartphone Giant Honor Quietly Shows Six-Head 3D Printer at Formnext&nbsp;&nbsp;All3DP",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPazNIb1pZRVlvN2N6R3pzQndLRW1JTVpjTWJjcWVnMFRzMHZFdGdPcmppcU1fWTZiTWR1Y0N3cThqSUN2UzI5YUN6dWRWcEZHeG01VUdvQmV3U2wzNzVqRXFsUVVOclV0MXE2ZlI2RWh5STJFaFU3cDA0MDBwc1d4QUI1cGxiQlBqQ182QWs0RGxlODho",
+      "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-1304407262223015415",
+      "title": "Tool Changer. Now Standard. Bambu Lab Launches the P3C - Make True Multi‑Material 3D Printing Accessible to All Creators - PR Newswire UK",
+      "source": "Bambu Hardware Watch",
+      "category": "Hardware Leaks",
+      "target": "Bambu Lab",
+      "summary": "Tool Changer. Now Standard. Bambu Lab Launches the P3C - Make True Multi‑Material 3D Printing Accessible to All Creators&nbsp;&nbsp;PR Newswire UK",
+      "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOYS1yOHVKMjlLN1N4TGZVX05ISHY4NXV0bVpabFBqNS13X2w5cWNJbUppdzRpMXdacU9jT0xyUXRGcndqNmJ2RDkwVnp6ZlZHeWlOcG9jUlh0NGE1Vkc0bmFETE1CYnVNSFVvQkxhLWdNMEkyeGRjTVlWUzJVZHh2b0ZJOHQ1SDJkd19nZ0JyUUFOZm5QWm5VcWI3dm1BMUt4TUxleVJlM1MtRWdXSGx5R0RfR0VrMHVjSmpQQ1pNZkVXVzNRSEUtV0VxR2dLUmowaFEtSlI0WHhjRzZzcjJxUkJjbTFCbmd5c2hPRDNxTURDWnVQdlJqNzdNaEVWeVJsZ1dfRg",
+      "timestamp": "Nov 24, 2026"
     }
   ],
   "reddit_articles": []

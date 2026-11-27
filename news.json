@@ -1,26 +1,26 @@
 {
-  "scan_iso": "2026-11-26T19:41:40.272469+00:00",
-  "last_updated": "November 26, 2026 at 07:41 PM UTC",
+  "scan_iso": "2026-11-27T19:30:07.603536+00:00",
+  "last_updated": "November 27, 2026 at 07:30 PM UTC",
   "live_daily_prints": [
     {
-      "name": "Designers: How to set up discounts!",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/4dc7740f-9163-4a7c-a46c-b52cca15f642/How%20to%20Set%20Up%20Discounts%20-%20final-Cover.jpg",
-      "url": "https://thangs.com/m/1588124"
+      "name": "Home Alone Advent Calendar - McCallister House Christmas Kit",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/e796d3d7-4ed7-4f1f-a0b7-e4c3c569d341/Image%202.png",
+      "url": "https://thangs.com/m/1662694"
     },
     {
-      "name": "Winter Coat Buddies Clicker",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/6dee3cb4-3bc5-4a43-b3e6-e048a1594471/coatbuddies5.png",
-      "url": "https://thangs.com/m/1665976"
+      "name": "Mini Vehicle Pack - Stocking Stuffers Kit | No Supports, No ",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/a621e8b4-0551-44dd-b51f-7899336a24f1/Image%206.png",
+      "url": "https://thangs.com/m/1666933"
     },
     {
-      "name": "Present Dragon",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/cc00b0e8-0e3b-49d7-86f9-daf62e2b5aec/pd6.png",
-      "url": "https://thangs.com/m/1664408"
+      "name": "KNITTED CHRISTMAS REINDEER / COZY CHRISTMAS DECOR / MODERN C",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/46930be2-c2c6-4787-b95b-9ae2a136150d/2.png",
+      "url": "https://thangs.com/m/1667355"
     },
     {
-      "name": "Mad Hatter – Whimsical Wonderland Figurine",
-      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/09996275-3626-4c9d-87f9-ab27b284a19c/3624_img_2.jpg",
-      "url": "https://thangs.com/m/1665688"
+      "name": "PAWZONE: MODULAR WALL ORGANIZER",
+      "img": "https://storage.googleapis.com/production-thangs-public/uploads/attachments/e5ff0e3a-ae17-4923-9a49-78073b9a181f/IMG_7365.JPG",
+      "url": "https://thangs.com/m/1493148"
     }
   ],
   "youtube_videos": [
@@ -48,7 +48,7 @@
   ],
   "priority_articles": [
     {
-      "id": "web-2990037699756893865",
+      "id": "web-1225080977166590449",
       "title": "Bambu Lab P3C 3D printer promises near H3C features at half price - Neowin",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -58,7 +58,7 @@
       "timestamp": "Nov 24, 2026"
     },
     {
-      "id": "web-5073654495398433374",
+      "id": "web-1319644710553425760",
       "title": "How much is the Bambu Lab P3C? $1,149 with five tools, and what it leaves out next to the H3C - Nacionale",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -68,7 +68,7 @@
       "timestamp": "Nov 24, 2026"
     },
     {
-      "id": "web-2978576298009499615",
+      "id": "web-8697234163184720053",
       "title": "Bambu Lab shows off H3C tool changer, first laser at Formnext 2026 — Prusa Research, Snapmaker, Creality, Elegoo, Anycubic, and Flashforge also on display - Tom's Hardware",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -78,7 +78,7 @@
       "timestamp": "Nov 24, 2026"
     },
     {
-      "id": "web-5266544615730075710",
+      "id": "web-1987615072690957585",
       "title": "Bambu Lab's H3C arrives in Malaysia at RM12,999; 9-tool 3D printer capable of material swapping in 6 seconds - Nasi Lemak Tech",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -88,7 +88,7 @@
       "timestamp": "Nov 24, 2026"
     },
     {
-      "id": "web-7582486282110483340",
+      "id": "web-954549338842283949",
       "title": "Bambu’s five-nozzle P3C is cheaper than the H3C, but more hands-on - Mezha.net",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -98,7 +98,7 @@
       "timestamp": "Nov 24, 2026"
     },
     {
-      "id": "web-8792142896684354382",
+      "id": "web-7599526277268326373",
       "title": "Bambu Lab H3C Launched As A Nine-Tool Third-Generation Desktop 3D Printer - Pokde.Net",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -108,7 +108,7 @@
       "timestamp": "Nov 24, 2026"
     },
     {
-      "id": "web-6623980163192928495",
+      "id": "web-30605887294600160",
       "title": "Bambu Lab's Nine-Tool H3C Is RM12,999 in Malaysia - ProductNation Malaysia",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -116,6 +116,16 @@
       "summary": "Bambu Lab's Nine-Tool H3C Is RM12,999 in Malaysia&nbsp;&nbsp;ProductNation Malaysia",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQVZ4Y0Mtb0hTYjZvNTRNT0NleFlYd2RSVzN4b1ZJTGJMWEpVMTB5V01BNlRNSFhHLWhzcmxCUEViZWZ1VVg0cDdwdEtpdUxNUE9WRG95amJWTkZsNzFnUnlWeEdUUDUtZkdlQndiMWMzdXlKNmtEZl85ako4Z1BTUnlR",
       "timestamp": "Nov 24, 2026"
+    },
+    {
+      "id": "web-1483393490100059877",
+      "title": "Swap Print Tools on Your Bambu Lab H3C: Simple Steps - Yahoo",
+      "source": "FCC & Patent Registry",
+      "category": "Priority Radar",
+      "target": "H3C",
+      "summary": "Swap Print Tools on Your Bambu Lab H3C: Simple Steps&nbsp;&nbsp;Yahoo",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQcXJYNjFnTTlMejQtdUQtTGZhdFVRTXppcnJVVVowV0Y5M1hXQlZLbHpScHdwUHFrVElsdldSaERnVlVlaE1BU2t1bmZEWkhHR18yRXdESlplb3ppeXdEd3NoOW9MZmJxUmdYcXRjZGI1cnBSTDF5Z3VYaHVyYV9pT3Jiak55N1k",
+      "timestamp": "Nov 19, 2026"
     },
     {
       "id": "fcc-pf008p",
@@ -140,17 +150,7 @@
   ],
   "general_articles": [
     {
-      "id": "web-1999103957271696529",
-      "title": "The Bambu-ification of 3D Scanning Is Here: Bambu Lab’s S1 Costs $1,699 - All3DP",
-      "source": "Bambu Ecosystem",
-      "category": "Bambu News",
-      "target": "Bambu Lab",
-      "summary": "The Bambu-ification of 3D Scanning Is Here: Bambu Lab’s S1 Costs $1,699&nbsp;&nbsp;All3DP",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPXzJqYXJVRDdhR3lKWVZqQklIUjdTSWhrX0tWemNza2RYaHBMWDNHeVFYZVpmS05uN2I5SmVHTjd0b3U0MzVVYXpIekpZaTFpMTVwcVFxOThrYVRaVk1jdDNXTUhVU3QyVkNfV0RfYWt6VWlYbGxYTjAyNGk1WVdrY0pDVjUzN2JzVDZUQ2R2aU9OV0U",
-      "timestamp": "Nov 26, 2026"
-    },
-    {
-      "id": "web-2074629735869183846",
+      "id": "web-8885181097092711691",
       "title": "Bambu Lab S1 Handheld 3D Scanner Goes on Sale at $1,699 - https://3dprinting.com/",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -160,7 +160,7 @@
       "timestamp": "Nov 26, 2026"
     },
     {
-      "id": "web-5301209951384497561",
+      "id": "web-101844259167914973",
       "title": "Bambu Lab P3C: Flagship 3D Printing Speed For Under Half The Price? - Ubergizmo",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -170,17 +170,27 @@
       "timestamp": "Nov 26, 2026"
     },
     {
-      "id": "web-2529570250531766022",
-      "title": "S1 3D: Bambu Lab’s first 3D scanner - develop3d",
+      "id": "web-1453166107971175165",
+      "title": "The Bambu-ification of 3D Scanning Is Here: Bambu Lab’s S1 Costs $1,699 - All3DP",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "S1 3D: Bambu Lab’s first 3D scanner&nbsp;&nbsp;develop3d",
+      "summary": "The Bambu-ification of 3D Scanning Is Here: Bambu Lab’s S1 Costs $1,699&nbsp;&nbsp;All3DP",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPXzJqYXJVRDdhR3lKWVZqQklIUjdTSWhrX0tWemNza2RYaHBMWDNHeVFYZVpmS05uN2I5SmVHTjd0b3U0MzVVYXpIekpZaTFpMTVwcVFxOThrYVRaVk1jdDNXTUhVU3QyVkNfV0RfYWt6VWlYbGxYTjAyNGk1WVdrY0pDVjUzN2JzVDZUQ2R2aU9OV0U",
+      "timestamp": "Nov 26, 2026"
+    },
+    {
+      "id": "web-848543897440009976",
+      "title": "S1 3D: Bambu Lab launches first 3D scanner - develop3d",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "S1 3D: Bambu Lab launches first 3D scanner&nbsp;&nbsp;develop3d",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBVdHRVeUNFb3c5Q3Z6NWxCNWFOeHF1MDRJOFdkLTl6QmlCUWZLSl92WlF3b0VydmJQU3B5WGxkakhGaE5RbzloQ2FndVZoVi1oRzFUUWRQOGhjMGozZnVqNWFlZVMwWVQ3WTh6VzJnWHp1TmhkZ2VJ",
       "timestamp": "Nov 26, 2026"
     },
     {
-      "id": "web-8007199171419862481",
+      "id": "web-560920912045182654",
       "title": "Bambu Lab S1 wireless 3D scanner targets beginners with 34 laser lines - Mezha.net",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -190,17 +200,17 @@
       "timestamp": "Nov 26, 2026"
     },
     {
-      "id": "web-8334193055247578244",
+      "id": "web-4874156433180512392",
       "title": "Bambu Lab S1: Wireless 3D scanner with touchscreen and 34 laser lines aims at beginners - Notebookcheck",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
       "target": "Bambu Lab",
       "summary": "Bambu Lab S1: Wireless 3D scanner with touchscreen and 34 laser lines aims at beginners&nbsp;&nbsp;Notebookcheck",
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQUGRDYlNfYThTXy15a1FxbWVMeGwtNzBKU3ZfLUpnSFpyT0JIMXBXcjJOMWpPSzA4S25TTjNQMFdXRlllN3JFalJmMGNNYkR3bF9rRnpKU082TE9STGR0UzJSdHhEMTRwclpyU0xaTHJJRnk3OTRGYWNadGtwazNHSS1zRV9ESGpEcXNfVlVMRDVEX3pJaFlTZE43R3VjcEMtNW9MQnJhSVRXX2phcU9fcXFPM3lpUnMyLXNZdV9jTUtJV3VUeGliZUY3Yw",
       "timestamp": "Nov 26, 2026"
     },
     {
-      "id": "web-262549120210408104",
+      "id": "web-4711522832741128418",
       "title": "Bambu Lab announced P3C after Formnext 2026 - NeoTeo",
       "source": "FCC & Patent Registry",
       "category": "Priority Radar",
@@ -210,7 +220,17 @@
       "timestamp": "Nov 26, 2026"
     },
     {
-      "id": "web-3094721702847472252",
+      "id": "web-8435886771190342370",
+      "title": "Bambu Lab S1: Manufacturer’s first 3D scanner costs €1,699 - 3Druck.com",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
+      "target": "Bambu Lab",
+      "summary": "Bambu Lab S1: Manufacturer’s first 3D scanner costs €1,699&nbsp;&nbsp;3Druck.com",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPNjdmLXVTWEtxUTljeTk0OXhpUlZ6VnMtM1lUblE4bl83ckRFVlNfUlpCOGlqTTlkbkpodVc3b2VBS0JiYVpvbzd0RWNSeTl2M3RrczBZTnpQZUFOZlVndldfSjRYcGZLMGc4Ulh6anVvRGM2enllQkJwODMtMlBiclhJSEZBZ2dUOHlXanFyaUFSdXpSVmtzc19pX2hNeHVnUF9HazAyOA",
+      "timestamp": "Nov 26, 2026"
+    },
+    {
+      "id": "web-1523097671664213799",
       "title": "Best Black Friday 3D printer deals 2026 — huge deals on Bambu Lab, Prusa, Creality, Elegoo, and more - Tom's Hardware",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -220,7 +240,7 @@
       "timestamp": "Nov 26, 2026"
     },
     {
-      "id": "web-695280007841196243",
+      "id": "web-715245437398215857",
       "title": "OctoPrint 2.0.0 Adds Plugin Route to Bambu Lab Printers After Years of Serial-Only Connections - 3D Printing Industry",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
@@ -230,34 +250,24 @@
       "timestamp": "Nov 26, 2026"
     },
     {
-      "id": "web-6120512258090196142",
-      "title": "Black Friday 2026 3D printing deals: printers, scanners, filament and upgrades - 3D Printing Industry",
+      "id": "web-6109620621251663508",
+      "title": "SIMA San Diego Trains Sailors to 3D Print Missing Ship Parts - https://3dprinting.com/",
       "source": "Bambu Ecosystem",
       "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "Black Friday 2026 3D printing deals: printers, scanners, filament and upgrades&nbsp;&nbsp;3D Printing Industry",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQMWlkUlp6MjdsMUFfa0lSQ2hZNkhWU3Niak1NVFpiNXhYOUY4QmNSdHR2d3FIZEdGdEJza0ZzTFFNRjFfNmFsalB3YjVxQWRVUUFYbTFiYy1uOEp3czY3TTFlV0FxemFud1RSOExqNnJQdWEzdHY2UGJtMUFocVNfdXVNclNucTVFN2VwV3Z3X0Z5bndfdHJJb2NaTjJLTUp5QVhlc0hSVUstRmJrakJSaHQtWFlGMnBJSms0",
-      "timestamp": "Nov 25, 2026"
+      "summary": "SIMA San Diego Trains Sailors to 3D Print Missing Ship Parts&nbsp;&nbsp;https://3dprinting.com/",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTFpnUG5fN0lFWndtM0FTWDdkZWozcVdUdEpxUFJweXhxT08zTzhDc213QkhicDNIbHktcVNrbXJoNDhKNnc3elhfdncybm9sSWJveFhiSEtabjFwM1FiV1hfWDF6RDhSR2EzMUpPZlZkQmkyZ1NjTUFLSmFPQ1ZBbVZtNC1ZNDY1N2I2cWV5b1FGYmc",
+      "timestamp": "Nov 26, 2026"
     },
     {
-      "id": "web-1844002757246944424",
-      "title": "Bambu Lab P3C Launches a Seven-Tool Changer on the Desk for $1,149 - Gadget Bridge",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
+      "id": "web-6612134458573904240",
+      "title": "KIT Team Wins German Future Award for 3D-Printed Photonic Links - https://3dprinting.com/",
+      "source": "Bambu Ecosystem",
+      "category": "Bambu News",
       "target": "Bambu Lab",
-      "summary": "Bambu Lab P3C Launches a Seven-Tool Changer on the Desk for $1,149&nbsp;&nbsp;Gadget Bridge",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQcG9jX1lsci1RWVp3VkNvNDliU2trLU1vQjkxNlVjSEkzVlJQM0ZDUm9qbVZYQXktWUJzQi12VHk5b1VVOG9SdEwwZHZhN01UdDQ0WXVBM2ljMkRra2VQRTdNNGtYRTlfWXJRY3dRT3VLYy1xV3g1VmY3QWVPVmFfNDJJYjFRQnVPc2FNYVhuSVNiSy1lazNtQ0VB0gGfAUFVX3lxTE0wV0ZCWFk3NUU1dXVuNFgwaTBxZ1NTN0liTS1uaWRVenVVdEo0WjBnd3Q4TmFOTTlJUzZfRlBCbkpLcnJWRW0wbGduT3ZpbnZXU1FJUThLdF9va2FzRUg3eWlQZThCZVZ1elBOVFpGeGl5dXpFdkZucTZ1RkhTSlZEX1dzSHp4REY4X1NPN0dFM3dZX215UHp6V2NSZ0hNWQ",
-      "timestamp": "Nov 25, 2026"
-    },
-    {
-      "id": "web-7917807794189716421",
-      "title": "Bambu Lab P3C: Price, Features and Specifications - thedigitalbriefnews.com",
-      "source": "FCC & Patent Registry",
-      "category": "Priority Radar",
-      "target": "Bambu Lab",
-      "summary": "Bambu Lab P3C: Price, Features and Specifications&nbsp;&nbsp;thedigitalbriefnews.com",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBHSGpCa2doSFNsYVpuMUUycmhycndVVnYtYUFQY1pRRUtXbjhFd1lVMGNQczk3azBaMTZqUlF2WWNuYTBPdGtlYV9IRVJkeDd5TGxrZ2lxbWZMNDlCNXdCaVN1U1I5MWJN",
-      "timestamp": "Nov 25, 2026"
+      "summary": "KIT Team Wins German Future Award for 3D-Printed Photonic Links&nbsp;&nbsp;https://3dprinting.com/",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWVJ1V1lLaklhN0VSRm5sdU5ZblNxTDJ0aWk1VU84VXNOS0x0dUt2RHU1T0t2dm1pODVpaUI0UDlEb2lJdWwxaUQ3dFd5VlFSR2dpZ1NOQVJON292WmgzbThZdFM4cnN3Q3RqaWkySWZyMm5zUXdwaXFia1BiZEh0ZVdZY3RtVkh2dXM3QkVpU3JHSzNjZTh3",
+      "timestamp": "Nov 26, 2026"
     }
   ],
   "reddit_articles": []
